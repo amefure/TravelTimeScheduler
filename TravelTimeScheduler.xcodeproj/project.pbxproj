@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */; };
+		1252187229D6330F006AF797 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252187129D6330F006AF797 /* ContentView.swift */; };
+		1252187429D63310006AF797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187329D63310006AF797 /* Assets.xcassets */; };
+		1252187729D63310006AF797 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187629D63310006AF797 /* Preview Assets.xcassets */; };
+		1252188129D63310006AF797 /* TravelTimeSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188029D63310006AF797 /* TravelTimeSchedulerTests.swift */; };
+		1252188B29D63310006AF797 /* TravelTimeSchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188A29D63310006AF797 /* TravelTimeSchedulerUITests.swift */; };
+		1252188D29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188C29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1252187D29D63310006AF797 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1252186429D6330F006AF797 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1252186B29D6330F006AF797;
+			remoteInfo = TravelTimeScheduler;
+		};
+		1252188729D63310006AF797 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1252186429D6330F006AF797 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1252186B29D6330F006AF797;
+			remoteInfo = TravelTimeScheduler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1252186C29D6330F006AF797 /* TravelTimeScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTimeScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerApp.swift; sourceTree = "<group>"; };
+		1252187129D6330F006AF797 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1252187329D63310006AF797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1252187629D63310006AF797 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1252187C29D63310006AF797 /* TravelTimeSchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelTimeSchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1252188029D63310006AF797 /* TravelTimeSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerTests.swift; sourceTree = "<group>"; };
+		1252188629D63310006AF797 /* TravelTimeSchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelTimeSchedulerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1252188A29D63310006AF797 /* TravelTimeSchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerUITests.swift; sourceTree = "<group>"; };
+		1252188C29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1252186929D6330F006AF797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252187929D63310006AF797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252188329D63310006AF797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1252186329D6330F006AF797 = {
+			isa = PBXGroup;
+			children = (
+				1252186E29D6330F006AF797 /* TravelTimeScheduler */,
+				1252187F29D63310006AF797 /* TravelTimeSchedulerTests */,
+				1252188929D63310006AF797 /* TravelTimeSchedulerUITests */,
+				1252186D29D6330F006AF797 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1252186D29D6330F006AF797 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1252186C29D6330F006AF797 /* TravelTimeScheduler.app */,
+				1252187C29D63310006AF797 /* TravelTimeSchedulerTests.xctest */,
+				1252188629D63310006AF797 /* TravelTimeSchedulerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1252186E29D6330F006AF797 /* TravelTimeScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */,
+				1252187129D6330F006AF797 /* ContentView.swift */,
+				1252187329D63310006AF797 /* Assets.xcassets */,
+				1252187529D63310006AF797 /* Preview Content */,
+			);
+			path = TravelTimeScheduler;
+			sourceTree = "<group>";
+		};
+		1252187529D63310006AF797 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1252187629D63310006AF797 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1252187F29D63310006AF797 /* TravelTimeSchedulerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1252188029D63310006AF797 /* TravelTimeSchedulerTests.swift */,
+			);
+			path = TravelTimeSchedulerTests;
+			sourceTree = "<group>";
+		};
+		1252188929D63310006AF797 /* TravelTimeSchedulerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1252188A29D63310006AF797 /* TravelTimeSchedulerUITests.swift */,
+				1252188C29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift */,
+			);
+			path = TravelTimeSchedulerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1252186B29D6330F006AF797 /* TravelTimeScheduler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1252189029D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeScheduler" */;
+			buildPhases = (
+				1252186829D6330F006AF797 /* Sources */,
+				1252186929D6330F006AF797 /* Frameworks */,
+				1252186A29D6330F006AF797 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TravelTimeScheduler;
+			productName = TravelTimeScheduler;
+			productReference = 1252186C29D6330F006AF797 /* TravelTimeScheduler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1252187B29D63310006AF797 /* TravelTimeSchedulerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1252189329D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerTests" */;
+			buildPhases = (
+				1252187829D63310006AF797 /* Sources */,
+				1252187929D63310006AF797 /* Frameworks */,
+				1252187A29D63310006AF797 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1252187E29D63310006AF797 /* PBXTargetDependency */,
+			);
+			name = TravelTimeSchedulerTests;
+			productName = TravelTimeSchedulerTests;
+			productReference = 1252187C29D63310006AF797 /* TravelTimeSchedulerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1252188529D63310006AF797 /* TravelTimeSchedulerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1252189629D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerUITests" */;
+			buildPhases = (
+				1252188229D63310006AF797 /* Sources */,
+				1252188329D63310006AF797 /* Frameworks */,
+				1252188429D63310006AF797 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1252188829D63310006AF797 /* PBXTargetDependency */,
+			);
+			name = TravelTimeSchedulerUITests;
+			productName = TravelTimeSchedulerUITests;
+			productReference = 1252188629D63310006AF797 /* TravelTimeSchedulerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1252186429D6330F006AF797 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					1252186B29D6330F006AF797 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					1252187B29D63310006AF797 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1252186B29D6330F006AF797;
+					};
+					1252188529D63310006AF797 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1252186B29D6330F006AF797;
+					};
+				};
+			};
+			buildConfigurationList = 1252186729D6330F006AF797 /* Build configuration list for PBXProject "TravelTimeScheduler" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1252186329D6330F006AF797;
+			productRefGroup = 1252186D29D6330F006AF797 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1252186B29D6330F006AF797 /* TravelTimeScheduler */,
+				1252187B29D63310006AF797 /* TravelTimeSchedulerTests */,
+				1252188529D63310006AF797 /* TravelTimeSchedulerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1252186A29D6330F006AF797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252187729D63310006AF797 /* Preview Assets.xcassets in Resources */,
+				1252187429D63310006AF797 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252187A29D63310006AF797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252188429D63310006AF797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1252186829D6330F006AF797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252187229D6330F006AF797 /* ContentView.swift in Sources */,
+				1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252187829D63310006AF797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252188129D63310006AF797 /* TravelTimeSchedulerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252188229D63310006AF797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252188B29D63310006AF797 /* TravelTimeSchedulerUITests.swift in Sources */,
+				1252188D29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1252187E29D63310006AF797 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1252186B29D6330F006AF797 /* TravelTimeScheduler */;
+			targetProxy = 1252187D29D63310006AF797 /* PBXContainerItemProxy */;
+		};
+		1252188829D63310006AF797 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1252186B29D6330F006AF797 /* TravelTimeScheduler */;
+			targetProxy = 1252188729D63310006AF797 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1252188E29D63310006AF797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1252188F29D63310006AF797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1252189129D63310006AF797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1252189229D63310006AF797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1252189429D63310006AF797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeSchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelTimeScheduler.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravelTimeScheduler";
+			};
+			name = Debug;
+		};
+		1252189529D63310006AF797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeSchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelTimeScheduler.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravelTimeScheduler";
+			};
+			name = Release;
+		};
+		1252189729D63310006AF797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeSchedulerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravelTimeScheduler;
+			};
+			name = Debug;
+		};
+		1252189829D63310006AF797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeSchedulerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravelTimeScheduler;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1252186729D6330F006AF797 /* Build configuration list for PBXProject "TravelTimeScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252188E29D63310006AF797 /* Debug */,
+				1252188F29D63310006AF797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1252189029D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252189129D63310006AF797 /* Debug */,
+				1252189229D63310006AF797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1252189329D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252189429D63310006AF797 /* Debug */,
+				1252189529D63310006AF797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1252189629D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252189729D63310006AF797 /* Debug */,
+				1252189829D63310006AF797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1252186429D6330F006AF797 /* Project object */;
+}
