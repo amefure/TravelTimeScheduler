@@ -8,12 +8,81 @@
 
 /* Begin PBXBuildFile section */
 		1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */; };
-		1252187229D6330F006AF797 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252187129D6330F006AF797 /* ContentView.swift */; };
+		1252187229D6330F006AF797 /* ListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252187129D6330F006AF797 /* ListTravelView.swift */; };
 		1252187429D63310006AF797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187329D63310006AF797 /* Assets.xcassets */; };
 		1252187729D63310006AF797 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187629D63310006AF797 /* Preview Assets.xcassets */; };
 		1252188129D63310006AF797 /* TravelTimeSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188029D63310006AF797 /* TravelTimeSchedulerTests.swift */; };
 		1252188B29D63310006AF797 /* TravelTimeSchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188A29D63310006AF797 /* TravelTimeSchedulerUITests.swift */; };
 		1252188D29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188C29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift */; };
+		1252189A29D634C3006AF797 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1252189929D634C3006AF797 /* GoogleService-Info.plist */; };
+		1252189B29D634C3006AF797 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1252189929D634C3006AF797 /* GoogleService-Info.plist */; };
+		1252189C29D634C3006AF797 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1252189929D634C3006AF797 /* GoogleService-Info.plist */; };
+		125218A429D6376D006AF797 /* NewEntryAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218A329D6376D006AF797 /* NewEntryAuthView.swift */; };
+		125218A629D63786006AF797 /* LoginAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218A529D63786006AF797 /* LoginAuthView.swift */; };
+		125218A829D63897006AF797 /* GoogleAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218A729D63897006AF797 /* GoogleAuthView.swift */; };
+		125218AA29D638A9006AF797 /* AppleAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218A929D638A9006AF797 /* AppleAuthView.swift */; };
+		125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218AB29D638B9006AF797 /* PasswordResetView.swift */; };
+		125218AE29D638D3006AF797 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218AD29D638D3006AF797 /* SecureInputView.swift */; };
+		125218B229D638F6006AF797 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B129D638F6006AF797 /* ErrorMessageView.swift */; };
+		125218B529D63943006AF797 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B429D63943006AF797 /* AuthViewModel.swift */; };
+		125218B729D63955006AF797 /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B629D63955006AF797 /* ValidationViewModel.swift */; };
+		1252192029DD7E0B006AF797 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252191F29DD7E0B006AF797 /* AuthModel.swift */; };
+		1252192229DD7E22006AF797 /* AppleAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192129DD7E22006AF797 /* AppleAuthModel.swift */; };
+		1252192429DD7F41006AF797 /* EmailAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192329DD7F41006AF797 /* EmailAuthModel.swift */; };
+		1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192529DD7F54006AF797 /* GoogleAuthModel.swift */; };
+		1252192829DD7F69006AF797 /* AuthErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192729DD7F69006AF797 /* AuthErrorModel.swift */; };
+		1252192B29DE1C2A006AF797 /* EmailAuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */; };
+		1252193129DE1E49006AF797 /* SignOutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193029DE1E49006AF797 /* SignOutButtonView.swift */; };
+		1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */; };
+		1252193729DE20D1006AF797 /* AuthProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193629DE20D1006AF797 /* AuthProviderModel.swift */; };
+		1252193929DF6E8A006AF797 /* FBDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */; };
+		1252193B29DF6ED6006AF797 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193A29DF6ED6006AF797 /* Travel.swift */; };
+		1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */; };
+		1252194029DF7442006AF797 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */; };
+		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
+		12B4696929E81E4C002E6864 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* Color.swift */; };
+		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
+		12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */; };
+		12B4696F29E82614002E6864 /* AdMobViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696E29E82614002E6864 /* AdMobViewModels.swift */; };
+		12B4697129E82633002E6864 /* ShareLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697029E82633002E6864 /* ShareLinkViewModel.swift */; };
+		12B4697329E82640002E6864 /* DeviceSizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697229E82640002E6864 /* DeviceSizeViewModel.swift */; };
+		12B4697C29E82838002E6864 /* ShareLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697B29E82838002E6864 /* ShareLinkModel.swift */; };
+		12B4697E29E82D14002E6864 /* EntryTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697D29E82D14002E6864 /* EntryTravelView.swift */; };
+		12B4698229E8ACDF002E6864 /* EntryScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */; };
+		12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698329EA9893002E6864 /* ListScheduleView.swift */; };
+		12B4698629EC1254002E6864 /* DisplayDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698529EC1254002E6864 /* DisplayDateViewModel.swift */; };
+		12B4698829ECA1ED002E6864 /* TravelPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698729ECA1ED002E6864 /* TravelPageView.swift */; };
+		12B4698A29ED5C28002E6864 /* RowScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698929ED5C28002E6864 /* RowScheduleView.swift */; };
+		12B4698E29F16C10002E6864 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698D29F16C10002E6864 /* Modifier.swift */; };
+		12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698F29F1E406002E6864 /* ScrollPeriodTabPickerView.swift */; };
+		12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699229F1E530002E6864 /* ScheduleTabMainView.swift */; };
+		12B4699529F1E58E002E6864 /* ScheduleControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699429F1E58E002E6864 /* ScheduleControlPanelView.swift */; };
+		12B4699829F51589002E6864 /* ScheduleTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */; };
+		12B4699E29F56710002E6864 /* ListScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699D29F56710002E6864 /* ListScheduleViewModel.swift */; };
+		12B469A029F67093002E6864 /* TranceportationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699F29F67093002E6864 /* TranceportationPickerView.swift */; };
+		12D5895C29E60ABB00DAEA5F /* EditUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */; };
+		12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */; };
+		12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */; };
+		12F0E06429FB220F0081D9C1 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06329FB220F0081D9C1 /* UserInfoView.swift */; };
+		12F0E06729FBEAB00081D9C1 /* InputPeriodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06629FBEAB00081D9C1 /* InputPeriodView.swift */; };
+		12F0E06929FBEC510081D9C1 /* InputMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06829FBEC510081D9C1 /* InputMemberView.swift */; };
+		12F0E06B29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06A29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift */; };
+		12F0E06D2A01F7D20081D9C1 /* SearchBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */; };
+		12F0E06F2A0284E10081D9C1 /* PickerTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */; };
+		12F0E0722A029AFD0081D9C1 /* UserinfoEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0712A029AFD0081D9C1 /* UserinfoEditView.swift */; };
+		12F0E0742A029BA00081D9C1 /* UserWithdrawalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0732A029BA00081D9C1 /* UserWithdrawalView.swift */; };
+		12F0E0762A029C130081D9C1 /* UserShareLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0752A029C130081D9C1 /* UserShareLinkView.swift */; };
+		12F0E0782A029C530081D9C1 /* UserReviewLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0772A029C530081D9C1 /* UserReviewLinkView.swift */; };
+		12F0E07A2A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0792A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift */; };
+		12F0E07C2A084CFE0081D9C1 /* WellcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E07B2A084CFE0081D9C1 /* WellcomeMessageView.swift */; };
+		12F0E07E2A0853130081D9C1 /* AuthInputBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E07D2A0853130081D9C1 /* AuthInputBoxView.swift */; };
+		12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */; };
+		12F0E0842A0A703E0081D9C1 /* BlankTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */; };
+		12F0E0862A0AF4660081D9C1 /* EntryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0852A0AF4660081D9C1 /* EntryHeaderView.swift */; };
+		12F0E0892A11FB400081D9C1 /* ReAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0882A11FB400081D9C1 /* ReAuthView.swift */; };
+		25BDF1DF9470CC6D55D7F5E0 /* Pods_TravelTimeScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A67D54A71F648BB8CB3391 /* Pods_TravelTimeScheduler.framework */; };
+		A5F1ADEDAA729AFE72C97AD9 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */; };
+		D8596E9294FB5113D291ED26 /* Pods_TravelTimeSchedulerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +103,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B69A7FC4D3F9F5BB8619F31 /* Pods-TravelTimeScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler.debug.xcconfig"; sourceTree = "<group>"; };
+		0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252186C29D6330F006AF797 /* TravelTimeScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTimeScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerApp.swift; sourceTree = "<group>"; };
-		1252187129D6330F006AF797 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1252187129D6330F006AF797 /* ListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTravelView.swift; sourceTree = "<group>"; };
 		1252187329D63310006AF797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1252187629D63310006AF797 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1252187C29D63310006AF797 /* TravelTimeSchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelTimeSchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +115,79 @@
 		1252188629D63310006AF797 /* TravelTimeSchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelTimeSchedulerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252188A29D63310006AF797 /* TravelTimeSchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerUITests.swift; sourceTree = "<group>"; };
 		1252188C29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1252189929D634C3006AF797 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		125218A329D6376D006AF797 /* NewEntryAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryAuthView.swift; sourceTree = "<group>"; };
+		125218A529D63786006AF797 /* LoginAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthView.swift; sourceTree = "<group>"; };
+		125218A729D63897006AF797 /* GoogleAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthView.swift; sourceTree = "<group>"; };
+		125218A929D638A9006AF797 /* AppleAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthView.swift; sourceTree = "<group>"; };
+		125218AB29D638B9006AF797 /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
+		125218AD29D638D3006AF797 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
+		125218B129D638F6006AF797 /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
+		125218B429D63943006AF797 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		125218B629D63955006AF797 /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
+		125218B929D6F726006AF797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		125218BA29D6F837006AF797 /* TravelTimeScheduler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TravelTimeScheduler.entitlements; sourceTree = "<group>"; };
+		1252191F29DD7E0B006AF797 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		1252192129DD7E22006AF797 /* AppleAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthModel.swift; sourceTree = "<group>"; };
+		1252192329DD7F41006AF797 /* EmailAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthModel.swift; sourceTree = "<group>"; };
+		1252192529DD7F54006AF797 /* GoogleAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthModel.swift; sourceTree = "<group>"; };
+		1252192729DD7F69006AF797 /* AuthErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorModel.swift; sourceTree = "<group>"; };
+		1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthButtonView.swift; sourceTree = "<group>"; };
+		1252193029DE1E49006AF797 /* SignOutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutButtonView.swift; sourceTree = "<group>"; };
+		1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalButtonView.swift; sourceTree = "<group>"; };
+		1252193629DE20D1006AF797 /* AuthProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderModel.swift; sourceTree = "<group>"; };
+		1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseViewModel.swift; sourceTree = "<group>"; };
+		1252193A29DF6ED6006AF797 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserInfoViewModel.swift; sourceTree = "<group>"; };
+		1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
+		12B4696829E81E4C002E6864 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
+		12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseModel.swift; sourceTree = "<group>"; };
+		12B4696E29E82614002E6864 /* AdMobViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobViewModels.swift; sourceTree = "<group>"; };
+		12B4697029E82633002E6864 /* ShareLinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLinkViewModel.swift; sourceTree = "<group>"; };
+		12B4697229E82640002E6864 /* DeviceSizeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSizeViewModel.swift; sourceTree = "<group>"; };
+		12B4697B29E82838002E6864 /* ShareLinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLinkModel.swift; sourceTree = "<group>"; };
+		12B4697D29E82D14002E6864 /* EntryTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTravelView.swift; sourceTree = "<group>"; };
+		12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryScheduleView.swift; sourceTree = "<group>"; };
+		12B4698329EA9893002E6864 /* ListScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScheduleView.swift; sourceTree = "<group>"; };
+		12B4698529EC1254002E6864 /* DisplayDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDateViewModel.swift; sourceTree = "<group>"; };
+		12B4698729ECA1ED002E6864 /* TravelPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPageView.swift; sourceTree = "<group>"; };
+		12B4698929ED5C28002E6864 /* RowScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowScheduleView.swift; sourceTree = "<group>"; };
+		12B4698D29F16C10002E6864 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
+		12B4698F29F1E406002E6864 /* ScrollPeriodTabPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPeriodTabPickerView.swift; sourceTree = "<group>"; };
+		12B4699229F1E530002E6864 /* ScheduleTabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTabMainView.swift; sourceTree = "<group>"; };
+		12B4699429F1E58E002E6864 /* ScheduleControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleControlPanelView.swift; sourceTree = "<group>"; };
+		12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypePickerView.swift; sourceTree = "<group>"; };
+		12B4699D29F56710002E6864 /* ListScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScheduleViewModel.swift; sourceTree = "<group>"; };
+		12B4699F29F67093002E6864 /* TranceportationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranceportationPickerView.swift; sourceTree = "<group>"; };
+		12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserNameView.swift; sourceTree = "<group>"; };
+		12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTravelView.swift; sourceTree = "<group>"; };
+		12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleView.swift; sourceTree = "<group>"; };
+		12F0E06329FB220F0081D9C1 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		12F0E06629FBEAB00081D9C1 /* InputPeriodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPeriodView.swift; sourceTree = "<group>"; };
+		12F0E06829FBEC510081D9C1 /* InputMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMemberView.swift; sourceTree = "<group>"; };
+		12F0E06A29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTravelButtonView.swift; sourceTree = "<group>"; };
+		12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBoxView.swift; sourceTree = "<group>"; };
+		12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimeView.swift; sourceTree = "<group>"; };
+		12F0E0712A029AFD0081D9C1 /* UserinfoEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserinfoEditView.swift; sourceTree = "<group>"; };
+		12F0E0732A029BA00081D9C1 /* UserWithdrawalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWithdrawalView.swift; sourceTree = "<group>"; };
+		12F0E0752A029C130081D9C1 /* UserShareLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShareLinkView.swift; sourceTree = "<group>"; };
+		12F0E0772A029C530081D9C1 /* UserReviewLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewLinkView.swift; sourceTree = "<group>"; };
+		12F0E0792A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTermsOfServiceLinkView.swift; sourceTree = "<group>"; };
+		12F0E07B2A084CFE0081D9C1 /* WellcomeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeMessageView.swift; sourceTree = "<group>"; };
+		12F0E07D2A0853130081D9C1 /* AuthInputBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInputBoxView.swift; sourceTree = "<group>"; };
+		12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMainTravelView.swift; sourceTree = "<group>"; };
+		12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankTravelView.swift; sourceTree = "<group>"; };
+		12F0E0852A0AF4660081D9C1 /* EntryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryHeaderView.swift; sourceTree = "<group>"; };
+		12F0E0882A11FB400081D9C1 /* ReAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReAuthView.swift; sourceTree = "<group>"; };
+		1BEC4574320B7DB533585B3D /* Pods-TravelTimeSchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeSchedulerTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F59A6353BC2EB3C8AAA5B3E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeSchedulerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A67D54A71F648BB8CB3391 /* Pods_TravelTimeScheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeScheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7EA08380A07E067510492F9 /* Pods-TravelTimeScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler.release.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler.release.xcconfig"; sourceTree = "<group>"; };
+		E7444FC2F380F92C5576B517 /* Pods-TravelTimeSchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeSchedulerTests.release.xcconfig"; path = "Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
+		F88D925E3C25EFAC19E2B93E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25BDF1DF9470CC6D55D7F5E0 /* Pods_TravelTimeScheduler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8596E9294FB5113D291ED26 /* Pods_TravelTimeSchedulerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F1ADEDAA729AFE72C97AD9 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +225,8 @@
 				1252187F29D63310006AF797 /* TravelTimeSchedulerTests */,
 				1252188929D63310006AF797 /* TravelTimeSchedulerUITests */,
 				1252186D29D6330F006AF797 /* Products */,
+				E2AB1BE13C30414714022949 /* Pods */,
+				3045442C34AA0D166A569C70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,9 +243,16 @@
 		1252186E29D6330F006AF797 /* TravelTimeScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				125218BA29D6F837006AF797 /* TravelTimeScheduler.entitlements */,
+				125218B929D6F726006AF797 /* Info.plist */,
 				1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */,
-				1252187129D6330F006AF797 /* ContentView.swift */,
+				1252189D29D63690006AF797 /* Views */,
+				125218A029D636B2006AF797 /* Models */,
+				1252189F29D636A9006AF797 /* ViewModels */,
+				12B4696729E813C1002E6864 /* Extensions */,
+				125218A129D6373C006AF797 /* FBAuthentication */,
 				1252187329D63310006AF797 /* Assets.xcassets */,
+				1252189929D634C3006AF797 /* GoogleService-Info.plist */,
 				1252187529D63310006AF797 /* Preview Content */,
 			);
 			path = TravelTimeScheduler;
@@ -127,6 +283,328 @@
 			path = TravelTimeSchedulerUITests;
 			sourceTree = "<group>";
 		};
+		1252189D29D63690006AF797 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E0822A0A6FB40081D9C1 /* TopMainTravelView */,
+				12F0E06529FBEA8B0081D9C1 /* EntryTravelView */,
+				12B4699129F1E45E002E6864 /* TravelDatePageView */,
+				12F0E0702A029AD90081D9C1 /* UserSettingView */,
+				12B4699629F514FD002E6864 /* ViewComponents */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1252189F29D636A9006AF797 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697629E826CB002E6864 /* Utility */,
+				1252193C29DF7404006AF797 /* UserDefaults */,
+				12B4699C29F566EF002E6864 /* ViewControl */,
+				12B4697829E827A7002E6864 /* Database */,
+				12B4697729E82790002E6864 /* Function */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		125218A029D636B2006AF797 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697A29E8280F002E6864 /* Function */,
+				12B4697429E826B4002E6864 /* Realm */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		125218A129D6373C006AF797 /* FBAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				125218B829D63A78006AF797 /* Views */,
+				1252191E29DD7DED006AF797 /* Models */,
+				125218B329D63924006AF797 /* ViewModels */,
+			);
+			path = FBAuthentication;
+			sourceTree = "<group>";
+		};
+		125218A229D6374E006AF797 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E07F2A08531C0081D9C1 /* AuthInputBoxView */,
+				125218B129D638F6006AF797 /* ErrorMessageView.swift */,
+				1252192929DD7FC3006AF797 /* ProviderAuthButton */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		125218B329D63924006AF797 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				125218B429D63943006AF797 /* AuthViewModel.swift */,
+				125218B629D63955006AF797 /* ValidationViewModel.swift */,
+				1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		125218B829D63A78006AF797 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1252192D29DE1DEE006AF797 /* AfterSignIn */,
+				1252192C29DE1DC9006AF797 /* BeforeSignIn */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1252191E29DD7DED006AF797 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1252191F29DD7E0B006AF797 /* AuthModel.swift */,
+				1252192129DD7E22006AF797 /* AppleAuthModel.swift */,
+				1252192329DD7F41006AF797 /* EmailAuthModel.swift */,
+				1252192529DD7F54006AF797 /* GoogleAuthModel.swift */,
+				1252192729DD7F69006AF797 /* AuthErrorModel.swift */,
+				1252193629DE20D1006AF797 /* AuthProviderModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1252192929DD7FC3006AF797 /* ProviderAuthButton */ = {
+			isa = PBXGroup;
+			children = (
+				125218A929D638A9006AF797 /* AppleAuthView.swift */,
+				1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */,
+				125218A729D63897006AF797 /* GoogleAuthView.swift */,
+			);
+			path = ProviderAuthButton;
+			sourceTree = "<group>";
+		};
+		1252192C29DE1DC9006AF797 /* BeforeSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E07B2A084CFE0081D9C1 /* WellcomeMessageView.swift */,
+				125218A529D63786006AF797 /* LoginAuthView.swift */,
+				125218A329D6376D006AF797 /* NewEntryAuthView.swift */,
+				125218AB29D638B9006AF797 /* PasswordResetView.swift */,
+				125218A229D6374E006AF797 /* ViewComponents */,
+			);
+			path = BeforeSignIn;
+			sourceTree = "<group>";
+		};
+		1252192D29DE1DEE006AF797 /* AfterSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				1252192E29DE1E1C006AF797 /* ViewComponents */,
+			);
+			path = AfterSignIn;
+			sourceTree = "<group>";
+		};
+		1252192E29DE1E1C006AF797 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				1252193029DE1E49006AF797 /* SignOutButtonView.swift */,
+				12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */,
+				1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */,
+				12F0E0882A11FB400081D9C1 /* ReAuthView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		1252193C29DF7404006AF797 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		12B4696729E813C1002E6864 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				12B4696829E81E4C002E6864 /* Color.swift */,
+				12B4698D29F16C10002E6864 /* Modifier.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		12B4697429E826B4002E6864 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				1252193A29DF6ED6006AF797 /* Travel.swift */,
+				12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		12B4697529E826C3002E6864 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		12B4697629E826CB002E6864 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697229E82640002E6864 /* DeviceSizeViewModel.swift */,
+				12B4698529EC1254002E6864 /* DisplayDateViewModel.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		12B4697729E82790002E6864 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				12B4696E29E82614002E6864 /* AdMobViewModels.swift */,
+				12B4697029E82633002E6864 /* ShareLinkViewModel.swift */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		12B4697829E827A7002E6864 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697929E827BB002E6864 /* Firebase */,
+				12B4697529E826C3002E6864 /* Realm */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		12B4697929E827BB002E6864 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		12B4697A29E8280F002E6864 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697B29E82838002E6864 /* ShareLinkModel.swift */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		12B4699129F1E45E002E6864 /* TravelDatePageView */ = {
+			isa = PBXGroup;
+			children = (
+				12B4698729ECA1ED002E6864 /* TravelPageView.swift */,
+				12B4698F29F1E406002E6864 /* ScrollPeriodTabPickerView.swift */,
+				12B4699229F1E530002E6864 /* ScheduleTabMainView.swift */,
+				12B4699429F1E58E002E6864 /* ScheduleControlPanelView.swift */,
+				12B4699929F5328B002E6864 /* ScheduleTabMainView */,
+			);
+			path = TravelDatePageView;
+			sourceTree = "<group>";
+		};
+		12B4699629F514FD002E6864 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */,
+				12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */,
+				12B4699F29F67093002E6864 /* TranceportationPickerView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		12B4699929F5328B002E6864 /* ScheduleTabMainView */ = {
+			isa = PBXGroup;
+			children = (
+				12B4698329EA9893002E6864 /* ListScheduleView.swift */,
+				12B4698929ED5C28002E6864 /* RowScheduleView.swift */,
+				12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */,
+			);
+			path = ScheduleTabMainView;
+			sourceTree = "<group>";
+		};
+		12B4699C29F566EF002E6864 /* ViewControl */ = {
+			isa = PBXGroup;
+			children = (
+				12B4699D29F56710002E6864 /* ListScheduleViewModel.swift */,
+			);
+			path = ViewControl;
+			sourceTree = "<group>";
+		};
+		12F0E06529FBEA8B0081D9C1 /* EntryTravelView */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697D29E82D14002E6864 /* EntryTravelView.swift */,
+				12F0E0852A0AF4660081D9C1 /* EntryHeaderView.swift */,
+				12F0E06829FBEC510081D9C1 /* InputMemberView.swift */,
+				12F0E06629FBEAB00081D9C1 /* InputPeriodView.swift */,
+				12F0E06A29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift */,
+			);
+			path = EntryTravelView;
+			sourceTree = "<group>";
+		};
+		12F0E0702A029AD90081D9C1 /* UserSettingView */ = {
+			isa = PBXGroup;
+			children = (
+				12B4696529E813A0002E6864 /* UserSettingView.swift */,
+				12F0E06329FB220F0081D9C1 /* UserInfoView.swift */,
+				12F0E0872A0AF7C40081D9C1 /* Buttons */,
+			);
+			path = UserSettingView;
+			sourceTree = "<group>";
+		};
+		12F0E07F2A08531C0081D9C1 /* AuthInputBoxView */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E07D2A0853130081D9C1 /* AuthInputBoxView.swift */,
+				125218AD29D638D3006AF797 /* SecureInputView.swift */,
+			);
+			path = AuthInputBoxView;
+			sourceTree = "<group>";
+		};
+		12F0E0822A0A6FB40081D9C1 /* TopMainTravelView */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */,
+				12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */,
+				12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */,
+				12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */,
+				1252187129D6330F006AF797 /* ListTravelView.swift */,
+				12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */,
+			);
+			path = TopMainTravelView;
+			sourceTree = "<group>";
+		};
+		12F0E0872A0AF7C40081D9C1 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E0712A029AFD0081D9C1 /* UserinfoEditView.swift */,
+				12F0E0732A029BA00081D9C1 /* UserWithdrawalView.swift */,
+				12F0E0772A029C530081D9C1 /* UserReviewLinkView.swift */,
+				12F0E0752A029C130081D9C1 /* UserShareLinkView.swift */,
+				12F0E0792A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		3045442C34AA0D166A569C70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44A67D54A71F648BB8CB3391 /* Pods_TravelTimeScheduler.framework */,
+				0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */,
+				2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2AB1BE13C30414714022949 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B69A7FC4D3F9F5BB8619F31 /* Pods-TravelTimeScheduler.debug.xcconfig */,
+				A7EA08380A07E067510492F9 /* Pods-TravelTimeScheduler.release.xcconfig */,
+				F88D925E3C25EFAC19E2B93E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig */,
+				1F59A6353BC2EB3C8AAA5B3E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig */,
+				1BEC4574320B7DB533585B3D /* Pods-TravelTimeSchedulerTests.debug.xcconfig */,
+				E7444FC2F380F92C5576B517 /* Pods-TravelTimeSchedulerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +612,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1252189029D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeScheduler" */;
 			buildPhases = (
+				92C48CDE8EBEC5B1017E6B38 /* [CP] Check Pods Manifest.lock */,
 				1252186829D6330F006AF797 /* Sources */,
 				1252186929D6330F006AF797 /* Frameworks */,
 				1252186A29D6330F006AF797 /* Resources */,
+				1DF66AF8C819C708101A927B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,9 +631,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1252189329D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerTests" */;
 			buildPhases = (
+				6521804DC1E4383DDFB07A37 /* [CP] Check Pods Manifest.lock */,
 				1252187829D63310006AF797 /* Sources */,
 				1252187929D63310006AF797 /* Frameworks */,
 				1252187A29D63310006AF797 /* Resources */,
+				A47EFD94B83192699F016535 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,9 +651,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1252189629D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerUITests" */;
 			buildPhases = (
+				4490083AF0E04A5361F521BD /* [CP] Check Pods Manifest.lock */,
 				1252188229D63310006AF797 /* Sources */,
 				1252188329D63310006AF797 /* Frameworks */,
 				1252188429D63310006AF797 /* Resources */,
+				4525552D62FB8E36D50FF401 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +717,7 @@
 			files = (
 				1252187729D63310006AF797 /* Preview Assets.xcassets in Resources */,
 				1252187429D63310006AF797 /* Assets.xcassets in Resources */,
+				1252189A29D634C3006AF797 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +725,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1252189B29D634C3006AF797 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,18 +733,202 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1252189C29D634C3006AF797 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DF66AF8C819C708101A927B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4490083AF0E04A5361F521BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4525552D62FB8E36D50FF401 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6521804DC1E4383DDFB07A37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelTimeSchedulerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92C48CDE8EBEC5B1017E6B38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelTimeScheduler-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A47EFD94B83192699F016535 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1252186829D6330F006AF797 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1252187229D6330F006AF797 /* ContentView.swift in Sources */,
+				12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */,
+				12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */,
+				12B4696F29E82614002E6864 /* AdMobViewModels.swift in Sources */,
+				12F0E07E2A0853130081D9C1 /* AuthInputBoxView.swift in Sources */,
+				12F0E06B29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift in Sources */,
+				1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */,
+				1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */,
+				12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */,
+				12B4699E29F56710002E6864 /* ListScheduleViewModel.swift in Sources */,
+				1252192229DD7E22006AF797 /* AppleAuthModel.swift in Sources */,
+				12F0E06429FB220F0081D9C1 /* UserInfoView.swift in Sources */,
+				125218B729D63955006AF797 /* ValidationViewModel.swift in Sources */,
+				12F0E0782A029C530081D9C1 /* UserReviewLinkView.swift in Sources */,
+				125218A829D63897006AF797 /* GoogleAuthView.swift in Sources */,
+				1252192429DD7F41006AF797 /* EmailAuthModel.swift in Sources */,
+				125218B229D638F6006AF797 /* ErrorMessageView.swift in Sources */,
+				1252192029DD7E0B006AF797 /* AuthModel.swift in Sources */,
+				12F0E0722A029AFD0081D9C1 /* UserinfoEditView.swift in Sources */,
+				12B469A029F67093002E6864 /* TranceportationPickerView.swift in Sources */,
+				12B4697329E82640002E6864 /* DeviceSizeViewModel.swift in Sources */,
+				12B4697129E82633002E6864 /* ShareLinkViewModel.swift in Sources */,
+				12B4698A29ED5C28002E6864 /* RowScheduleView.swift in Sources */,
+				12B4698229E8ACDF002E6864 /* EntryScheduleView.swift in Sources */,
+				1252192829DD7F69006AF797 /* AuthErrorModel.swift in Sources */,
+				125218AA29D638A9006AF797 /* AppleAuthView.swift in Sources */,
+				12B4697E29E82D14002E6864 /* EntryTravelView.swift in Sources */,
+				12F0E06D2A01F7D20081D9C1 /* SearchBoxView.swift in Sources */,
+				1252193929DF6E8A006AF797 /* FBDatabaseViewModel.swift in Sources */,
+				125218AE29D638D3006AF797 /* SecureInputView.swift in Sources */,
+				125218A629D63786006AF797 /* LoginAuthView.swift in Sources */,
+				12F0E0742A029BA00081D9C1 /* UserWithdrawalView.swift in Sources */,
+				12D5895C29E60ABB00DAEA5F /* EditUserNameView.swift in Sources */,
+				12B4698829ECA1ED002E6864 /* TravelPageView.swift in Sources */,
+				1252194029DF7442006AF797 /* UserDefaultsProtocol.swift in Sources */,
+				12F0E07C2A084CFE0081D9C1 /* WellcomeMessageView.swift in Sources */,
+				12B4698E29F16C10002E6864 /* Modifier.swift in Sources */,
+				12F0E06F2A0284E10081D9C1 /* PickerTimeView.swift in Sources */,
+				1252193729DE20D1006AF797 /* AuthProviderModel.swift in Sources */,
+				12F0E0862A0AF4660081D9C1 /* EntryHeaderView.swift in Sources */,
+				125218A429D6376D006AF797 /* NewEntryAuthView.swift in Sources */,
+				12F0E06929FBEC510081D9C1 /* InputMemberView.swift in Sources */,
+				12B4699529F1E58E002E6864 /* ScheduleControlPanelView.swift in Sources */,
+				12F0E0842A0A703E0081D9C1 /* BlankTravelView.swift in Sources */,
+				12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */,
+				12B4698629EC1254002E6864 /* DisplayDateViewModel.swift in Sources */,
+				1252193B29DF6ED6006AF797 /* Travel.swift in Sources */,
+				1252187229D6330F006AF797 /* ListTravelView.swift in Sources */,
+				12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */,
+				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
+				12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */,
+				12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */,
+				1252193129DE1E49006AF797 /* SignOutButtonView.swift in Sources */,
+				12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */,
+				12B4696929E81E4C002E6864 /* Color.swift in Sources */,
+				12B4697C29E82838002E6864 /* ShareLinkModel.swift in Sources */,
+				12B4699829F51589002E6864 /* ScheduleTypePickerView.swift in Sources */,
+				1252192B29DE1C2A006AF797 /* EmailAuthButtonView.swift in Sources */,
 				1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */,
+				12F0E07A2A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift in Sources */,
+				12F0E06729FBEAB00081D9C1 /* InputPeriodView.swift in Sources */,
+				12F0E0762A029C130081D9C1 /* UserShareLinkView.swift in Sources */,
+				12F0E0892A11FB400081D9C1 /* ReAuthView.swift in Sources */,
+				125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */,
+				12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */,
+				1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,15 +1081,20 @@
 		};
 		1252189129D63310006AF797 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B69A7FC4D3F9F5BB8619F31 /* Pods-TravelTimeScheduler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelTimeScheduler/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "旅Time";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -432,6 +1107,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -440,15 +1118,20 @@
 		};
 		1252189229D63310006AF797 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7EA08380A07E067510492F9 /* Pods-TravelTimeScheduler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelTimeScheduler/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "旅Time";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,6 +1144,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -469,6 +1155,7 @@
 		};
 		1252189429D63310006AF797 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BEC4574320B7DB533585B3D /* Pods-TravelTimeSchedulerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +1176,7 @@
 		};
 		1252189529D63310006AF797 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7444FC2F380F92C5576B517 /* Pods-TravelTimeSchedulerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,6 +1197,7 @@
 		};
 		1252189729D63310006AF797 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F88D925E3C25EFAC19E2B93E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +1216,7 @@
 		};
 		1252189829D63310006AF797 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F59A6353BC2EB3C8AAA5B3E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
