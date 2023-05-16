@@ -41,6 +41,7 @@ class Schedule:Object ,ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id:ObjectId             // ID
     @Persisted var dateTime:Date = Date()                    // 時間
     @Persisted var content:String = ""                       // 内容
+    @Persisted var memo:String = ""                          // memo
     @Persisted var type:ScheduleType = .other                // タイプ
     @Persisted var tranceportation:Tranceportation? = .none  // 移動手段
 }

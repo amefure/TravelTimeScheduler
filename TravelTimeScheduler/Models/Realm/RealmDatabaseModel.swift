@@ -9,8 +9,14 @@ import UIKit
 import RealmSwift
 
 class RealmDatabaseModel {
+    
+    init() {
+        let config = Realm.Configuration(schemaVersion: 1)
+        realm = try! Realm(configuration:config)
+    }
+    
     //MARK: -  通知管理用RealmDBのCRUD処理モデル
-    private let realm = try! Realm()
+    private var realm:Realm!
  
     // MARK: - Travel
     // Create
