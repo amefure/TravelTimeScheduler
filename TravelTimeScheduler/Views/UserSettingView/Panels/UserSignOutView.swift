@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignOutButtonView: View {
+struct UserSignOutView: View {
     
     // MARK: - ViewModels
     @ObservedObject var authVM = AuthViewModel.shared
@@ -29,7 +29,8 @@ struct SignOutButtonView: View {
                     .font(.system(size: 40))
                 Text("SignOut")
             }
-        }.navigationDestination(isPresented: $isActive) {
+        }.userPanelsShape()
+        .navigationDestination(isPresented: $isActive) {
             LoginAuthView()
         }
         
@@ -38,6 +39,6 @@ struct SignOutButtonView: View {
 
 struct SignOutButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        SignOutButtonView()
+        UserSignOutView()
     }
 }

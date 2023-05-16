@@ -17,7 +17,7 @@ struct TranceportationPickerView: View {
     let schedule:Schedule
     
     @Binding var selectedTranceportation:Tranceportation
-    @Binding var change:Bool
+    @Binding var displaytChange:Bool
     
     // MARK: - Models
     public let allCases:[Tranceportation] = Tranceportation.allCases
@@ -36,7 +36,7 @@ struct TranceportationPickerView: View {
                 }
             }
                 .onChange(of: selectedTranceportation) { newValue in
-                    change = false
+                    displaytChange = false
                     realmDataBase.updateSchedule(travelId: travel.id, scheduleId: schedule.id, dateTime: schedule.dateTime, content: schedule.content, type: schedule.type, tranceportation: selectedTranceportation)
                 }
         }

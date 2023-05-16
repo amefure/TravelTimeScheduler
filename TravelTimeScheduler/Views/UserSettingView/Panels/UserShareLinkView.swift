@@ -11,7 +11,6 @@ struct UserShareLinkView: View {
     
     // MARK: - ViewModels
     private let shareLinkViewModel = ShareLinkViewModel()
-    private let deviceSizeViewModel = DeviceSizeViewModel()
     
     var body: some View {
         Button(action: {
@@ -24,10 +23,6 @@ struct UserShareLinkView: View {
                 Text("Appをシェア")
                     .font(.caption)
             }
-        })
-            .padding()
-            .frame(width:deviceSizeViewModel.deviceWidth/3 - 15,height: deviceSizeViewModel.isSESize ? 90 : 120)
-            .background(.white)
-            .shadowCornerRadius()
+        }).userPanelsShape()
     }
 }

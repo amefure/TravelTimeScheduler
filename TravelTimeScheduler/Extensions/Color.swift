@@ -42,6 +42,8 @@ extension Color{
     static let foundation:Color = Color(hexString: "#e7e7e7")
     static let thema:Color = Color(hexString: "#34527B")
     static let negative:Color = Color(hexString: "#C84311")
-    static let accent:Color = Color(hexString: "#ff6584")
+//    static let accent:Color = Color(hexString: "#ff6584")
+    static let list:Color = Color(hexString: "#f2f2f7")
+    static let schedule:Color = Color(hexString: "#73BBD1")
     static let accentSchedule:Color = Color(hexString: "#F4C01E")
 }

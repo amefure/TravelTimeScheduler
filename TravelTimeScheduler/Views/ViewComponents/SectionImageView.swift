@@ -19,8 +19,8 @@ struct SectionImageView: View {
             Image(image)
                 .resizable()
                 .frame(width: deviceSize.deviceWidth - 100  ,height: deviceSize.deviceWidth / 1.9)
-                .background(Color(hexString: "#f2f2f7")) // リストカラー色
-        }.listRowBackground(Color(hexString: "#f2f2f7")) // リストカラー色
+                .background(Color.list)
+        }.listRowBackground(Color.list)
             .listRowSeparator(.hidden)
     }
 }

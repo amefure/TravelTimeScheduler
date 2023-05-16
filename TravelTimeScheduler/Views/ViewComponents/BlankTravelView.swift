@@ -30,6 +30,6 @@ struct BlankTravelView: View {
                 .frame(width: deviceSizeViewModel.deviceWidth - 100  ,height: deviceSizeViewModel.deviceWidth / 1.9)
             
             Spacer()
-        }.background(Color(hexString: "#f2f2f7")) // リストカラー色
+        }.background(Color.list)
     }
 }

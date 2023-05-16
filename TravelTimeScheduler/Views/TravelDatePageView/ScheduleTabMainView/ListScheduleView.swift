@@ -39,7 +39,7 @@ struct ListScheduleView: View {
                         .listRowInsets(.init(top: 3, leading: 20, bottom: 0, trailing: 20))
                 }.listStyle(GroupedListStyle())
                     .scrollContentBackground(.hidden)
-                    .background(Color(hexString: "#f2f2f7")) // リスト背景色
+                    .background(Color.list)
             }
     }
 }

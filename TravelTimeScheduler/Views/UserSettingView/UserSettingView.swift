@@ -10,7 +10,6 @@ import SwiftUI
 struct UserSettingView: View {
     
     // MARK: - ViewModels
-    private let deviceSizeViewModel = DeviceSizeViewModel()
     @ObservedObject var signInUserInfoVM = SignInUserInfoViewModel.shared
     
     // MARK: - View
@@ -21,7 +20,7 @@ struct UserSettingView: View {
         VStack {
             
             // MARK: - Image
-            BlankTravelView(text: "", imageName: "Relaxation")
+            SectionImageView(image: "Relaxation")
             
             // MARK: - User Card
             UserInfoView()
@@ -31,12 +30,8 @@ struct UserSettingView: View {
                 
                 UserinfoEditView()
                 
-                SignOutButtonView()
-                    .padding()
-                    .frame(width:deviceSizeViewModel.deviceWidth/3 - 15,height: deviceSizeViewModel.isSESize ? 90 : 120)
-                    .background(.white)
-                    .shadowCornerRadius()
-                
+                UserSignOutView()
+                   
                 UserWithdrawalView()
                 
                 UserReviewLinkView()
@@ -50,15 +45,14 @@ struct UserSettingView: View {
             
             Spacer()
             
-            if !deviceSizeViewModel.isSESize {
+            if !DeviceSizeViewModel().isSESize {
                 // MARK: - AdMob
                 AdMobBannerView().frame(height: 60)
             }
-        }
-            
+        }    
         .navigationCustomBackground()
         .navigationTitle("User Setting")
-        .background(Color(hexString: "#f2f2f7")) // リスト背景色
+        .background(Color.list)
         .fontWeight(.bold)
     }
 }

@@ -32,7 +32,7 @@
 		1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192529DD7F54006AF797 /* GoogleAuthModel.swift */; };
 		1252192829DD7F69006AF797 /* AuthErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192729DD7F69006AF797 /* AuthErrorModel.swift */; };
 		1252192B29DE1C2A006AF797 /* EmailAuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */; };
-		1252193129DE1E49006AF797 /* SignOutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193029DE1E49006AF797 /* SignOutButtonView.swift */; };
+		1252193129DE1E49006AF797 /* UserSignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193029DE1E49006AF797 /* UserSignOutView.swift */; };
 		1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */; };
 		1252193729DE20D1006AF797 /* AuthProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193629DE20D1006AF797 /* AuthProviderModel.swift */; };
 		1252193929DF6E8A006AF797 /* FBDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */; };
@@ -82,6 +82,7 @@
 		12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0882A11FB400081D9C1 /* ReAuthProviderView.swift */; };
 		12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E08A2A1302910081D9C1 /* ReAuthEmailView.swift */; };
 		12F0E08D2A131F130081D9C1 /* SectionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E08C2A131F130081D9C1 /* SectionImageView.swift */; };
+		12F0E08F2A135DF30081D9C1 /* RowTranceportationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E08E2A135DF30081D9C1 /* RowTranceportationView.swift */; };
 		25BDF1DF9470CC6D55D7F5E0 /* Pods_TravelTimeScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A67D54A71F648BB8CB3391 /* Pods_TravelTimeScheduler.framework */; };
 		A5F1ADEDAA729AFE72C97AD9 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */; };
 		D8596E9294FB5113D291ED26 /* Pods_TravelTimeSchedulerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */; };
@@ -135,7 +136,7 @@
 		1252192529DD7F54006AF797 /* GoogleAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthModel.swift; sourceTree = "<group>"; };
 		1252192729DD7F69006AF797 /* AuthErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorModel.swift; sourceTree = "<group>"; };
 		1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthButtonView.swift; sourceTree = "<group>"; };
-		1252193029DE1E49006AF797 /* SignOutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutButtonView.swift; sourceTree = "<group>"; };
+		1252193029DE1E49006AF797 /* UserSignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOutView.swift; sourceTree = "<group>"; };
 		1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalButtonView.swift; sourceTree = "<group>"; };
 		1252193629DE20D1006AF797 /* AuthProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderModel.swift; sourceTree = "<group>"; };
 		1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 		12F0E0882A11FB400081D9C1 /* ReAuthProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReAuthProviderView.swift; sourceTree = "<group>"; };
 		12F0E08A2A1302910081D9C1 /* ReAuthEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReAuthEmailView.swift; sourceTree = "<group>"; };
 		12F0E08C2A131F130081D9C1 /* SectionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionImageView.swift; sourceTree = "<group>"; };
+		12F0E08E2A135DF30081D9C1 /* RowTranceportationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTranceportationView.swift; sourceTree = "<group>"; };
 		1BEC4574320B7DB533585B3D /* Pods-TravelTimeSchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeSchedulerTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1F59A6353BC2EB3C8AAA5B3E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeSchedulerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -405,7 +407,6 @@
 		1252192E29DE1E1C006AF797 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				1252193029DE1E49006AF797 /* SignOutButtonView.swift */,
 				12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */,
 				12F0E0882A11FB400081D9C1 /* ReAuthProviderView.swift */,
 				12F0E08A2A1302910081D9C1 /* ReAuthEmailView.swift */,
@@ -496,7 +497,6 @@
 			children = (
 				12B4698729ECA1ED002E6864 /* TravelPageView.swift */,
 				12B4698F29F1E406002E6864 /* ScrollPeriodTabPickerView.swift */,
-				12B4699229F1E530002E6864 /* ScheduleTabMainView.swift */,
 				12B4699429F1E58E002E6864 /* ScheduleControlPanelView.swift */,
 				12B4699929F5328B002E6864 /* ScheduleTabMainView */,
 			);
@@ -507,9 +507,8 @@
 			isa = PBXGroup;
 			children = (
 				12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */,
+				12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */,
 				12F0E08C2A131F130081D9C1 /* SectionImageView.swift */,
-				12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */,
-				12B4699F29F67093002E6864 /* TranceportationPickerView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -517,9 +516,11 @@
 		12B4699929F5328B002E6864 /* ScheduleTabMainView */ = {
 			isa = PBXGroup;
 			children = (
+				12B4699229F1E530002E6864 /* ScheduleTabMainView.swift */,
 				12B4698329EA9893002E6864 /* ListScheduleView.swift */,
-				12B4698929ED5C28002E6864 /* RowScheduleView.swift */,
+				12F0E0902A135DF70081D9C1 /* Row */,
 				12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */,
+				12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */,
 			);
 			path = ScheduleTabMainView;
 			sourceTree = "<group>";
@@ -549,7 +550,7 @@
 			children = (
 				12B4696529E813A0002E6864 /* UserSettingView.swift */,
 				12F0E06329FB220F0081D9C1 /* UserInfoView.swift */,
-				12F0E0872A0AF7C40081D9C1 /* Buttons */,
+				12F0E0872A0AF7C40081D9C1 /* Panels */,
 			);
 			path = UserSettingView;
 			sourceTree = "<group>";
@@ -569,23 +570,33 @@
 				12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */,
 				12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */,
 				12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */,
-				12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */,
 				1252187129D6330F006AF797 /* ListTravelView.swift */,
 				12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */,
 			);
 			path = TopMainTravelView;
 			sourceTree = "<group>";
 		};
-		12F0E0872A0AF7C40081D9C1 /* Buttons */ = {
+		12F0E0872A0AF7C40081D9C1 /* Panels */ = {
 			isa = PBXGroup;
 			children = (
 				12F0E0712A029AFD0081D9C1 /* UserinfoEditView.swift */,
+				1252193029DE1E49006AF797 /* UserSignOutView.swift */,
 				12F0E0732A029BA00081D9C1 /* UserWithdrawalView.swift */,
 				12F0E0772A029C530081D9C1 /* UserReviewLinkView.swift */,
 				12F0E0752A029C130081D9C1 /* UserShareLinkView.swift */,
 				12F0E0792A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift */,
 			);
-			path = Buttons;
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		12F0E0902A135DF70081D9C1 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				12B4698929ED5C28002E6864 /* RowScheduleView.swift */,
+				12F0E08E2A135DF30081D9C1 /* RowTranceportationView.swift */,
+				12B4699F29F67093002E6864 /* TranceportationPickerView.swift */,
+			);
+			path = Row;
 			sourceTree = "<group>";
 		};
 		3045442C34AA0D166A569C70 /* Frameworks */ = {
@@ -873,6 +884,7 @@
 				12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */,
 				12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */,
 				12B4696F29E82614002E6864 /* AdMobViewModels.swift in Sources */,
+				12F0E08F2A135DF30081D9C1 /* RowTranceportationView.swift in Sources */,
 				12F0E07E2A0853130081D9C1 /* AuthInputBoxView.swift in Sources */,
 				12F0E08D2A131F130081D9C1 /* SectionImageView.swift in Sources */,
 				12F0E06B29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift in Sources */,
@@ -923,7 +935,7 @@
 				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
 				12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */,
 				12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */,
-				1252193129DE1E49006AF797 /* SignOutButtonView.swift in Sources */,
+				1252193129DE1E49006AF797 /* UserSignOutView.swift in Sources */,
 				12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */,
 				12B4696929E81E4C002E6864 /* Color.swift in Sources */,
 				12B4697C29E82838002E6864 /* ShareLinkModel.swift in Sources */,

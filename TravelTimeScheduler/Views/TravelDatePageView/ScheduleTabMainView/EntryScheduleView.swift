@@ -49,7 +49,7 @@ struct EntryScheduleView: View {
                 .colorInvert()
                 .colorMultiply(Color.foundation)
                 .labelsHidden()
-                .background(Color(hexString: "#73BBD1"))
+                .background(Color.schedule)
                 .shadowCornerRadius()
                 .padding(deviceSize.isSESize ? 10 : 15)
                 .environment(\.locale, Locale(identifier: "ja_JP"))
@@ -58,7 +58,7 @@ struct EntryScheduleView: View {
             // MARK: - Input2
             TextField("内容", text: $content)
                 .padding(10)
-                .background(Color(hexString: "#73BBD1"))
+                .background(Color.schedule)
                 .padding(.bottom,3)
                 .shadowCornerRadius()
                 .padding(deviceSize.isSESize ? 10 : 15)
