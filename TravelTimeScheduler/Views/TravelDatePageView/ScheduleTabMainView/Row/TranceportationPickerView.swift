@@ -37,7 +37,7 @@ struct TranceportationPickerView: View {
             }
                 .onChange(of: selectedTranceportation) { newValue in
                     displaytChange = false
-                    realmDataBase.updateSchedule(travelId: travel.id, scheduleId: schedule.id, dateTime: schedule.dateTime, content: schedule.content, type: schedule.type, tranceportation: selectedTranceportation)
+                    realmDataBase.updateSchedule(travelId: travel.id, scheduleId: schedule.id, dateTime: schedule.dateTime, content: schedule.content, memo:schedule.memo,type: schedule.type, tranceportation: selectedTranceportation)
                 }
         }
     }

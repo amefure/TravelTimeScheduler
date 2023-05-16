@@ -26,6 +26,7 @@ struct EntryScheduleView: View {
     // MARK: - View
     @State var dateTime:Date = Date()                    // 時間
     @State var content:String = ""                       // 内容
+    @State var memo:String = ""
     @State var type:ScheduleType = .other                // タイプ
     
     @Binding var isModal:Bool
@@ -64,6 +65,14 @@ struct EntryScheduleView: View {
                 .padding(deviceSize.isSESize ? 10 : 15)
             
             // MARK: - Input3
+            TextField("Memo", text: $memo)
+                .padding(10)
+                .background(Color.list)
+                .padding(.bottom,3)
+                .cornerRadius(5)
+                .padding(deviceSize.isSESize ? 10 : 15)
+            
+            // MARK: - Input4
             ScheduleTypePickerView(type: $type)
             
             
@@ -75,20 +84,21 @@ struct EntryScheduleView: View {
                         let sc = Schedule()
                         sc.content = content
                         sc.dateTime = dateTime
+                        sc.memo = memo
                         sc.type = type
                         sc.tranceportation = .none
                         
                         realmDataBase.addSchedule(id: travel.id, schedule: sc)
                     }else{
                         /// 更新処理
-                        realmDataBase.updateSchedule(travelId: travel.id, scheduleId: schedule!.id, dateTime: dateTime, content: content, type: type, tranceportation: schedule!.tranceportation)
+                        realmDataBase.updateSchedule(travelId: travel.id, scheduleId: schedule!.id, dateTime: dateTime, content: content,memo: memo, type: type, tranceportation: schedule!.tranceportation)
                         
                     }
                     isModal = false
                 }
             } label: {
                 Text(schedule == nil ? "追加" : "編集")
-            }.padding(deviceSize.isSESize ? 10 : 15)
+            }.padding(deviceSize.isSESize ? 8 : 10)
                 .background(validatuonInput() ? Color.thema :.gray)
                 .foregroundColor(.white)
                 .shadowCornerRadius()
@@ -107,6 +117,7 @@ struct EntryScheduleView: View {
                     /// 　更新時は対象データを格納
                     dateTime = schedule!.dateTime
                     content = schedule!.content
+                    memo = schedule!.memo
                     type = schedule!.type
                 }else{
                     /// 　新規登録時は時間のみリセット

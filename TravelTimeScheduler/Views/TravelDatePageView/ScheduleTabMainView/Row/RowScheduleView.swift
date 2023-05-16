@@ -23,47 +23,76 @@ struct RowScheduleView: View {
     // MARK: - View
     @State var isEditModal:Bool = false
     @State var isDeleteAlert:Bool = false
-
+    @State var isShowMemo:Bool = false
     
     var body: some View {
         VStack(spacing:0){
             
             // MARK: - UpSide
-            HStack{
-                // MARK: - 時間：20:00
-                Text(displayDate.getTimeDisplayFormatString(schedule.dateTime))
-                    .fontWeight(.bold)
-                    .padding(.leading,5)
-                    .frame(width: 65)
+            VStack(spacing:5){
                 
-                // MARK: - スケジュールタイプ：空港
-                ScheduleType.getScheduleTypeImage(schedule.type)
-                    .scheduleTypeIcon(color: .accentSchedule)
+                HStack{
+                    
+                    // MARK: - 時間：20:00
+                    Text(displayDate.getTimeDisplayFormatString(schedule.dateTime))
+                        .fontWeight(.bold)
+                        .padding(.leading,5)
+                        .frame(width: 65)
+                    
+                    // MARK: - スケジュールタイプ：空港
+                    ScheduleType.getScheduleTypeImage(schedule.type)
+                        .scheduleTypeIcon(color: .accentSchedule)
+                    
+                    
+                    // MARK: - 内容：鹿児島空港
+                    Text(schedule.content)
+                        .fontWeight(.bold)
+                        .lineLimit(2)
+                    
+                    Spacer()
+                    
+                    // MARK: - Memo：メモ表示切り替えボタン
+                    if !schedule.memo.isEmpty {
+                        Button {
+                            isShowMemo.toggle()
+                        } label: {
+                            Image(systemName: "doc.plaintext.fill")
+                        }.foregroundColor(.list)
+                            .buttonStyle(.borderless)
+                    }
+                    
+                    // MARK: - 右上削除用ボタン
+                    if listScheduleVM.isDeleteMode {
+                        Button {
+                            isDeleteAlert = true
+                        } label: {
+                            Image(systemName: "minus")
+                                .padding()
+                                .frame(width: 20,height: 20)
+                                .background(Color.negative)
+                                .foregroundColor(.white)
+                                .cornerRadius(20)
+                        }.buttonStyle(BorderlessButtonStyle())
+                            .offset(y: deviceSize.isSESize ? -8: -15)
+                    }
+                    
+                } // HStack
                 
                 
-                // MARK: - 内容：鹿児島空港
-                Text(schedule.content)
-                    .fontWeight(.bold)
-                    .lineLimit(2)
-                
-                Spacer()
-                
-                // MARK: - 右上削除用ボタン
-                if listScheduleVM.isDeleteMode {
-                    Button {
-                        isDeleteAlert = true
-                    } label: {
-                        Image(systemName: "minus")
-                            .padding()
-                            .frame(width: 20,height: 20)
-                            .background(Color.negative)
-                            .foregroundColor(.white)
-                            .cornerRadius(20)
-                    }.buttonStyle(BorderlessButtonStyle())
-                        .offset(y: deviceSize.isSESize ? -8: -15)
+                // MARK: - MEMO：メモ
+                if isShowMemo {
+                    Divider() // 境界線
+                    
+                    HStack{
+                        Text("MEMO：")
+                            .fontWeight(.bold)
+                            .foregroundColor(.list)
+                        Text(schedule.memo)
+                        Spacer()
+                    }
                 }
                 
-            }.padding(5)
+            }.padding(5) // VStack
                 .frame(width:deviceSize.deviceWidth - 30 )
                 .background(Color(hexString: "#73BBD1"))
                 .padding(.bottom,3)
@@ -74,7 +103,7 @@ struct RowScheduleView: View {
                         isEditModal = true
                     }
                 }
-
+            
             // MARK: - DownSide
             RowTranceportationView(travel: travel, schedule: schedule)
             

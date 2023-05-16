@@ -45,12 +45,13 @@ class RealmDatabaseModel {
     }
     
     // Update
-    public func updateSchedule(travelId:ObjectId,scheduleId:ObjectId,dateTime:Date,content:String,type:ScheduleType,tranceportation:Tranceportation?){
+    public func updateSchedule(travelId:ObjectId,scheduleId:ObjectId,dateTime:Date,content:String,memo:String,type:ScheduleType,tranceportation:Tranceportation?){
         try! realm.write {
             let record = readIdTravel(id:travelId)
             let result =  record.schedules.where({$0.id == scheduleId }).first!
             result.dateTime = dateTime
             result.content = content
+            result.memo = memo
             result.type = type
             result.tranceportation = tranceportation
         }

@@ -44,8 +44,8 @@ class RealmDatabaseViewModel {
     }
     
     // Update
-    public func updateSchedule(travelId:ObjectId,scheduleId:ObjectId,dateTime:Date,content:String,type:ScheduleType,tranceportation:Tranceportation?){
-        model.updateSchedule(travelId: travelId, scheduleId: scheduleId, dateTime: dateTime, content: content,  type: type, tranceportation: tranceportation)
+    public func updateSchedule(travelId:ObjectId,scheduleId:ObjectId,dateTime:Date,content:String,memo:String,type:ScheduleType,tranceportation:Tranceportation?){
+        model.updateSchedule(travelId: travelId, scheduleId: scheduleId, dateTime: dateTime, content: content, memo:memo, type: type, tranceportation: tranceportation)
     }
     
     // Update
