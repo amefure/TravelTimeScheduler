@@ -10,12 +10,14 @@ import SwiftUI
 struct WithdrawalButtonView: View {
     
     // MARK: - ViewModels
-    private let deviceSize = DeviceSizeViewModel()
+    private let realmDataBase = RealmDatabaseViewModel()
+    private let validationVM = ValidationViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
     
     // MARK: - Navigationプロパティ
     @State var isActive:Bool = false
     @State var isPresentedHalfModal:Bool = false
+    @State var isClick:Bool = false
     
     @State var password:String = ""
     
@@ -23,59 +25,76 @@ struct WithdrawalButtonView: View {
         VStack{
             
             List{
-                Section {
-                    Image("Withdrawal")
-                        .resizable()
-                        .frame(width: deviceSize.deviceWidth - 100  ,height: deviceSize.deviceWidth / 1.9)
-                        .background(Color(hexString: "#f2f2f7")) // リストカラー色
-                   
-                }.listRowBackground(Color(hexString: "#f2f2f7")) // リストカラー色
-                    .listRowSeparator(.hidden)
                 
+                // MARK: - ErrorMsg
+                Section {
+                    ErrorMessageView()
+                        .frame(maxWidth:.infinity, alignment: .center)
+                }.listRowBackground(Color(hexString: "#f2f2f7")) // リストカラー色
+                
+                // MARK: - ImageView
+                SectionImageView(image: "Withdrawal")
+                
+                // MARK: - Input (Email Only)
                 if SignInUserInfoViewModel().getSignInProvider() == .email {
-                    // MARK: - Email
                     Section("User password?"){
                         SecureInputView(password: $password)
                     }
-                    
                 }
+                
+                // MARK: - Button
                 Section {
-                    Button {
-                        
-                        switch SignInUserInfoViewModel().getSignInProvider() {
-                        case .email:
-                            
-                            if !password.isEmpty{
-                                authVM.credentialEmailWithdrawal(password:password) { result in
-                                    if result {
-                                        isActive = true
-                                    }
-                                }
-                            }
-                        case .apple:
-                            isPresentedHalfModal = true
-                        case .google:
-                            isPresentedHalfModal = true
-                        }
-                        
-                    } label: {
-                        Text("このアカウントを削除する")
+                    if isClick {
+                        // 処理中...
+                        ProgressView()
                             .tint(.white)
                             .fontWeight(.bold)
+                            .buttonStyle(.borderless)
+                    }else{
                         
-                    }.frame(maxWidth:.infinity, alignment: .center)
-                        .listRowBackground(Color.negative)
-                }
+                        Button {
+                            isClick = true
+                            switch SignInUserInfoViewModel().getSignInProvider() {
+                            case .email:
+                                
+                                if !password.isEmpty{
+                                    authVM.credentialEmailWithdrawal(password:password) { result in
+                                        if result {
+                                            realmDataBase.realmAllReset()
+                                            isActive = true
+                                        }
+                                        isClick = false
+                                    }
+                                }
+                            case .apple:
+                                isPresentedHalfModal = true
+                            case .google:
+                                isPresentedHalfModal = true
+                            }
+                            
+                        } label: {
+                            Text("このアカウントを削除する")
+                                .tint(.white)
+                                .fontWeight(.bold)
+                            
+                        }
+                        .disabled(SignInUserInfoViewModel().getSignInProvider() == .email ? !validationVM.validatePassWord(password: password) : false)
+                    }
+                }.listRowBackground(Color.negative)
+                    .frame(maxWidth:.infinity, alignment: .center)
+                
+                // MARK: - Description
                 Section {
                     Text("アカウントを削除するとこれまで記録してきたデータが全て失われます。また友達と共有しているデータも削除される可能性があるので注意してください。")
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
                         .listRowBackground(Color(hexString: "#f2f2f7")) // リストカラー色
                 }
-    
+                
             }
         }.sheet(isPresented: $isPresentedHalfModal, content: {
-           ReAuthView(provider: SignInUserInfoViewModel().getSignInProvider(), isActive: $isActive, isPresentedHalfModal: $isPresentedHalfModal)
+            ReAuthProviderView(provider: SignInUserInfoViewModel().getSignInProvider(), isActive: $isActive, isPresentedHalfModal: $isPresentedHalfModal)
+                .presentationDetents([.medium])
         })
         .navigationDestination(isPresented: $isActive) {
             LoginAuthView()

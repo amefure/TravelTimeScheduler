@@ -17,6 +17,7 @@ struct GoogleAuthButtonView: View {
     @Binding var isPresentedHalfModal:Bool
     
     // MARK: - ViewModels
+    private let realmDataBase = RealmDatabaseViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
 
     // MARK: - Flag
@@ -26,6 +27,7 @@ struct GoogleAuthButtonView: View {
         Button(action: {
             
                 if isCalledFromUserWithDrawaScreen == false{
+                    // サインイン
                     authVM.credentialGoogleSignIn { result in
                         if result {
                             authVM.resetErrorMsg()
@@ -33,8 +35,10 @@ struct GoogleAuthButtonView: View {
                         }
                     }
                 }else{
+                    // 退会
                     authVM.credentialGoogleWithdrawal { result in
                         if result {
+                            realmDataBase.realmAllReset()  // 全データリセット
                             isPresentedHalfModal = false
                             isActive = true
                         }

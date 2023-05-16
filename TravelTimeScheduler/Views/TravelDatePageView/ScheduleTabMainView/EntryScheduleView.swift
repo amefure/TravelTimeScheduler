@@ -59,15 +59,12 @@ struct EntryScheduleView: View {
             TextField("内容", text: $content)
                 .padding(10)
                 .background(Color(hexString: "#73BBD1"))
-                .frame(width:deviceSize.deviceWidth - 30 )
                 .padding(.bottom,3)
                 .shadowCornerRadius()
                 .padding(deviceSize.isSESize ? 10 : 15)
             
             // MARK: - Input3
             ScheduleTypePickerView(type: $type)
-                .scaleEffect(1.1)
-                .offset(x:20)
             
             
             // MARK: - 登録ボタン

@@ -93,8 +93,10 @@ struct EntryTravelView: View {
                 memberArray = Array(travel!.members)
                 startDate = travel!.startDate
                 endDate = travel!.endDate
+            }else{
+                let myName = SignInUserInfoViewModel.shared.signInUserName
+                memberArray = [myName]
             }
         }
-        
     }
 }

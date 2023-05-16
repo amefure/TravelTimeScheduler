@@ -104,7 +104,6 @@ class EmailAuthModel {
     public func resetPassWord(email:String,completion : @escaping (Result<Bool, Error>) ->  Void ){
         auth.sendPasswordReset(withEmail: email) { error in
             if error == nil {
-                print("Succress")
                 completion(.success(true))
             } else {
                 completion(.failure(error!))
@@ -112,22 +111,14 @@ class EmailAuthModel {
         }
     }
     
-
-    //     MARK: - Email編集
-    public func updateEmail(email:String,pass:String,completion : @escaping (Result<Bool, Error>) ->  Void ){
-        reAuthUser(pass: pass) { result in
-            switch result {
-            case .success(_):
-                self.auth.currentUser?.updateEmail(to: email) { error in
-                    if error == nil{
-                        completion(.success(true))
-                    }else{
-                        completion(.failure(error!))
-                    }
-                }
-            case .failure(let error):
-                completion(.failure(error))
+    //  MARK: - Email編集
+    public func updateEmail(email:String,completion : @escaping (Result<Bool, Error>) ->  Void ){
+        self.auth.currentUser?.updateEmail(to: email) { error in
+            if error == nil{
+                completion(.success(true))
+            }else{
+                completion(.failure(error!))
             }
         }
-    }   
+    }
 }

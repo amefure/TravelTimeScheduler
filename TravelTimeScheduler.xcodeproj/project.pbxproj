@@ -79,7 +79,9 @@
 		12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */; };
 		12F0E0842A0A703E0081D9C1 /* BlankTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */; };
 		12F0E0862A0AF4660081D9C1 /* EntryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0852A0AF4660081D9C1 /* EntryHeaderView.swift */; };
-		12F0E0892A11FB400081D9C1 /* ReAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0882A11FB400081D9C1 /* ReAuthView.swift */; };
+		12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0882A11FB400081D9C1 /* ReAuthProviderView.swift */; };
+		12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E08A2A1302910081D9C1 /* ReAuthEmailView.swift */; };
+		12F0E08D2A131F130081D9C1 /* SectionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E08C2A131F130081D9C1 /* SectionImageView.swift */; };
 		25BDF1DF9470CC6D55D7F5E0 /* Pods_TravelTimeScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A67D54A71F648BB8CB3391 /* Pods_TravelTimeScheduler.framework */; };
 		A5F1ADEDAA729AFE72C97AD9 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */; };
 		D8596E9294FB5113D291ED26 /* Pods_TravelTimeSchedulerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */; };
@@ -180,7 +182,9 @@
 		12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMainTravelView.swift; sourceTree = "<group>"; };
 		12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankTravelView.swift; sourceTree = "<group>"; };
 		12F0E0852A0AF4660081D9C1 /* EntryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryHeaderView.swift; sourceTree = "<group>"; };
-		12F0E0882A11FB400081D9C1 /* ReAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReAuthView.swift; sourceTree = "<group>"; };
+		12F0E0882A11FB400081D9C1 /* ReAuthProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReAuthProviderView.swift; sourceTree = "<group>"; };
+		12F0E08A2A1302910081D9C1 /* ReAuthEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReAuthEmailView.swift; sourceTree = "<group>"; };
+		12F0E08C2A131F130081D9C1 /* SectionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionImageView.swift; sourceTree = "<group>"; };
 		1BEC4574320B7DB533585B3D /* Pods-TravelTimeSchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeSchedulerTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1F59A6353BC2EB3C8AAA5B3E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeSchedulerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -403,8 +407,9 @@
 			children = (
 				1252193029DE1E49006AF797 /* SignOutButtonView.swift */,
 				12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */,
+				12F0E0882A11FB400081D9C1 /* ReAuthProviderView.swift */,
+				12F0E08A2A1302910081D9C1 /* ReAuthEmailView.swift */,
 				1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */,
-				12F0E0882A11FB400081D9C1 /* ReAuthView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */,
+				12F0E08C2A131F130081D9C1 /* SectionImageView.swift */,
 				12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */,
 				12B4699F29F67093002E6864 /* TranceportationPickerView.swift */,
 			);
@@ -868,6 +874,7 @@
 				12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */,
 				12B4696F29E82614002E6864 /* AdMobViewModels.swift in Sources */,
 				12F0E07E2A0853130081D9C1 /* AuthInputBoxView.swift in Sources */,
+				12F0E08D2A131F130081D9C1 /* SectionImageView.swift in Sources */,
 				12F0E06B29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift in Sources */,
 				1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */,
 				1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */,
@@ -910,6 +917,7 @@
 				12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */,
 				12B4698629EC1254002E6864 /* DisplayDateViewModel.swift in Sources */,
 				1252193B29DF6ED6006AF797 /* Travel.swift in Sources */,
+				12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */,
 				1252187229D6330F006AF797 /* ListTravelView.swift in Sources */,
 				12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */,
 				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
@@ -925,7 +933,7 @@
 				12F0E07A2A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift in Sources */,
 				12F0E06729FBEAB00081D9C1 /* InputPeriodView.swift in Sources */,
 				12F0E0762A029C130081D9C1 /* UserShareLinkView.swift in Sources */,
-				12F0E0892A11FB400081D9C1 /* ReAuthView.swift in Sources */,
+				12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */,
 				125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */,
 				12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */,
 				1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */,

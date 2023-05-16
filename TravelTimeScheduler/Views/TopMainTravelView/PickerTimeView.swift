@@ -36,7 +36,7 @@ struct PickerTimeView: View {
                 selectTime = "all"
             } label: {
                 Image(systemName: "calendar")
-                    .foregroundColor(selectTime != "all" ? .accent : .foundation)
+                    .foregroundColor(selectTime != "all" ? .negative : .foundation)
             }
 
             Picker(selection: $selectTime, content: {

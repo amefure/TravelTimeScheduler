@@ -50,9 +50,12 @@ enum ScheduleType: String,PersistableEnum{
     case airport = "空港"
     case station = "駅"
     case hotel = "ホテル、宿"
+    case shop = "ショップ"
+    case nature = "自然"
     case sightseein = "観光地"
     case restaurant = "飲食店"
     case cafe = "カフェ"
+    case home = "家"
     case other = "その他"
     
     static func getScheduleTypeImage(_ type:ScheduleType) -> Image{
@@ -63,12 +66,18 @@ enum ScheduleType: String,PersistableEnum{
             return Image(systemName: "tram.fill.tunnel")
         case .hotel:
             return Image(systemName: "bed.double")
+        case .shop :
+            return Image(systemName: "cart.fill")
+        case .nature :
+            return Image(systemName: "leaf")
         case.sightseein:
-            return Image(systemName: "map")
+            return Image(systemName: "flag")
         case.restaurant:
             return Image(systemName: "fork.knife")
         case .cafe :
             return Image(systemName: "cup.and.saucer.fill")
+        case .home:
+            return Image(systemName: "house")
         case.other:
             return Image(systemName: "map")
         }
@@ -108,7 +117,7 @@ enum Tranceportation: String,PersistableEnum {
         case .walk:
             return Image(systemName: "figure.walk")
         case .other:
-            return  Image(systemName: "rosette")
+            return  Image(systemName: "arrow.down")
         }
     }
 }

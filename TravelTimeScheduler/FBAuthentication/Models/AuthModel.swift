@@ -24,16 +24,13 @@ class AuthModel {
         return auth.currentUser
     }
     
-    public let defaultName = "no name"
+    public let defaultName = "自分(名前未設定)"
     
     // MARK: - Sign In for Credential
     public func credentialSignIn(credential: AuthCredential,completion : @escaping (Result<Bool, Error>) ->  Void ){
         self.auth.signIn(with: credential) { (authResult, error) in
             if error == nil {
             if authResult?.user != nil{
-                if authResult!.user.displayName == nil{
-                    // Appleアカウントの場合は存在しない
-                }
                 completion(.success(true))
             }
             }else{
@@ -46,7 +43,9 @@ class AuthModel {
     public func SignOut(completion : @escaping (Result<Bool, Error>) ->  Void ){
         do{
             try auth.signOut()
-//            print("SignOut")
+#if DEBUG
+            print("SignOut")
+#endif
             completion(.success(true))
         } catch let signOutError as NSError {
             completion(.failure(signOutError))
@@ -58,10 +57,14 @@ class AuthModel {
         if let user = auth.currentUser {
             user.delete { error in
                 if error == nil {
-//                    print("退会成功")
+#if DEBUG
+                    print("退会成功")
+#endif
                     completion(.success(true))
                 } else {
-//                    print("退会失敗")
+#if DEBUG
+                    print("退会失敗")
+#endif
                     completion(.failure(error!))
                 }
             }

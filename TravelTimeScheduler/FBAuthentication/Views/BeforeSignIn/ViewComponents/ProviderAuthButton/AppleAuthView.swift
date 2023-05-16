@@ -13,6 +13,7 @@ import FirebaseAuth
 struct AppleAuthButtonView: View {
     
     // MARK: - ViewModels
+    private let realmDataBase = RealmDatabaseViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
     
     // MARK: - Navigationプロパティ
@@ -21,7 +22,6 @@ struct AppleAuthButtonView: View {
     @Binding var isPresentedHalfModal:Bool
     
     // MARK: - Flag
-
     public var isCalledFromUserWithDrawaScreen:Bool = false         // WithdrawalButtonViewから呼び出されているか
     
     // MARK: - Appleボタン　ボタンタイトル表示用
@@ -60,6 +60,7 @@ struct AppleAuthButtonView: View {
                     // MARK: - 退会
                     authVM.withdrawal { result in
                         if result {
+                            realmDataBase.realmAllReset() // 全データリセット
                             isPresentedHalfModal = false
                             isActive = true
                         }

@@ -34,7 +34,9 @@ class AuthViewModel:ObservableObject {
         case .success(_) :
             return true
         case .failure(let error) :
+#if DEBUG
             print(error.localizedDescription)
+#endif
             self.errMessage = self.errModel.setErrorMessage(error)
             return false
         }
@@ -82,7 +84,7 @@ class AuthViewModel:ObservableObject {
             completion(self.switchResultAndSetErrorMsg(result))
         }
     }
-
+    
 }
 
 // MARK: - Email
@@ -119,6 +121,26 @@ extension AuthViewModel {
                 self.withdrawal { result in
                     completion(result)
                 }
+            }else{
+                completion(false)
+            }
+        }
+    }
+    
+    /// メール再設定
+    public func updateEmail(email:String,password:String,completion:@escaping (Bool) -> Void ) {
+        emailAuth.reAuthUser(pass: password) { result in
+            if self.switchResultAndSetErrorMsg(result) {
+                self.emailAuth.updateEmail(email: email) { result in
+                    if self.switchResultAndSetErrorMsg(result) {
+                        self.setCurrentUserInfo(provider: .email)
+                        completion(true)
+                    }else{
+                        completion(false)
+                    }
+                }
+            }else{
+                completion(false)
             }
         }
     }
@@ -200,6 +222,5 @@ extension AuthViewModel {
     public func switchAuthResult(result:Result<ASAuthorization, Error>) -> AuthCredential?{
         return appleAuth.switchAuthResult(result: result)
     }
-
 }
 

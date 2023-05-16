@@ -21,7 +21,7 @@ struct SearchBoxView: View {
                 searchText = inputText
             }, label: {
                 Text("検索")
-                    .foregroundColor(inputText.isEmpty ? .gray :.accent)
+                    .foregroundColor(inputText.isEmpty ? .gray :.negative)
             })
         }.padding(8)
             .background(Color.foundation)

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ReAuthView: View {
-    
+// MARK: - Apple/Google User用　再認証View
+struct ReAuthProviderView: View {
     // MARK: - ViewModels
     private let deviceSize = DeviceSizeViewModel()
     
@@ -20,7 +20,6 @@ struct ReAuthView: View {
     
     var body: some View {
         VStack{
-            // MARK: - Google
             HeaderTitleView(title: "再認証")
                 .frame(width: deviceSize.deviceWidth)
                 .padding()
@@ -32,9 +31,8 @@ struct ReAuthView: View {
             
             if provider == .apple{
                 AppleAuthButtonView(isActive: $isActive,isPresentedHalfModal: $isPresentedHalfModal, isCalledFromUserWithDrawaScreen: true)
-                    .presentationDetents([.medium])
             }else if provider == .google{
-                GoogleAuthButtonView(isActive: $isActive,isPresentedHalfModal: $isPresentedHalfModal, isCalledFromUserWithDrawaScreen: true).presentationDetents([.medium])
+                GoogleAuthButtonView(isActive: $isActive,isPresentedHalfModal: $isPresentedHalfModal, isCalledFromUserWithDrawaScreen: true)
             }
 
             Spacer()

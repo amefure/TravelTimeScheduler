@@ -19,9 +19,14 @@ struct ScheduleTypePickerView: View {
                     Button {
                         type = item
                     } label: {
-                        ScheduleType.getScheduleTypeImage(item)
-                            .scheduleTypeIcon(color: type == item ? Color.negative : .gray)
-                            .foregroundColor(Color.foundation)
+                        VStack{
+                            ScheduleType.getScheduleTypeImage(item)
+                                .scheduleTypeIcon(color: type == item ? Color.negative : .gray)
+                                .foregroundColor(Color.foundation)
+                            Text(item.rawValue)
+                                .font(.caption)
+                                .foregroundColor(type == item ? Color.negative : .gray)
+                        }
                     }
                 }
             }
