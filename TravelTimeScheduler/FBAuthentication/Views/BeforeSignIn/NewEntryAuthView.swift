@@ -44,10 +44,21 @@ struct NewEntryAuthView: View {
             // MARK: - Apple IDログイン
             AppleAuthButtonView(isActive: $isActive,isPresentedHalfModal:Binding.constant(false))
             
+            // MARK: - 登録済みボタン
+            HStack{
+                Spacer()
+                NavigationLink(destination: LoginAuthView(), label: {
+                    Text("登録済みの方はこちら")
+                        .font(.system(size: 15))
+                        .foregroundColor(.thema)
+                }).padding(.trailing)
+            }
+            
         }.onAppear {
             authVM.resetErrorMsg()
         }.navigationDestination(isPresented: $isActive) {
             TopMainTravelView()
-        }
+        }.navigationCustomBackground()
+            .navigationTitle("New Entry")
     }
 }

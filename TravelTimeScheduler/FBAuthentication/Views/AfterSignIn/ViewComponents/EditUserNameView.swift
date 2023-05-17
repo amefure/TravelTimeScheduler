@@ -12,7 +12,7 @@ struct EditUserNameView: View {
     // MARK: - ViewModels
     private let validationVM = ValidationViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
-    @ObservedObject var signInUserInfoVM = SignInUserInfoViewModel.shared
+    private let signInUserInfoVM = SignInUserInfoViewModel.shared
     
     // MARK: - Navigationプロパティ
     @State var isActive:Bool = false

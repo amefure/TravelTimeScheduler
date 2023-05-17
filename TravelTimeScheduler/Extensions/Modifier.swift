@@ -25,10 +25,10 @@ struct UserPanelsShape:ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .padding()
-            .frame(width:DeviceSizeViewModel().deviceWidth/3 - 15,height: DeviceSizeViewModel().isSESize ? 90 : 120)
-            .background(.white)
-            .shadowCornerRadius()
+//            .padding()
+//            .frame(width:DeviceSizeViewModel().deviceWidth/3 - 15,height: DeviceSizeViewModel().isSESize ? 90 : 120)
+//            .background(.white)
+//            .shadowCornerRadius()
     }
 }
 

@@ -10,7 +10,7 @@ import SwiftUI
 struct UserSettingView: View {
     
     // MARK: - ViewModels
-    @ObservedObject var signInUserInfoVM = SignInUserInfoViewModel.shared
+    private let signInUserInfoVM = SignInUserInfoViewModel.shared
     
     // MARK: - View
     private let columns = Array(repeating: GridItem(.flexible()), count: 3)
@@ -19,24 +19,36 @@ struct UserSettingView: View {
         
         VStack {
             
+            Spacer()
+            
             // MARK: - Image
             SectionImageView(image: "Relaxation")
             
             // MARK: - User Card
-            UserInfoView()
+            if AuthViewModel.shared.getCurrentUser() != nil {
+                UserInfoView()
+            }
             
             // MARK: - Panels
-            LazyVGrid(columns: columns,spacing: 10) {
+            LazyVGrid(columns: columns,spacing: 20) {
                 
-                UserinfoEditView()
+                if AuthViewModel.shared.getCurrentUser() != nil {
+                    UserinfoEditView()
+                }else{
+                    UserNameEntryView()
+                }
                 
-                UserSignOutView()
+                UserSignUpView()
                    
-                UserWithdrawalView()
+                UserAllTravelDeleteView()
                 
                 UserReviewLinkView()
+                    .disabled(true)
+                    .foregroundColor(.gray)
                 
                 UserShareLinkView()
+                    .disabled(true)
+                    .foregroundColor(.gray)
                
                 UserTermsOfServiceLinkView()
                 

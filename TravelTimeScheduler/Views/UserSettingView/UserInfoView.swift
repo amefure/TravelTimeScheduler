@@ -11,7 +11,7 @@ import RealmSwift
 struct UserInfoView: View {
     // MARK: - ViewModels
     private let deviceSizeViewModel = DeviceSizeViewModel()
-    @ObservedObject var signInUserInfoVM = SignInUserInfoViewModel.shared
+    private let signInUserInfoVM = SignInUserInfoViewModel.shared
     @ObservedResults(Travel.self) var allTravelRelam
     
     // MARK: - View
@@ -24,7 +24,7 @@ struct UserInfoView: View {
                 Text("User Name")
                     .font(.caption)
                     
-                Text(signInUserInfoVM.displayName)
+                Text(signInUserInfoVM.signInUserName)
                     .foregroundColor(Color.thema)
             }
             

@@ -59,7 +59,8 @@ struct LoginAuthView: View {
                 }).padding(.trailing)
             }
             
-        }.navigationBarHidden(true)
+        }.navigationCustomBackground()
+            .navigationTitle("Sign In")
             .navigationDestination(isPresented: $isActive) {
                 TopMainTravelView()
             }

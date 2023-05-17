@@ -32,7 +32,7 @@
 		1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192529DD7F54006AF797 /* GoogleAuthModel.swift */; };
 		1252192829DD7F69006AF797 /* AuthErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192729DD7F69006AF797 /* AuthErrorModel.swift */; };
 		1252192B29DE1C2A006AF797 /* EmailAuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */; };
-		1252193129DE1E49006AF797 /* UserSignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193029DE1E49006AF797 /* UserSignOutView.swift */; };
+		1252193129DE1E49006AF797 /* UserSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193029DE1E49006AF797 /* UserSignUpView.swift */; };
 		1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */; };
 		1252193729DE20D1006AF797 /* AuthProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193629DE20D1006AF797 /* AuthProviderModel.swift */; };
 		1252193929DF6E8A006AF797 /* FBDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */; };
@@ -40,6 +40,11 @@
 		1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */; };
 		1252194029DF7442006AF797 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */; };
 		1281C5312A13B82400C23047 /* FBDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5302A13B82400C23047 /* FBDatabaseModel.swift */; };
+		1281C5332A15140700C23047 /* FBDatabaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5322A15140700C23047 /* FBDatabaseErrorModel.swift */; };
+		1281C5362A157FD400C23047 /* UserAllTravelDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5352A157FD400C23047 /* UserAllTravelDeleteView.swift */; };
+		1281C5382A15825800C23047 /* UserNameEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5372A15825800C23047 /* UserNameEntryView.swift */; };
+		1281C53A2A1582FB00C23047 /* EntryUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5392A1582FB00C23047 /* EntryUserNameView.swift */; };
+		1281C53C2A158EC900C23047 /* SignInUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C53B2A158EC900C23047 /* SignInUserView.swift */; };
 		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
 		12B4696929E81E4C002E6864 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* Color.swift */; };
 		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
@@ -137,7 +142,7 @@
 		1252192529DD7F54006AF797 /* GoogleAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthModel.swift; sourceTree = "<group>"; };
 		1252192729DD7F69006AF797 /* AuthErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorModel.swift; sourceTree = "<group>"; };
 		1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthButtonView.swift; sourceTree = "<group>"; };
-		1252193029DE1E49006AF797 /* UserSignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOutView.swift; sourceTree = "<group>"; };
+		1252193029DE1E49006AF797 /* UserSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpView.swift; sourceTree = "<group>"; };
 		1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalButtonView.swift; sourceTree = "<group>"; };
 		1252193629DE20D1006AF797 /* AuthProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderModel.swift; sourceTree = "<group>"; };
 		1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -145,6 +150,11 @@
 		1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserInfoViewModel.swift; sourceTree = "<group>"; };
 		1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
 		1281C5302A13B82400C23047 /* FBDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseModel.swift; sourceTree = "<group>"; };
+		1281C5322A15140700C23047 /* FBDatabaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseErrorModel.swift; sourceTree = "<group>"; };
+		1281C5352A157FD400C23047 /* UserAllTravelDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllTravelDeleteView.swift; sourceTree = "<group>"; };
+		1281C5372A15825800C23047 /* UserNameEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameEntryView.swift; sourceTree = "<group>"; };
+		1281C5392A1582FB00C23047 /* EntryUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryUserNameView.swift; sourceTree = "<group>"; };
+		1281C53B2A158EC900C23047 /* SignInUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserView.swift; sourceTree = "<group>"; };
 		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		12B4696829E81E4C002E6864 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -430,8 +440,18 @@
 			isa = PBXGroup;
 			children = (
 				1281C5302A13B82400C23047 /* FBDatabaseModel.swift */,
+				1281C5322A15140700C23047 /* FBDatabaseErrorModel.swift */,
 			);
 			path = FBRealtimeDatabase;
+			sourceTree = "<group>";
+		};
+		1281C5342A157F7900C23047 /* DiscontinuedAuth */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E0712A029AFD0081D9C1 /* UserinfoEditView.swift */,
+				12F0E0732A029BA00081D9C1 /* UserWithdrawalView.swift */,
+			);
+			path = DiscontinuedAuth;
 			sourceTree = "<group>";
 		};
 		12B4696729E813C1002E6864 /* Extensions */ = {
@@ -561,6 +581,8 @@
 			children = (
 				12B4696529E813A0002E6864 /* UserSettingView.swift */,
 				12F0E06329FB220F0081D9C1 /* UserInfoView.swift */,
+				1281C5392A1582FB00C23047 /* EntryUserNameView.swift */,
+				1281C53B2A158EC900C23047 /* SignInUserView.swift */,
 				12F0E0872A0AF7C40081D9C1 /* Panels */,
 			);
 			path = UserSettingView;
@@ -590,12 +612,13 @@
 		12F0E0872A0AF7C40081D9C1 /* Panels */ = {
 			isa = PBXGroup;
 			children = (
-				12F0E0712A029AFD0081D9C1 /* UserinfoEditView.swift */,
-				1252193029DE1E49006AF797 /* UserSignOutView.swift */,
-				12F0E0732A029BA00081D9C1 /* UserWithdrawalView.swift */,
+				1281C5352A157FD400C23047 /* UserAllTravelDeleteView.swift */,
+				1281C5372A15825800C23047 /* UserNameEntryView.swift */,
+				1252193029DE1E49006AF797 /* UserSignUpView.swift */,
 				12F0E0772A029C530081D9C1 /* UserReviewLinkView.swift */,
 				12F0E0752A029C130081D9C1 /* UserShareLinkView.swift */,
 				12F0E0792A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift */,
+				1281C5342A157F7900C23047 /* DiscontinuedAuth */,
 			);
 			path = Panels;
 			sourceTree = "<group>";
@@ -902,9 +925,11 @@
 				1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */,
 				1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */,
 				12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */,
+				1281C5362A157FD400C23047 /* UserAllTravelDeleteView.swift in Sources */,
 				12B4699E29F56710002E6864 /* ListScheduleViewModel.swift in Sources */,
 				1252192229DD7E22006AF797 /* AppleAuthModel.swift in Sources */,
 				12F0E06429FB220F0081D9C1 /* UserInfoView.swift in Sources */,
+				1281C53A2A1582FB00C23047 /* EntryUserNameView.swift in Sources */,
 				125218B729D63955006AF797 /* ValidationViewModel.swift in Sources */,
 				12F0E0782A029C530081D9C1 /* UserReviewLinkView.swift in Sources */,
 				125218A829D63897006AF797 /* GoogleAuthView.swift in Sources */,
@@ -929,6 +954,7 @@
 				12B4698829ECA1ED002E6864 /* TravelPageView.swift in Sources */,
 				1252194029DF7442006AF797 /* UserDefaultsProtocol.swift in Sources */,
 				12F0E07C2A084CFE0081D9C1 /* WellcomeMessageView.swift in Sources */,
+				1281C5332A15140700C23047 /* FBDatabaseErrorModel.swift in Sources */,
 				12B4698E29F16C10002E6864 /* Modifier.swift in Sources */,
 				12F0E06F2A0284E10081D9C1 /* PickerTimeView.swift in Sources */,
 				1252193729DE20D1006AF797 /* AuthProviderModel.swift in Sources */,
@@ -947,16 +973,18 @@
 				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
 				12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */,
 				12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */,
-				1252193129DE1E49006AF797 /* UserSignOutView.swift in Sources */,
+				1252193129DE1E49006AF797 /* UserSignUpView.swift in Sources */,
 				12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */,
 				12B4696929E81E4C002E6864 /* Color.swift in Sources */,
 				12B4697C29E82838002E6864 /* ShareLinkModel.swift in Sources */,
 				12B4699829F51589002E6864 /* ScheduleTypePickerView.swift in Sources */,
 				1252192B29DE1C2A006AF797 /* EmailAuthButtonView.swift in Sources */,
+				1281C5382A15825800C23047 /* UserNameEntryView.swift in Sources */,
 				1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */,
 				12F0E07A2A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift in Sources */,
 				12F0E06729FBEAB00081D9C1 /* InputPeriodView.swift in Sources */,
 				12F0E0762A029C130081D9C1 /* UserShareLinkView.swift in Sources */,
+				1281C53C2A158EC900C23047 /* SignInUserView.swift in Sources */,
 				12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */,
 				125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */,
 				12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */,
@@ -1119,7 +1147,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -1156,7 +1184,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;

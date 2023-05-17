@@ -14,14 +14,13 @@ struct UserShareLinkView: View {
     
     var body: some View {
         Button(action: {
-            shareLinkViewModel.shareApp(shareText: "旅Timeで旅行のタイムスケジュールを共有しよう！", shareLink: "https://tech.amefure.com/")
+            shareLinkViewModel.shareApp(shareText: "旅Timeで旅行のタイムスケジュールを共有しよう！", shareLink: "https://apps.apple.com/jp/app/%E3%81%B5%E3%82%8B%E3%83%AD%E3%82%B0/")
         }, label: {
             VStack{
                 Image(systemName: "square.and.arrow.up")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("Appをシェア")
-                    .font(.caption)
+                Text("Share App")
             }
         }).userPanelsShape()
     }

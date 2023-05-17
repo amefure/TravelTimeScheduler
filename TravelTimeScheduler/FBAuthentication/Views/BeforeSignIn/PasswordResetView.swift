@@ -52,5 +52,7 @@ struct PasswordResetView: View {
         }.onAppear {
             authVM.resetErrorMsg()
         }
+        .navigationCustomBackground()
+            .navigationTitle("Password Reset")
     }
 }

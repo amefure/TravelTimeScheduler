@@ -28,6 +28,13 @@ class DisplayDateViewModel {
         return df.string(from: date)
     }
     
+    // FBRealtimeDatebase
+    /// yyyy/MM/dd H：mm形式：年月日時間
+    public func getAllDateDisplayFormatString(_ date:Date) -> String{
+        df.dateFormat = "yyyy/MM/dd H：mm"
+        return df.string(from: date)
+    }
+    
     /// yyyy年M月dd日形式：年月日のみ
     public func getJapanDateDisplayFormatString(_ date:Date) -> String{
         df.dateFormat = "yyyy年M月dd日"
@@ -58,6 +65,13 @@ class DisplayDateViewModel {
         let start = df.date(from: "\(year)/1/1")!
         let end = df.date(from:  "\(year)/12/31")!
         return [start,end]
+    }
+    
+    // FBRealtimeDatebase
+    /// yyyy/MM/dd H：mm形式の文字列をDate型で返す
+    public func getAllDateStringDate(_ date:String) -> Date{
+        df.dateFormat = "yyyy/MM/dd H：mm"
+        return df.date(from: date)!
     }
 }
 
