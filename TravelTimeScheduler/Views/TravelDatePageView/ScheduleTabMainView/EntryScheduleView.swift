@@ -108,7 +108,8 @@ struct EntryScheduleView: View {
             Spacer()
             
             // MARK: - AdMob
-            AdMobBannerView().frame(width: deviceSize.deviceWidth,height: 60)
+            AdMobBannerView()
+                .frame(height: 60)
             
         }.padding(.horizontal)
             .onAppear{

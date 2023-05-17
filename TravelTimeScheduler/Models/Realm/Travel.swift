@@ -59,6 +59,7 @@ enum ScheduleType: String,PersistableEnum{
     case home = "家"
     case other = "その他"
     
+    /// ScheduleTypeのアイコンイメージ(image型)
     static func getScheduleTypeImage(_ type:ScheduleType) -> Image{
         switch type {
         case .airport:
@@ -84,6 +85,33 @@ enum ScheduleType: String,PersistableEnum{
         }
     }
     
+    /// 文字列で受け取ったScheduleType FBRealtimedatabase
+    static func getScheduleType(_ type:String) -> ScheduleType {
+        switch type {
+        case ScheduleType.airport.rawValue:
+            return .airport
+        case ScheduleType.station.rawValue:
+            return .station
+        case ScheduleType.hotel.rawValue:
+            return .hotel
+        case ScheduleType.shop.rawValue :
+            return .shop
+        case ScheduleType.nature.rawValue :
+            return .nature
+        case ScheduleType.sightseein.rawValue:
+            return .sightseein
+        case ScheduleType.restaurant.rawValue:
+            return .restaurant
+        case ScheduleType.cafe.rawValue :
+            return .cafe
+        case ScheduleType.home.rawValue:
+            return .home
+        case ScheduleType.other.rawValue:
+            return .other
+        default:
+            return .other
+        }
+    }
 }
 
 enum Tranceportation: String,PersistableEnum {
@@ -98,7 +126,7 @@ enum Tranceportation: String,PersistableEnum {
     case walk = "歩き"
     case other = "その他"
     
-    
+    /// ScheduleTypeのアイコンイメージ(image型)
     static func getTranceportationTypeImage(_ type:Tranceportation) -> Image{
         switch type {
         case .airplane:
@@ -119,6 +147,32 @@ enum Tranceportation: String,PersistableEnum {
             return Image(systemName: "figure.walk")
         case .other:
             return  Image(systemName: "arrow.down")
+        }
+    }
+    
+    /// 文字列で受け取ったScheduleType FBRealtimedatabase
+    static func getScheduleType(_ type:String) -> Tranceportation {
+        switch type {
+        case Tranceportation.airplane.rawValue:
+            return .airplane
+        case Tranceportation.ship.rawValue:
+            return .ship
+        case Tranceportation.bulletTrain.rawValue:
+            return .bulletTrain
+        case Tranceportation.train.rawValue:
+            return .train
+        case Tranceportation.car.rawValue:
+            return  .car
+        case Tranceportation.bus.rawValue:
+            return  .bus
+        case Tranceportation.bicycle.rawValue:
+            return .bicycle
+        case Tranceportation.walk.rawValue:
+            return .walk
+        case Tranceportation.other.rawValue:
+            return .other
+        default:
+            return .other
         }
     }
 }

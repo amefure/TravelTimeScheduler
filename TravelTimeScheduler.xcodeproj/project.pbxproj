@@ -39,6 +39,7 @@
 		1252193B29DF6ED6006AF797 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193A29DF6ED6006AF797 /* Travel.swift */; };
 		1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */; };
 		1252194029DF7442006AF797 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */; };
+		1281C5312A13B82400C23047 /* FBDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5302A13B82400C23047 /* FBDatabaseModel.swift */; };
 		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
 		12B4696929E81E4C002E6864 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* Color.swift */; };
 		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
@@ -143,6 +144,7 @@
 		1252193A29DF6ED6006AF797 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserInfoViewModel.swift; sourceTree = "<group>"; };
 		1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		1281C5302A13B82400C23047 /* FBDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseModel.swift; sourceTree = "<group>"; };
 		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		12B4696829E81E4C002E6864 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				12B4697A29E8280F002E6864 /* Function */,
+				1281C52F2A13B7FB00C23047 /* FBRealtimeDatabase */,
 				12B4697429E826B4002E6864 /* Realm */,
 			);
 			path = Models;
@@ -423,6 +426,14 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		1281C52F2A13B7FB00C23047 /* FBRealtimeDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				1281C5302A13B82400C23047 /* FBDatabaseModel.swift */,
+			);
+			path = FBRealtimeDatabase;
+			sourceTree = "<group>";
+		};
 		12B4696729E813C1002E6864 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,18 +481,18 @@
 		12B4697829E827A7002E6864 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				12B4697929E827BB002E6864 /* Firebase */,
+				12B4697929E827BB002E6864 /* FBRealtimeDatabase */,
 				12B4697529E826C3002E6864 /* Realm */,
 			);
 			path = Database;
 			sourceTree = "<group>";
 		};
-		12B4697929E827BB002E6864 /* Firebase */ = {
+		12B4697929E827BB002E6864 /* FBRealtimeDatabase */ = {
 			isa = PBXGroup;
 			children = (
 				1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */,
 			);
-			path = Firebase;
+			path = FBRealtimeDatabase;
 			sourceTree = "<group>";
 		};
 		12B4697A29E8280F002E6864 /* Function */ = {
@@ -930,6 +941,7 @@
 				12B4698629EC1254002E6864 /* DisplayDateViewModel.swift in Sources */,
 				1252193B29DF6ED6006AF797 /* Travel.swift in Sources */,
 				12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */,
+				1281C5312A13B82400C23047 /* FBDatabaseModel.swift in Sources */,
 				1252187229D6330F006AF797 /* ListTravelView.swift in Sources */,
 				12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */,
 				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
@@ -1107,7 +1119,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -1144,7 +1156,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
