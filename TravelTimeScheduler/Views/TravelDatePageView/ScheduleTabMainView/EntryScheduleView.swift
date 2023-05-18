@@ -32,7 +32,7 @@ struct EntryScheduleView: View {
     @Binding var isModal:Bool
     
     private func validatuonInput() -> Bool{
-        validation.checkNonEmptyText(content)
+        validation.validateEmpty(str:content)
     }
     
     var body: some View {

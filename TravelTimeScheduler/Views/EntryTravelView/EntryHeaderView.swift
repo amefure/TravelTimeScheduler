@@ -26,7 +26,7 @@ struct EntryHeaderView: View {
     @State var isAlert:Bool = false
     
     private func validatuonInput() -> Bool{
-        validation.checkNonEmptyText(travelName)
+        validation.validateEmpty(str:travelName)
     }
     
     @Environment(\.dismiss) var dismiss

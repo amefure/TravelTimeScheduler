@@ -48,7 +48,7 @@ struct SignInUserView: View {
                     .foregroundColor(Color.foundation)
             }
             
-        }
+        }.fontWeight(.bold)
         .navigationCustomBackground()
         .navigationTitle("User Edit")
         .navigationDestination(isPresented: $isActive) {

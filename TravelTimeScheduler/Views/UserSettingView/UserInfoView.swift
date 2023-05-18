@@ -11,47 +11,53 @@ import RealmSwift
 struct UserInfoView: View {
     // MARK: - ViewModels
     private let deviceSizeViewModel = DeviceSizeViewModel()
-    private let signInUserInfoVM = SignInUserInfoViewModel.shared
+    private var signInUserInfoVM = SignInUserInfoViewModel.shared
     @ObservedResults(Travel.self) var allTravelRelam
     
+    @State var active = false // User情報が更新された時に画面を再描画する
     // MARK: - View
     private let columns = [GridItem(.fixed(100)),GridItem(.fixed(DeviceSizeViewModel().isSESize ? 120 : 180))]
     
     var body: some View {
-        
-        LazyVGrid(columns: columns){
-            Group{
-                Text("User Name")
-                    .font(.caption)
+        Group{
+            if AuthViewModel.shared.getCurrentUser() != nil {
+                LazyVGrid(columns: columns){
+                    Group{
+                        Text("User Name")
+                            .font(.caption)
+                        
+                        Text(signInUserInfoVM.signInUserName)
+                            .foregroundColor(Color.thema)
+                            
+                    }
                     
-                Text(signInUserInfoVM.signInUserName)
-                    .foregroundColor(Color.thema)
+                    Group{
+                        Text("SignIn Provider")
+                            .font(.caption)
+                        Text(signInUserInfoVM.signInUserProvider)
+                            .foregroundColor(Color.thema)
+                    }
+                    
+                    Group{
+                        Text("旅行数")
+                            .font(.caption)
+                        Text("\(allTravelRelam.count)個")
+                            .foregroundColor(Color.thema)
+                    }
+                    
+                    
+                    Group{
+                        Text("SignIn Email")
+                            .font(.caption)
+                        Text(signInUserInfoVM.signInUserEmail)
+                            .foregroundColor(Color.thema)
+                            .lineLimit(1)
+                    }
+                }.id(active) // User情報が更新された時に画面を再描画する
+            }else{
+                Text("サインインすると\n友達と旅行記録(タイムスケジュール)を\n共有できるようになります。")
             }
-            
-            Group{
-                Text("SignIn Provider")
-                    .font(.caption)
-                Text(signInUserInfoVM.signInUserProvider)
-                    .foregroundColor(Color.thema)
-            }
-            
-            Group{
-                Text("旅行数")
-                    .font(.caption)
-                Text("\(allTravelRelam.count)個")
-                    .foregroundColor(Color.thema)
-            }
-            
-            
-            Group{
-                Text("SignIn Email")
-                    .font(.caption)
-                Text(signInUserInfoVM.signInUserEmail)
-                    .foregroundColor(Color.thema)
-                    .lineLimit(1)
-            }
-        }
-        .padding()
+        }.padding()
             .foregroundColor(.gray)
             .frame(width: deviceSizeViewModel.deviceWidth - 90)
             .fontWeight(.bold)
@@ -61,5 +67,8 @@ struct UserInfoView: View {
                     .stroke(Color.gray,lineWidth: 2)
             )
             .shadowCornerRadius()
+            .onAppear{
+                active.toggle() // User情報が更新された時に画面を再描画する
+            }
     }
 }

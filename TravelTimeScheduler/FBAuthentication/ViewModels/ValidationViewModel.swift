@@ -41,14 +41,6 @@ extension ValidationViewModel {
             return true
         }
     }
-        
-    public func checkNonEmptyText(_ text:String) -> Bool{
-        if text.isEmpty {
-            return false
-        }else{
-            return true
-        }
-    }
     
     public func checkValidURL (_ urlStr: String) -> Bool {
         guard let encurl = urlStr.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {

@@ -25,9 +25,7 @@ struct UserSettingView: View {
             SectionImageView(image: "Relaxation")
             
             // MARK: - User Card
-            if AuthViewModel.shared.getCurrentUser() != nil {
-                UserInfoView()
-            }
+            UserInfoView()
             
             // MARK: - Panels
             LazyVGrid(columns: columns,spacing: 20) {

@@ -39,7 +39,7 @@ struct EntryUserNameView: View {
                     Text("更新")
                         .tint(.white)
                         .fontWeight(.bold)
-                }.disabled(!validationVM.checkNonEmptyText(name))
+                }.disabled(!validationVM.validateEmpty(str:name))
                     .listRowBackground(Color.thema)
                     .frame(maxWidth:.infinity, alignment: .center)
             }

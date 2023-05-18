@@ -19,6 +19,7 @@ struct TravelPageView: View {
     // MARK: - View
     @State var selection:Int = 0
     @State var isDeleteMode:Bool = false
+    @State var isSharePresented = false
     
     var body: some View {
         VStack(spacing:0){
@@ -36,6 +37,23 @@ struct TravelPageView: View {
             AdMobBannerView().frame(height: 60)
             
         }.navigationTitle(travel.name)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        isSharePresented = true
+                    }) {
+                        VStack{
+                            Image(systemName: "cloud.fill")
+                            Text("共有")
+                                .font(.caption)
+                        }// .foregroundColor(Color.accentSchedule)
+                        
+                    }
+                }
+            }
+            .navigationDestination(isPresented: $isSharePresented) {
+                ShareTravelView(travel: travel)
+            }
             .toolbarTitleMenu {
                 if travel.members.first == "" {
                     // countは0でも1になる(Blankがあるため)
