@@ -30,7 +30,7 @@ struct UserSettingView: View {
             // MARK: - Panels
             LazyVGrid(columns: columns,spacing: 20) {
                 
-                if AuthViewModel.shared.getCurrentUser() != nil {
+                if AuthViewModel.shared.isSignIn {
                     UserinfoEditView()
                 }else{
                     UserNameEntryView()
@@ -41,12 +41,8 @@ struct UserSettingView: View {
                 UserAllTravelDeleteView()
                 
                 UserReviewLinkView()
-                    .disabled(true)
-                    .foregroundColor(.gray)
                 
                 UserShareLinkView()
-                    .disabled(true)
-                    .foregroundColor(.gray)
                
                 UserTermsOfServiceLinkView()
                 

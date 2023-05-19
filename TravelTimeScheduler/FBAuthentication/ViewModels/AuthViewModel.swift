@@ -18,6 +18,9 @@ class AuthViewModel:ObservableObject {
     // UserDefaultVM
     private let userInfoVM = SignInUserInfoViewModel.shared
     
+    // FB RealtimeDatabase User
+    private let fbDatabase = FBDatabaseModel()
+    
     // AuthModel
     private var auth = AuthModel.shared
     private let emailAuth = EmailAuthModel.shared
@@ -51,11 +54,22 @@ class AuthViewModel:ObservableObject {
         userInfoVM.signInUserName = auth.getCurrentUser()?.displayName ?? auth.defaultName
         userInfoVM.setSignInProvider(provider: provider)
         userInfoVM.signInUserEmail = auth.getCurrentUser()?.email ?? ""
+        // サインインした際にはクラウド上にUser情報を格納しておく
+        fbDatabase.createUser(userId: userInfoVM.signInUserId, name: userInfoVM.signInUserName)
     }
     
     // MARK: - カレントユーザー取得
     public func getCurrentUser() -> User? {
         return self.auth.getCurrentUser()
+    }
+    
+    // MARK: - サインインしているかどうか
+    public var isSignIn:Bool {
+        if  self.getCurrentUser() != nil {
+            return true
+        }else{
+            return false
+        }
     }
     
     /// サインアウト

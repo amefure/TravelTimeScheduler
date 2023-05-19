@@ -20,7 +20,7 @@ struct UserInfoView: View {
     
     var body: some View {
         Group{
-            if AuthViewModel.shared.getCurrentUser() != nil {
+            if AuthViewModel.shared.isSignIn {
                 LazyVGrid(columns: columns){
                     Group{
                         Text("User Name")
@@ -56,10 +56,11 @@ struct UserInfoView: View {
                 }.id(active) // User情報が更新された時に画面を再描画する
             }else{
                 Text("サインインすると\n友達と旅行記録(タイムスケジュール)を\n共有できるようになります。")
+                    .font(.caption)
             }
-        }.padding()
+        }.padding(10)
             .foregroundColor(.gray)
-            .frame(width: deviceSizeViewModel.deviceWidth - 90)
+            .frame(width: deviceSizeViewModel.deviceWidth - 50)
             .fontWeight(.bold)
             .background(.white)
             .overlay(

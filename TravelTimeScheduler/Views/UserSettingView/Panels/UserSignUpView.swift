@@ -17,9 +17,8 @@ struct UserSignUpView: View {
     @State var isActiveSignIn:Bool = false
     
     var body: some View {
-        
         Button {
-            if AuthViewModel.shared.getCurrentUser() != nil {
+            if AuthViewModel.shared.isSignIn {
                 isActiveSignIn = true
             }else{
                 isActiveNewEntry = true
@@ -33,11 +32,11 @@ struct UserSignUpView: View {
                 Text("Sign Up")
             }
         }.userPanelsShape()
-        .navigationDestination(isPresented: $isActiveNewEntry) {
-            NewEntryAuthView()
-        }
-        .navigationDestination(isPresented: $isActiveSignIn) {
-            SignInUserView()
-        }
+            .navigationDestination(isPresented: $isActiveNewEntry) {
+                NewEntryAuthView()
+            }
+            .navigationDestination(isPresented: $isActiveSignIn) {
+                SignInUserView()
+            }
     }
 }

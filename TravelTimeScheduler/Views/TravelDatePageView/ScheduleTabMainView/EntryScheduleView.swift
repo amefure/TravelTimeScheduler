@@ -55,7 +55,7 @@ struct EntryScheduleView: View {
                 .padding(deviceSize.isSESize ? 10 : 15)
                 .environment(\.locale, Locale(identifier: "ja_JP"))
                 .environment(\.calendar, Calendar(identifier: .japanese))
-                
+            
             // MARK: - Input2
             TextField("内容", text: $content)
                 .padding(10)
@@ -108,8 +108,10 @@ struct EntryScheduleView: View {
             Spacer()
             
             // MARK: - AdMob
-            AdMobBannerView()
-                .frame(height: 60)
+            if !deviceSize.isSESize {
+                AdMobBannerView()
+                    .frame(height: 60)
+            }
             
         }.padding(.horizontal)
             .onAppear{

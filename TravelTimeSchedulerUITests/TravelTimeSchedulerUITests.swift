@@ -36,10 +36,14 @@ final class TravelTimeSchedulerUITests: XCTestCase {
     func testSignIn() throws {
         let app = XCUIApplication()
         app.launch()
+        
+        app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"]/*@START_MENU_TOKEN@*/.buttons["gearshape.fill"]/*[[".otherElements[\"gearshape.fill\"].buttons[\"gearshape.fill\"]",".buttons[\"gearshape.fill\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["Sign Up"].tap()
+        
+        app.buttons["登録済みの方はこちら"].tap()
 
         app.textFields["メールアドレス"].tap()
         app.textFields["メールアドレス"].typeText("sample@sample.com")
-
         app.secureTextFields["パスワード"].tap()
         app.secureTextFields["パスワード"].typeText("1")  // 「12345678」で入力しようとするとなぜか「2」が抜けるため分割
         app.secureTextFields["パスワード"].typeText("234")
@@ -61,7 +65,9 @@ final class TravelTimeSchedulerUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        app.buttons["未登録の方はこちら"].tap()
+        app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"]/*@START_MENU_TOKEN@*/.buttons["gearshape.fill"]/*[[".otherElements[\"gearshape.fill\"].buttons[\"gearshape.fill\"]",".buttons[\"gearshape.fill\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["Sign Up"].tap()
+        
         XCTAssert(app.textFields["ユーザー名"].exists) // 新規登録画面へ遷移
 
         app.textFields["ユーザー名"].tap()

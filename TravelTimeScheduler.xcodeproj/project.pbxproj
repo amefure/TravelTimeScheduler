@@ -46,6 +46,9 @@
 		1281C53A2A1582FB00C23047 /* EntryUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5392A1582FB00C23047 /* EntryUserNameView.swift */; };
 		1281C53C2A158EC900C23047 /* SignInUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C53B2A158EC900C23047 /* SignInUserView.swift */; };
 		1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C53E2A15A3E300C23047 /* ShareTravelView.swift */; };
+		1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5412A160F0300C23047 /* RealmListTravelView.swift */; };
+		1281C5442A1611D900C23047 /* FBRealtimeListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */; };
+		12822D862A1654B0001D5E6C /* SwitchDBStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12822D852A1654B0001D5E6C /* SwitchDBStatusViewModel.swift */; };
 		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
 		12B4696929E81E4C002E6864 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* Color.swift */; };
 		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
@@ -157,6 +160,9 @@
 		1281C5392A1582FB00C23047 /* EntryUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryUserNameView.swift; sourceTree = "<group>"; };
 		1281C53B2A158EC900C23047 /* SignInUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserView.swift; sourceTree = "<group>"; };
 		1281C53E2A15A3E300C23047 /* ShareTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTravelView.swift; sourceTree = "<group>"; };
+		1281C5412A160F0300C23047 /* RealmListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmListTravelView.swift; sourceTree = "<group>"; };
+		1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRealtimeListTravelView.swift; sourceTree = "<group>"; };
+		12822D852A1654B0001D5E6C /* SwitchDBStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchDBStatusViewModel.swift; sourceTree = "<group>"; };
 		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		12B4696829E81E4C002E6864 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -465,6 +471,15 @@
 			path = ShareTravelView;
 			sourceTree = "<group>";
 		};
+		1281C5402A160EF800C23047 /* RealmListTravelView */ = {
+			isa = PBXGroup;
+			children = (
+				1281C5412A160F0300C23047 /* RealmListTravelView.swift */,
+				1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */,
+			);
+			path = RealmListTravelView;
+			sourceTree = "<group>";
+		};
 		12B4696729E813C1002E6864 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				12B4699D29F56710002E6864 /* ListScheduleViewModel.swift */,
+				12822D852A1654B0001D5E6C /* SwitchDBStatusViewModel.swift */,
 			);
 			path = ViewControl;
 			sourceTree = "<group>";
@@ -616,6 +632,7 @@
 				12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */,
 				1252187129D6330F006AF797 /* ListTravelView.swift */,
 				12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */,
+				1281C5402A160EF800C23047 /* RealmListTravelView */,
 			);
 			path = TopMainTravelView;
 			sourceTree = "<group>";
@@ -984,6 +1001,7 @@
 				12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */,
 				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
 				12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */,
+				12822D862A1654B0001D5E6C /* SwitchDBStatusViewModel.swift in Sources */,
 				12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */,
 				1252193129DE1E49006AF797 /* UserSignUpView.swift in Sources */,
 				12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */,
@@ -996,11 +1014,13 @@
 				12F0E07A2A029CB10081D9C1 /* UserTermsOfServiceLinkView.swift in Sources */,
 				12F0E06729FBEAB00081D9C1 /* InputPeriodView.swift in Sources */,
 				12F0E0762A029C130081D9C1 /* UserShareLinkView.swift in Sources */,
+				1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */,
 				1281C53C2A158EC900C23047 /* SignInUserView.swift in Sources */,
 				12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */,
 				125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */,
 				12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */,
 				1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */,
+				1281C5442A1611D900C23047 /* FBRealtimeListTravelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1159,7 +1179,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -1176,7 +1196,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1196,7 +1216,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -1213,7 +1233,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
