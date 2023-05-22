@@ -76,23 +76,25 @@ class FBDatabaseModel {
         let schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
         
         /// 掘り進める
-        if let travels = snapshot.value as? [String:Any]{ // [ key-travel.id : value [travel.name,travel....]]
-            if let travel = travels.first!.value as? [String:Any]{ // [travel.name,travel....]
-                if let schedules = travel["schedules"] as? [String:Any] {
-                    for schedule in schedules {
-                        if let value = schedule.value as? [String:String] {
-                            let newSchedule = Schedule()
-                            newSchedule.id = try! ObjectId(string: schedule.key)
-                            newSchedule.content = value["content"]!
-                            newSchedule.memo = value["memo"]!
-                            newSchedule.dateTime = DisplayDateViewModel().getAllDateStringDate(value["dateTime"]!)
-                            newSchedule.type = ScheduleType.getScheduleType(value["type"]!)
-                            newSchedule.tranceportation = Tranceportation.getScheduleType(value["tranceportation"]!)
-                            schedulesArray.append(newSchedule)
-                        }
-                    }
+        if let travels = snapshot.value as? [String:Any]{                       // #1 [ key-travel.id : value [travel.name,travel....]]
+            for travelRecored in travels {                                      // #2 格納されているRecordだけ繰り返す
+                if let travel = travelRecored.value as? [String:Any]{           // #3 [travel.name,travel....]
+                    if let schedules = travel["schedules"] as? [String:Any] {   // #4 travel.schedulesが存在すれば
+                        for schedule in schedules {                             // #5 格納されているscheduleだけ繰り返す
+                            if let value = schedule.value as? [String:String] { // #6
+                                let newSchedule = Schedule()
+                                newSchedule.id = try! ObjectId(string: schedule.key)
+                                newSchedule.content = value["content"]!
+                                newSchedule.memo = value["memo"]!
+                                newSchedule.dateTime = DisplayDateViewModel().getAllDateStringDate(value["dateTime"]!)
+                                newSchedule.type = ScheduleType.getScheduleType(value["type"]!)
+                                newSchedule.tranceportation = Tranceportation.getScheduleType(value["tranceportation"]!)
+                                schedulesArray.append(newSchedule)
+                            } // #6
+                        } // #5
+                    } // #4 ↓schedulesがなくてもFirebaseに格納する
                     let newTravel = Travel()
-                    newTravel.id = try! ObjectId(string: travels.first!.key)
+                    newTravel.id = try! ObjectId(string: travelRecored.key)
                     newTravel.name = travel["name"] as! String
                     newTravel.members = self.convertMembersList(joinMember: travel["members"]! as! String)
                     newTravel.startDate = DisplayDateViewModel().getAllDateStringDate(travel["startDate"]! as! String)
@@ -100,10 +102,10 @@ class FBDatabaseModel {
                     newTravel.schedules = schedulesArray
                     newTravel.share = true
                     TravelsArray.append(newTravel)
-                    completion(TravelsArray)
-                }
-            }
-        }
+                } // #3
+            } // #2
+        } // #1
+        completion(TravelsArray)
     }
     
     // Update
