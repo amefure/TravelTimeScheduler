@@ -70,6 +70,10 @@ extension FBDatabaseViewModel {
     public func createUser(userId:String,name:String){
         model.createUser(userId:userId, name: name)
     }
+    ///
+    public func addTravelIdSharedByUser(userId:String,travelId:String){
+        model.addTravelIdSharedByUser(userId:userId,travelId:travelId)
+    }
     
     // MARK: - Travel
     // Entry

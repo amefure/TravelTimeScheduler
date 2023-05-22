@@ -126,6 +126,11 @@ extension SwitchingDatabaseControlViewModel {
         fbVM.createUser(userId:userId, name: name)
     }
     
+    /// 
+    public func addTravelIdSharedByUser(userId:String,travelId:String){
+        fbVM.addTravelIdSharedByUser(userId:userId,travelId:travelId)
+    }
+    
     // MARK: - User
     /// User新規登録時にDBに情報を格納
     public func entryTravel(travel:Travel){

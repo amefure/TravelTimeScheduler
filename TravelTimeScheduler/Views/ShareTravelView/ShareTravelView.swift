@@ -21,6 +21,7 @@ struct ShareTravelView: View {
                 Button {
                     dbControl.updateShareTravel(travel: travel, share: true)
                     dbControl.entryTravel(travel: travel)
+                    dbControl.addTravelIdSharedByUser(userId: signInUserInfo.signInUserId, travelId: travel.id.stringValue)
                 } label: {
                     HStack{
                         Text("TravelIDを発行する")

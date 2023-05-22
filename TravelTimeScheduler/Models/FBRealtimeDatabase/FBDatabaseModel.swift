@@ -21,20 +21,25 @@ class FBDatabaseModel {
     public func createUser(userId:String,name:String){
         ref.child("users").child(userId).setValue(["username": name])
     }
-    
-    
-    // MARK: - Travel
-    /// ["User","User2"] → "User,User2" convert
-    private func convertMembersString(members:RealmSwift.List<String>) -> String{
-        var joinMember = ""
-        for member in members{
-            if joinMember.isEmpty {
-                joinMember = member
-            }else{
-                joinMember += "," + member
+    /// User登録処理
+    public func addTravelIdSharedByUser(userId:String,travelId:String){
+        let userRef = ref.child("users").child(userId).child("sharedId")
+        userRef.getData(completion:  { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
             }
-        }
-        return joinMember
+            if var array = snapshot?.value as? [String] {
+                    // 配列の操作を行う
+                    array.append(travelId)
+                    
+                    // 更新した配列をデータベースに保存
+                userRef.setValue(array)
+            }else{
+                userRef.setValue([travelId])
+            }
+            
+        })
     }
     
     ///  "User,User2" → ["User","User2"]  convert
@@ -45,22 +50,6 @@ class FBDatabaseModel {
             members.append(String(item))
         }
         return members
-    }
-    
-    /// [Schedule,Schedule] → [id:,[key:value]]  convert
-    private func convertScheduleDictionary(schedules:RealmSwift.List<Schedule>) -> [String:[String:String]] {
-        var joinSchedule:[String:[String:String]] = [:]
-        for schedule in schedules {
-            let array = [
-                "content": schedule.content,
-                "memo": schedule.memo,
-                "dateTime":DisplayDateViewModel().getAllDateDisplayFormatString(schedule.dateTime),
-                "type":schedule.type.rawValue,
-                "tranceportation":schedule.tranceportation?.rawValue ?? Tranceportation.other.rawValue
-            ]
-            joinSchedule.updateValue(array, forKey: schedule.id.stringValue)
-        }
-        return joinSchedule
     }
 
     /// Create
@@ -88,7 +77,7 @@ class FBDatabaseModel {
         
         /// 必要になる変数を定義
         var TravelsArray:[Travel] = []
-        var schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
+        let schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
         
         /// 掘り進める
         if let travels = snapshot.value as? [String:Any]{ // [ key-travel.id : value [travel.name,travel....]]
