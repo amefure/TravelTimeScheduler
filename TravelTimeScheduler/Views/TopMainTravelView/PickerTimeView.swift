@@ -13,19 +13,19 @@ struct PickerTimeView: View {
     
     // MARK: - ViewModels
     private let displayDateViewModel = DisplayDateViewModel()
-    @ObservedObject var databaseModel = FBDatabaseViewModel.shared
+    @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
 
     @Binding var selectTime:String
-    @ObservedObject var switchDBViewModel = CurrentDatabaseStatusViewModel.shared
+    @ObservedObject var currentDBStatus = CurrentDatabaseStatusViewModel.shared
     
-    private let realmDataBase = SwitchingDatabaseControlViewModel.shared // migrationのため必要
+    private let dbControl = SwitchingDatabaseControlViewModel.shared // migrationのため必要
     @ObservedResults(Travel.self) var allTravelRelam
     
     // MARK: - リスト表示するべき年数
     private var timeArray:[String] {
         var array:[String] = ["all"]
-        if switchDBViewModel.isFB {
-            for item in databaseModel.Travels {
+        if currentDBStatus.isFB {
+            for item in allTravelFirebase.Travels {
                 let year = displayDateViewModel.getDateDisplayFormatString(item.startDate).prefix(4)
                 array.append(String(year))
             }

@@ -11,7 +11,7 @@ struct EntryHeaderView: View {
     
     // MARK: - ViewModels
     private let validation = ValidationViewModel()
-    private let realmDataBase = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
     
     // MARK: - TextField
     public let travelName:String        // 旅行名
@@ -54,11 +54,11 @@ struct EntryHeaderView: View {
                     
                     if travel == nil {
                         // 新規登録処理
-                        realmDataBase.createTravel(travelName: travelName,members: memberArray, startDate: startDate,endDate: endDate)
+                        dbControl.createTravel(travelName: travelName,members: memberArray, startDate: startDate,endDate: endDate)
                         
                     }else{
                         // 更新処理
-                        realmDataBase.updateTravel(id: travel!.id.stringValue, travelName: travelName,members: memberArray, startDate: startDate, endDate: endDate, schedules: travel!.schedules)
+                        dbControl.updateTravel(id: travel!.id.stringValue, travelName: travelName,members: memberArray, startDate: startDate, endDate: endDate, schedules: travel!.schedules)
                     }
                     
                     isAlert = true

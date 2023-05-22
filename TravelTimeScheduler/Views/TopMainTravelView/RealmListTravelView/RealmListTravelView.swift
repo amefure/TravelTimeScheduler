@@ -11,7 +11,7 @@ struct RealmListTravelView: View {
     
     // MARK: - ViewModels
 
-    private let realmDataBase = SwitchingDatabaseControlViewModel.shared // migrationのため必要
+    private let dbControl = SwitchingDatabaseControlViewModel.shared // migrationのため必要
     private let displayDateViewModel = DisplayDateViewModel()
     
     @ObservedResults(Travel.self,sortDescriptor:SortDescriptor(keyPath: "startDate", ascending: false)) var allTravelRelam

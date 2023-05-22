@@ -15,20 +15,21 @@ struct FBRealtimeListTravelView: View {
     @Binding var searchText:String
     @Binding var selectTime:String
     
-    @ObservedObject var databaseModel = FBDatabaseViewModel.shared
+    @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
     
     private var filteringResults:Array<Travel> {
         if searchText.isEmpty && selectTime == "all"{
             // フィルタリングなし
-            return databaseModel.Travels
+            return allTravelFirebase.Travels
         }else if searchText.isEmpty && selectTime != "all" {
             // 年数のみ
             let array = displayDateViewModel.getYearStringDateArray(selectTime)
-            return databaseModel.Travels // .filter("startDate between {%@, %@}", array[0],array[1])
+            return allTravelFirebase.Travels // .filter("startDate between {%@, %@}", array[0],array[1])
         }else if searchText.isEmpty == false &&  selectTime != "all" {
             // 検索値＆年数
             let array = displayDateViewModel.getYearStringDateArray(selectTime)
-            return databaseModel.Travels // .filter("name contains %@", searchText).filter("startDate between {%@, %@}", array[0],array[1])
+            return allTravelFirebase.Travels // .filter("name contains %@", searchText).filter("startDate between {%@, %@}", array[0],array[1])
         }else{
             // 検索値のみ
             return databaseModel.Travels // .filter("name contains %@", searchText)
@@ -50,7 +51,9 @@ struct FBRealtimeListTravelView: View {
                 FBListTravelView(filteringResults: filteringResults)
             }
         }.onAppear{
-            databaseModel.readAllTravel()
+            dbControl.readAllTravel { data in
+                databaseModel.Travels = data
+            }
         }
     }
 }

@@ -143,8 +143,10 @@ extension SwitchingDatabaseControlViewModel {
     }
     
     /// User新規登録時にDBに情報を格納
-    public func readAllTravel(){
-        fbVM.readAllTravel()
+    public func readAllTravel(completion: @escaping ([Travel]) -> Void ) {
+        fbVM.readAllTravel { data in
+            completion(data)
+        }
     }
 }
 

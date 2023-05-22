@@ -8,9 +8,8 @@
 import UIKit
 import FirebaseDatabase
 
-class FBDatabaseViewModel:ObservableObject{
-    /// DBから抽出したTravel情報
-    @Published var Travels:[Travel] = []
+
+class FBDatabaseViewModel:CrudDatabaseViewModel{
     
     // MARK: シングルトン
     static let shared:FBDatabaseViewModel = FBDatabaseViewModel()
@@ -20,12 +19,6 @@ class FBDatabaseViewModel:ObservableObject{
     
     // MARK: -  ViewModels
     private let convertTypeVM = ConvertTypeViewModel()
-    
-}
-
-
-/// FirebaseDatabaseから抽出したTravel情報
-extension FBDatabaseViewModel:CrudDatabaseViewModel{
     
     // MARK: - Generic Type
     typealias RecordId = String
@@ -84,9 +77,9 @@ extension FBDatabaseViewModel {
         model.entryTravel(id:id,childUpdates: childUpdates)
     }
     
-    public func readAllTravel(){
+    public func readAllTravel(completion: @escaping ([Travel]) -> Void ) {
         model.readAllTravel { data in
-            self.Travels = data
+            completion(data)
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserAllTravelDeleteView: View {
     // MARK: - ViewModels
-    private let realmDataBase = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
     
     @State var isAlert:Bool = false
     @State var isDeleteAlert:Bool = false
@@ -27,7 +27,7 @@ struct UserAllTravelDeleteView: View {
         }.userPanelsShape()
             .alert("登録している\nすべての旅行の記録を\n削除しますか？", isPresented: $isAlert) {
                 Button(role:.destructive) {
-                    realmDataBase.deleteAllTable()
+                    dbControl.deleteAllTable()
                     isDeleteAlert = true
                 } label: {
                     Text("削除")

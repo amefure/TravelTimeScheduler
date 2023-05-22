@@ -52,6 +52,7 @@
 		12AEEB712A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */; };
 		12AEEB732A19B0AB008AB7B8 /* ConvertTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */; };
 		12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */; };
+		12AEEB772A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */; };
 		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
 		12B4696929E81E4C002E6864 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* Color.swift */; };
 		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
@@ -169,6 +170,7 @@
 		12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingDatabaseControlViewModel.swift; sourceTree = "<group>"; };
 		12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTypeViewModel.swift; sourceTree = "<group>"; };
 		12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudDatabaseViewModel.swift; sourceTree = "<group>"; };
+		12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseTravelListViewModel.swift; sourceTree = "<group>"; };
 		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		12B4696829E81E4C002E6864 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */,
+				12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */,
 			);
 			path = FBRealtimeDatabase;
 			sourceTree = "<group>";
@@ -987,6 +990,7 @@
 				12F0E07C2A084CFE0081D9C1 /* WellcomeMessageView.swift in Sources */,
 				1281C5332A15140700C23047 /* FBDatabaseErrorModel.swift in Sources */,
 				12B4698E29F16C10002E6864 /* Modifier.swift in Sources */,
+				12AEEB772A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift in Sources */,
 				12F0E06F2A0284E10081D9C1 /* PickerTimeView.swift in Sources */,
 				1252193729DE20D1006AF797 /* AuthProviderModel.swift in Sources */,
 				12F0E0862A0AF4660081D9C1 /* EntryHeaderView.swift in Sources */,

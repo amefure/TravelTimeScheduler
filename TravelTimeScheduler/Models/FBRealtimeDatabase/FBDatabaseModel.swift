@@ -9,11 +9,9 @@ import UIKit
 import FirebaseDatabase
 import RealmSwift
 
-class FBDatabaseModel {//  :ObservableObject{
+class FBDatabaseModel {
     
     static var shared:FBDatabaseModel = FBDatabaseModel()
-    /// DBから抽出したTravel情報
-//    @Published var Travels:[Travel] = []
     
     // MARK: - Database Reference
     private var ref:DatabaseReference! = Database.database().reference()
@@ -67,7 +65,7 @@ class FBDatabaseModel {//  :ObservableObject{
 
     /// Create
     public func entryTravel(id:String,childUpdates:[String : Any]){
-        ref.child(id).updateChildValues(childUpdates)
+        ref.child("travels").child(id).updateChildValues(childUpdates)
     }
     
     
@@ -118,7 +116,6 @@ class FBDatabaseModel {//  :ObservableObject{
                     newTravel.share = true
                     TravelsArray.append(newTravel)
                     completion(TravelsArray)
-//                    self.Travels = TravelsArray
                 }
             }
         }

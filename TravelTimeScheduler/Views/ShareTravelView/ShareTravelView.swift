@@ -11,7 +11,7 @@ struct ShareTravelView: View {
     
     public let travel:Travel
     
-    private let realmDatabaseVM = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
     private let signInUserInfo = SignInUserInfoViewModel()
     
     var body: some View {
@@ -19,8 +19,8 @@ struct ShareTravelView: View {
             
             Section {
                 Button {
-                    realmDatabaseVM.updateShareTravel(travel: travel, share: true)
-                    realmDatabaseVM.entryTravel(travel: travel)
+                    dbControl.updateShareTravel(travel: travel, share: true)
+                    dbControl.entryTravel(travel: travel)
                 } label: {
                     HStack{
                         Text("TravelIDを発行する")
@@ -63,12 +63,6 @@ struct ShareTravelView: View {
                         .shadowCornerRadius()
                 }.listRowBackground(Color.list)
                 
-            }
-            
-            Button {
-                realmDatabaseVM.readAllTravel()
-            } label: {
-                Text("readAllTravel")
             }
             
         }.foregroundColor(Color.thema)

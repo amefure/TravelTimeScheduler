@@ -15,7 +15,7 @@ struct TopMainTravelView: View {
     private let deviceSizeViewModel = DeviceSizeViewModel()
     
     // MARK: - ObservedViewModels
-    @ObservedObject var switchDBViewModel = CurrentDatabaseStatusViewModel.shared
+    @ObservedObject var currentDBStatus = CurrentDatabaseStatusViewModel.shared
     
     // MARK: - View
     @State var isPresented:Bool = false
@@ -33,7 +33,7 @@ struct TopMainTravelView: View {
             PickerTimeView(selectTime: $selectTime)
             
             /// DBどちらのタブがアクティブになっているかで表示するリストを変更
-            if switchDBViewModel.isFB {
+            if currentDBStatus.isFB {
                 FBRealtimeListTravelView(searchText: $searchText, selectTime: $selectTime)
             }else{
                 // MARK: - RealmTravelListView
@@ -79,9 +79,9 @@ struct TopMainTravelView: View {
             if AuthViewModel.shared.getCurrentUser() != nil {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        switchDBViewModel.isFB.toggle()
+                        currentDBStatus.isFB.toggle()
                     } label: {
-                        Text(switchDBViewModel.isFB ? "Not Share" : "Share")
+                        Text(currentDBStatus.isFB ? "Not Share" : "Share")
                     }
                 }
             }
