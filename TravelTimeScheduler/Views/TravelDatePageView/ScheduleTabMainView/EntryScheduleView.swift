@@ -13,9 +13,10 @@ struct EntryScheduleView: View {
     
     // MARK: - ViewModels
     private let validation = ValidationViewModel()
-    private let realmDataBase = RealmDatabaseViewModel()
+    private let realmDataBase = SwitchingDatabaseControlViewModel.shared
     private let displayDate = DisplayDateViewModel()
     private let deviceSize = DeviceSizeViewModel()
+
     
     @ObservedResults(Travel.self) var allTravelRelam
     
@@ -88,10 +89,10 @@ struct EntryScheduleView: View {
                         sc.type = type
                         sc.tranceportation = .none
                         
-                        realmDataBase.addSchedule(id: travel.id, schedule: sc)
+                        realmDataBase.addSchedule(id: travel.id.stringValue, schedule: sc)
                     }else{
                         /// 更新処理
-                        realmDataBase.updateSchedule(travelId: travel.id, scheduleId: schedule!.id, dateTime: dateTime, content: content,memo: memo, type: type, tranceportation: schedule!.tranceportation)
+                        realmDataBase.updateSchedule(travelId: travel.id.stringValue, scheduleId: schedule!.id.stringValue, dateTime: dateTime, content: content,memo: memo, type: type, tranceportation: schedule!.tranceportation)
                         
                     }
                     isModal = false

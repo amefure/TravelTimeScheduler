@@ -10,7 +10,7 @@ import SwiftUI
 struct DeleteTravelButtonView: View {
     
     // MARK: - ViewModels
-    private let realmDataBase = RealmDatabaseViewModel()
+    private let realmDataBase = SwitchingDatabaseControlViewModel.shared
     
     // MARK: - Parameters
     public let travel:Travel
@@ -25,7 +25,7 @@ struct DeleteTravelButtonView: View {
             Text("旅行削除")
         }.alert("「\(travel.name)」の記録と思い出をすべて削除しますか...？", isPresented: $isDeleteAlert) {
             Button(role:.destructive) {
-                realmDataBase.deleteTravel(id: travel.id)
+                realmDataBase.deleteTravel(id: travel.id.stringValue)
                 self.parentBackRootViewFunction()
             } label: {
                 Text("削除")

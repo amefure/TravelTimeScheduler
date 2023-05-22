@@ -17,7 +17,7 @@ struct GoogleAuthButtonView: View {
     @Binding var isPresentedHalfModal:Bool
     
     // MARK: - ViewModels
-    private let realmDataBase = RealmDatabaseViewModel()
+    private let realmDataBase = SwitchingDatabaseControlViewModel.shared
     @ObservedObject var authVM = AuthViewModel.shared
 
     // MARK: - Flag
@@ -38,7 +38,7 @@ struct GoogleAuthButtonView: View {
                     // 退会
                     authVM.credentialGoogleWithdrawal { result in
                         if result {
-                            realmDataBase.realmAllReset()  // 全データリセット
+                            realmDataBase.deleteAllTable()  // 全データリセット
                             isPresentedHalfModal = false
                             isActive = true
                         }

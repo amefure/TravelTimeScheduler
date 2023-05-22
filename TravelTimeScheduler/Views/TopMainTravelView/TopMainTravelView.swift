@@ -11,34 +11,17 @@ import RealmSwift
 struct TopMainTravelView: View {
     
     // MARK: - ViewModels
-    private let realmDataBase = RealmDatabaseViewModel()
     private let displayDateViewModel = DisplayDateViewModel()
     private let deviceSizeViewModel = DeviceSizeViewModel()
     
-    @ObservedResults(Travel.self,sortDescriptor:SortDescriptor(keyPath: "startDate", ascending: false)) var allTravelRelam
+    // MARK: - ObservedViewModels
+    @ObservedObject var switchDBViewModel = CurrentDatabaseStatusViewModel.shared
     
     // MARK: - View
     @State var isPresented:Bool = false
     @State var searchText:String = ""
     @State var selectTime:String = "all"
-    
-    private var filteringResults:Results<Travel> {
-        if searchText.isEmpty && selectTime == "all"{
-            // フィルタリングなし
-            return allTravelRelam
-        }else if searchText.isEmpty && selectTime != "all" {
-            // 年数のみ
-            let array = displayDateViewModel.getYearStringDateArray(selectTime)
-            return allTravelRelam.filter("startDate between {%@, %@}", array[0],array[1])
-        }else if searchText.isEmpty == false &&  selectTime != "all" {
-            // 検索値＆年数
-            let array = displayDateViewModel.getYearStringDateArray(selectTime)
-            return allTravelRelam.filter("name contains %@", searchText).filter("startDate between {%@, %@}", array[0],array[1])
-        }else{
-            // 検索値のみ
-            return allTravelRelam.filter("name contains %@", searchText)
-        }
-    }
+
     
     var body: some View {
         VStack(spacing:0){
@@ -49,16 +32,12 @@ struct TopMainTravelView: View {
             // MARK: - 日付フィルタリング
             PickerTimeView(selectTime: $selectTime)
             
-            // MARK: - TravelListView
-            if searchText.isEmpty && filteringResults.count == 0 {
-                // 履歴未登録時のビュー
-                BlankTravelView(text: "旅行を登録してね♪", imageName: "Traveling")
-            }else if !searchText.isEmpty && filteringResults.count == 0 {
-                // 検索時にマッチする履歴がない場合のビュー
-                BlankTravelView(text: "「\(searchText)」にマッチする\n旅行履歴はありませんでした。", imageName: "Walking_outside")
+            /// DBどちらのタブがアクティブになっているかで表示するリストを変更
+            if switchDBViewModel.isFB {
+                FBRealtimeListTravelView(searchText: $searchText, selectTime: $selectTime)
             }else{
-                // 履歴リスト表示ビュー
-                ListTravelView(filteringResults: filteringResults)
+                // MARK: - RealmTravelListView
+                RealmListTravelView(searchText: $searchText, selectTime: $selectTime)
             }
             
             HStack{
@@ -75,7 +54,7 @@ struct TopMainTravelView: View {
             
             AdMobBannerView().frame(height: 60)
             
-        }
+        }.ignoresSafeArea(.keyboard, edges: .bottom)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .background(Color.thema)
@@ -96,7 +75,16 @@ struct TopMainTravelView: View {
                         .foregroundColor(Color.foundation)
                 })
             }
-            
+            // サインインしていないなら非表示
+            if AuthViewModel.shared.getCurrentUser() != nil {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        switchDBViewModel.isFB.toggle()
+                    } label: {
+                        Text(switchDBViewModel.isFB ? "Not Share" : "Share")
+                    }
+                }
+            }
         }
     }
 }

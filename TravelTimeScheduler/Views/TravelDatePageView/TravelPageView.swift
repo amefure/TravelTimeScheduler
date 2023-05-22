@@ -10,9 +10,6 @@ import RealmSwift
 
 struct TravelPageView: View {
     
-    // MARK: - ViewModels
-    private let realmDataBase = RealmDatabaseViewModel()
-    
     // MARK: - Parameters
     public let travel:Travel
     
@@ -39,15 +36,16 @@ struct TravelPageView: View {
         }.navigationTitle(travel.name)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        isSharePresented = true
-                    }) {
-                        VStack{
-                            Image(systemName: "cloud.fill")
-                            Text("共有")
-                                .font(.caption)
-                        }// .foregroundColor(Color.accentSchedule)
-                        
+                    if AuthViewModel.shared.isSignIn {
+                        Button(action: {
+                            isSharePresented = true
+                        }) {
+                            VStack{
+                                Image(systemName: "cloud.fill")
+                                Text("共有")
+                                    .font(.caption)
+                            }
+                        }
                     }
                 }
             }

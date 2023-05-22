@@ -10,7 +10,7 @@ import SwiftUI
 struct WithdrawalButtonView: View {
     
     // MARK: - ViewModels
-    private let realmDataBase = RealmDatabaseViewModel()
+    private let realmDataBase = SwitchingDatabaseControlViewModel.shared
     private let validationVM = ValidationViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
     
@@ -60,7 +60,7 @@ struct WithdrawalButtonView: View {
                                 if !password.isEmpty{
                                     authVM.credentialEmailWithdrawal(password:password) { result in
                                         if result {
-                                            realmDataBase.realmAllReset()
+                                            realmDataBase.deleteAllTable()
                                             isActive = true
                                         }
                                         isClick = false
@@ -97,7 +97,7 @@ struct WithdrawalButtonView: View {
                 .presentationDetents([.medium])
         })
         .navigationDestination(isPresented: $isActive) {
-            LoginAuthView()
+            TopMainTravelView()
         }.navigationCustomBackground()
             .navigationTitle("User Delete")
     }

@@ -13,17 +13,29 @@ struct PickerTimeView: View {
     
     // MARK: - ViewModels
     private let displayDateViewModel = DisplayDateViewModel()
-    
+    @ObservedObject var databaseModel = FBDatabaseViewModel.shared
+
     @Binding var selectTime:String
+    @ObservedObject var switchDBViewModel = CurrentDatabaseStatusViewModel.shared
     
+    private let realmDataBase = SwitchingDatabaseControlViewModel.shared // migrationのため必要
     @ObservedResults(Travel.self) var allTravelRelam
     
     // MARK: - リスト表示するべき年数
     private var timeArray:[String] {
         var array:[String] = ["all"]
-        for item in allTravelRelam {
-            let year = displayDateViewModel.getDateDisplayFormatString(item.startDate).prefix(4)
-            array.append(String(year))
+        if switchDBViewModel.isFB {
+            for item in databaseModel.Travels {
+                let year = displayDateViewModel.getDateDisplayFormatString(item.startDate).prefix(4)
+                array.append(String(year))
+            }
+        }else{
+            
+            
+            for item in allTravelRelam {
+                let year = displayDateViewModel.getDateDisplayFormatString(item.startDate).prefix(4)
+                array.append(String(year))
+            }
         }
         let timeSet = Set(array) // 重複値を除去
         return Array(timeSet).sorted().reversed()
@@ -38,7 +50,6 @@ struct PickerTimeView: View {
                 Image(systemName: "calendar")
                     .foregroundColor(selectTime != "all" ? .negative : .foundation)
             }
-
             Picker(selection: $selectTime, content: {
                 ForEach(timeArray,id:\.self) { item in
                     Text(item)

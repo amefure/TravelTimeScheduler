@@ -10,7 +10,6 @@ import SwiftUI
 struct ScheduleControlPanelView: View {
     
     // MARK: - ViewModels
-    private let realmDataBase = RealmDatabaseViewModel()
     @ObservedObject var listScheduleVM = ListScheduleViewModel.shared
     
     // MARK: - Parameters

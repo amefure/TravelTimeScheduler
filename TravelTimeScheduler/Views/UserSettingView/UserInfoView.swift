@@ -13,7 +13,7 @@ struct UserInfoView: View {
     private let deviceSizeViewModel = DeviceSizeViewModel()
     private var signInUserInfoVM = SignInUserInfoViewModel.shared
     @ObservedResults(Travel.self) var allTravelRelam
-    
+    private let realmDataBase = SwitchingDatabaseControlViewModel.shared // migrationのため必要
     @State var active = false // User情報が更新された時に画面を再描画する
     // MARK: - View
     private let columns = [GridItem(.fixed(100)),GridItem(.fixed(DeviceSizeViewModel().isSESize ? 120 : 180))]

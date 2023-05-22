@@ -11,7 +11,7 @@ struct EntryHeaderView: View {
     
     // MARK: - ViewModels
     private let validation = ValidationViewModel()
-    private let realmDataBase = RealmDatabaseViewModel()
+    private let realmDataBase = SwitchingDatabaseControlViewModel.shared
     
     // MARK: - TextField
     public let travelName:String        // 旅行名
@@ -58,7 +58,7 @@ struct EntryHeaderView: View {
                         
                     }else{
                         // 更新処理
-                        realmDataBase.updateTravel(id: travel!.id, travelName: travelName,members: memberArray, startDate: startDate, endDate: endDate, schedules: travel!.schedules)
+                        realmDataBase.updateTravel(id: travel!.id.stringValue, travelName: travelName,members: memberArray, startDate: startDate, endDate: endDate, schedules: travel!.schedules)
                     }
                     
                     isAlert = true

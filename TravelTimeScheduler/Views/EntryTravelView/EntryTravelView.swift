@@ -11,7 +11,6 @@ import RealmSwift
 struct EntryTravelView: View {
     
     // MARK: - ViewModels
-    private let realmDataBase = RealmDatabaseViewModel()
     private let deviceSize = DeviceSizeViewModel()
     
     // MARK: - TextField
@@ -58,20 +57,6 @@ struct EntryTravelView: View {
             Section("Setting"){
                 
                 if travel != nil {
-                    HStack{
-                        
-                        Spacer()
-                        Button {
-                            
-                        } label: {
-                            Text("友達と共有する(工事中...)")
-                        }
-                        .padding(10)
-                        .background(.gray)
-                        .foregroundColor(.white)
-                        .shadowCornerRadius()
-                        Spacer()
-                    }
                     HStack{
                         
                         Spacer()

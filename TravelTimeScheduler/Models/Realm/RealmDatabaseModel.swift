@@ -10,6 +10,8 @@ import RealmSwift
 
 class RealmDatabaseModel {
     
+    static var shared:RealmDatabaseModel = RealmDatabaseModel()
+    
     init() {
         let config = Realm.Configuration(schemaVersion: 1)
         realm = try! Realm(configuration:config)
@@ -65,6 +67,7 @@ class RealmDatabaseModel {
             record.members = newRecord.members
             record.startDate = newRecord.startDate
             record.endDate = newRecord.endDate
+            record.share = newRecord.share
         }
     }
     
