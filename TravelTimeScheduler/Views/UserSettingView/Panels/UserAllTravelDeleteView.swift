@@ -27,7 +27,7 @@ struct UserAllTravelDeleteView: View {
         }.userPanelsShape()
             .alert("登録している\nすべての旅行の記録を\n削除しますか？", isPresented: $isAlert) {
                 Button(role:.destructive) {
-                    dbControl.deleteAllTable()
+                    dbControl.deleteRealmAllTable()
                     isDeleteAlert = true
                 } label: {
                     Text("削除")
