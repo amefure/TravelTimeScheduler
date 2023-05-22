@@ -29,14 +29,14 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     // MARK: - CRUD処理を提供するViewModels
     private let realmVM = RealmDatabaseViewModel.shared
     private let fbVM = FBDatabaseViewModel.shared
-
+    
     
     
     // MARK: -  Travel
     func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) {
-            let membersList = convertTypeVM.convertMembersToList(members)
-            realmVM.createTravel(travelName: travelName, members: membersList, startDate: startDate, endDate: endDate)
-
+        let membersList = convertTypeVM.convertMembersToList(members)
+        realmVM.createTravel(travelName: travelName, members: membersList, startDate: startDate, endDate: endDate)
+        
     }
     
     
@@ -83,7 +83,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
             realmVM.addSchedule(id: objID, schedule: schedule)
         }
     }
-
+    
     // Update
     public func updateSchedule(travelId:String,scheduleId:String,dateTime:Date,content:String,memo:String,type:ScheduleType,tranceportation:Tranceportation?){
         if dbStatus.isFB {
@@ -94,7 +94,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
             realmVM.updateSchedule(travelId: objTravelID, scheduleId: objScheduleID, dateTime: dateTime, content: content, memo:memo, type: type, tranceportation: tranceportation)
         }
     }
-
+    
     // Delete
     public func deleteSchedule(travelId:String,scheduleId:String){
         if dbStatus.isFB {
@@ -104,7 +104,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
             let objScheduleID = convertTypeVM.convertStringToObjectId(strID: travelId)
             realmVM.deleteSchedule(travelId: objTravelID, scheduleId: objScheduleID)
         }
-
+        
     }
     
     // MARK: - ALl
@@ -114,6 +114,10 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
         }else{
             realmVM.deleteAllTable()
         }
+    }
+    
+    public func deleteRealmAllTable() {
+        realmVM.deleteAllTable()
     }
 }
 
@@ -126,7 +130,7 @@ extension SwitchingDatabaseControlViewModel {
         fbVM.createUser(userId:userId, name: name)
     }
     
-    /// 
+    /// Travel共有時にUser内にtravelIdを格納
     public func addTravelIdSharedByUser(userId:String,travelId:String){
         fbVM.addTravelIdSharedByUser(userId:userId,travelId:travelId)
     }

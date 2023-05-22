@@ -70,7 +70,7 @@ extension FBDatabaseViewModel {
     public func createUser(userId:String,name:String){
         model.createUser(userId:userId, name: name)
     }
-    ///
+    /// Travel共有時にUser内にtravelIdを格納
     public func addTravelIdSharedByUser(userId:String,travelId:String){
         model.addTravelIdSharedByUser(userId:userId,travelId:travelId)
     }

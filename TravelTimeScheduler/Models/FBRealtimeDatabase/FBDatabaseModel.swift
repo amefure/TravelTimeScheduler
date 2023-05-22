@@ -21,24 +21,20 @@ class FBDatabaseModel {
     public func createUser(userId:String,name:String){
         ref.child("users").child(userId).setValue(["username": name])
     }
-    /// User登録処理
+    /// Travel共有時にUser内にtravelIdを格納
     public func addTravelIdSharedByUser(userId:String,travelId:String){
-        let userRef = ref.child("users").child(userId).child("sharedId")
+        let userRef = ref.child("users").child(userId).child("sharedTravelId")
         userRef.getData(completion:  { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return
             }
             if var array = snapshot?.value as? [String] {
-                    // 配列の操作を行う
-                    array.append(travelId)
-                    
-                    // 更新した配列をデータベースに保存
+                array.append(travelId)
                 userRef.setValue(array)
             }else{
                 userRef.setValue([travelId])
             }
-            
         })
     }
     
@@ -51,7 +47,7 @@ class FBDatabaseModel {
         }
         return members
     }
-
+    
     /// Create
     public func entryTravel(id:String,childUpdates:[String : Any]){
         ref.child("travels").child(id).updateChildValues(childUpdates)
