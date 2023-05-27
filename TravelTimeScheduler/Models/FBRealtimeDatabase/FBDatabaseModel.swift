@@ -109,8 +109,17 @@ class FBDatabaseModel {
     }
     
     // Update
-    public func addSchedule(id:ObjectId,schedule:Schedule){
+    public func addSchedule(travelId:String,currentSchedules:List<Schedule>,addSchedule:Schedule){
+        print("-----------addSchedule-------")
+        print(addSchedule)
+        currentSchedules.append(addSchedule)
+        print("-----------currentSchedules--------")
+        print(currentSchedules)
         
+        let scheduleRef = ref.child("travels").child(travelId).child("schedules")
+        let scheduleDictionary = ConvertTypeViewModel().convertScheduleToDictionary(schedules: currentSchedules)
+
+        scheduleRef.setValue(scheduleDictionary)
     }
     
     // Update

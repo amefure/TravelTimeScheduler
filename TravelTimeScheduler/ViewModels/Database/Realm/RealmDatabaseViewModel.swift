@@ -66,8 +66,8 @@ class RealmDatabaseViewModel:CrudDatabaseViewModel {
     
     // MARK: - Schedule
     // Create(add)
-    public func addSchedule(id:ObjectId,schedule:Schedule){
-        model.addSchedule(id: id, schedule: schedule)
+    public func addSchedule(travel:Travel,schedule:Schedule){
+        model.addSchedule(id: travel.id, schedule: schedule)
     }
     
     // Update

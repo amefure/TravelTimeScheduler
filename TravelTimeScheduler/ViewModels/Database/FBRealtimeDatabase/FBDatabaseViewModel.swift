@@ -45,8 +45,8 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     }
     
     // MARK: - Schedule
-    func addSchedule(id: String, schedule: Schedule) {
-        
+    func addSchedule(travel:Travel,schedule:Schedule){
+        model.addSchedule(travelId: travel.id.stringValue, currentSchedules: travel.schedules, addSchedule: schedule)
     }
     
     func updateSchedule(travelId: String, scheduleId: String, dateTime: Date, content: String, memo: String, type: ScheduleType, tranceportation: Tranceportation?) {

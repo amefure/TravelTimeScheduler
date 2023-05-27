@@ -75,12 +75,11 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     // MARK: - Schedule
     // Update
-    public func addSchedule(id:String,schedule:Schedule){
+    public func addSchedule(travel:Travel,schedule:Schedule){
         if dbStatus.isFB {
-            fbVM.addSchedule(id: id, schedule: schedule)
+            fbVM.addSchedule(travel: travel, schedule: schedule)
         }else{
-            let objID = convertTypeVM.convertStringToObjectId(strID: id)
-            realmVM.addSchedule(id: objID, schedule: schedule)
+            realmVM.addSchedule(travel: travel, schedule: schedule)
         }
     }
     
