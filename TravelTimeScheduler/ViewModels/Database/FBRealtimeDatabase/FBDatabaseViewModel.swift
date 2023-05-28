@@ -50,6 +50,14 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     }
     
     func updateSchedule(travelId: String, scheduleId: String, dateTime: Date, content: String, memo: String, type: ScheduleType, tranceportation: Tranceportation?) {
+        let sc = Schedule()
+        sc.id = convertTypeVM.convertStringToObjectId(strID: scheduleId)
+        sc.content = content
+        sc.dateTime = dateTime
+        sc.memo = memo
+        sc.type = type
+        sc.tranceportation = tranceportation ?? .other
+        model.updateSchedule(travelId: travelId, newRecord: sc)
         
     }
     

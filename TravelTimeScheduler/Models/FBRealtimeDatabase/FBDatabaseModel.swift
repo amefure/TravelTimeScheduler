@@ -110,11 +110,7 @@ class FBDatabaseModel {
     
     // Update
     public func addSchedule(travelId:String,currentSchedules:List<Schedule>,addSchedule:Schedule){
-        print("-----------addSchedule-------")
-        print(addSchedule)
         currentSchedules.append(addSchedule)
-        print("-----------currentSchedules--------")
-        print(currentSchedules)
         
         let scheduleRef = ref.child("travels").child(travelId).child("schedules")
         let scheduleDictionary = ConvertTypeViewModel().convertScheduleToDictionary(schedules: currentSchedules)
@@ -123,8 +119,13 @@ class FBDatabaseModel {
     }
     
     // Update
-    public func updateSchedule(travelId:ObjectId,scheduleId:ObjectId,dateTime:Date,content:String,memo:String,type:ScheduleType,tranceportation:Tranceportation?){
-        
+    public func updateSchedule(travelId:String,newRecord:Schedule){
+        let scheduleRef = ref.child("travels").child(travelId).child("schedules").child(newRecord.id.stringValue)
+        let schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
+        schedulesArray.append(newRecord)
+        let scheduleDictionary = ConvertTypeViewModel().convertScheduleToDictionary(schedules: schedulesArray)
+        scheduleRef.setValue(scheduleDictionary.first?.value)
+
     }
     
     // Update
