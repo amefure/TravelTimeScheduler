@@ -16,6 +16,7 @@ class SignInUserInfoViewModel {
     
     // FB RealtimeDatabase User
     private let fbDatabase = FBDatabaseModel()
+    private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
     
     init(userDefaults: UserDefaultsProtocol = UserDefaultsWrapper.shared) {
         self.userDefaults = userDefaults
@@ -107,11 +108,18 @@ extension SignInUserInfoViewModel {
         fbDatabase.createUser(userId: uid, name: name)
     }
     
+    // サインアウトした際に実行される処理
     public func resetUserInfo(){
+        
+        // DBStatusをfalse(Realm)に
+        dbStatus.isFB = false
+        
+        // Firebase情報をリセット
+        allTravelFirebase.resetData()
+        
         signInUserId = ""
         signInUserName = "User"
         signInUserProvider = ""
-        // サインアウトした際にはDBStatusをfalseに
-        dbStatus.isFB = false
+       
     }
 }

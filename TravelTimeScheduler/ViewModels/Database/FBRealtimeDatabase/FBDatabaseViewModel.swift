@@ -83,6 +83,13 @@ extension FBDatabaseViewModel {
         model.addUserReadableTravelId(userId:userId,travelId:travelId)
     }
     
+    /// サインインUserが読み取り可能なTarvelID配列を観測
+    public func observeUserReadableTravelIds(userId:String,completion: @escaping ([String]) -> Void ) {
+        model.observeUserReadableTravelIds(userId: userId) { data in
+            completion(data)
+        }
+    }
+    
     // MARK: - Travel
     // Entry
     public func entryTravel(id:String,childUpdates:[String : Any]){

@@ -18,4 +18,10 @@ class FBDatabaseTravelListViewModel:ObservableObject{
     
     // MARK: シングルトン
     static let shared:FBDatabaseTravelListViewModel = FBDatabaseTravelListViewModel()
+    
+    
+    public func resetData(){
+        Travels = []
+        userReadableTravelIds = []
+    }
 }
