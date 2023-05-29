@@ -131,7 +131,7 @@ extension SwitchingDatabaseControlViewModel {
     
     /// Travel共有時にUser内にtravelIdを格納
     public func addTravelIdSharedByUser(userId:String,travelId:String){
-        fbVM.addTravelIdSharedByUser(userId:userId,travelId:travelId)
+        fbVM.addUserReadableTravelId(userId:userId,travelId:travelId)
     }
     
     // MARK: - User

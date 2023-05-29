@@ -19,10 +19,11 @@ class FBDatabaseModel {
     // MARK: - User
     /// User登録処理
     public func createUser(userId:String,name:String){
-        ref.child("users").child(userId).setValue(["username": name])
+        ref.child("users").child(userId).child("username").setValue(name)
     }
-    /// Travel共有時にUser内にtravelIdを格納
-    public func addTravelIdSharedByUser(userId:String,travelId:String){
+    
+    /// サインインUserが読み取り可能なTarvelID配列を取得
+    public func addUserReadableTravelId(userId:String,travelId:String){
         let userRef = ref.child("users").child(userId).child("sharedTravelId")
         userRef.getData(completion:  { error, snapshot in
             guard error == nil else {
@@ -36,6 +37,15 @@ class FBDatabaseModel {
                 userRef.setValue([travelId])
             }
         })
+    }
+    
+    /// サインインUserが読み取り可能なTarvelID配列を取得
+    public func getUserReadableTravelId(userId:String,completion: @escaping ([String]) -> Void ) {
+        ref.child("users").child(userId).child("sharedTravelId").observe(.value) { snapshot in
+            if let currentUserReadableTravelId = snapshot.value as? [String] {
+                completion(currentUserReadableTravelId)
+            }
+        }
     }
     
     ///  "User,User2" → ["User","User2"]  convert
@@ -105,7 +115,7 @@ class FBDatabaseModel {
                 } // #3
             } // #2
         } // #1
-        completion(TravelsArray)
+        completion(TravelsArray.sorted(by:{ $0.startDate > $1.startDate }))
     }
     
     // Update
@@ -147,7 +157,13 @@ class FBDatabaseModel {
 
     
     
-    
+    public func observedTravel(travelId:String,completion: @escaping ([Travel]) -> Void ) {
+        ref.child("travels").child(travelId).observe(DataEventType.value, with: { snapshot in
+            self.setSnapShot(snapshot) { data in
+                completion(data)
+            }
+        })
+    }
     // MARK: -
     public func deleteAllTable(){
     }
