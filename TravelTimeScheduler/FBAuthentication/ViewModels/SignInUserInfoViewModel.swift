@@ -11,6 +11,12 @@ class SignInUserInfoViewModel {
     
     private let userDefaults: UserDefaultsProtocol
     
+    /// アクティブになっているDB状態
+    private let dbStatus: CurrentDatabaseStatusViewModel = CurrentDatabaseStatusViewModel.shared
+    
+    // FB RealtimeDatabase User
+    private let fbDatabase = FBDatabaseModel()
+    
     init(userDefaults: UserDefaultsProtocol = UserDefaultsWrapper.shared) {
         self.userDefaults = userDefaults
     }
@@ -86,9 +92,26 @@ class SignInUserInfoViewModel {
         }
     }
     
+    
+
+}
+
+extension SignInUserInfoViewModel {
+    
+    public func setCurrentUserInfo(uid:String,name:String,email:String,provider:AuthProviderModel){
+        signInUserId = uid
+        signInUserName = name
+        setSignInProvider(provider: provider)
+        signInUserEmail = email
+        // サインインした際にはクラウド上にUser情報を格納しておく
+        fbDatabase.createUser(userId: uid, name: name)
+    }
+    
     public func resetUserInfo(){
         signInUserId = ""
         signInUserName = "User"
         signInUserProvider = ""
+        // サインアウトした際にはDBStatusをfalseに
+        dbStatus.isFB = false
     }
 }
