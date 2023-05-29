@@ -11,7 +11,7 @@ struct RowScheduleView: View {
     
     // MARK: - ViewModels
     private let deviceSize = DeviceSizeViewModel()
-    private let realmDataBase = RealmDatabaseViewModel()
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
     private let displayDate = DisplayDateViewModel()
     
     @ObservedObject var listScheduleVM = ListScheduleViewModel.shared
@@ -114,7 +114,7 @@ struct RowScheduleView: View {
         }
         .alert("このタイムスケジュールを\n削除しますか？", isPresented: $isDeleteAlert) {
             Button(role:.destructive) {
-                realmDataBase.deleteSchedule(travelId: travel.id, scheduleId: schedule.id)
+                dbControl.deleteSchedule(travelId: travel.id.stringValue, scheduleId: schedule.id.stringValue)
             } label: {
                 Text("削除")
             }

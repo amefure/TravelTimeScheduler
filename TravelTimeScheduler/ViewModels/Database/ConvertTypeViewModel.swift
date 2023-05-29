@@ -13,24 +13,9 @@ import RealmSwift
 class ConvertTypeViewModel {
 
     // MARK: - Travel(Realm)をFirebase上に新規登録する際の型変換
-    // - Members   → カンマ(,)区切りの結合文字列にする
-    // - Schedules → 辞書形式
-    // - 使用箇所：SwitchingDatabaseViewModel.swift > func entryTravel
+    // - 使用箇所：SwitchingDatabaseViewModel.swift
     
-    /// Members ["User","User2"] → "User,User2" convert
-    public func convertMembersToJoinString(members:RealmSwift.List<String>) -> String{
-        var joinMember = ""
-        for member in members{
-            if joinMember.isEmpty {
-                joinMember = member
-            }else{
-                joinMember += "," + member
-            }
-        }
-        return joinMember
-    }
-    
-    /// Schedules [Schedule,Schedule] → [id:,[key:value]]  convert
+    /// Array<Schedule>  → Dictionary<String:String>
     public func convertScheduleToDictionary(schedules:RealmSwift.List<Schedule>) -> [String:[String:String]] {
         var joinSchedule:[String:[String:String]] = [:]
         for schedule in schedules {
@@ -48,42 +33,30 @@ class ConvertTypeViewModel {
     
     
     // MARK: - TravelをFirebase上から取得する際の型変換
-    // - Members   → カンマ(,)区切りの結合文字列にする
-    // - Schedules → 辞書形式
-    // - 使用箇所：SwitchingDatabaseViewModel.swift > func readAll
+    // - 使用箇所：SwitchingDatabaseViewModel.swift
     
-    ///  "User,User2" → ["User","User2"]  convert
-    public func convertJoinStringToList(joinMember:String) -> Array<String>{
-        var members:Array<String> = []
-        let result = joinMember.split(separator: ",")
-        for item in result{
-            members.append(String(item))
-        }
-        return members
-    }
-    
-    
-    /// Array<String> → RealmSwift.List<String> convert
+    /// Array<String> → RealmSwift.List<String>
     public func convertMembersToList(_ members:[String]) -> RealmSwift.List<String>{
-        var filteringMembers = members.filter { !$0.isEmpty && !$0.trimmingCharacters(in: .whitespaces).isEmpty }
-        if filteringMembers.count == 0 {
-            filteringMembers = [""]
-        }
-        let memberList:RealmSwift.List = RealmSwift.List<String>()
-        memberList.append(objectsIn: filteringMembers)
-        return memberList
+        let membersList:RealmSwift.List<String> = RealmSwift.List()
+        membersList.append(objectsIn: members)
+        return membersList
     }
-    
-    
-
     
 
     // MARK: - Travel(Realm)を更新する際のID変換
-    // - String    → ObjectId
     // - 使用箇所：SwitchingDatabaseViewModel.swift
-    /// ID:String → ID:ObjectId convert
+    
+    /// String → ObjectId
     public func convertStringToObjectId(strID:String) -> RealmSwift.ObjectId {
-        return try! ObjectId(string: strID)
+        
+        guard let obj = try? ObjectId(string: strID) else {
+            return ObjectId.generate()
+        }
+        
+        return obj
     }
     
+    public func generateObjectIdString() -> String {
+        return ObjectId.generate().stringValue
+    }
 }

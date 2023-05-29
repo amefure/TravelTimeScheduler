@@ -31,12 +31,14 @@ struct TopMainTravelView: View {
             
             // MARK: - 日付フィルタリング
             PickerTimeView(selectTime: $selectTime)
-            
+
             /// DBどちらのタブがアクティブになっているかで表示するリストを変更
             if currentDBStatus.isFB {
+                Text("Firebase")
                 FBRealtimeListTravelView(searchText: $searchText, selectTime: $selectTime)
             }else{
                 // MARK: - RealmTravelListView
+                Text("Realm")
                 RealmListTravelView(searchText: $searchText, selectTime: $selectTime)
             }
             
@@ -75,15 +77,11 @@ struct TopMainTravelView: View {
                         .foregroundColor(Color.foundation)
                 })
             }
-            // サインインしていないなら非表示
+        }
+        .onAppear{
+            // サインインしている状態なら表示するDBをFirebaseに
             if AuthViewModel.shared.getCurrentUser() != nil {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        currentDBStatus.isFB.toggle()
-                    } label: {
-                        Text(currentDBStatus.isFB ? "Not Share" : "Share")
-                    }
-                }
+                currentDBStatus.isFB = true
             }
         }
     }

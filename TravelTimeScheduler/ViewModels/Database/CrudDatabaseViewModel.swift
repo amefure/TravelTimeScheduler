@@ -17,7 +17,6 @@ protocol CrudDatabaseViewModel {
     // MARK: -  Travel
     func createTravel(travelName:String,members:DBMembersCollection,startDate:Date,endDate:Date)
     func updateTravel(id:RecordId,travelName:String,members:DBMembersCollection,startDate:Date,endDate:Date,schedules:DBScheduleCollection)
-    func updateShareTravel(travel:Travel,share:Bool)
     func deleteTravel(id:RecordId)
     
     // MARK: -  Schedule

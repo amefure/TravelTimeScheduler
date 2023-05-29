@@ -13,6 +13,9 @@ struct TravelPageView: View {
     // MARK: - Parameters
     public let travel:Travel
     
+    @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    
     // MARK: - View
     @State var selection:Int = 0
     @State var isDeleteMode:Bool = false
@@ -64,5 +67,10 @@ struct TravelPageView: View {
             }
             .background(Color.thema)
             .navigationCustomBackground()
+            .onAppear{
+                dbControl.observedTravel(travelId: travel.id.stringValue) { data in
+                    allTravelFirebase.Travels = data
+                }
+            }
     }
 }

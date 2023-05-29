@@ -19,37 +19,51 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     
     // MARK: -  ViewModels
     private let convertTypeVM = ConvertTypeViewModel()
+    private let signInUserInfoVM = SignInUserInfoViewModel.shared
     
     // MARK: - Generic Type
     typealias RecordId = String
     typealias DBMembersCollection = Array<String>
-    typealias DBScheduleCollection = Array<Schedule>
+    typealias DBScheduleCollection = [String : [String : String]]//Array<Schedule>
     
     
-    internal func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) {
-        
+    public func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) {
+        let childUpdates:[String : Any] = [
+            "name": travelName,
+            "members": members,
+            "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(startDate),
+            "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(endDate),
+            "share": "true"
+        ]
+        let id:String = convertTypeVM.generateObjectIdString()
+        model.addUserReadableTravelId(userId: signInUserInfoVM.signInUserId, travelId: id)
+        model.entryTravel(id:id ,childUpdates: childUpdates)
     }
     
 
     
-    func updateTravel(id: String, travelName: String, members: Array<String>, startDate: Date, endDate: Date, schedules: Array<Schedule>) {
-        
-    }
-
-    func updateShareTravel(travel: Travel, share: Bool) {
-        
+    public func updateTravel(id: String, travelName: String, members: Array<String>, startDate: Date, endDate: Date, schedules: [String : [String : String]]) {
+        let childUpdates:[String : Any] = [
+            "name": travelName,
+            "members": Array(members),
+            "schedules" : schedules,
+            "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(startDate),
+            "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(endDate),
+            "share": "true"
+        ]
+        model.entryTravel(id:id,childUpdates: childUpdates)
     }
     
-    func deleteTravel(id: String) {
-        
+    public func deleteTravel(id: String) {
+        model.deleteTravel(id: id)
     }
     
     // MARK: - Schedule
-    func addSchedule(travel:Travel,schedule:Schedule){
+    public func addSchedule(travel:Travel,schedule:Schedule){
         model.addSchedule(travelId: travel.id.stringValue, currentSchedules: travel.schedules, addSchedule: schedule)
     }
     
-    func updateSchedule(travelId: String, scheduleId: String, dateTime: Date, content: String, memo: String, type: ScheduleType, tranceportation: Tranceportation?) {
+    public func updateSchedule(travelId: String, scheduleId: String, dateTime: Date, content: String, memo: String, type: ScheduleType, tranceportation: Tranceportation?) {
         let sc = Schedule()
         sc.id = convertTypeVM.convertStringToObjectId(strID: scheduleId)
         sc.content = content
@@ -61,13 +75,13 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
         
     }
     
-    func deleteSchedule(travelId: String, scheduleId: String) {
-        
+    public func deleteSchedule(travelId: String, scheduleId: String) {
+        model.deleteSchedule(travelId: travelId, scheduleId: scheduleId)
     }
     
     // MARK: - All
-    func deleteAllTable() {
-        
+    public func deleteAllTable() {
+        model.deleteAllTable(userId: signInUserInfoVM.signInUserId)
     }
     
 }
@@ -92,12 +106,27 @@ extension FBDatabaseViewModel {
     
     // MARK: - Travel
     // Entry
-    public func entryTravel(id:String,childUpdates:[String : Any]){
-        model.entryTravel(id:id,childUpdates: childUpdates)
+    public func entryTravel(travel:Travel){
+        let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules: travel.schedules)
+        let childUpdates:[String : Any] = [
+            "name": travel.name,
+            "members": Array(travel.members),
+            "schedules" : scheduleDictionary,
+            "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.startDate),
+            "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.endDate),
+            "share": "true"
+        ]
+        model.entryTravel(id:travel.id.stringValue,childUpdates: childUpdates)
     }
     
     public func readAllTravel(completion: @escaping ([Travel]) -> Void ) {
         model.readAllTravel { data in
+            completion(data)
+        }
+    }
+    
+    public func observedTravel(travelId:String,completion: @escaping ([Travel]) -> Void ) {
+        model.observedTravel(travelId: travelId) { data in
             completion(data)
         }
     }

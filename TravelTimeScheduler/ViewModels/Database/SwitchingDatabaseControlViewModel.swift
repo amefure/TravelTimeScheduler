@@ -34,8 +34,12 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     // MARK: -  Travel
     func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) {
-        let membersList = convertTypeVM.convertMembersToList(members)
-        realmVM.createTravel(travelName: travelName, members: membersList, startDate: startDate, endDate: endDate)
+        if dbStatus.isFB {
+            fbVM.createTravel(travelName: travelName, members: members, startDate: startDate, endDate: endDate)
+        }else{
+            let membersList = convertTypeVM.convertMembersToList(members)
+            realmVM.createTravel(travelName: travelName, members: membersList, startDate: startDate, endDate: endDate)
+        }
         
     }
     
@@ -43,24 +47,14 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     /// Update  Property
     public func updateTravel(id:String,travelName:String,members:Array<String>,startDate:Date,endDate:Date,schedules:RealmSwift.List<Schedule>){
         if dbStatus.isFB {
-            let array:Array<Schedule> =  Array(schedules)
-            fbVM.updateTravel(id: id, travelName: travelName, members: members, startDate: startDate, endDate: endDate, schedules: array)
+            let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules:schedules)
+            fbVM.updateTravel(id: id, travelName: travelName, members: members, startDate: startDate, endDate: endDate, schedules: scheduleDictionary)
         }else{
             let objID = convertTypeVM.convertStringToObjectId(strID: id)
             let membersList = convertTypeVM.convertMembersToList(members)
             realmVM.updateTravel(id: objID, travelName: travelName, members: membersList, startDate: startDate, endDate: endDate, schedules: schedules)
         }
     }
-    
-    /// Update Share Property Only
-    public func updateShareTravel(travel:Travel,share:Bool){
-        if dbStatus.isFB {
-            fbVM.updateShareTravel(travel: travel, share: true)
-        }else{
-            realmVM.updateShareTravel(travel: travel, share: true)
-        }
-    }
-    
     
     // Delete
     public func deleteTravel(id:String){
@@ -100,7 +94,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
             fbVM.deleteSchedule(travelId: travelId, scheduleId: scheduleId)
         }else{
             let objTravelID = convertTypeVM.convertStringToObjectId(strID: travelId)
-            let objScheduleID = convertTypeVM.convertStringToObjectId(strID: travelId)
+            let objScheduleID = convertTypeVM.convertStringToObjectId(strID: scheduleId)
             realmVM.deleteSchedule(travelId: objTravelID, scheduleId: objScheduleID)
         }
         
@@ -108,16 +102,28 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     // MARK: - ALl
     public func deleteAllTable() {
-        if dbStatus.isFB {
-            fbVM.deleteAllTable()
-        }else{
-            realmVM.deleteAllTable()
-        }
+//        if dbStatus.isFB {
+//            fbVM.deleteAllTable()
+//        }else{
+//            realmVM.deleteAllTable()
+//        }
     }
+
+}
+
+// MARK: - Realm Only Function
+extension SwitchingDatabaseControlViewModel{
+    
+    /// Update Share Property Only
+    public func updateShareTravel(travel:Travel,share:Bool){
+        realmVM.updateShareTravel(travel: travel, share: true)
+    }
+    
     
     public func deleteRealmAllTable() {
         realmVM.deleteAllTable()
     }
+    
 }
 
 // MARK: - Firebase Only Function
@@ -130,7 +136,7 @@ extension SwitchingDatabaseControlViewModel {
     }
     
     /// Travel共有時にUser内にtravelIdを格納
-    public func addTravelIdSharedByUser(userId:String,travelId:String){
+    public func addUserReadableTravelId(userId:String,travelId:String){
         fbVM.addUserReadableTravelId(userId:userId,travelId:travelId)
     }
     
@@ -144,22 +150,18 @@ extension SwitchingDatabaseControlViewModel {
     // MARK: - User
     /// User新規登録時にDBに情報を格納
     public func entryTravel(travel:Travel){
-        let membersString = convertTypeVM.convertMembersToJoinString(members: travel.members)
-        let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules: travel.schedules)
-        let childUpdates:[String : Any] = [
-            "name": travel.name,
-            "members": membersString,
-            "schedules" : scheduleDictionary,
-            "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.startDate),
-            "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.endDate),
-            "share": "true"
-        ]
-        fbVM.entryTravel(id:travel.id.stringValue,childUpdates: childUpdates)
+        fbVM.entryTravel(travel: travel)
     }
     
     /// User新規登録時にDBに情報を格納
     public func readAllTravel(completion: @escaping ([Travel]) -> Void ) {
         fbVM.readAllTravel { data in
+            completion(data)
+        }
+    }
+    
+    public func observedTravel(travelId:String,completion: @escaping ([Travel]) -> Void ) {
+        fbVM.observedTravel(travelId: travelId) { data in
             completion(data)
         }
     }

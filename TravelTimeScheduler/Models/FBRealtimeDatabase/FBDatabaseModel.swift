@@ -16,6 +16,9 @@ class FBDatabaseModel {
     // MARK: - Database Reference
     private var ref:DatabaseReference! = Database.database().reference()
     
+    private let convertTypeVM = ConvertTypeViewModel()
+    private let displayDateVM = DisplayDateViewModel()
+    
     // MARK: - User
     /// User登録処理
     public func createUser(userId:String,name:String){
@@ -46,16 +49,6 @@ class FBDatabaseModel {
                 completion(currentUserReadableTravelId)
             }
         }
-    }
-    
-    ///  "User,User2" → ["User","User2"]  convert
-    private func convertMembersList(joinMember:String) -> RealmSwift.List<String>{
-        let members:RealmSwift.List<String> = RealmSwift.List()
-        let result = joinMember.split(separator: ",")
-        for item in result{
-            members.append(String(item))
-        }
-        return members
     }
     
     /// Create
@@ -93,10 +86,10 @@ class FBDatabaseModel {
                         for schedule in schedules {                             // #5 格納されているscheduleだけ繰り返す
                             if let value = schedule.value as? [String:String] { // #6
                                 let newSchedule = Schedule()
-                                newSchedule.id = try! ObjectId(string: schedule.key)
+                                newSchedule.id = convertTypeVM.convertStringToObjectId(strID: schedule.key)
                                 newSchedule.content = value["content"]!
                                 newSchedule.memo = value["memo"]!
-                                newSchedule.dateTime = DisplayDateViewModel().getAllDateStringDate(value["dateTime"]!)
+                                newSchedule.dateTime = displayDateVM.getAllDateStringDate(value["dateTime"]!)
                                 newSchedule.type = ScheduleType.getScheduleType(value["type"]!)
                                 newSchedule.tranceportation = Tranceportation.getScheduleType(value["tranceportation"]!)
                                 schedulesArray.append(newSchedule)
@@ -104,11 +97,11 @@ class FBDatabaseModel {
                         } // #5
                     } // #4 ↓schedulesがなくてもFirebaseに格納する
                     let newTravel = Travel()
-                    newTravel.id = try! ObjectId(string: travelRecored.key)
+                    newTravel.id = convertTypeVM.convertStringToObjectId(strID: travelRecored.key)
                     newTravel.name = travel["name"] as! String
-                    newTravel.members = self.convertMembersList(joinMember: travel["members"]! as! String)
-                    newTravel.startDate = DisplayDateViewModel().getAllDateStringDate(travel["startDate"]! as! String)
-                    newTravel.endDate = DisplayDateViewModel().getAllDateStringDate(travel["endDate"]! as! String)
+                    newTravel.members = convertTypeVM.convertMembersToList(travel["members"]! as! Array<String>)
+                    newTravel.startDate = displayDateVM.getAllDateStringDate(travel["startDate"]! as! String)
+                    newTravel.endDate = displayDateVM.getAllDateStringDate(travel["endDate"]! as! String)
                     newTravel.schedules = schedulesArray
                     newTravel.share = true
                     TravelsArray.append(newTravel)
@@ -123,7 +116,7 @@ class FBDatabaseModel {
         currentSchedules.append(addSchedule)
         
         let scheduleRef = ref.child("travels").child(travelId).child("schedules")
-        let scheduleDictionary = ConvertTypeViewModel().convertScheduleToDictionary(schedules: currentSchedules)
+        let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules: currentSchedules)
 
         scheduleRef.setValue(scheduleDictionary)
     }
@@ -133,38 +126,67 @@ class FBDatabaseModel {
         let scheduleRef = ref.child("travels").child(travelId).child("schedules").child(newRecord.id.stringValue)
         let schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
         schedulesArray.append(newRecord)
-        let scheduleDictionary = ConvertTypeViewModel().convertScheduleToDictionary(schedules: schedulesArray)
+        let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules: schedulesArray)
         scheduleRef.setValue(scheduleDictionary.first?.value)
 
     }
     
     // Update
-    public func updateTravel(newRecord:Travel){
-        
+    public func updateTravel(newRecord:Travel,childUpdates:[String : Any]){
+        ref.child("travels").child(newRecord.id.stringValue).updateChildValues(childUpdates)
     }
     
     // Delete
-    public func deleteTravel(id:ObjectId) {
-        
-    }
-    public func deleteAllTravel() {
-        
+    public func deleteTravel(id:String) {
+        ref.child("travels").child(id).removeValue()
     }
     
-    public func deleteSchedule(travelId:ObjectId,scheduleId:ObjectId){
-        
+    public func deleteSchedule(travelId:String,scheduleId:String){
+        ref.child("travels").child(travelId).child("schedules").child(scheduleId).removeValue()
     }
 
-    
-    
+    public func deleteAllTable(userId:String){
+        // Dataの前に読み取れるTravelIdを空にする
+        ref.child("users").child(userId).child("sharedTravelId").removeValue()
+    }
+    // Travelを観測開始
     public func observedTravel(travelId:String,completion: @escaping ([Travel]) -> Void ) {
         ref.child("travels").child(travelId).observe(DataEventType.value, with: { snapshot in
-            self.setSnapShot(snapshot) { data in
-                completion(data)
-            }
+            /// 必要になる変数を定義
+            var TravelsArray:[Travel] = []
+            let schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
+            
+            if let travel = snapshot.value as? [String:Any]{           // #3 [travel.name,travel....]
+                if let schedules = travel["schedules"] as? [String:Any] {   // #4 travel.schedulesが存在すれば
+                    for schedule in schedules {                             // #5 格納されているscheduleだけ繰り返す
+                        if let value = schedule.value as? [String:String] { // #6
+                            let newSchedule = Schedule()
+                            newSchedule.id = self.convertTypeVM.convertStringToObjectId(strID: schedule.key)
+                            newSchedule.content = value["content"]!
+                            newSchedule.memo = value["memo"]!
+                            newSchedule.dateTime = self.displayDateVM.getAllDateStringDate(value["dateTime"]!)
+                            newSchedule.type = ScheduleType.getScheduleType(value["type"]!)
+                            newSchedule.tranceportation = Tranceportation.getScheduleType(value["tranceportation"]!)
+                            schedulesArray.append(newSchedule)
+                        } // #6
+                    } // #5
+                } // #4 ↓schedulesがなくてもFirebaseに格納する
+                let newTravel = Travel()
+        
+                newTravel.id = self.convertTypeVM.convertStringToObjectId(strID: snapshot.key)
+                newTravel.name = travel["name"] as! String
+                newTravel.members = self.convertTypeVM.convertMembersToList(travel["members"]! as! Array<String>)
+                newTravel.startDate = self.displayDateVM.getAllDateStringDate(travel["startDate"]! as! String)
+                newTravel.endDate = self.displayDateVM.getAllDateStringDate(travel["endDate"]! as! String)
+                newTravel.schedules = schedulesArray
+                newTravel.share = true
+                TravelsArray.append(newTravel)
+            } // #3
+            completion(TravelsArray.sorted(by:{ $0.startDate > $1.startDate }))
+            
+//            self.setSnapShot(snapshot) { data in
+//                completion(data)
+//            }
         })
-    }
-    // MARK: -
-    public func deleteAllTable(){
     }
 }
