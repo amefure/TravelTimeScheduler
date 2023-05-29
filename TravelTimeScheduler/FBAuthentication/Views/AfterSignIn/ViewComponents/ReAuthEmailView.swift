@@ -55,13 +55,7 @@ struct ReAuthEmailView: View {
             
             // MARK: - Button
             Section {
-                if isClick2 {
-                    // 処理中...
-                    ProgressView()
-                        .tint(.white)
-                        .fontWeight(.bold)
-                        .buttonStyle(.borderless)
-                }else{
+                ProgressButtonStack(isClick: $isClick2) {
                     Button {
                         isClick2 = true
                         authVM.editUserName(name: name) { result in

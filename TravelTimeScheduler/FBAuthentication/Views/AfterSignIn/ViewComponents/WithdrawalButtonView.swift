@@ -44,13 +44,7 @@ struct WithdrawalButtonView: View {
                 
                 // MARK: - Button
                 Section {
-                    if isClick {
-                        // 処理中...
-                        ProgressView()
-                            .tint(.white)
-                            .fontWeight(.bold)
-                            .buttonStyle(.borderless)
-                    }else{
+                    ProgressButtonStack(isClick: $isClick) {
                         
                         Button {
                             isClick = true

@@ -73,13 +73,7 @@ struct EditUserNameView: View {
                 
                 // MARK: - Button
                 Group{
-                    if isClick {
-                        // 処理中...
-                        ProgressView()
-                            .tint(.white)
-                            .fontWeight(.bold)
-                            .buttonStyle(.borderless)
-                    }else{
+                    ProgressButtonStack(isClick: $isClick) {
                         Button {
                             isClick = true
                             if isEmailEdit {

@@ -53,6 +53,8 @@
 		12AEEB732A19B0AB008AB7B8 /* ConvertTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */; };
 		12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */; };
 		12AEEB772A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */; };
+		12AEEB792A24B99B008AB7B8 /* ReadingShareTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */; };
+		12AEEB7B2A24D8DB008AB7B8 /* ProgressButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */; };
 		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
 		12B4696929E81E4C002E6864 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* Color.swift */; };
 		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
@@ -171,6 +173,8 @@
 		12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTypeViewModel.swift; sourceTree = "<group>"; };
 		12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudDatabaseViewModel.swift; sourceTree = "<group>"; };
 		12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseTravelListViewModel.swift; sourceTree = "<group>"; };
+		12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingShareTravelView.swift; sourceTree = "<group>"; };
+		12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButtonStack.swift; sourceTree = "<group>"; };
 		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		12B4696829E81E4C002E6864 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -466,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				1281C53E2A15A3E300C23047 /* ShareTravelView.swift */,
+				12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */,
 			);
 			path = ShareTravelView;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 			children = (
 				12B4696829E81E4C002E6864 /* Color.swift */,
 				12B4698D29F16C10002E6864 /* Modifier.swift */,
+				12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -970,6 +976,7 @@
 				12AEEB732A19B0AB008AB7B8 /* ConvertTypeViewModel.swift in Sources */,
 				1252192029DD7E0B006AF797 /* AuthModel.swift in Sources */,
 				12F0E0722A029AFD0081D9C1 /* UserinfoEditView.swift in Sources */,
+				12AEEB7B2A24D8DB008AB7B8 /* ProgressButtonStack.swift in Sources */,
 				1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */,
 				12B469A029F67093002E6864 /* TranceportationPickerView.swift in Sources */,
 				12B4697329E82640002E6864 /* DeviceSizeViewModel.swift in Sources */,
@@ -1011,6 +1018,7 @@
 				12822D862A1654B0001D5E6C /* CurrentDatabaseStatusViewModel.swift in Sources */,
 				12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */,
 				12AEEB712A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift in Sources */,
+				12AEEB792A24B99B008AB7B8 /* ReadingShareTravelView.swift in Sources */,
 				1252193129DE1E49006AF797 /* UserSignUpView.swift in Sources */,
 				12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */,
 				12B4696929E81E4C002E6864 /* Color.swift in Sources */,
