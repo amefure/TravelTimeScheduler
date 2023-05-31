@@ -55,6 +55,7 @@
 		12AEEB772A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */; };
 		12AEEB792A24B99B008AB7B8 /* ReadingShareTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */; };
 		12AEEB7B2A24D8DB008AB7B8 /* ProgressButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */; };
+		12AEEB7D2A275D21008AB7B8 /* MessageBalloonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB7C2A275D21008AB7B8 /* MessageBalloonViewModel.swift */; };
 		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
 		12B4696929E81E4C002E6864 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* Color.swift */; };
 		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
@@ -175,6 +176,7 @@
 		12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseTravelListViewModel.swift; sourceTree = "<group>"; };
 		12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingShareTravelView.swift; sourceTree = "<group>"; };
 		12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButtonStack.swift; sourceTree = "<group>"; };
+		12AEEB7C2A275D21008AB7B8 /* MessageBalloonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBalloonViewModel.swift; sourceTree = "<group>"; };
 		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		12B4696829E81E4C002E6864 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				12B4696E29E82614002E6864 /* AdMobViewModels.swift */,
+				12AEEB7C2A275D21008AB7B8 /* MessageBalloonViewModel.swift */,
 				12B4697029E82633002E6864 /* ShareLinkViewModel.swift */,
 			);
 			path = Function;
@@ -969,6 +972,7 @@
 				12F0E06429FB220F0081D9C1 /* UserInfoView.swift in Sources */,
 				1281C53A2A1582FB00C23047 /* EntryUserNameView.swift in Sources */,
 				125218B729D63955006AF797 /* ValidationViewModel.swift in Sources */,
+				12AEEB7D2A275D21008AB7B8 /* MessageBalloonViewModel.swift in Sources */,
 				12F0E0782A029C530081D9C1 /* UserReviewLinkView.swift in Sources */,
 				125218A829D63897006AF797 /* GoogleAuthView.swift in Sources */,
 				1252192429DD7F41006AF797 /* EmailAuthModel.swift in Sources */,
