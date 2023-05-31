@@ -165,5 +165,10 @@ extension SwitchingDatabaseControlViewModel {
             completion(data)
         }
     }
+    
+    // 全てのデータベース観測を停止
+    public func stopAllObserved(){
+        fbVM.stopAllObserved()
+    }
 }
 

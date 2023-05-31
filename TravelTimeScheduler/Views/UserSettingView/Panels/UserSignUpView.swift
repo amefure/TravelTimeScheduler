@@ -36,7 +36,7 @@ struct UserSignUpView: View {
                 NewEntryAuthView()
             }
             .navigationDestination(isPresented: $isActiveSignIn) {
-                SignInUserView()
+                SignInUserInfoView()
             }
     }
 }

@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct SignInUserView: View {
+struct SignInUserInfoView: View {
     // MARK: - ViewModels
     @ObservedObject var authVM = AuthViewModel.shared
-    
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
     // MARK: - Navigationプロパティ
     @State var isActive:Bool = false
     
@@ -23,6 +23,7 @@ struct SignInUserView: View {
             // MARK: - Input
             Section("Sign Out") {
                 Button {
+                    dbControl.stopAllObserved()
                     authVM.signOut { result in
                         if result {
                             isActive = true

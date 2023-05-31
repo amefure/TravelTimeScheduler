@@ -183,10 +183,11 @@ class FBDatabaseModel {
                 TravelsArray.append(newTravel)
             } // #3
             completion(TravelsArray.sorted(by:{ $0.startDate > $1.startDate }))
-            
-//            self.setSnapShot(snapshot) { data in
-//                completion(data)
-//            }
         })
+    }
+    
+    // 全てのデータベース観測を停止
+    public func stopAllObserved(){
+        ref.removeAllObservers()
     }
 }

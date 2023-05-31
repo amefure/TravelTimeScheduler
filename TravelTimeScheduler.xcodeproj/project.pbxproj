@@ -44,7 +44,7 @@
 		1281C5362A157FD400C23047 /* UserAllTravelDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5352A157FD400C23047 /* UserAllTravelDeleteView.swift */; };
 		1281C5382A15825800C23047 /* UserNameEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5372A15825800C23047 /* UserNameEntryView.swift */; };
 		1281C53A2A1582FB00C23047 /* EntryUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5392A1582FB00C23047 /* EntryUserNameView.swift */; };
-		1281C53C2A158EC900C23047 /* SignInUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C53B2A158EC900C23047 /* SignInUserView.swift */; };
+		1281C53C2A158EC900C23047 /* SignInUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C53B2A158EC900C23047 /* SignInUserInfoView.swift */; };
 		1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C53E2A15A3E300C23047 /* ShareTravelView.swift */; };
 		1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5412A160F0300C23047 /* RealmListTravelView.swift */; };
 		1281C5442A1611D900C23047 /* FBRealtimeListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */; };
@@ -166,7 +166,7 @@
 		1281C5352A157FD400C23047 /* UserAllTravelDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllTravelDeleteView.swift; sourceTree = "<group>"; };
 		1281C5372A15825800C23047 /* UserNameEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameEntryView.swift; sourceTree = "<group>"; };
 		1281C5392A1582FB00C23047 /* EntryUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryUserNameView.swift; sourceTree = "<group>"; };
-		1281C53B2A158EC900C23047 /* SignInUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserView.swift; sourceTree = "<group>"; };
+		1281C53B2A158EC900C23047 /* SignInUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserInfoView.swift; sourceTree = "<group>"; };
 		1281C53E2A15A3E300C23047 /* ShareTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTravelView.swift; sourceTree = "<group>"; };
 		1281C5412A160F0300C23047 /* RealmListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmListTravelView.swift; sourceTree = "<group>"; };
 		1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRealtimeListTravelView.swift; sourceTree = "<group>"; };
@@ -624,7 +624,7 @@
 				12B4696529E813A0002E6864 /* UserSettingView.swift */,
 				12F0E06329FB220F0081D9C1 /* UserInfoView.swift */,
 				1281C5392A1582FB00C23047 /* EntryUserNameView.swift */,
-				1281C53B2A158EC900C23047 /* SignInUserView.swift */,
+				1281C53B2A158EC900C23047 /* SignInUserInfoView.swift */,
 				12F0E0872A0AF7C40081D9C1 /* Panels */,
 			);
 			path = UserSettingView;
@@ -1039,7 +1039,7 @@
 				12F0E06729FBEAB00081D9C1 /* InputPeriodView.swift in Sources */,
 				12F0E0762A029C130081D9C1 /* UserShareLinkView.swift in Sources */,
 				1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */,
-				1281C53C2A158EC900C23047 /* SignInUserView.swift in Sources */,
+				1281C53C2A158EC900C23047 /* SignInUserInfoView.swift in Sources */,
 				12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */,
 				125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */,
 				12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */,

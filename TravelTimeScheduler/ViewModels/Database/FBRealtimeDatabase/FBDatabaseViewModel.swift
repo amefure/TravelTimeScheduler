@@ -130,4 +130,9 @@ extension FBDatabaseViewModel {
             completion(data)
         }
     }
+    
+    // 全てのデータベース観測を停止
+    public func stopAllObserved(){
+        model.stopAllObserved()
+    }
 }

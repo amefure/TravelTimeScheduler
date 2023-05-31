@@ -48,6 +48,7 @@ struct WithdrawalButtonView: View {
                         
                         Button {
                             isClick = true
+                            dbControl.stopAllObserved()
                             switch SignInUserInfoViewModel().getSignInProvider() {
                             case .email:
                                 

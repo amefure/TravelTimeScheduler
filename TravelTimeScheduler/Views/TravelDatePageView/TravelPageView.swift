@@ -39,15 +39,13 @@ struct TravelPageView: View {
         }.navigationTitle(travel.name)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    if AuthViewModel.shared.isSignIn {
-                        Button(action: {
-                            isSharePresented = true
-                        }) {
-                            VStack{
-                                Image(systemName: "cloud.fill")
-                                Text("共有")
-                                    .font(.caption)
-                            }
+                    Button(action: {
+                        isSharePresented = true
+                    }) {
+                        VStack{
+                            Image(systemName: "cloud.fill")
+                            Text("共有")
+                                .font(.caption)
                         }
                     }
                 }
