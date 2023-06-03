@@ -1,5 +1,5 @@
 //
-//  UserReviewLinkView.swift
+//  UserTermsOfServiceLinkView.swift
 //  TravelTimeScheduler
 //
 //  Created by t&a on 2023/05/03.
@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct UserReviewLinkView: View {
+struct UserTermsOfServiceLinkPanelView: View {
     
     var body: some View {
-        Link(destination:URL.init(string: "https://apps.apple.com/jp/app/%E6%97%85time/id6449208868?action=write-review")!,
+        Link(destination:URL.init(string: "https://tech.amefure.com/app-terms-of-service")!,
           label: {
             VStack{
-                Image(systemName:"hand.thumbsup")
+                Image(systemName:"note.text")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("Review")
+                Text("利用規約")
             }
         }).userPanelsShape()
     }

@@ -25,7 +25,7 @@ struct UserSettingView: View {
             SectionImageView(image: "Relaxation")
             
             // MARK: - User Card
-            UserInfoView()
+            UserInfoCardView()
             
             // MARK: - Panels
             LazyVGrid(columns: columns,spacing: 20) {
@@ -36,15 +36,25 @@ struct UserSettingView: View {
                     UserNameEntryView()
                 }
                 
-                UserSignUpView()
+                if AuthViewModel.shared.isSignIn {
+                    UserSignOutPanelView()
+                }else{
+                    UserSignUpPanelView()
+                }
+                
                    
-                UserAllTravelDeleteView()
+                UserAllTravelDeletePanelView()
                 
-                UserReviewLinkView()
+                if AuthViewModel.shared.isSignIn {
+                    UserWithdrawalPanelView()
+                }
                 
-                UserShareLinkView()
+                UserReviewLinkPanelView()
+                
+                UserShareLinkPanelView()
                
-                UserTermsOfServiceLinkView()
+                UserTermsOfServiceLinkPanelView()
+                
                 
             }.foregroundColor(Color.thema)
                 .padding()

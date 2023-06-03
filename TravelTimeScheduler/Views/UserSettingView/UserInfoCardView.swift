@@ -8,7 +8,9 @@
 import SwiftUI
 import RealmSwift
 
-struct UserInfoView: View {
+/// User情報を表示するカード
+struct UserInfoCardView: View {
+    
     // MARK: - ViewModels
     private let deviceSizeViewModel = DeviceSizeViewModel()
     private var signInUserInfoVM = SignInUserInfoViewModel.shared
@@ -28,6 +30,7 @@ struct UserInfoView: View {
                         
                         Text(signInUserInfoVM.signInUserName)
                             .foregroundColor(Color.thema)
+                            .lineLimit(1)
                             
                     }
                     

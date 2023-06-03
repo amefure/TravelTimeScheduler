@@ -9,12 +9,9 @@ import SwiftUI
 
 struct UserNameEntryView: View {
     
-    // MARK: - View
-    @State var isPresented:Bool = false
-    
     var body: some View {
-        Button {
-            isPresented = true
+        NavigationLink {
+            EntryUserNameView()
         } label: {
             VStack{
                 Image(systemName: "person.text.rectangle")
@@ -23,8 +20,5 @@ struct UserNameEntryView: View {
                 Text("User Name")
             }
         }.userPanelsShape()
-            .navigationDestination(isPresented: $isPresented) {
-                EntryUserNameView()
-            }
     }
 }

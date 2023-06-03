@@ -21,7 +21,6 @@ struct EntryUserNameView: View {
         VStack{
             
             List{
-                
                 // MARK: - ImageView
                 SectionImageView(image: "UserInfo")
                 

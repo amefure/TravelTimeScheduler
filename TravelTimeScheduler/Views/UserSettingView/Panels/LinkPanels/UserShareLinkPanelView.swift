@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct UserShareLinkView: View {
+struct UserShareLinkPanelView: View {
     
     // MARK: - ViewModels
-    private let shareLinkViewModel = ShareLinkViewModel()
+    private let shareLinkVM = ShareLinkViewModel()
     
     var body: some View {
         Button(action: {
-            shareLinkViewModel.shareApp(shareText: "旅Timeで旅行のタイムスケジュールを共有しよう！", shareLink: "https://apps.apple.com/jp/app/%E6%97%85time/id6449208868")
+            shareLinkVM.shareApp(shareText: "旅Timeで旅行のタイムスケジュールを共有しよう！", shareLink: "https://apps.apple.com/jp/app/%E6%97%85time/id6449208868")
         }, label: {
             VStack{
                 Image(systemName: "square.and.arrow.up")

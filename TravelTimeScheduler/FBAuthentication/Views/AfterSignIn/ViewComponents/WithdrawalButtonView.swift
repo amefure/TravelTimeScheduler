@@ -22,16 +22,15 @@ struct WithdrawalButtonView: View {
     @State var password:String = ""
     
     var body: some View {
-        VStack{
+        VStack(spacing: 0){
             
+            // MARK: - ErrorMsg
+            ErrorMessageView()
+                .frame(maxWidth:.infinity, alignment: .center)
+                .padding(.top,10)
+                        
             List{
-                
-                // MARK: - ErrorMsg
-                Section {
-                    ErrorMessageView()
-                        .frame(maxWidth:.infinity, alignment: .center)
-                }.listRowBackground(Color(hexString: "#f2f2f7")) // リストカラー色
-                
+
                 // MARK: - ImageView
                 SectionImageView(image: "Withdrawal")
                 
@@ -43,7 +42,7 @@ struct WithdrawalButtonView: View {
                 }
                 
                 // MARK: - Button
-                Section {
+                Section(content: {
                     ProgressButtonStack(isClick: $isClick) {
                         
                         Button {
@@ -75,25 +74,24 @@ struct WithdrawalButtonView: View {
                         }
                         .disabled(SignInUserInfoViewModel().getSignInProvider() == .email ? !validationVM.validatePassWord(password: password) : false)
                     }
-                }.listRowBackground(Color.negative)
-                    .frame(maxWidth:.infinity, alignment: .center)
-                
-                // MARK: - Description
-                Section {
+                }, footer: {
                     Text("アカウントを削除するとこれまで記録してきたデータが全て失われます。また友達と共有しているデータも削除される可能性があるので注意してください。")
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
                         .listRowBackground(Color(hexString: "#f2f2f7")) // リストカラー色
-                }
+                }).listRowBackground(Color.negative)
+                    .frame(maxWidth:.infinity, alignment: .center)
+                
                 
             }
-        }.sheet(isPresented: $isPresentedHalfModal, content: {
-            ReAuthProviderView(provider: SignInUserInfoViewModel().getSignInProvider(), isActive: $isActive, isPresentedHalfModal: $isPresentedHalfModal)
-                .presentationDetents([.medium])
-        })
-        .navigationDestination(isPresented: $isActive) {
-            TopMainTravelView()
-        }.navigationCustomBackground()
+        }.background(Color.list)
+            .sheet(isPresented: $isPresentedHalfModal, content: {
+                ReAuthProviderView(provider: SignInUserInfoViewModel().getSignInProvider(), isActive: $isActive, isPresentedHalfModal: $isPresentedHalfModal)
+                    .presentationDetents([.medium])
+            })
+            .navigationDestination(isPresented: $isActive) {
+                TopMainTravelView()
+            }.navigationCustomBackground()
             .navigationTitle("User Delete")
     }
 }

@@ -7,24 +7,18 @@
 
 import SwiftUI
 
-struct UserWithdrawalView: View {
-    
-    // MARK: - View
-    @State var isPresented:Bool = false
+struct UserWithdrawalPanelView: View {
     
     var body: some View {
-        Button {
-            isPresented = true
+        NavigationLink {
+            WithdrawalButtonView()
         } label: {
             VStack{
                 Image(systemName: "arrow.right.to.line.compact")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("退会...")
+                Text("User Delete")
             }
         }.userPanelsShape()
-        .navigationDestination(isPresented: $isPresented) {
-            WithdrawalButtonView() // 画面遷移させるためNavigation
-        }
     }
 }

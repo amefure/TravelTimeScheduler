@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserAllTravelDeleteView: View {
+struct UserAllTravelDeletePanelView: View {
     // MARK: - ViewModels
     private let dbControl = SwitchingDatabaseControlViewModel.shared
     
