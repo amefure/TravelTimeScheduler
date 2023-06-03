@@ -16,7 +16,7 @@ struct PickerTimeView: View {
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
 
     @Binding var selectTime:String
-    @ObservedObject var currentDBStatus = CurrentDatabaseStatusViewModel.shared
+    private let authViewModel = AuthViewModel.shared
     
     private let dbControl = SwitchingDatabaseControlViewModel.shared // migrationのため必要
     @ObservedResults(Travel.self) var allTravelRelam
@@ -24,7 +24,7 @@ struct PickerTimeView: View {
     // MARK: - リスト表示するべき年数
     private var timeArray:[String] {
         var array:[String] = ["all"]
-        if currentDBStatus.isFB {
+        if authViewModel.isSignIn {
             for item in allTravelFirebase.Travels {
                 let year = displayDateViewModel.getDateDisplayFormatString(item.startDate).prefix(4)
                 array.append(String(year))

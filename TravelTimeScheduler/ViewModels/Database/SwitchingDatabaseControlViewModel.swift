@@ -21,7 +21,8 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     /// DBに格納時にデータのタイプをキャストする機能を提供するViewModels
     private let convertTypeVM = ConvertTypeViewModel()
     /// アクティブになっているDB状態
-    private let dbStatus: CurrentDatabaseStatusViewModel = CurrentDatabaseStatusViewModel.shared
+//    private let dbStatus: CurrentDatabaseStatusViewModel = CurrentDatabaseStatusViewModel.shared
+    private let signIn:Bool = AuthViewModel.shared.isSignIn
     
     // MARK: シングルトン
     static let shared:SwitchingDatabaseControlViewModel = SwitchingDatabaseControlViewModel()
@@ -34,7 +35,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     // MARK: -  Travel
     func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) {
-        if dbStatus.isFB {
+        if signIn {
             fbVM.createTravel(travelName: travelName, members: members, startDate: startDate, endDate: endDate)
         }else{
             let membersList = convertTypeVM.convertMembersToList(members)
@@ -46,7 +47,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     /// Update  Property
     public func updateTravel(id:String,travelName:String,members:Array<String>,startDate:Date,endDate:Date,schedules:RealmSwift.List<Schedule>){
-        if dbStatus.isFB {
+        if signIn {
             let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules:schedules)
             fbVM.updateTravel(id: id, travelName: travelName, members: members, startDate: startDate, endDate: endDate, schedules: scheduleDictionary)
         }else{
@@ -58,7 +59,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     // Delete
     public func deleteTravel(id:String){
-        if dbStatus.isFB {
+        if signIn {
             fbVM.deleteTravel(id: id)
         }else{
             let objID = convertTypeVM.convertStringToObjectId(strID: id)
@@ -70,7 +71,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     // MARK: - Schedule
     // Update
     public func addSchedule(travel:Travel,schedule:Schedule){
-        if dbStatus.isFB {
+        if signIn {
             fbVM.addSchedule(travel: travel, schedule: schedule)
         }else{
             realmVM.addSchedule(travel: travel, schedule: schedule)
@@ -79,7 +80,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     // Update
     public func updateSchedule(travelId:String,scheduleId:String,dateTime:Date,content:String,memo:String,type:ScheduleType,tranceportation:Tranceportation?){
-        if dbStatus.isFB {
+        if signIn {
             fbVM.updateSchedule(travelId: travelId, scheduleId: scheduleId, dateTime: dateTime, content: content, memo:memo, type: type, tranceportation: tranceportation)
         }else{
             let objTravelID = convertTypeVM.convertStringToObjectId(strID: travelId)
@@ -90,7 +91,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     // Delete
     public func deleteSchedule(travelId:String,scheduleId:String){
-        if dbStatus.isFB {
+        if signIn {
             fbVM.deleteSchedule(travelId: travelId, scheduleId: scheduleId)
         }else{
             let objTravelID = convertTypeVM.convertStringToObjectId(strID: travelId)
@@ -102,7 +103,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     // MARK: - ALl
     public func deleteAllTable() {
-//        if dbStatus.isFB {
+//        if signIn {
 //            fbVM.deleteAllTable()
 //        }else{
 //            realmVM.deleteAllTable()

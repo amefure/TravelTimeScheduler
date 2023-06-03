@@ -11,9 +11,6 @@ class SignInUserInfoViewModel {
     
     private let userDefaults: UserDefaultsProtocol
     
-    /// アクティブになっているDB状態
-    private let dbStatus: CurrentDatabaseStatusViewModel = CurrentDatabaseStatusViewModel.shared
-    
     // FB RealtimeDatabase User
     private let fbDatabase = FBDatabaseModel()
     private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
@@ -110,9 +107,6 @@ extension SignInUserInfoViewModel {
     
     // サインアウトした際に実行される処理
     public func resetUserInfo(){
-        
-        // DBStatusをfalse(Realm)に
-        dbStatus.isFB = false
         
         // Firebase情報をリセット
         allTravelFirebase.resetData()

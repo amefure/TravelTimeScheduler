@@ -47,7 +47,6 @@
 		1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C53E2A15A3E300C23047 /* ShareTravelView.swift */; };
 		1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5412A160F0300C23047 /* RealmListTravelView.swift */; };
 		1281C5442A1611D900C23047 /* FBRealtimeListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */; };
-		12822D862A1654B0001D5E6C /* CurrentDatabaseStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12822D852A1654B0001D5E6C /* CurrentDatabaseStatusViewModel.swift */; };
 		12AEEB712A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */; };
 		12AEEB732A19B0AB008AB7B8 /* ConvertTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */; };
 		12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */; };
@@ -169,7 +168,6 @@
 		1281C53E2A15A3E300C23047 /* ShareTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTravelView.swift; sourceTree = "<group>"; };
 		1281C5412A160F0300C23047 /* RealmListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmListTravelView.swift; sourceTree = "<group>"; };
 		1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRealtimeListTravelView.swift; sourceTree = "<group>"; };
-		12822D852A1654B0001D5E6C /* CurrentDatabaseStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDatabaseStatusViewModel.swift; sourceTree = "<group>"; };
 		12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingDatabaseControlViewModel.swift; sourceTree = "<group>"; };
 		12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTypeViewModel.swift; sourceTree = "<group>"; };
 		12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -655,7 +653,6 @@
 			isa = PBXGroup;
 			children = (
 				12B4699D29F56710002E6864 /* ListScheduleViewModel.swift */,
-				12822D852A1654B0001D5E6C /* CurrentDatabaseStatusViewModel.swift */,
 			);
 			path = ViewControl;
 			sourceTree = "<group>";
@@ -1071,7 +1068,6 @@
 				12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */,
 				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
 				12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */,
-				12822D862A1654B0001D5E6C /* CurrentDatabaseStatusViewModel.swift in Sources */,
 				12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */,
 				12AEEB712A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift in Sources */,
 				12AEEB792A24B99B008AB7B8 /* ReadingShareTravelView.swift in Sources */,

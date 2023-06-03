@@ -13,7 +13,7 @@ struct ListScheduleView: View {
     
     // MARK: - ViewModels
     private let displayDate = DisplayDateViewModel()
-    @ObservedObject var currentDBStatus = CurrentDatabaseStatusViewModel.shared
+    private let authViewModel = AuthViewModel.shared
   
     // MARK: - Parameters
     public let travel:Travel // Realm.Result or Array
@@ -24,7 +24,7 @@ struct ListScheduleView: View {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: dateTime)
         let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
-        if currentDBStatus.isFB {
+        if authViewModel.isSignIn {
             return nil
         }else{
             return travel.schedules.filter("dateTime >= %@ AND dateTime < %@", today, tomorrow).sorted(byKeyPath: "dateTime")
@@ -44,7 +44,7 @@ struct ListScheduleView: View {
     
     var body: some View {
         
-        if currentDBStatus.isFB {
+        if authViewModel.isSignIn {
             if filteringTravelScheduleArray.count == 0{
                 BlankTravelView(text: "スケジュールがありません。", imageName: "Traveler")
             }else{
