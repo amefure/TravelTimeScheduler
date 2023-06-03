@@ -44,9 +44,11 @@ class FBDatabaseModel {
     
     /// サインインUserが読み取り可能なTarvelID配列を観測
     public func observeUserReadableTravelIds(userId:String,completion: @escaping ([String]) -> Void ) {
-        ref.child("users").child(userId).child("sharedTravelId").observe(.value) { snapshot in
-            if let currentUserReadableTravelId = snapshot.value as? [String] {
-                completion(currentUserReadableTravelId)
+        if !userId.isEmpty {
+            ref.child("users").child(userId).child("sharedTravelId").observe(.value) { snapshot in
+                if let currentUserReadableTravelId = snapshot.value as? [String] {
+                    completion(currentUserReadableTravelId)
+                }
             }
         }
     }
