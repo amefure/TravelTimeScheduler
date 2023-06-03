@@ -17,53 +17,48 @@ struct ShareTravelView: View {
     var body: some View {
         List{
             
-            Section {
-                Button {
-                    dbControl.updateShareTravel(travel: travel, share: true)
-                    dbControl.entryTravel(travel: travel)
-                    dbControl.addUserReadableTravelId(userId: signInUserInfo.signInUserId, travelId: travel.id.stringValue)
-                } label: {
-                    HStack{
-                        Text("TravelIDを発行する")
-                        if travel.share {
-                            Text("発行済")
-                                .font(.caption)
-                                .padding(5)
-                                .foregroundColor(.foundation)
-                                .background(Color.negative)
-                                .opacity(0.8)
-                                .cornerRadius(15)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 15)
-                                          .stroke(Color.negative,lineWidth: 2)
-                                }
-                                
-                        }
-                    }
-                    
-                }.disabled(travel.share) // 発行済みなら再発行不可にする
-            } header: {
-                Text("Share")
-            } footer: {
-                Text("友達と共有するにはTravelIDを発行する必要があります。")
-            }
+            // MARK: - ImageView
+            SectionImageView(image: "ShareId")
             
             if travel.share {
                 
-                Section("TravelID") {
-                    Text("64648ef93e61168821a55623")
-                        .padding()
+                Section(header: Text("TravelID"), footer: Text("・このIDは登録した旅行ごとに振られる一意のIDです。\n・このIDを友達に教えることで旅行をシェアできます。")) {
+                    
+                    HStack{
+                        
+                        Text(travel.id.stringValue)
+                        
+                        CopyButtonView(copyText: travel.id.stringValue)
+                        
+                    }.padding()
                         .foregroundColor(.gray)
-                        .frame(width: DeviceSizeViewModel().deviceWidth - 90)
+                        .frame(width: DeviceSizeViewModel().deviceWidth - 60)
                         .fontWeight(.bold)
                         .background(.white)
+                        .textSelection(.enabled)
                         .overlay(
                             RoundedRectangle(cornerRadius:5)
                                 .stroke(Color.gray,lineWidth: 2)
                         )
                         .shadowCornerRadius()
+                    
                 }.listRowBackground(Color.list)
-                
+            }else{
+                Section {
+                    
+                    Button {
+                        dbControl.updateShareTravel(travel: travel, share: true)
+                        dbControl.entryTravel(travel: travel)
+//                        dbControl.addUserReadableTravelId(userId: signInUserInfo.signInUserId, travelId: travel.id.stringValue)
+                    } label: {
+                        Text("TravelIDを発行する")
+                    }
+                    
+                } header: {
+                    Text("Share")
+                } footer: {
+                    Text("友達と共有するにはTravelIDを発行する必要があります。")
+                }
             }
             
         }.foregroundColor(Color.thema)

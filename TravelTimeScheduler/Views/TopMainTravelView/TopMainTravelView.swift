@@ -13,12 +13,11 @@ struct TopMainTravelView: View {
     // MARK: - ViewModels
     private let displayDateViewModel = DisplayDateViewModel()
     private let deviceSizeViewModel = DeviceSizeViewModel()
-    
-    // MARK: - ObservedViewModels
-    @ObservedObject var currentDBStatus = CurrentDatabaseStatusViewModel.shared
+    private let authViewModel = AuthViewModel.shared
     
     // MARK: - View
     @State var isPresented:Bool = false
+    @State var isPresented2:Bool = false
     @State var searchText:String = ""
     @State var selectTime:String = "all"
 
@@ -33,7 +32,7 @@ struct TopMainTravelView: View {
             PickerTimeView(selectTime: $selectTime)
 
             /// DBどちらのタブがアクティブになっているかで表示するリストを変更
-            if currentDBStatus.isFB {
+            if authViewModel.isSignIn {
                 Text("Firebase")
                 FBRealtimeListTravelView(searchText: $searchText, selectTime: $selectTime)
             }else{
@@ -63,6 +62,9 @@ struct TopMainTravelView: View {
         .sheet(isPresented: $isPresented) {
             EntryTravelView(travel:nil,parentDismissFunction: {})
         }
+        .sheet(isPresented: $isPresented2) {
+            ReadingShareTravelView()
+        }
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HeaderTitleView(title: "旅Time")
@@ -77,11 +79,15 @@ struct TopMainTravelView: View {
                         .foregroundColor(Color.foundation)
                 })
             }
-        }
-        .onAppear{
-            // サインインしている状態なら表示するDBをFirebaseに
-            if AuthViewModel.shared.getCurrentUser() != nil {
-                currentDBStatus.isFB = true
+            if authViewModel.isSignIn {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        isPresented2 = true
+                    } label: {
+                        Image(systemName: "icloud.and.arrow.down.fill")
+                            .foregroundColor(Color.foundation)
+                    }
+                }
             }
         }
     }
