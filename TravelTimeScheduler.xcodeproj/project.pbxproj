@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */; };
-		1252187229D6330F006AF797 /* ListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252187129D6330F006AF797 /* ListTravelView.swift */; };
 		1252187429D63310006AF797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187329D63310006AF797 /* Assets.xcassets */; };
 		1252187729D63310006AF797 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187629D63310006AF797 /* Preview Assets.xcassets */; };
 		1252188129D63310006AF797 /* TravelTimeSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188029D63310006AF797 /* TravelTimeSchedulerTests.swift */; };
@@ -128,7 +127,6 @@
 		0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252186C29D6330F006AF797 /* TravelTimeScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTimeScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerApp.swift; sourceTree = "<group>"; };
-		1252187129D6330F006AF797 /* ListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTravelView.swift; sourceTree = "<group>"; };
 		1252187329D63310006AF797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1252187629D63310006AF797 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1252187C29D63310006AF797 /* TravelTimeSchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelTimeSchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -479,13 +477,13 @@
 			path = ShareTravelView;
 			sourceTree = "<group>";
 		};
-		1281C5402A160EF800C23047 /* RealmListTravelView */ = {
+		1281C5402A160EF800C23047 /* ListTravelView */ = {
 			isa = PBXGroup;
 			children = (
 				1281C5412A160F0300C23047 /* RealmListTravelView.swift */,
 				1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */,
 			);
-			path = RealmListTravelView;
+			path = ListTravelView;
 			sourceTree = "<group>";
 		};
 		12AEEB842A2AC68F008AB7B8 /* LinkPanels */ = {
@@ -698,9 +696,8 @@
 				12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */,
 				12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */,
 				12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */,
-				1252187129D6330F006AF797 /* ListTravelView.swift */,
+				1281C5402A160EF800C23047 /* ListTravelView */,
 				12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */,
-				1281C5402A160EF800C23047 /* RealmListTravelView */,
 			);
 			path = TopMainTravelView;
 			sourceTree = "<group>";
@@ -1067,7 +1064,6 @@
 				12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */,
 				12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */,
 				1281C5312A13B82400C23047 /* FBDatabaseModel.swift in Sources */,
-				1252187229D6330F006AF797 /* ListTravelView.swift in Sources */,
 				12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */,
 				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
 				12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */,

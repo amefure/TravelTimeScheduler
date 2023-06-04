@@ -31,13 +31,10 @@ struct TopMainTravelView: View {
             // MARK: - 日付フィルタリング
             PickerTimeView(selectTime: $selectTime)
 
-            /// DBどちらのタブがアクティブになっているかで表示するリストを変更
+            /// サインインしているならFirebase DB
             if authViewModel.isSignIn {
-                Text("Firebase")
                 FBRealtimeListTravelView(searchText: $searchText, selectTime: $selectTime)
             }else{
-                // MARK: - RealmTravelListView
-                Text("Realm")
                 RealmListTravelView(searchText: $searchText, selectTime: $selectTime)
             }
             

@@ -52,7 +52,10 @@ struct FBRealtimeListTravelView: View {
                 BlankTravelView(text: "「\(searchText)」にマッチする\n旅行履歴はありませんでした。", imageName: "Walking_outside")
             }else{
                 // 履歴リスト表示ビュー
-                FBListTravelView(filteringResults: filteringResults)
+                List(filteringResults){ travel in
+                    RowTravelView(travel: travel)
+                }.listStyle(GroupedListStyle())
+//                FBListTravelView(filteringResults: filteringResults)
             }
         }.onAppear{
             dbControl.readAllTravel { data in

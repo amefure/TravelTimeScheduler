@@ -47,7 +47,9 @@ struct RealmListTravelView: View {
             BlankTravelView(text: "「\(searchText)」にマッチする\n旅行履歴はありませんでした。", imageName: "Walking_outside")
         }else{
             // 履歴リスト表示ビュー
-            ListTravelView(filteringResults: filteringResults)
+            List(filteringResults){ travel in
+                RowTravelView(travel: travel)
+            }.listStyle(GroupedListStyle())
         }
     }
 }
