@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SignInUserInfoViewModel {
     
     private let userDefaults: UserDefaultsProtocol
     
     // FB RealtimeDatabase User
-    private let fbDatabase = FBDatabaseModel()
     private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
+
     
     init(userDefaults: UserDefaultsProtocol = UserDefaultsWrapper.shared) {
         self.userDefaults = userDefaults
@@ -95,25 +96,19 @@ class SignInUserInfoViewModel {
 }
 
 extension SignInUserInfoViewModel {
-    
+    /// AuthViewModelから呼び出し
+    // サインインした際に実行される処理
     public func setCurrentUserInfo(uid:String,name:String,email:String,provider:AuthProviderModel){
         signInUserId = uid
         signInUserName = name
         setSignInProvider(provider: provider)
         signInUserEmail = email
-        // サインインした際にはクラウド上にUser情報を格納しておく
-        fbDatabase.createUser(userId: uid, name: name)
     }
     
     // サインアウトした際に実行される処理
     public func resetUserInfo(){
-        
-        // Firebase情報をリセット
-        allTravelFirebase.resetData()
-        
         signInUserId = ""
         signInUserName = "User"
         signInUserProvider = ""
-       
     }
 }

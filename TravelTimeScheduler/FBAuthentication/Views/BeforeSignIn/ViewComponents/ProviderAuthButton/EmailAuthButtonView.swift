@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct EmailAuthButtonView: View {
 
@@ -41,15 +42,7 @@ struct EmailAuthButtonView: View {
     
     var body: some View {
         // MARK: - ボタン
-        if isClick {
-            // 処理中...
-            ProgressView()
-                .frame(width:200,height: 40)
-                .background(Color.thema)
-                .tint(.white)
-                .shadowCornerRadius()
-        
-        }else{
+        ProgressButtonStack(isClick: $isClick) {
             // ログインボタン
             Button(action: {
                 if validationInput(){
@@ -58,7 +51,10 @@ struct EmailAuthButtonView: View {
                         // 新規登録
                         authVM.createEmailUser(email: email, password: password,name: name!) { result in
                             if result {
+                                
                                 authVM.resetErrorMsg()
+                                // 新規登録時にRealmのデータをFirebaseにコピーする処理
+                                UserNewEntryRegistrationFBDatabaseViewModel().register()
                                 isActive = true  // 画面遷移
                             }else{
                                 isClick = false  // 解除

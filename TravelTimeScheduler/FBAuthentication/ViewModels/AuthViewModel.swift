@@ -17,6 +17,7 @@ class AuthViewModel:ObservableObject {
     
     // UserDefaultVM
     private let userInfoVM = SignInUserInfoViewModel.shared
+    private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
     
     // AuthModel
     private var auth = AuthModel.shared
@@ -72,7 +73,8 @@ class AuthViewModel:ObservableObject {
     public func signOut(completion: @escaping (Bool) -> Void ) {
         self.auth.SignOut { result in
             if self.switchResultAndSetErrorMsg(result) {
-                self.userInfoVM.resetUserInfo() // ユーザー情報をリセット
+                self.allTravelFirebase.resetData() // 読み込んでいるFirebase Dataをリセット
+                self.userInfoVM.resetUserInfo()    // ユーザー情報をリセット
                 completion(true)
             }else{
                 completion(false)

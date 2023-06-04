@@ -31,6 +31,8 @@ struct GoogleAuthButtonView: View {
                     authVM.credentialGoogleSignIn { result in
                         if result {
                             authVM.resetErrorMsg()
+                            // 新規登録時にRealmのデータをFirebaseにコピーする処理
+                            UserNewEntryRegistrationFBDatabaseViewModel().register()
                             isActive = true
                         }
                     }

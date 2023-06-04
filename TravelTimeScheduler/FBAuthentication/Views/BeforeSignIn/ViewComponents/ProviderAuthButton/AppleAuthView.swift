@@ -54,6 +54,8 @@ struct AppleAuthButtonView: View {
                     // MARK: - ログイン
                     authVM.credentialAppleSignIn(credential: credential) { result in
                         authVM.resetErrorMsg()
+                        // 新規登録時にRealmのデータをFirebaseにコピーする処理
+                        UserNewEntryRegistrationFBDatabaseViewModel().register()
                         isActive = true
                     }
                 }else{

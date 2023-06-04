@@ -56,6 +56,7 @@
 		12AEEB7D2A275D21008AB7B8 /* MessageBalloonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB7C2A275D21008AB7B8 /* MessageBalloonViewModel.swift */; };
 		12AEEB812A275E28008AB7B8 /* CopyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB802A275E28008AB7B8 /* CopyButtonView.swift */; };
 		12AEEB832A2AC536008AB7B8 /* UserSignOutPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB822A2AC536008AB7B8 /* UserSignOutPanelView.swift */; };
+		12AEEB8D2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB8C2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift */; };
 		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
 		12B4696929E81E4C002E6864 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* Color.swift */; };
 		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
@@ -177,6 +178,7 @@
 		12AEEB7C2A275D21008AB7B8 /* MessageBalloonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBalloonViewModel.swift; sourceTree = "<group>"; };
 		12AEEB802A275E28008AB7B8 /* CopyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButtonView.swift; sourceTree = "<group>"; };
 		12AEEB822A2AC536008AB7B8 /* UserSignOutPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOutPanelView.swift; sourceTree = "<group>"; };
+		12AEEB8C2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewEntryRegistrationFBDatabaseViewModel.swift; sourceTree = "<group>"; };
 		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		12B4696829E81E4C002E6864 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 				12B4697929E827BB002E6864 /* FBRealtimeDatabase */,
 				12B4697529E826C3002E6864 /* Realm */,
 				12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */,
+				12AEEB8C2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift */,
 				12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */,
 				12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */,
 			);
@@ -1069,6 +1072,7 @@
 				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
 				12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */,
 				12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */,
+				12AEEB8D2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift in Sources */,
 				12AEEB712A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift in Sources */,
 				12AEEB792A24B99B008AB7B8 /* ReadingShareTravelView.swift in Sources */,
 				1252193129DE1E49006AF797 /* UserSignUpPanelView.swift in Sources */,
