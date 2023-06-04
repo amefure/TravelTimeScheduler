@@ -20,8 +20,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     // MARK: -  ViewModels
     /// DBに格納時にデータのタイプをキャストする機能を提供するViewModels
     private let convertTypeVM = ConvertTypeViewModel()
-    /// アクティブになっているDB状態
-//    private let dbStatus: CurrentDatabaseStatusViewModel = CurrentDatabaseStatusViewModel.shared
+    /// サインインしているならFirebaseに切り替える
     private let signIn:Bool = AuthViewModel.shared.isSignIn
     
     // MARK: シングルトン
@@ -173,3 +172,12 @@ extension SwitchingDatabaseControlViewModel {
     }
 }
 
+// MARK: - SignIn/Out Fuction
+extension SwitchingDatabaseControlViewModel {
+    // MARK: - SingIn
+    
+    public func registerAllRealmDBWithFirebase(travels:Results<Travel>){
+        fbVM.registerAllRealmDBWithFirebase(travels:Array(travels))
+    }
+    
+}

@@ -135,4 +135,21 @@ extension FBDatabaseViewModel {
     public func stopAllObserved(){
         model.stopAllObserved()
     }
+    
+    public func registerAllRealmDBWithFirebase(travels:Array<Travel>){
+        var childUpdates:[String : Any] = [:]
+        for travel in travels{
+            let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules: travel.schedules)
+            let travelBody:[String : Any] = [
+                "name": travel.name,
+                "members": Array(travel.members),
+                "schedules" : scheduleDictionary,
+                "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.startDate),
+                "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.endDate),
+                "share": "true"
+            ]
+            childUpdates.updateValue(travelBody, forKey: travel.id.stringValue)
+        }
+        model.registerAllRealmDBWithFirebase(userId:signInUserInfoVM.signInUserId,childUpdates: childUpdates)
+    }
 }

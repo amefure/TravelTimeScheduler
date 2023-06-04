@@ -192,4 +192,31 @@ class FBDatabaseModel {
     public func stopAllObserved(){
         ref.removeAllObservers()
     }
+    
+    public func registerAllRealmDBWithFirebase(userId:String,childUpdates:[String : Any]){
+        ref.child("travels").updateChildValues(childUpdates)
+        
+        let userRef = ref.child("users").child(userId).child("sharedTravelId")
+        userRef.getData(completion:  { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            if var array = snapshot?.value as? [String] {
+                for travel in childUpdates{
+                    array.append(travel.key)
+                }
+                userRef.setValue(array)
+            }else{
+                var array = []
+                for travel in childUpdates{
+                    array.append(travel.key)
+                }
+                userRef.setValue(array)
+            }
+        })
+        
+    }
+    
+    
 }
