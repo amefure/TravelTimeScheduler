@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RealmSwift
 
 /// User情報を表示するカード
 struct UserInfoCardView: View {
@@ -14,8 +13,7 @@ struct UserInfoCardView: View {
     // MARK: - ViewModels
     private let deviceSizeViewModel = DeviceSizeViewModel()
     private var signInUserInfoVM = SignInUserInfoViewModel.shared
-    @ObservedResults(Travel.self) var allTravelRelam
-    private let dbControl = SwitchingDatabaseControlViewModel.shared // migrationのため必要
+    private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
     @State var active = false // User情報が更新された時に画面を再描画する
     // MARK: - View
     private let columns = [GridItem(.fixed(100)),GridItem(.fixed(DeviceSizeViewModel().isSESize ? 120 : 180))]
@@ -44,7 +42,7 @@ struct UserInfoCardView: View {
                     Group{
                         Text("旅行数")
                             .font(.caption)
-                        Text("\(allTravelRelam.count)個")
+                        Text("\(allTravelFirebase.Travels.count)個")
                             .foregroundColor(Color.thema)
                     }
                     
@@ -58,10 +56,16 @@ struct UserInfoCardView: View {
                     }
                 }.id(active) // User情報が更新された時に画面を再描画する
             }else{
-                Text("サインインすると\n友達と旅行記録(タイムスケジュール)を\n共有できるようになります。")
-                    .font(.caption)
+                HStack{
+                    Image(systemName: "person.icloud")
+                        .padding(.trailing,10)
+                        .font(.title)
+                    Text("ユーザー登録をすると\n友達と旅行記録(タイムスケジュール)を\n共有できるようになります。")
+                        .font(.caption)
+                }
+                
             }
-        }.padding(10)
+        }.padding(8)
             .foregroundColor(.gray)
             .frame(width: deviceSizeViewModel.deviceWidth - 50)
             .fontWeight(.bold)
