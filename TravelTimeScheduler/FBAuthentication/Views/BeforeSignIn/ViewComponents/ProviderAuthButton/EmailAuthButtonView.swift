@@ -74,13 +74,11 @@ struct EmailAuthButtonView: View {
                 }
             }, label: {
                 Text(name != nil ? "新規登録" : "ログイン")
-                    .frame(width:200,height: 40)
-                    .background((validationInput() ? Color.thema : .gray))
-                    .foregroundColor(.white)
-                    .shadowCornerRadius()
-                    .disabled(!validationInput())
             })
-        }
-        
+        }.frame(width:200,height: 40)
+            .background((validationInput() ? Color.thema : .gray))
+            .foregroundColor(.white)
+            .shadowCornerRadius()
+            .disabled(!validationInput())
     }
 }
