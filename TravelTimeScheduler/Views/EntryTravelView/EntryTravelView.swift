@@ -54,18 +54,18 @@ struct EntryTravelView: View {
                 InputPeriodView(startDate: $startDate, endDate: $endDate)
             }.listRowSeparator(.hidden)
             
-            Section("Setting"){
-                
-                if travel != nil {
+            
+            if travel != nil {
+                /// 編集モードならDeleteボタン
+                Section("Setting"){
                     HStack{
-                        
                         Spacer()
                         DeleteTravelButtonView(travel: travel!, parentBackRootViewFunction: backRootViewFunction)
                             .foregroundColor(.negative)
                         Spacer()
                     }
-                }
-            }.listRowSeparator(.hidden)
+                }.listRowSeparator(.hidden)
+            }
         }
         .fontWeight(.bold)
         .listStyle(GroupedListStyle())

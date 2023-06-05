@@ -55,7 +55,6 @@ struct FBRealtimeListTravelView: View {
                 List(filteringResults){ travel in
                     RowTravelView(travel: travel)
                 }.listStyle(GroupedListStyle())
-//                FBListTravelView(filteringResults: filteringResults)
             }
         }.onAppear{
             dbControl.readAllTravel { data in
