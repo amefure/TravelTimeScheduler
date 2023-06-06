@@ -99,14 +99,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
         
     }
     
-    // MARK: - ALl
-    public func deleteAllTable() {
-//        if authVM.isSignIn {
-//            fbVM.deleteAllTable()
-//        }else{
-//            realmVM.deleteAllTable()
-//        }
-    }
+
 
 }
 
@@ -118,7 +111,7 @@ extension SwitchingDatabaseControlViewModel{
         realmVM.updateShareTravel(travel: travel, share: true)
     }
     
-    
+    // MARK: - ALl
     public func deleteRealmAllTable() {
         realmVM.deleteAllTable()
     }
@@ -127,6 +120,11 @@ extension SwitchingDatabaseControlViewModel{
 
 // MARK: - Firebase Only Function
 extension SwitchingDatabaseControlViewModel {
+    
+    // MARK: - ALl
+    public func deleteFBAllTable() {
+        fbVM.deleteAllTable()
+    }
     
     // MARK: - User
     /// User新規登録時にDBに情報を格納

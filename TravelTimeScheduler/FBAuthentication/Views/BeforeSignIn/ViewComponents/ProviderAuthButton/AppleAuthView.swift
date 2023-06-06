@@ -62,7 +62,7 @@ struct AppleAuthButtonView: View {
                     // MARK: - 退会
                     authVM.withdrawal { result in
                         if result {
-                            dbControl.deleteAllTable() // 全データリセット
+                            dbControl.deleteFBAllTable() // 全データリセット
                             isPresentedHalfModal = false
                             isActive = true
                         }

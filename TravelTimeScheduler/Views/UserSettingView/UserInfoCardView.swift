@@ -24,8 +24,6 @@ struct UserInfoCardView: View {
                 LazyVGrid(columns: columns){
                     Group{
                         Text("User Name")
-                            .font(.caption)
-                        
                         Text(userInfoVM.signInUserName)
                             .foregroundColor(Color.thema)
                             .lineLimit(1)
@@ -33,27 +31,24 @@ struct UserInfoCardView: View {
                     
                     Group{
                         Text("SignIn Provider")
-                            .font(.caption)
                         Text(userInfoVM.signInUserProvider)
                             .foregroundColor(Color.thema)
                     }
                     
                     Group{
                         Text("旅行数")
-                            .font(.caption)
                         Text("\(allTravelFirebase.travels.filter({$0.readableUserlId.contains(userInfoVM.signInUserId)}).count)個")
                             .foregroundColor(Color.thema)
                     }
                     
-                    
                     Group{
                         Text("SignIn Email")
-                            .font(.caption)
                         Text(userInfoVM.signInUserEmail)
                             .foregroundColor(Color.thema)
                             .lineLimit(1)
                     }
-                }.id(active) // User情報が更新された時に画面を再描画する
+                }.font(.caption)
+                    .id(active) // User情報が更新された時に画面を再描画する
             }else{
                 HStack{
                     Image(systemName: "person.icloud")

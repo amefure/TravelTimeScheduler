@@ -40,7 +40,7 @@ struct GoogleAuthButtonView: View {
                     // 退会
                     authVM.credentialGoogleWithdrawal { result in
                         if result {
-                            dbControl.deleteAllTable()  // 全データリセット
+                            dbControl.deleteFBAllTable()  // 全データリセット
                             isPresentedHalfModal = false
                             isActive = true
                         }

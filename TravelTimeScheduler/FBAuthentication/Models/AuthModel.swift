@@ -24,7 +24,7 @@ class AuthModel {
         return auth.currentUser
     }
     
-    public let defaultName = "自分(名前未設定)"
+    public let defaultName = "MyName"
     
     // MARK: - Sign In for Credential
     public func credentialSignIn(credential: AuthCredential,completion : @escaping (Result<Bool, Error>) ->  Void ){

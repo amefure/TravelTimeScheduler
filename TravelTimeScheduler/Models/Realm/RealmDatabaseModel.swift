@@ -86,14 +86,6 @@ class RealmDatabaseModel {
             realm.delete(result)
         }
     }
-    public func deleteAllTravel() {
-        try! realm.write{
-            let table = realm.objects(Travel.self)
-            realm.delete(table)
-        }
-    }
-    
-   
     
     // MARK: -
     public func deleteAllTable(){

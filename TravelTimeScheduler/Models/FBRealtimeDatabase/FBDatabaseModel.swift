@@ -145,8 +145,13 @@ class FBDatabaseModel {
     }
 
     public func deleteAllTable(userId:String){
-        // Dataの前に読み取れるTravelIdを空にする
-        ref.child("users").child(userId).child("sharedTravelId").removeValue()
+        self.readAllTravel { travels in
+            let result = travels.filter({$0.readableUserlId.contains(userId)})
+            for travel in result{
+                self.deleteTravel(travel: travel, userId: userId)
+            }
+        }
+        ref.child("users").child(userId).removeValue()
     }
     // Travelを観測開始
     public func observedTravel(travelId:String,completion: @escaping (Travel) -> Void ) {

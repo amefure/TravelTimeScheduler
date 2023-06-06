@@ -41,8 +41,9 @@ struct UserSettingView: View {
                     UserSignUpPanelView()
                 }
                 
-                   
-                UserAllTravelDeletePanelView()
+                if !authVM.isSignIn  {
+                    UserAllTravelDeletePanelView()
+                }
                 
                 if authVM.isSignIn  {
                     UserWithdrawalPanelView()

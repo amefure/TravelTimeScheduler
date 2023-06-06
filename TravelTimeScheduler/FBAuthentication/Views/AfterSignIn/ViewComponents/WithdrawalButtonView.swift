@@ -55,7 +55,7 @@ struct WithdrawalButtonView: View {
                                 if !password.isEmpty{
                                     authVM.credentialEmailWithdrawal(password:password) { result in
                                         if result {
-                                            dbControl.deleteAllTable()
+                                            dbControl.deleteFBAllTable()
                                             isActive = true
                                         }
                                         isClick = false
@@ -76,7 +76,7 @@ struct WithdrawalButtonView: View {
                         .disabled(userInfoVM.getSignInProvider() == .email ? !validationVM.validatePassWord(password: password) : false)
                     }
                 }, footer: {
-                    Text("アカウントを削除するとこれまで記録してきたデータが全て失われます。また友達と共有しているデータも削除される可能性があるので注意してください。")
+                    Text("・アカウントを削除すると記録してきたデータのうち誰とも共有していないデータが全て失われます。")
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
                         .listRowBackground(Color(hexString: "#f2f2f7")) // リストカラー色

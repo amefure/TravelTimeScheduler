@@ -107,7 +107,7 @@ extension SignInUserInfoViewModel {
     // サインアウトした際に実行される処理
     public func resetUserInfo(){
         signInUserId = ""
-        signInUserName = "User"
+        signInUserName = "MyName"
         signInUserProvider = ""
     }
 }
