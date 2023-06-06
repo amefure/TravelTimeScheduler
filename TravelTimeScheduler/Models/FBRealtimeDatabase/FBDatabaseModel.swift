@@ -25,33 +25,33 @@ class FBDatabaseModel {
         ref.child("users").child(userId).child("username").setValue(name)
     }
     
-    /// サインインUserが読み取り可能なTarvelID配列を取得
-    public func addUserReadableTravelId(userId:String,travelId:String){
-        let userRef = ref.child("users").child(userId).child("sharedTravelId")
+    /// Tarvelを読み取れるサインインUser ID配列を更新
+    public func updateTravelReadableUserId(userId:String,travelId:String){
+        let userRef = ref.child("travels").child(travelId).child("readableUserlId")
         userRef.getData(completion:  { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return
             }
             if var array = snapshot?.value as? [String] {
-                array.append(travelId)
+                array.append(userId)
                 userRef.setValue(array)
             }else{
-                userRef.setValue([travelId])
+                userRef.setValue([userId])
             }
         })
     }
     
-    /// サインインUserが読み取り可能なTarvelID配列を観測
-    public func observeUserReadableTravelIds(userId:String,completion: @escaping ([String]) -> Void ) {
-        if !userId.isEmpty {
-            ref.child("users").child(userId).child("sharedTravelId").observe(.value) { snapshot in
-                if let currentUserReadableTravelId = snapshot.value as? [String] {
-                    completion(currentUserReadableTravelId)
-                }
-            }
-        }
-    }
+//    /// サインインUserが読み取り可能なTarvelID配列を観測
+//    public func observeUserReadableTravelIds(userId:String,completion: @escaping ([String]) -> Void ) {
+//        if !userId.isEmpty {
+//            ref.child("users").child(userId).child("sharedTravelId").observe(.value) { snapshot in
+//                if let currentUserReadableTravelId = snapshot.value as? [String] {
+//                    completion(currentUserReadableTravelId)
+//                }
+//            }
+//        }
+//    }
     
     /// Create
     public func entryTravel(id:String,childUpdates:[String : Any]){
@@ -106,6 +106,7 @@ class FBDatabaseModel {
                     newTravel.endDate = displayDateVM.getAllDateStringDate(travel["endDate"]! as! String)
                     newTravel.schedules = schedulesArray
                     newTravel.share = true
+                    newTravel.readableUserlId = travel["readableUserlId"]! as! Array<String>
                     TravelsArray.append(newTravel)
                 } // #3
             } // #2
@@ -182,6 +183,7 @@ class FBDatabaseModel {
                 newTravel.endDate = self.displayDateVM.getAllDateStringDate(travel["endDate"]! as! String)
                 newTravel.schedules = schedulesArray
                 newTravel.share = true
+                newTravel.readableUserlId = travel["readableUserlId"]! as! Array<String>
                 TravelsArray.append(newTravel)
             } // #3
             completion(TravelsArray.sorted(by:{ $0.startDate > $1.startDate }))
@@ -193,30 +195,7 @@ class FBDatabaseModel {
         ref.removeAllObservers()
     }
     
-    public func registerAllRealmDBWithFirebase(userId:String,childUpdates:[String : Any]){
+    public func registerAllRealmDBWithFirebase(childUpdates:[String : Any]){
         ref.child("travels").updateChildValues(childUpdates)
-        
-        let userRef = ref.child("users").child(userId).child("sharedTravelId")
-        userRef.getData(completion:  { error, snapshot in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            if var array = snapshot?.value as? [String] {
-                for travel in childUpdates{
-                    array.append(travel.key)
-                }
-                userRef.setValue(array)
-            }else{
-                var array = []
-                for travel in childUpdates{
-                    array.append(travel.key)
-                }
-                userRef.setValue(array)
-            }
-        })
-        
     }
-    
-    
 }

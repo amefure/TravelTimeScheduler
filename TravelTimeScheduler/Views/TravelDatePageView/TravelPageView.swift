@@ -67,7 +67,7 @@ struct TravelPageView: View {
             .navigationCustomBackground()
             .onAppear{
                 dbControl.observedTravel(travelId: travel.id.stringValue) { data in
-                    allTravelFirebase.Travels = data
+                    allTravelFirebase.travels = data
                 }
             }
     }

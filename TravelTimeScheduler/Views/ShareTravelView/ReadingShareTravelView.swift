@@ -25,8 +25,9 @@ struct ReadingShareTravelView: View {
     
     
     private func validationCheck() -> Bool{
-        if allTravelFirebase.Travels.first(where: { $0.id.stringValue == travelId}) != nil{
-            if allTravelFirebase.userReadableTravelIds.first(where: { $0 == travelId}) == nil{
+        if let travel = allTravelFirebase.travels.first(where: { $0.id.stringValue == travelId}){
+            // readableUserlId配列の中にUserIdがなければOK
+            if travel.readableUserlId.contains(signInUserInfo.signInUserId) == false {
                 return true
             }
         }
@@ -56,7 +57,7 @@ struct ReadingShareTravelView: View {
                             isClick = true
                             
                             if validationCheck() {
-                                dbControl.addUserReadableTravelId(userId: signInUserInfo.signInUserId, travelId: travelId)
+                                dbControl.updateTravelReadableUserId(userId: signInUserInfo.signInUserId, travelId: travelId)
                                 isSuccess = true
                             }else{
                                 isSuccess = false

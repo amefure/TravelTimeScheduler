@@ -9,7 +9,9 @@ import SwiftUI
 
 struct FBRealtimeListTravelView: View {
     
+    // MARK: - ViewModels
     private let displayDateViewModel = DisplayDateViewModel()
+    private let signInUserInfoVM = SignInUserInfoViewModel.shared
     
     // MARK: - View
     @Binding var searchText:String
@@ -21,7 +23,7 @@ struct FBRealtimeListTravelView: View {
     private var filteringResults:Array<Travel> {
         
         // 全Travel情報の中からサインインUserが読み取り可能な情報のみにフィルタリング
-        let result = allTravelFirebase.Travels.filter({ allTravelFirebase.userReadableTravelIds.contains($0.id.stringValue)})
+        let result = allTravelFirebase.travels.filter({$0.readableUserlId.contains(signInUserInfoVM.signInUserId)})
         
         if searchText.isEmpty && selectTime == "all" {
             // フィルタリングなし
@@ -58,10 +60,7 @@ struct FBRealtimeListTravelView: View {
             }
         }.onAppear{
             dbControl.readAllTravel { data in
-                allTravelFirebase.Travels = data
-            }
-            dbControl.observeUserReadableTravelIds(userId: SignInUserInfoViewModel.shared.signInUserId) { data in
-                allTravelFirebase.userReadableTravelIds = data
+                allTravelFirebase.travels = data
             }
         }
     }

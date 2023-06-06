@@ -20,6 +20,7 @@ class Travel :Object,ObjectKeyIdentifiable {
     @Persisted var schedules:RealmSwift.List = RealmSwift.List<Schedule>()    // タイムスケジュール
     @Persisted var share:Bool = false
     
+    var readableUserlId:[String] = []
     /// 旅行期間の日付をすべて含んだ配列
     public var allTravelPeriod:[Date] {
         let displayDateViewModel = DisplayDateViewModel()

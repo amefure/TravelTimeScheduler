@@ -25,7 +25,7 @@ struct PickerTimeView: View {
     private var timeArray:[String] {
         var array:[String] = ["all"]
         if authViewModel.isSignIn {
-            for item in allTravelFirebase.Travels {
+            for item in allTravelFirebase.travels {
                 let year = displayDateViewModel.getDateDisplayFormatString(item.startDate).prefix(4)
                 array.append(String(year))
             }

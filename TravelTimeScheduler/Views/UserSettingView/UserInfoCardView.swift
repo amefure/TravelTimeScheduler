@@ -42,7 +42,7 @@ struct UserInfoCardView: View {
                     Group{
                         Text("旅行数")
                             .font(.caption)
-                        Text("\(allTravelFirebase.Travels.count)個")
+                        Text("\(allTravelFirebase.travels.count)個")
                             .foregroundColor(Color.thema)
                     }
                     

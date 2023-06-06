@@ -36,7 +36,7 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
             "share": "true"
         ]
         let id:String = convertTypeVM.generateObjectIdString()
-        model.addUserReadableTravelId(userId: signInUserInfoVM.signInUserId, travelId: id)
+        model.updateTravelReadableUserId(userId: signInUserInfoVM.signInUserId, travelId: id)
         model.entryTravel(id:id ,childUpdates: childUpdates)
     }
     
@@ -93,16 +93,16 @@ extension FBDatabaseViewModel {
         model.createUser(userId:userId, name: name)
     }
     /// Travel共有時にUser内にtravelIdを格納
-    public func addUserReadableTravelId(userId:String,travelId:String){
-        model.addUserReadableTravelId(userId:userId,travelId:travelId)
+    public func updateTravelReadableUserId(userId:String,travelId:String){
+        model.updateTravelReadableUserId(userId:userId,travelId:travelId)
     }
     
-    /// サインインUserが読み取り可能なTarvelID配列を観測
-    public func observeUserReadableTravelIds(userId:String,completion: @escaping ([String]) -> Void ) {
-        model.observeUserReadableTravelIds(userId: userId) { data in
-            completion(data)
-        }
-    }
+//    /// サインインUserが読み取り可能なTarvelID配列を観測
+//    public func observeUserReadableTravelIds(userId:String,completion: @escaping ([String]) -> Void ) {
+//        model.observeUserReadableTravelIds(userId: userId) { data in
+//            completion(data)
+//        }
+//    }
     
     // MARK: - Travel
     // Entry
@@ -146,10 +146,11 @@ extension FBDatabaseViewModel {
                 "schedules" : scheduleDictionary,
                 "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.startDate),
                 "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.endDate),
-                "share": "true"
+                "share": "true",
+                "readableUserlId": [signInUserInfoVM.signInUserId]
             ]
             childUpdates.updateValue(travelBody, forKey: travel.id.stringValue)
         }
-        model.registerAllRealmDBWithFirebase(userId:signInUserInfoVM.signInUserId,childUpdates: childUpdates)
+        model.registerAllRealmDBWithFirebase(childUpdates: childUpdates)
     }
 }

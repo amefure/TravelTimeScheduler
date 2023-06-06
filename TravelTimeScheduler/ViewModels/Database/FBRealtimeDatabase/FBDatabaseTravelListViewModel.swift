@@ -10,18 +10,14 @@ import UIKit
 // MARK: - Firebaseから抽出したリアルタイムの情報を保持するクラス
 class FBDatabaseTravelListViewModel:ObservableObject{
     
-    /// サインインUserが読み取り可能なTravelID配列
-    @Published var userReadableTravelIds:[String] = []
-    
     /// DBから抽出したTravel情報
-    @Published var Travels:[Travel] = []
+    @Published var travels:[Travel] = []
     
     // MARK: シングルトン
     static let shared:FBDatabaseTravelListViewModel = FBDatabaseTravelListViewModel()
     
     
     public func resetData(){
-        Travels = []
-        userReadableTravelIds = []
+        travels = []
     }
 }
