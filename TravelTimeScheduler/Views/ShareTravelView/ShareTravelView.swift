@@ -9,9 +9,12 @@ import SwiftUI
 
 struct ShareTravelView: View {
     
-    public let travel:Travel
-    
+    // MARK: - ViewModels
+    private let deviceSizeVM = DeviceSizeViewModel()
     private let dbControl = SwitchingDatabaseControlViewModel.shared
+    
+    // MARK: - Receive Parameters
+    public let travel:Travel
     
     var body: some View {
         List{
@@ -19,47 +22,28 @@ struct ShareTravelView: View {
             // MARK: - ImageView
             SectionImageView(image: "ShareId")
             
-            if travel.share {
+            Section(header: Text("TravelID"), footer: Text("・このIDは登録した旅行ごとに振られる一意のIDです。\n・このIDを友達に教えることで旅行をシェアできます。")) {
                 
-                Section(header: Text("TravelID"), footer: Text("・このIDは登録した旅行ごとに振られる一意のIDです。\n・このIDを友達に教えることで旅行をシェアできます。")) {
+                HStack{
                     
-                    HStack{
-                        
-                        Text(travel.id.stringValue)
-                            .lineLimit(1)
-                        
-                        CopyButtonView(copyText: travel.id.stringValue)
-                        
-                    }.padding()
-                        .foregroundColor(.gray)
-                        .frame(width: DeviceSizeViewModel().deviceWidth - 60)
-                        .fontWeight(.bold)
-                        .background(.white)
-                        .textSelection(.enabled)
-                        .overlay(
-                            RoundedRectangle(cornerRadius:5)
-                                .stroke(Color.gray,lineWidth: 2)
-                        )
-                        .shadowCornerRadius()
+                    Text(travel.id.stringValue)
+                        .lineLimit(1)
                     
-                }.listRowBackground(Color.list)
-            }else{
-                Section {
+                    CopyButtonView(copyText: travel.id.stringValue)
                     
-                    Button {
-                        dbControl.updateShareTravel(travel: travel, share: true)
-                        dbControl.entryTravel(travel: travel)
-                    } label: {
-                        Text("TravelIDを発行する")
-                    }
-                    
-                } header: {
-                    Text("Share")
-                } footer: {
-                    Text("友達と共有するにはTravelIDを発行する必要があります。")
-                }
-            }
-            
+                }.padding()
+                    .foregroundColor(.gray)
+                    .frame(width: deviceSizeVM.deviceWidth - 40)
+                    .fontWeight(.bold)
+                    .background(.white)
+                    .textSelection(.enabled)
+                    .overlay(
+                        RoundedRectangle(cornerRadius:5)
+                            .stroke(Color.gray,lineWidth: 2)
+                    )
+                    .shadowCornerRadius()
+                
+            }.listRowBackground(Color.list)
         }.foregroundColor(Color.thema)
             .navigationTitle("Share Travel")
             .navigationCustomBackground()

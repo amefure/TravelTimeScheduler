@@ -42,7 +42,7 @@ struct UserInfoCardView: View {
                     Group{
                         Text("旅行数")
                             .font(.caption)
-                        Text("\(allTravelFirebase.travels.count)個")
+                        Text("\(allTravelFirebase.travels.filter({$0.readableUserlId.contains(userInfoVM.signInUserId)}).count)個")
                             .foregroundColor(Color.thema)
                     }
                     
@@ -65,9 +65,9 @@ struct UserInfoCardView: View {
                 }
                 
             }
-        }.padding(8)
+        }.padding()
             .foregroundColor(.gray)
-            .frame(width: deviceSizeVM.deviceWidth - 50)
+            .frame(width: deviceSizeVM.deviceWidth - 40)
             .fontWeight(.bold)
             .background(.white)
             .overlay(

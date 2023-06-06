@@ -26,7 +26,7 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     typealias DBMembersCollection = Array<String>
     typealias DBScheduleCollection = [String : [String : String]]//Array<Schedule>
     
-    
+    // MARK: - Travel新規登録
     public func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) {
         let childUpdates:[String : Any] = [
             "name": travelName,
@@ -37,12 +37,10 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
             "readableUserlId": [userInfoVM.signInUserId]
         ]
         let id:String = convertTypeVM.generateObjectIdString()
-        model.updateTravelReadableUserId(userId: userInfoVM.signInUserId, travelId: id)
         model.entryTravel(id:id ,childUpdates: childUpdates)
     }
     
-
-    
+    // MARK: - Travel更新
     public func updateTravel(id: String, travelName: String, members: Array<String>, startDate: Date, endDate: Date, schedules: [String : [String : String]]) {
         let childUpdates:[String : Any] = [
             "name": travelName,
@@ -93,27 +91,12 @@ extension FBDatabaseViewModel {
     public func createUser(userId:String,name:String){
         model.createUser(userId:userId, name: name)
     }
-    /// Travel共有時にUser内にtravelIdを格納
+    /// Tarvelを読み取れるサインインUser ID配列を更新
     public func updateTravelReadableUserId(userId:String,travelId:String){
         model.updateTravelReadableUserId(userId:userId,travelId:travelId)
     }
     
     // MARK: - Travel
-    // Entry
-    public func entryTravel(travel:Travel){
-        let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules: travel.schedules)
-        let childUpdates:[String : Any] = [
-            "name": travel.name,
-            "members": Array(travel.members),
-            "schedules" : scheduleDictionary,
-            "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.startDate),
-            "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.endDate),
-            "share": "true",
-            "readableUserlId": [userInfoVM.signInUserId]
-        ]
-        model.entryTravel(id:travel.id.stringValue,childUpdates: childUpdates)
-    }
-    
     public func readAllTravel(completion: @escaping ([Travel]) -> Void ) {
         model.readAllTravel { data in
             completion(data)
@@ -131,6 +114,12 @@ extension FBDatabaseViewModel {
         model.stopAllObserved()
     }
     
+}
+
+// MARK: - SignIn/Out Fuction
+extension FBDatabaseViewModel {
+    // MARK: - SingIn
+    /// User新規登録時にDBに情報を格納
     public func registerAllRealmDBWithFirebase(travels:Array<Travel>){
         var childUpdates:[String : Any] = [:]
         for travel in travels{

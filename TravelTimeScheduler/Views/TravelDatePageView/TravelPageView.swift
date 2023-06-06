@@ -39,14 +39,16 @@ struct TravelPageView: View {
             
         }.navigationTitle(travel.name)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        isSharePresented = true
-                    }) {
-                        VStack{
-                            Image(systemName: "cloud.fill")
-                            Text("共有")
-                                .font(.caption)
+                if authVM.isSignIn{
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            isSharePresented = true
+                        }) {
+                            VStack{
+                                Image(systemName: "cloud.fill")
+                                Text("共有")
+                                    .font(.caption)
+                            }
                         }
                     }
                 }

@@ -134,19 +134,12 @@ extension SwitchingDatabaseControlViewModel {
         fbVM.createUser(userId:userId, name: name)
     }
     
-    /// Travel共有時にUser内にtravelIdを格納
+    /// Tarvelを読み取れるサインインUser ID配列を更新
     public func updateTravelReadableUserId(userId:String,travelId:String){
         fbVM.updateTravelReadableUserId(userId:userId,travelId:travelId)
     }
     
-    
-    // MARK: - User
-    /// User新規登録時にDBに情報を格納
-    public func entryTravel(travel:Travel){
-        fbVM.entryTravel(travel: travel)
-    }
-    
-    /// User新規登録時にDBに情報を格納
+    /// Travel共有時にUser内にtravelIdを格納
     public func readAllTravel(completion: @escaping ([Travel]) -> Void ) {
         fbVM.readAllTravel { data in
             completion(data)
@@ -168,7 +161,7 @@ extension SwitchingDatabaseControlViewModel {
 // MARK: - SignIn/Out Fuction
 extension SwitchingDatabaseControlViewModel {
     // MARK: - SingIn
-    
+    /// User新規登録時にDBに情報を格納
     public func registerAllRealmDBWithFirebase(travels:Results<Travel>){
         fbVM.registerAllRealmDBWithFirebase(travels:Array(travels))
     }
