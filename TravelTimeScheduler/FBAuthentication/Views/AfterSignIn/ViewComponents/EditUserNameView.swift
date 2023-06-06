@@ -13,6 +13,7 @@ struct EditUserNameView: View {
     private let validationVM = ValidationViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
     private let userInfoVM = SignInUserInfoViewModel()
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
     
     // MARK: - Navigationプロパティ
     @State var isActive:Bool = false
@@ -80,6 +81,7 @@ struct EditUserNameView: View {
                                 isReAuth = true
                             }else{
                                 authVM.editUserName(name: name) { result in
+                                    dbControl.createUser(userId: userInfoVM.signInUserId, name: name)
                                     isClick = false
                                     isActive = true
                                 }

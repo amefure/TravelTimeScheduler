@@ -12,6 +12,8 @@ struct ReAuthEmailView: View {
     // MARK: - ViewModels
     private let validationVM = ValidationViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
+    private let userInfoVM = SignInUserInfoViewModel()
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
     
     // MARK: - Bindingプロパティ
     @Binding var isActive:Bool
@@ -61,6 +63,7 @@ struct ReAuthEmailView: View {
                         isProgressDisplay = true
                         authVM.editUserName(name: name) { result in
                             if result {
+                                dbControl.createUser(userId: userInfoVM.signInUserId, name: name)
                                 authVM.updateEmail(email: email, password: pass) { result in
                                     if result {
                                         isUpdateSuccess = true
