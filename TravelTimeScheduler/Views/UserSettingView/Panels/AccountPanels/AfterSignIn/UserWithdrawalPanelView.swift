@@ -19,6 +19,6 @@ struct UserWithdrawalPanelView: View {
                     .frame(height: 40)
                 Text("User Delete")
             }
-        }.userPanelsShape()
+        }
     }
 }

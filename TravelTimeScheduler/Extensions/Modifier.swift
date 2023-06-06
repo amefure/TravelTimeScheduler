@@ -21,17 +21,6 @@ struct ScheduleTypeIcon: ViewModifier {
     }
 }
 
-struct UserPanelsShape:ViewModifier {
-    
-    func body(content: Content) -> some View {
-        content
-//            .padding()
-//            .frame(width:DeviceSizeViewModel().deviceWidth/3 - 15,height: DeviceSizeViewModel().isSESize ? 90 : 120)
-//            .background(.white)
-//            .shadowCornerRadius()
-    }
-}
-
 struct NavigationCustomBackground:ViewModifier{
     func body(content: Content) -> some View {
         content
@@ -54,10 +43,6 @@ struct ShadowCornerRadius:ViewModifier{
 extension View {
     func scheduleTypeIcon(color:Color) -> some View {
         modifier(ScheduleTypeIcon(color: color))
-    }
-    
-    func userPanelsShape() -> some View{
-        modifier(UserPanelsShape())
     }
     
     func navigationCustomBackground() -> some View {

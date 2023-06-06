@@ -18,6 +18,6 @@ struct UserTermsOfServiceLinkPanelView: View {
                     .frame(height: 40)
                 Text("利用規約")
             }
-        }).userPanelsShape()
+        })
     }
 }

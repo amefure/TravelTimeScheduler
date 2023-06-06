@@ -24,8 +24,7 @@ struct UserSignOutPanelView: View {
                     .font(.system(size: 40))
                 Text("SignOut")
             }
-        }.userPanelsShape()
-            .navigationDestination(isPresented: $isActive) {
+        }.navigationDestination(isPresented: $isActive) {
                 TopMainTravelView()
             }.alert("サインアウトしますか？", isPresented: $isPresented) {
                 Button {

@@ -19,6 +19,6 @@ struct UserNameEntryView: View {
                     .frame(height: 40)
                 Text("User Name")
             }
-        }.userPanelsShape()
+        }
     }
 }

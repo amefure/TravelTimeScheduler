@@ -20,6 +20,6 @@ struct UserinfoEditView: View {
                     .frame(height: 40)
                 Text("Edit User")
             }
-        }.userPanelsShape()
+        }
     }
 }

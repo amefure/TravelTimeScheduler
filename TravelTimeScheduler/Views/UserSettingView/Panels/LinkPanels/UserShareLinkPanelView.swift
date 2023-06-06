@@ -22,6 +22,6 @@ struct UserShareLinkPanelView: View {
                     .frame(height: 40)
                 Text("Share App")
             }
-        }).userPanelsShape()
+        })
     }
 }
