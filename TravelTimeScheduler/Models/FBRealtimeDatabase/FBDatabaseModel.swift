@@ -100,7 +100,7 @@ class FBDatabaseModel {
                 } // #3
             } // #2
         } // #1
-        completion(TravelsArray.sorted(by:{ $0.startDate > $1.startDate }).sorted(by:{ $0.name > $1.name }))
+        completion(TravelsArray.sorted(by:{ $0.name > $1.name }).sorted(by:{ $0.startDate > $1.startDate }))
     }
     
     // Update

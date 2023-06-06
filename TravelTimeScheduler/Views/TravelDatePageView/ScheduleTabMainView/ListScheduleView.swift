@@ -27,7 +27,7 @@ struct ListScheduleView: View {
         if authViewModel.isSignIn {
             return nil
         }else{
-            return travel.schedules.filter("dateTime >= %@ AND dateTime < %@", today, tomorrow).sorted(byKeyPath: "dateTime")
+            return travel.schedules.filter("dateTime >= %@ AND dateTime < %@", today, tomorrow).sorted(byKeyPath: "content").sorted(byKeyPath: "dateTime")
         }
     }
     
@@ -38,7 +38,7 @@ struct ListScheduleView: View {
         let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
         let array = Array(travel.schedules)
         
-        return array.filter(({ $0.dateTime >= today && $0.dateTime < tomorrow})).sorted(by:{ $0.dateTime < $1.dateTime })
+        return array.filter(({ $0.dateTime >= today && $0.dateTime < tomorrow})).sorted(by:{ $0.content < $1.content }).sorted(by:{ $0.dateTime < $1.dateTime })
     }
     
     

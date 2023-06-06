@@ -10,7 +10,7 @@ import SwiftUI
 struct TranceportationPickerView: View {
     
     // MARK: - ViewModels
-    private let realmDataBase = RealmDatabaseViewModel()
+    private let dbControl = SwitchingDatabaseControlViewModel()
     
     // MARK: - Parameters
     let travel:Travel
@@ -37,7 +37,7 @@ struct TranceportationPickerView: View {
             }
                 .onChange(of: selectedTranceportation) { newValue in
                     displaytChange = false
-                    realmDataBase.updateSchedule(travelId: travel.id, scheduleId: schedule.id, dateTime: schedule.dateTime, content: schedule.content, memo:schedule.memo,type: schedule.type, tranceportation: selectedTranceportation)
+                    dbControl.updateSchedule(travelId: travel.id.stringValue, scheduleId: schedule.id.stringValue, dateTime: schedule.dateTime, content: schedule.content, memo:schedule.memo,type: schedule.type, tranceportation: selectedTranceportation)
                 }
         }
     }
