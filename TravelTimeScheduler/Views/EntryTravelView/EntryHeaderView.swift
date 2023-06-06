@@ -12,6 +12,7 @@ struct EntryHeaderView: View {
     // MARK: - ViewModels
     private let validation = ValidationViewModel()
     private let dbControl = SwitchingDatabaseControlViewModel.shared
+    @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
     
     // MARK: - TextField
     public let travelName:String        // 旅行名
@@ -76,6 +77,13 @@ struct EntryHeaderView: View {
                     dismiss()
                 } label: {
                     Text("OK")
+                }
+            }
+            .onDisappear {
+                if AuthViewModel.shared.isSignIn {   
+                    dbControl.readAllTravel { data in
+                        allTravelFirebase.travels = data
+                    }
                 }
             }
     }

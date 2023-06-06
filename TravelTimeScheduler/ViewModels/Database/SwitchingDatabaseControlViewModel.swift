@@ -140,12 +140,6 @@ extension SwitchingDatabaseControlViewModel {
         fbVM.updateTravelReadableUserId(userId:userId,travelId:travelId)
     }
     
-//    /// サインインUserが読み取り可能なTarvelID配列を観測
-//    public func observeUserReadableTravelIds(userId:String,completion: @escaping ([String]) -> Void ) {
-//        fbVM.observeUserReadableTravelIds(userId: userId) { data in
-//            completion(data)
-//        }
-//    }
     
     // MARK: - User
     /// User新規登録時にDBに情報を格納
@@ -160,7 +154,7 @@ extension SwitchingDatabaseControlViewModel {
         }
     }
     
-    public func observedTravel(travelId:String,completion: @escaping ([Travel]) -> Void ) {
+    public func observedTravel(travelId:String,completion: @escaping (Travel) -> Void ) {
         fbVM.observedTravel(travelId: travelId) { data in
             completion(data)
         }

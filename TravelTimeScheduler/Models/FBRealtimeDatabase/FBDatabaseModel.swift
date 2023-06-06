@@ -42,17 +42,6 @@ class FBDatabaseModel {
         })
     }
     
-//    /// サインインUserが読み取り可能なTarvelID配列を観測
-//    public func observeUserReadableTravelIds(userId:String,completion: @escaping ([String]) -> Void ) {
-//        if !userId.isEmpty {
-//            ref.child("users").child(userId).child("sharedTravelId").observe(.value) { snapshot in
-//                if let currentUserReadableTravelId = snapshot.value as? [String] {
-//                    completion(currentUserReadableTravelId)
-//                }
-//            }
-//        }
-//    }
-    
     /// Create
     public func entryTravel(id:String,childUpdates:[String : Any]){
         ref.child("travels").child(id).updateChildValues(childUpdates)
@@ -153,10 +142,10 @@ class FBDatabaseModel {
         ref.child("users").child(userId).child("sharedTravelId").removeValue()
     }
     // Travelを観測開始
-    public func observedTravel(travelId:String,completion: @escaping ([Travel]) -> Void ) {
+    public func observedTravel(travelId:String,completion: @escaping (Travel) -> Void ) {
         ref.child("travels").child(travelId).observe(DataEventType.value, with: { snapshot in
             /// 必要になる変数を定義
-            var TravelsArray:[Travel] = []
+            let newTravel = Travel()
             let schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
             
             if let travel = snapshot.value as? [String:Any]{           // #3 [travel.name,travel....]
@@ -174,8 +163,6 @@ class FBDatabaseModel {
                         } // #6
                     } // #5
                 } // #4 ↓schedulesがなくてもFirebaseに格納する
-                let newTravel = Travel()
-        
                 newTravel.id = self.convertTypeVM.convertStringToObjectId(strID: snapshot.key)
                 newTravel.name = travel["name"] as! String
                 newTravel.members = self.convertTypeVM.convertMembersToList(travel["members"]! as! Array<String>)
@@ -184,9 +171,8 @@ class FBDatabaseModel {
                 newTravel.schedules = schedulesArray
                 newTravel.share = true
                 newTravel.readableUserlId = travel["readableUserlId"]! as! Array<String>
-                TravelsArray.append(newTravel)
             } // #3
-            completion(TravelsArray.sorted(by:{ $0.startDate > $1.startDate }))
+            completion(newTravel)
         })
     }
     

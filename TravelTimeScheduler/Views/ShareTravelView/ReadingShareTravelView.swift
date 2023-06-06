@@ -88,6 +88,12 @@ struct ReadingShareTravelView: View {
                         }
                 }
             }
+        }.onDisappear {
+            if AuthViewModel.shared.isSignIn {
+                dbControl.readAllTravel { data in
+                    allTravelFirebase.travels = data
+                }
+            }
         }
     }
 }
