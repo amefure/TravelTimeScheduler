@@ -11,7 +11,7 @@ struct EntryUserNameView: View {
     
     // MARK: - ViewModels
     private let validationVM = ValidationViewModel()
-    private let signInUserInfoVM = SignInUserInfoViewModel.shared
+    private let userInfoVM = SignInUserInfoViewModel()
     
     // MARK: - Navigationプロパティ
     @State var isActive:Bool = false
@@ -32,7 +32,7 @@ struct EntryUserNameView: View {
                 
                 // MARK: - Button
                 Button {
-                    signInUserInfoVM.signInUserName = name
+                    userInfoVM.signInUserName = name
                     isActive = true
                 } label: {
                     Text("更新")
@@ -49,7 +49,7 @@ struct EntryUserNameView: View {
         .navigationCustomBackground()
         .navigationTitle("User Edit")
         .onAppear {
-            name = signInUserInfoVM.signInUserName
+            name = userInfoVM.signInUserName
         }
 
     }

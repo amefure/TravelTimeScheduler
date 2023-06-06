@@ -9,33 +9,33 @@ import SwiftUI
 
 struct CopyButtonView: View {
     
-    @ObservedObject var messageAlert = MessageBalloonViewModel()
+    @ObservedObject var messageAlertVM = MessageBalloonViewModel()
     
     public let copyText:String
     
     var body: some View {
         ZStack {
-            if (messageAlert.isPreview){
+            if (messageAlertVM.isPreview){
                 Text("コピーしました")
                     .font(.system(size: 8))
                     .padding(3)
                     .background(Color(red: 0.3, green: 0.3 ,blue: 0.3))
                     .foregroundColor(.white)
-                    .opacity(messageAlert.castOpacity())
+                    .opacity(messageAlertVM.castOpacity())
                     .cornerRadius(5)
                     .offset(x: 0, y: -20)
             }
             
             Button(action: {
                 UIPasteboard.general.string = copyText
-                messageAlert.isPreview = true
-                messageAlert.vanishMessage()
+                messageAlertVM.isPreview = true
+                messageAlertVM.vanishMessage()
                 
             }, label: {
                 Image(systemName: "doc.on.doc")
                     .foregroundColor(.gray)
                     .frame(width: 65)
-            }).disabled(messageAlert.isPreview)
+            }).disabled(messageAlertVM.isPreview)
             
         }
     }

@@ -19,7 +19,7 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     
     // MARK: -  ViewModels
     private let convertTypeVM = ConvertTypeViewModel()
-    private let signInUserInfoVM = SignInUserInfoViewModel.shared
+    private let userInfoVM = SignInUserInfoViewModel()
     
     // MARK: - Generic Type
     typealias RecordId = String
@@ -33,10 +33,11 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
             "members": members,
             "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(startDate),
             "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(endDate),
-            "share": "true"
+            "share": "true",
+            "readableUserlId": [userInfoVM.signInUserId]
         ]
         let id:String = convertTypeVM.generateObjectIdString()
-        model.updateTravelReadableUserId(userId: signInUserInfoVM.signInUserId, travelId: id)
+        model.updateTravelReadableUserId(userId: userInfoVM.signInUserId, travelId: id)
         model.entryTravel(id:id ,childUpdates: childUpdates)
     }
     
@@ -55,7 +56,7 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     }
     
     public func deleteTravel(travel:Travel) {
-        model.deleteTravel(travel: travel,userId: signInUserInfoVM.signInUserId)
+        model.deleteTravel(travel: travel,userId: userInfoVM.signInUserId)
     }
     
     // MARK: - Schedule
@@ -81,7 +82,7 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     
     // MARK: - All
     public func deleteAllTable() {
-        model.deleteAllTable(userId: signInUserInfoVM.signInUserId)
+        model.deleteAllTable(userId: userInfoVM.signInUserId)
     }
     
 }
@@ -107,7 +108,8 @@ extension FBDatabaseViewModel {
             "schedules" : scheduleDictionary,
             "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.startDate),
             "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.endDate),
-            "share": "true"
+            "share": "true",
+            "readableUserlId": [userInfoVM.signInUserId]
         ]
         model.entryTravel(id:travel.id.stringValue,childUpdates: childUpdates)
     }
@@ -140,7 +142,7 @@ extension FBDatabaseViewModel {
                 "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.startDate),
                 "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.endDate),
                 "share": "true",
-                "readableUserlId": [signInUserInfoVM.signInUserId]
+                "readableUserlId": [userInfoVM.signInUserId]
             ]
             childUpdates.updateValue(travelBody, forKey: travel.id.stringValue)
         }

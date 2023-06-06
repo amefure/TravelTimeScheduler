@@ -16,7 +16,7 @@ class AuthViewModel:ObservableObject {
     static let shared = AuthViewModel()
     
     // UserDefaultVM
-    private let userInfoVM = SignInUserInfoViewModel.shared
+    private let userInfoVM = SignInUserInfoViewModel()
     private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
     
     // AuthModel

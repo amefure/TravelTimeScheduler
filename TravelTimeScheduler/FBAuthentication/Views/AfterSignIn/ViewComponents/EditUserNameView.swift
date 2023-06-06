@@ -12,7 +12,7 @@ struct EditUserNameView: View {
     // MARK: - ViewModels
     private let validationVM = ValidationViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
-    private let signInUserInfoVM = SignInUserInfoViewModel.shared
+    private let userInfoVM = SignInUserInfoViewModel()
     
     // MARK: - Navigationプロパティ
     @State var isActive:Bool = false
@@ -50,7 +50,7 @@ struct EditUserNameView: View {
                 }
                 
                 // MARK: - Input2 (email Only)
-                if signInUserInfoVM.signInUserProvider == "email" {
+                if userInfoVM.signInUserProvider == "email" {
                     Section("Mail Address") {
                         HStack{
                             if isEmailEdit {
@@ -101,8 +101,8 @@ struct EditUserNameView: View {
         .navigationCustomBackground()
         .navigationTitle("User Edit")
         .onAppear {
-            name = signInUserInfoVM.signInUserName
-            email = signInUserInfoVM.signInUserEmail
+            name = userInfoVM.signInUserName
+            email = userInfoVM.signInUserEmail
         }
         .onDisappear {
             isEmailEdit = false

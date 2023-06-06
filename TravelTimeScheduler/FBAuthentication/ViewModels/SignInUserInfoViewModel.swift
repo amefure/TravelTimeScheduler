@@ -15,13 +15,9 @@ class SignInUserInfoViewModel {
     // FB RealtimeDatabase User
     private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
 
-    
     init(userDefaults: UserDefaultsProtocol = UserDefaultsWrapper.shared) {
         self.userDefaults = userDefaults
     }
-    
-    static let shared = SignInUserInfoViewModel()
-    
     
     var signInUserId: String {
         get {
@@ -66,7 +62,12 @@ class SignInUserInfoViewModel {
         }
     }
     
-    public func setSignInProvider(provider:AuthProviderModel){
+}
+
+//MARK: - AuthViewModelから呼び出し
+extension SignInUserInfoViewModel {
+    
+    private func setSignInProvider(provider:AuthProviderModel){
         switch provider{
             
         case .email:
@@ -90,13 +91,11 @@ class SignInUserInfoViewModel {
             return AuthProviderModel.email
         }
     }
-    
-    
-
 }
 
+//MARK: - AuthViewModelから呼び出し
 extension SignInUserInfoViewModel {
-    /// AuthViewModelから呼び出し
+
     // サインインした際に実行される処理
     public func setCurrentUserInfo(uid:String,name:String,email:String,provider:AuthProviderModel){
         signInUserId = uid

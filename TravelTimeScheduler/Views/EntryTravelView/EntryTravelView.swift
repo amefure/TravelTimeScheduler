@@ -11,7 +11,7 @@ import RealmSwift
 struct EntryTravelView: View {
     
     // MARK: - ViewModels
-    private let deviceSize = DeviceSizeViewModel()
+    private let userInfoVM = SignInUserInfoViewModel()
     
     // MARK: - TextField
     @State var travelName:String = ""      // 旅行名
@@ -79,7 +79,7 @@ struct EntryTravelView: View {
                 startDate = travel!.startDate
                 endDate = travel!.endDate
             }else{
-                let myName = SignInUserInfoViewModel.shared.signInUserName
+                let myName = userInfoVM.signInUserName
                 memberArray = [myName]
             }
         }

@@ -63,7 +63,6 @@
 		12B4696F29E82614002E6864 /* AdMobViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696E29E82614002E6864 /* AdMobViewModels.swift */; };
 		12B4697129E82633002E6864 /* ShareLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697029E82633002E6864 /* ShareLinkViewModel.swift */; };
 		12B4697329E82640002E6864 /* DeviceSizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697229E82640002E6864 /* DeviceSizeViewModel.swift */; };
-		12B4697C29E82838002E6864 /* ShareLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697B29E82838002E6864 /* ShareLinkModel.swift */; };
 		12B4697E29E82D14002E6864 /* EntryTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697D29E82D14002E6864 /* EntryTravelView.swift */; };
 		12B4698229E8ACDF002E6864 /* EntryScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */; };
 		12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698329EA9893002E6864 /* ListScheduleView.swift */; };
@@ -184,7 +183,6 @@
 		12B4696E29E82614002E6864 /* AdMobViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobViewModels.swift; sourceTree = "<group>"; };
 		12B4697029E82633002E6864 /* ShareLinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLinkViewModel.swift; sourceTree = "<group>"; };
 		12B4697229E82640002E6864 /* DeviceSizeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSizeViewModel.swift; sourceTree = "<group>"; };
-		12B4697B29E82838002E6864 /* ShareLinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLinkModel.swift; sourceTree = "<group>"; };
 		12B4697D29E82D14002E6864 /* EntryTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTravelView.swift; sourceTree = "<group>"; };
 		12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryScheduleView.swift; sourceTree = "<group>"; };
 		12B4698329EA9893002E6864 /* ListScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScheduleView.swift; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 		125218A029D636B2006AF797 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				12B4697A29E8280F002E6864 /* Function */,
 				1281C52F2A13B7FB00C23047 /* FBRealtimeDatabase */,
 				12B4697429E826B4002E6864 /* Realm */,
 			);
@@ -606,14 +603,6 @@
 				12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */,
 			);
 			path = FBRealtimeDatabase;
-			sourceTree = "<group>";
-		};
-		12B4697A29E8280F002E6864 /* Function */ = {
-			isa = PBXGroup;
-			children = (
-				12B4697B29E82838002E6864 /* ShareLinkModel.swift */,
-			);
-			path = Function;
 			sourceTree = "<group>";
 		};
 		12B4699129F1E45E002E6864 /* TravelDatePageView */ = {
@@ -1074,7 +1063,6 @@
 				1252193129DE1E49006AF797 /* UserSignUpPanelView.swift in Sources */,
 				12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */,
 				12B4696929E81E4C002E6864 /* Color.swift in Sources */,
-				12B4697C29E82838002E6864 /* ShareLinkModel.swift in Sources */,
 				12B4699829F51589002E6864 /* ScheduleTypePickerView.swift in Sources */,
 				1252192B29DE1C2A006AF797 /* EmailAuthButtonView.swift in Sources */,
 				1281C5382A15825800C23047 /* UserNameEntryView.swift in Sources */,

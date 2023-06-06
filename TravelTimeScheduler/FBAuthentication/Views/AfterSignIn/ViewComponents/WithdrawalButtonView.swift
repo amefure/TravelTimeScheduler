@@ -13,6 +13,7 @@ struct WithdrawalButtonView: View {
     private let dbControl = SwitchingDatabaseControlViewModel.shared
     private let validationVM = ValidationViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
+    private let userInfoVM = SignInUserInfoViewModel()
     
     // MARK: - Navigationプロパティ
     @State var isActive:Bool = false
@@ -35,7 +36,7 @@ struct WithdrawalButtonView: View {
                 SectionImageView(image: "Withdrawal")
                 
                 // MARK: - Input (Email Only)
-                if SignInUserInfoViewModel().getSignInProvider() == .email {
+                if userInfoVM.getSignInProvider() == .email {
                     Section("User password?"){
                         SecureInputView(password: $password)
                     }
@@ -48,7 +49,7 @@ struct WithdrawalButtonView: View {
                         Button {
                             isClick = true
                             dbControl.stopAllObserved()
-                            switch SignInUserInfoViewModel().getSignInProvider() {
+                            switch userInfoVM.getSignInProvider() {
                             case .email:
                                 
                                 if !password.isEmpty{
@@ -72,7 +73,7 @@ struct WithdrawalButtonView: View {
                                 .fontWeight(.bold)
                             
                         }
-                        .disabled(SignInUserInfoViewModel().getSignInProvider() == .email ? !validationVM.validatePassWord(password: password) : false)
+                        .disabled(userInfoVM.getSignInProvider() == .email ? !validationVM.validatePassWord(password: password) : false)
                     }
                 }, footer: {
                     Text("アカウントを削除するとこれまで記録してきたデータが全て失われます。また友達と共有しているデータも削除される可能性があるので注意してください。")
@@ -86,7 +87,7 @@ struct WithdrawalButtonView: View {
             }
         }.background(Color.list)
             .sheet(isPresented: $isPresentedHalfModal, content: {
-                ReAuthProviderView(provider: SignInUserInfoViewModel().getSignInProvider(), isActive: $isActive, isPresentedHalfModal: $isPresentedHalfModal)
+                ReAuthProviderView(provider: userInfoVM.getSignInProvider(), isActive: $isActive, isPresentedHalfModal: $isPresentedHalfModal)
                     .presentationDetents([.medium])
             })
             .navigationDestination(isPresented: $isActive) {

@@ -13,16 +13,17 @@ struct ReAuthEmailView: View {
     private let validationVM = ValidationViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
     
-    // MARK: - Navigationプロパティ
+    // MARK: - Bindingプロパティ
     @Binding var isActive:Bool
     @Binding var name:String
     @Binding var email:String
     @Binding var isClick:Bool
     @Binding var isReAuth:Bool
     
+    // MARK: - Viewプロパティ
     @State var pass:String = ""
-    @State var isClick2:Bool = false
-    @State var isSuccess:Bool = false
+    @State var isProgressDisplay:Bool = false
+    @State var isUpdateSuccess:Bool = false
     
     private func validationInput()-> Bool{
         if validationVM.validateEmpty(str: name) && validationVM.validateEmail(email: email) && validationVM.validatePassWord(password: pass) {
@@ -55,21 +56,21 @@ struct ReAuthEmailView: View {
             
             // MARK: - Button
             Section {
-                ProgressButtonStack(isClick: $isClick2) {
+                ProgressButtonStack(isClick: $isProgressDisplay) {
                     Button {
-                        isClick2 = true
+                        isProgressDisplay = true
                         authVM.editUserName(name: name) { result in
                             if result {
                                 authVM.updateEmail(email: email, password: pass) { result in
                                     if result {
-                                        isSuccess = true
+                                        isUpdateSuccess = true
                                         isReAuth = false
                                     }else{
-                                        isClick2 = false
+                                        isProgressDisplay = false
                                     }
                                 }
                             }else{
-                                isClick2 = false
+                                isProgressDisplay = false
                             }
                         }
                         
@@ -85,7 +86,7 @@ struct ReAuthEmailView: View {
             
         }.onDisappear{
             isClick = false
-            if isSuccess {
+            if isUpdateSuccess {
                 isActive = true
             }
         }

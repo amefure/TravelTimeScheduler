@@ -15,8 +15,6 @@ struct AuthInputBoxView: View {
     @Binding var email:String
     @Binding var password:String
     
-    private let isSESize:Bool = DeviceSizeViewModel().isSESize
-    
     var body: some View {
         VStack{
             
@@ -36,7 +34,7 @@ struct AuthInputBoxView: View {
                 TextField("メールアドレス", text: $email)
                 SecureInputView(password: $password)
             }.padding()
-                .font(.system(size: isSESize ? 15 : 20))
+                .font(.system(size: DeviceSizeViewModel().isSESize ? 15 : 20))
                 .fontWeight(.bold)
                 .overlay(
                     RoundedRectangle(cornerRadius:5)

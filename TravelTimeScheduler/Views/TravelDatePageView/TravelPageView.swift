@@ -13,6 +13,7 @@ struct TravelPageView: View {
     // MARK: - Parameters
     public let travel:Travel
     
+    private let authVM = AuthViewModel.shared
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
     private let dbControl = SwitchingDatabaseControlViewModel.shared
     
@@ -66,11 +67,13 @@ struct TravelPageView: View {
             .background(Color.thema)
             .navigationCustomBackground()
             .onAppear{
-                dbControl.observedTravel(travelId: travel.id.stringValue) { data in
-                    // アクティブになったページの変更を観測
-                    // 変更があった場合は同じ要素のインデックスに再格納する
-                    if let index =  allTravelFirebase.travels.firstIndex(where: {$0.id == data.id}) {
-                        allTravelFirebase.travels[index] = data
+                if authVM.isSignIn{
+                    dbControl.observedTravel(travelId: travel.id.stringValue) { data in
+                        // アクティブになったページの変更を観測
+                        // 変更があった場合は同じ要素のインデックスに再格納する
+                        if let index =  allTravelFirebase.travels.firstIndex(where: {$0.id == data.id}) {
+                            allTravelFirebase.travels[index] = data
+                        }
                     }
                 }
             }

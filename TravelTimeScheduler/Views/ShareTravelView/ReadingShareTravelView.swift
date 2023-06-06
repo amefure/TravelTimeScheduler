@@ -13,8 +13,8 @@ struct ReadingShareTravelView: View {
     private let validationVM = ValidationViewModel()
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
     private let dbControl = SwitchingDatabaseControlViewModel.shared
-    private let signInUserInfo = SignInUserInfoViewModel()
-    private let deviceSize = DeviceSizeViewModel()
+    private let userInfoVM = SignInUserInfoViewModel()
+    private let deviceSizeVM = DeviceSizeViewModel()
     
     @State var travelId:String = ""
     @State var isClick:Bool = false
@@ -27,7 +27,7 @@ struct ReadingShareTravelView: View {
     private func validationCheck() -> Bool{
         if let travel = allTravelFirebase.travels.first(where: { $0.id.stringValue == travelId}){
             // readableUserlId配列の中にUserIdがなければOK
-            if travel.readableUserlId.contains(signInUserInfo.signInUserId) == false {
+            if travel.readableUserlId.contains(userInfoVM.signInUserId) == false {
                 return true
             }
         }
@@ -38,7 +38,7 @@ struct ReadingShareTravelView: View {
         VStack(spacing:0){
             
             HeaderTitleView(title:"ReadingShareTravel")
-                .frame(width: deviceSize.deviceWidth)
+                .frame(width: deviceSizeVM.deviceWidth)
                 .padding()
                 .background(Color.thema)
             
@@ -57,7 +57,7 @@ struct ReadingShareTravelView: View {
                             isClick = true
                             
                             if validationCheck() {
-                                dbControl.updateTravelReadableUserId(userId: signInUserInfo.signInUserId, travelId: travelId)
+                                dbControl.updateTravelReadableUserId(userId: userInfoVM.signInUserId, travelId: travelId)
                                 isSuccess = true
                             }else{
                                 isSuccess = false

@@ -10,7 +10,7 @@ import SwiftUI
 struct EntryHeaderView: View {
     
     // MARK: - ViewModels
-    private let validation = ValidationViewModel()
+    private let validationVM = ValidationViewModel()
     private let dbControl = SwitchingDatabaseControlViewModel.shared
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
     
@@ -27,7 +27,7 @@ struct EntryHeaderView: View {
     @State var isAlert:Bool = false
     
     private func validatuonInput() -> Bool{
-        validation.validateEmpty(str:travelName)
+        validationVM.validateEmpty(str:travelName)
     }
     
     @Environment(\.dismiss) var dismiss
@@ -68,7 +68,7 @@ struct EntryHeaderView: View {
             }, label: {
                 Text(travel == nil ? "登録" : "更新")
             }).padding()
-                .foregroundColor(validatuonInput() ?.accentSchedule:.gray)
+                .foregroundColor(validatuonInput() ? .accentSchedule : .gray)
                 .fontWeight(.bold)
         }.padding()
             .background(Color.thema)

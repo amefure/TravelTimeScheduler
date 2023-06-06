@@ -10,7 +10,7 @@ import SwiftUI
 struct BlankTravelView: View {
     
     // MARK: - ViewModels
-    private let deviceSizeViewModel = DeviceSizeViewModel()
+    private let deviceSizeVM = DeviceSizeViewModel()
     
     // MARK: - Parameters
     public let text:String
@@ -21,13 +21,13 @@ struct BlankTravelView: View {
             Spacer()
             
             Text(text)
-                .frame(width: deviceSizeViewModel.deviceWidth)
+                .frame(width: deviceSizeVM.deviceWidth)
                 .fontWeight(.bold)
                 .foregroundColor(.gray)
             
             Image(imageName)
                 .resizable()
-                .frame(width: deviceSizeViewModel.deviceWidth - 100  ,height: deviceSizeViewModel.deviceWidth / 1.9)
+                .frame(width: deviceSizeVM.deviceWidth - 100  ,height: deviceSizeVM.deviceWidth / 1.9)
             
             Spacer()
         }.background(Color.list)

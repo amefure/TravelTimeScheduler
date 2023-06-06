@@ -10,7 +10,8 @@ import SwiftUI
 struct RowTravelView: View {
     
     // MARK: - ViewModels
-    private let displayDate = DisplayDateViewModel()
+    private let deviceSizeVM = DeviceSizeViewModel()
+    private let displayDateVM = DisplayDateViewModel()
     
     // MARK: - Parameters
     let travel:Travel
@@ -19,7 +20,7 @@ struct RowTravelView: View {
         HStack{
             Image(systemName: "mappin.circle.fill")
                 .foregroundColor(Color.thema)
-                .font(.system(size: DeviceSizeViewModel().isSESize ? 35 : 40))
+                .font(.system(size: deviceSizeVM.isSESize ? 35 : 40))
                 .opacity(0.8)
             
             VStack{
@@ -31,9 +32,9 @@ struct RowTravelView: View {
                 }
                 
                 HStack{
-                    Text(displayDate.getJapanDateDisplayFormatString(travel.startDate))
+                    Text(displayDateVM.getJapanDateDisplayFormatString(travel.startDate))
                     Text("〜")
-                    Text(displayDate.getJapanDateDisplayFormatString(travel.endDate))
+                    Text(displayDateVM.getJapanDateDisplayFormatString(travel.endDate))
                 }.font(.system(size: 12))
                 
             }.fontWeight(.bold)

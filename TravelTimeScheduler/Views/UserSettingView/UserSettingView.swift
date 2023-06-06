@@ -9,8 +9,7 @@ import SwiftUI
 
 struct UserSettingView: View {
     
-    // MARK: - ViewModels
-    private let signInUserInfoVM = SignInUserInfoViewModel.shared
+    private let authVM = AuthViewModel.shared
     
     // MARK: - View
     private let columns = Array(repeating: GridItem(.flexible()), count: 3)
@@ -30,13 +29,13 @@ struct UserSettingView: View {
             // MARK: - Panels
             LazyVGrid(columns: columns,spacing: 20) {
                 
-                if AuthViewModel.shared.isSignIn {
+                if authVM.isSignIn {
                     UserinfoEditView()
                 }else{
                     UserNameEntryView()
                 }
                 
-                if AuthViewModel.shared.isSignIn {
+                if authVM.isSignIn  {
                     UserSignOutPanelView()
                 }else{
                     UserSignUpPanelView()
@@ -45,7 +44,7 @@ struct UserSettingView: View {
                    
                 UserAllTravelDeletePanelView()
                 
-                if AuthViewModel.shared.isSignIn {
+                if authVM.isSignIn  {
                     UserWithdrawalPanelView()
                 }
                 

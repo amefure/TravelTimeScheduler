@@ -11,8 +11,8 @@ import SwiftUI
 struct UserInfoCardView: View {
     
     // MARK: - ViewModels
-    private let deviceSizeViewModel = DeviceSizeViewModel()
-    private var signInUserInfoVM = SignInUserInfoViewModel.shared
+    private let deviceSizeVM = DeviceSizeViewModel()
+    private var userInfoVM = SignInUserInfoViewModel()
     private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
     @State var active = false // User情報が更新された時に画面を再描画する
     // MARK: - View
@@ -26,7 +26,7 @@ struct UserInfoCardView: View {
                         Text("User Name")
                             .font(.caption)
                         
-                        Text(signInUserInfoVM.signInUserName)
+                        Text(userInfoVM.signInUserName)
                             .foregroundColor(Color.thema)
                             .lineLimit(1)
                             
@@ -35,7 +35,7 @@ struct UserInfoCardView: View {
                     Group{
                         Text("SignIn Provider")
                             .font(.caption)
-                        Text(signInUserInfoVM.signInUserProvider)
+                        Text(userInfoVM.signInUserProvider)
                             .foregroundColor(Color.thema)
                     }
                     
@@ -50,7 +50,7 @@ struct UserInfoCardView: View {
                     Group{
                         Text("SignIn Email")
                             .font(.caption)
-                        Text(signInUserInfoVM.signInUserEmail)
+                        Text(userInfoVM.signInUserEmail)
                             .foregroundColor(Color.thema)
                             .lineLimit(1)
                     }
@@ -67,7 +67,7 @@ struct UserInfoCardView: View {
             }
         }.padding(8)
             .foregroundColor(.gray)
-            .frame(width: deviceSizeViewModel.deviceWidth - 50)
+            .frame(width: deviceSizeVM.deviceWidth - 50)
             .fontWeight(.bold)
             .background(.white)
             .overlay(

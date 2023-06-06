@@ -12,10 +12,10 @@ class ValidationViewModel {
     
     // MARK: - Empty
     public func validateEmpty(str: String) -> Bool {
-        if str != ""{
-            return true
+        if str.isEmpty {
+            return false
         }
-        return false
+        return true
     }
     
     // MARK: - Email
@@ -31,26 +31,4 @@ class ValidationViewModel {
         }
         return false
     }
-}
-
-extension ValidationViewModel {
-    public func checkNegativeAmount (_ amount:Int) -> Bool{
-        if amount <= -1  {
-            return false
-        }else{
-            return true
-        }
-    }
-    
-    public func checkValidURL (_ urlStr: String) -> Bool {
-        guard let encurl = urlStr.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
-            return false
-        }
-        if let url = NSURL(string: encurl) {
-            return UIApplication.shared.canOpenURL(url as URL)
-        }else{
-            return false
-        }
-    }
-    
 }

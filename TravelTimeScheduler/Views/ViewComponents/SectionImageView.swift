@@ -10,7 +10,7 @@ import SwiftUI
 struct SectionImageView: View {
     
     // MARK: - ViewModels
-    private let deviceSize = DeviceSizeViewModel()
+    private let deviceSizeVM = DeviceSizeViewModel()
     // MARK: - Parameters
     public let image:String
     
@@ -18,7 +18,7 @@ struct SectionImageView: View {
         Section {
             Image(image)
                 .resizable()
-                .frame(width: deviceSize.deviceWidth - 100  ,height: deviceSize.deviceWidth / 1.9)
+                .frame(width: deviceSizeVM.deviceWidth - 100  ,height: deviceSizeVM.deviceWidth / 1.9)
                 .background(Color.list)
         }.listRowBackground(Color.list)
             .listRowSeparator(.hidden)

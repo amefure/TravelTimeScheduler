@@ -12,28 +12,27 @@ import RealmSwift
 struct PickerTimeView: View {
     
     // MARK: - ViewModels
-    private let displayDateViewModel = DisplayDateViewModel()
+    private let displayDateVM = DisplayDateViewModel()
+    private let authVM = AuthViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel.shared // migrationのため必要
+    
+    // MARK: - Database
+    @ObservedResults(Travel.self) var allTravelRelam
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
 
     @Binding var selectTime:String
-    private let authViewModel = AuthViewModel.shared
-    
-    private let dbControl = SwitchingDatabaseControlViewModel.shared // migrationのため必要
-    @ObservedResults(Travel.self) var allTravelRelam
     
     // MARK: - リスト表示するべき年数
     private var timeArray:[String] {
         var array:[String] = ["all"]
-        if authViewModel.isSignIn {
+        if authVM.isSignIn {
             for item in allTravelFirebase.travels {
-                let year = displayDateViewModel.getDateDisplayFormatString(item.startDate).prefix(4)
+                let year = displayDateVM.getDateDisplayFormatString(item.startDate).prefix(4)
                 array.append(String(year))
             }
         }else{
-            
-            
             for item in allTravelRelam {
-                let year = displayDateViewModel.getDateDisplayFormatString(item.startDate).prefix(4)
+                let year = displayDateVM.getDateDisplayFormatString(item.startDate).prefix(4)
                 array.append(String(year))
             }
         }

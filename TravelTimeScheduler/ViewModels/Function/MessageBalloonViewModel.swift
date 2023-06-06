@@ -17,12 +17,12 @@ class MessageBalloonViewModel:ObservableObject{
     private var timer = Timer()
     
     // Double型にキャスト＆opacityモディファイア用の数値に割り算
-    func castOpacity() -> Double{
+    public func castOpacity() -> Double{
         Double(self.opacity / 10)
     }
     
     // opacityを徐々に減らすことでアニメーションを実装
-    func vanishMessage(){
+    public func vanishMessage(){
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true){ _ in
             self.opacity = self.opacity - 1.0 // デクリメント
             

@@ -12,7 +12,7 @@ import RealmSwift
 struct ScrollPeriodTabPickerView: View {
     
     // MARK: - ViewModels
-    private let displayDate = DisplayDateViewModel()
+    private let displayDateVM = DisplayDateViewModel()
     
     // MARK: - Parameters
     public let travel:Travel
@@ -27,7 +27,7 @@ struct ScrollPeriodTabPickerView: View {
                         selection = travel.allTravelPeriod.firstIndex(of: item)!
                     } label: {
                         VStack(spacing:0){
-                            Text(displayDate.getShortDateDisplayFormatString(item))
+                            Text(displayDateVM.getShortDateDisplayFormatString(item))
                                 .padding(5)
                             Rectangle()
                                 .frame(height:5)

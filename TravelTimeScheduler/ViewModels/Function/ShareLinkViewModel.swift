@@ -8,9 +8,19 @@
 import UIKit
 
 class ShareLinkViewModel {
-    private let model = ShareLinkModel()
 
     public func shareApp(shareText: String, shareLink: String) {
-        model.shareApp(shareText: shareText, shareLink: shareLink)
+        let items = [shareText, URL(string: shareLink)!] as [Any]
+        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if let popPC = activityVC.popoverPresentationController {
+                popPC.sourceView = activityVC.view
+                popPC.barButtonItem = .none
+                popPC.sourceRect = activityVC.accessibilityFrame
+            }
+        }
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let rootVC = windowScene?.windows.first?.rootViewController
+        rootVC?.present(activityVC, animated: true,completion: {})
     }
 }

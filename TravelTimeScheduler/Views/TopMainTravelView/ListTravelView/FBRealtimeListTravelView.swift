@@ -10,31 +10,33 @@ import SwiftUI
 struct FBRealtimeListTravelView: View {
     
     // MARK: - ViewModels
-    private let displayDateViewModel = DisplayDateViewModel()
-    private let signInUserInfoVM = SignInUserInfoViewModel.shared
+    private let displayDateVM = DisplayDateViewModel()
+    private let userInfoVM = SignInUserInfoViewModel()
+    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    
+    // MARK: - Database
+    @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
     
     // MARK: - View
     @Binding var searchText:String
     @Binding var selectTime:String
     
-    @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
-    
+    // MARK: - フィルタリング
     private var filteringResults:Array<Travel> {
         
         // 全Travel情報の中からサインインUserが読み取り可能な情報のみにフィルタリング
-        let result = allTravelFirebase.travels.filter({$0.readableUserlId.contains(signInUserInfoVM.signInUserId)})
+        let result = allTravelFirebase.travels.filter({$0.readableUserlId.contains(userInfoVM.signInUserId)})
         
         if searchText.isEmpty && selectTime == "all" {
             // フィルタリングなし
             return result
         }else if searchText.isEmpty && selectTime != "all"{
             // 年数のみ
-            let startAndEndDate = displayDateViewModel.getYearStringDateArray(selectTime)
+            let startAndEndDate = displayDateVM.getYearStringDateArray(selectTime)
             return result.filter({ (startAndEndDate[0]...startAndEndDate[1]).contains($0.startDate)})
         }else if searchText.isEmpty == false &&  selectTime != "all"  {
             // 検索値＆年数
-            let startAndEndDate = displayDateViewModel.getYearStringDateArray(selectTime)
+            let startAndEndDate = displayDateVM.getYearStringDateArray(selectTime)
             return result.filter({$0.name.contains(searchText)}).filter({ (startAndEndDate[0]...startAndEndDate[1]).contains($0.startDate)})
         }else{
             // 検索値のみ
@@ -42,9 +44,8 @@ struct FBRealtimeListTravelView: View {
         }
     }
     
-    
+    // MARK: - TravelListView
     var body: some View {
-        // MARK: - TravelListView
         Group{
             if searchText.isEmpty && filteringResults.count == 0 {
                 // 履歴未登録時のビュー
