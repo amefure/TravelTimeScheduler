@@ -38,11 +38,15 @@ struct GoogleAuthButtonView: View {
                     }
                 }else{
                     // 退会
-                    authVM.credentialGoogleWithdrawal { result in
+                    authVM.credentialGoogleReAuth{ result in
+                        dbControl.deleteFBAllTable()    // 認証済みなら退会の前にUserのデータを削除
                         if result {
-                            dbControl.deleteFBAllTable()  // 全データリセット
-                            isPresentedHalfModal = false
-                            isActive = true
+                            authVM.withdrawal { result in
+                                if result {
+                                    isPresentedHalfModal = false
+                                    isActive = true
+                                }
+                            }
                         }
                     }
                 }

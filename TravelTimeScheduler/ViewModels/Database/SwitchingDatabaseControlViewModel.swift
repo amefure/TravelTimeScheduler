@@ -23,8 +23,6 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     /// サインインしているならFirebaseに切り替える
     private let authVM:AuthViewModel = AuthViewModel.shared
     
-    // MARK: シングルトン
-//    static let shared:SwitchingDatabaseControlViewModel = SwitchingDatabaseControlViewModel()
     
     // MARK: - CRUD処理を提供するViewModels
     private let realmVM = RealmDatabaseViewModel.shared

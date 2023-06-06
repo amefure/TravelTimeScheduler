@@ -52,7 +52,7 @@ class AuthModel {
         }
     }
     
-    // MARK: -  各プロバイダ退会処理 & Appleアカウントは直呼び出し
+    // MARK: -  各プロバイダ退会処理 
     public func withdrawal(completion : @escaping (Result<Bool, Error>) ->  Void ){
         if let user = auth.currentUser {
             user.delete { error in

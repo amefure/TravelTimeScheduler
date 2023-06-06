@@ -53,9 +53,14 @@ struct WithdrawalButtonView: View {
                             case .email:
                                 
                                 if !password.isEmpty{
-                                    authVM.credentialEmailWithdrawal(password:password) { result in
+                                    authVM.credentialEmailReAuthUser(password:password) { result in
                                         if result {
-                                            isActive = true
+                                            dbControl.deleteFBAllTable()  // 認証済みなら退会の前にUserのデータを削除
+                                            authVM.withdrawal { result in
+                                                if result {
+                                                    isActive = true
+                                                }
+                                            }
                                         }
                                         isClick = false
                                     }

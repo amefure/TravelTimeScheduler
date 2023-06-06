@@ -18,7 +18,6 @@ class AuthViewModel:ObservableObject {
     // UserDefaultVM
     private let userInfoVM = SignInUserInfoViewModel()
     private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
-//    private let dbControl = SwitchingDatabaseControlViewModel()
     
     // AuthModel
     private var auth = AuthModel.shared
@@ -83,7 +82,7 @@ class AuthViewModel:ObservableObject {
         }
     }
     
-    /// 退会
+    /// 退会 & Appleアカウントは直呼び出し
     public func withdrawal(completion: @escaping (Bool) -> Void ) {
         self.auth.withdrawal { result in
             completion(self.switchResultAndSetErrorMsg(result))
@@ -128,13 +127,10 @@ extension AuthViewModel {
     }
     
     /// 再認証→退会
-    public func credentialEmailWithdrawal(password:String,completion: @escaping (Bool) -> Void ) {
+    public func credentialEmailReAuthUser(password:String,completion: @escaping (Bool) -> Void ) {
         emailAuth.reAuthUser(pass: password) { result in
             if self.switchResultAndSetErrorMsg(result) {
-//                self.dbControl.deleteFBAllTable()
-                self.withdrawal { result in
-                    completion(result)
-                }
+               completion(true)
             }else{
                 completion(false)
             }
@@ -185,21 +181,8 @@ extension AuthViewModel {
             }
         }
     }
-    
-    /// 再認証→退会
-    public func credentialGoogleWithdrawal(completion: @escaping (Bool) -> Void ) {
-        self.credentialGoogleReAuth { result in
-            if result {
-//                self.dbControl.deleteFBAllTable()
-                self.withdrawal { result in
-                    completion(result)
-                }
-            }
-        }
-    }
-    
     /// 再認証
-    private func credentialGoogleReAuth(completion: @escaping (Bool) -> Void ) {
+    public func credentialGoogleReAuth(completion: @escaping (Bool) -> Void ) {
         googleAuth.getCredential { credential in
             if credential != nil {
                 self.googleAuth.reAuthUser(user: self.auth.getCurrentUser()!, credential: credential!) { result in
@@ -236,14 +219,6 @@ extension AuthViewModel {
     /// ボタンクリック後の結果分岐処理
     public func switchAuthResult(result:Result<ASAuthorization, Error>) -> AuthCredential?{
         return appleAuth.switchAuthResult(result: result)
-    }
-    
-    /// 再認証
-    private func credentialAppleWithdrawal(completion: @escaping (Bool) -> Void ) {
-//        self.dbControl.deleteFBAllTable()
-        self.withdrawal { result in
-            completion(result)
-        }
     }
     
 }
