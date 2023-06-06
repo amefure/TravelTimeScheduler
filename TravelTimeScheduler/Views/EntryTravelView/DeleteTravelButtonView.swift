@@ -25,7 +25,7 @@ struct DeleteTravelButtonView: View {
             Text("旅行削除")
         }.alert("「\(travel.name)」の記録と思い出をすべて削除しますか...？", isPresented: $isDeleteAlert) {
             Button(role:.destructive) {
-                dbControl.deleteTravel(id: travel.id.stringValue)
+                dbControl.deleteTravel(travel: travel)
                 self.parentBackRootViewFunction()
             } label: {
                 Text("削除")

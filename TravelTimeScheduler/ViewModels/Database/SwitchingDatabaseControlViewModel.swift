@@ -57,12 +57,11 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     }
     
     // Delete
-    public func deleteTravel(id:String){
+    public func deleteTravel(travel:Travel){
         if authVM.isSignIn {
-            fbVM.deleteTravel(id: id)
+            fbVM.deleteTravel(travel: travel)
         }else{
-            let objID = convertTypeVM.convertStringToObjectId(strID: id)
-            realmVM.deleteTravel(id: objID)
+            realmVM.deleteTravel(travel: travel)
         }
     }
     

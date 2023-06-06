@@ -69,8 +69,9 @@ struct TravelPageView: View {
                 dbControl.observedTravel(travelId: travel.id.stringValue) { data in
                     // アクティブになったページの変更を観測
                     // 変更があった場合は同じ要素のインデックスに再格納する
-                    let index =  allTravelFirebase.travels.firstIndex(where: {$0.id == data.id})
-                    allTravelFirebase.travels[index!] = data
+                    if let index =  allTravelFirebase.travels.firstIndex(where: {$0.id == data.id}) {
+                        allTravelFirebase.travels[index] = data
+                    }
                 }
             }
     }

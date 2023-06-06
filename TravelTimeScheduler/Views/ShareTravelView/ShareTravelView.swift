@@ -12,7 +12,6 @@ struct ShareTravelView: View {
     public let travel:Travel
     
     private let dbControl = SwitchingDatabaseControlViewModel.shared
-    private let signInUserInfo = SignInUserInfoViewModel()
     
     var body: some View {
         List{
@@ -27,6 +26,7 @@ struct ShareTravelView: View {
                     HStack{
                         
                         Text(travel.id.stringValue)
+                            .lineLimit(1)
                         
                         CopyButtonView(copyText: travel.id.stringValue)
                         
@@ -49,7 +49,6 @@ struct ShareTravelView: View {
                     Button {
                         dbControl.updateShareTravel(travel: travel, share: true)
                         dbControl.entryTravel(travel: travel)
-//                        dbControl.addUserReadableTravelId(userId: signInUserInfo.signInUserId, travelId: travel.id.stringValue)
                     } label: {
                         Text("TravelIDを発行する")
                     }

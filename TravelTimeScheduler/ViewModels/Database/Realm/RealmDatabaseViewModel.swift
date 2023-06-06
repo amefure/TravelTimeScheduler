@@ -60,8 +60,8 @@ class RealmDatabaseViewModel:CrudDatabaseViewModel {
     }
     
     // Delete
-    public func deleteTravel(id:ObjectId){
-        model.deleteTravel(id: id)
+    public func deleteTravel(travel:Travel){
+        model.deleteTravel(id: travel.id)
     }
     
     // MARK: - Schedule

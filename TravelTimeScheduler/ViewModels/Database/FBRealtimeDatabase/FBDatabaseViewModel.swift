@@ -54,8 +54,8 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
         model.entryTravel(id:id,childUpdates: childUpdates)
     }
     
-    public func deleteTravel(id: String) {
-        model.deleteTravel(id: id)
+    public func deleteTravel(travel:Travel) {
+        model.deleteTravel(travel: travel,userId: signInUserInfoVM.signInUserId)
     }
     
     // MARK: - Schedule

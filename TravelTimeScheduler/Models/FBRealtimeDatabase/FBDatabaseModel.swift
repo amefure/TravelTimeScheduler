@@ -129,8 +129,15 @@ class FBDatabaseModel {
     }
     
     // Delete
-    public func deleteTravel(id:String) {
-        ref.child("travels").child(id).removeValue()
+    public func deleteTravel(travel:Travel,userId:String) {
+        var ids = travel.readableUserlId
+        if ids.count == 1{
+            ref.child("travels").child(travel.id.stringValue).removeValue()
+        }else{
+            let index = ids.firstIndex(of: userId)
+            ids.remove(at: index!)
+            ref.child("travels").child(travel.id.stringValue).child("readableUserlId").setValue(ids)
+        }
     }
     
     public func deleteSchedule(travelId:String,scheduleId:String){
