@@ -10,7 +10,7 @@ import SwiftUI
 struct WithdrawalButtonView: View {
     
     // MARK: - ViewModels
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     private let validationVM = ValidationViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
     private let userInfoVM = SignInUserInfoViewModel()
@@ -55,7 +55,6 @@ struct WithdrawalButtonView: View {
                                 if !password.isEmpty{
                                     authVM.credentialEmailWithdrawal(password:password) { result in
                                         if result {
-                                            dbControl.deleteFBAllTable()
                                             isActive = true
                                         }
                                         isClick = false

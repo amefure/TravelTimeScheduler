@@ -24,7 +24,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     private let authVM:AuthViewModel = AuthViewModel.shared
     
     // MARK: シングルトン
-    static let shared:SwitchingDatabaseControlViewModel = SwitchingDatabaseControlViewModel()
+//    static let shared:SwitchingDatabaseControlViewModel = SwitchingDatabaseControlViewModel()
     
     // MARK: - CRUD処理を提供するViewModels
     private let realmVM = RealmDatabaseViewModel.shared

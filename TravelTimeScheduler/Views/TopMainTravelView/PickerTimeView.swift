@@ -14,7 +14,7 @@ struct PickerTimeView: View {
     // MARK: - ViewModels
     private let displayDateVM = DisplayDateViewModel()
     private let authVM = AuthViewModel.shared
-    private let dbControl = SwitchingDatabaseControlViewModel.shared // migrationのため必要
+    private let dbControl = SwitchingDatabaseControlViewModel() // migrationのため必要
     
     // MARK: - Database
     @ObservedResults(Travel.self) var allTravelRelam

@@ -10,7 +10,7 @@ import SwiftUI
 struct UserSignOutPanelView: View {
     // MARK: - ViewModels
     @ObservedObject var authVM = AuthViewModel.shared
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     // MARK: - Navigationプロパティ
     @State var isActive:Bool = false
     @State var isPresented:Bool = false

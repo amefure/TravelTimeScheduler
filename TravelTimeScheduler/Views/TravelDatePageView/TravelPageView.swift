@@ -15,7 +15,7 @@ struct TravelPageView: View {
     
     private let authVM = AuthViewModel.shared
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     
     // MARK: - View
     @State var selection:Int = 0

@@ -12,7 +12,7 @@ struct FBRealtimeListTravelView: View {
     // MARK: - ViewModels
     private let displayDateVM = DisplayDateViewModel()
     private let userInfoVM = SignInUserInfoViewModel()
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     
     // MARK: - Database
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared

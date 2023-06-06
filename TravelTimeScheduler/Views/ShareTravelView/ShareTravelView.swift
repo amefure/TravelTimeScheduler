@@ -11,7 +11,7 @@ struct ShareTravelView: View {
     
     // MARK: - ViewModels
     private let deviceSizeVM = DeviceSizeViewModel()
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     
     // MARK: - Receive Parameters
     public let travel:Travel

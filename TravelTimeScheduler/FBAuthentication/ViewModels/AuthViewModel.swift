@@ -18,6 +18,7 @@ class AuthViewModel:ObservableObject {
     // UserDefaultVM
     private let userInfoVM = SignInUserInfoViewModel()
     private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
+//    private let dbControl = SwitchingDatabaseControlViewModel()
     
     // AuthModel
     private var auth = AuthModel.shared
@@ -130,6 +131,7 @@ extension AuthViewModel {
     public func credentialEmailWithdrawal(password:String,completion: @escaping (Bool) -> Void ) {
         emailAuth.reAuthUser(pass: password) { result in
             if self.switchResultAndSetErrorMsg(result) {
+//                self.dbControl.deleteFBAllTable()
                 self.withdrawal { result in
                     completion(result)
                 }
@@ -188,6 +190,7 @@ extension AuthViewModel {
     public func credentialGoogleWithdrawal(completion: @escaping (Bool) -> Void ) {
         self.credentialGoogleReAuth { result in
             if result {
+//                self.dbControl.deleteFBAllTable()
                 self.withdrawal { result in
                     completion(result)
                 }
@@ -234,5 +237,14 @@ extension AuthViewModel {
     public func switchAuthResult(result:Result<ASAuthorization, Error>) -> AuthCredential?{
         return appleAuth.switchAuthResult(result: result)
     }
+    
+    /// 再認証
+    private func credentialAppleWithdrawal(completion: @escaping (Bool) -> Void ) {
+//        self.dbControl.deleteFBAllTable()
+        self.withdrawal { result in
+            completion(result)
+        }
+    }
+    
 }
 

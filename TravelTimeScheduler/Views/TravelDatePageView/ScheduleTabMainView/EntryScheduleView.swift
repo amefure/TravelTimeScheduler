@@ -13,7 +13,7 @@ struct EntryScheduleView: View {
     
     // MARK: - ViewModels
     private let validation = ValidationViewModel()
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     private let displayDate = DisplayDateViewModel()
     private let deviceSize = DeviceSizeViewModel()
 

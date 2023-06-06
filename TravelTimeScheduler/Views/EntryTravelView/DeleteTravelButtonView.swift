@@ -10,7 +10,7 @@ import SwiftUI
 struct DeleteTravelButtonView: View {
     
     // MARK: - ViewModels
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     
     // MARK: - Parameters
     public let travel:Travel

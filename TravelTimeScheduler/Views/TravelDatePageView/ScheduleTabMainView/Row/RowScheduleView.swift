@@ -11,7 +11,7 @@ struct RowScheduleView: View {
     
     // MARK: - ViewModels
     private let deviceSize = DeviceSizeViewModel()
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     private let displayDate = DisplayDateViewModel()
     
     @ObservedObject var listScheduleVM = ListScheduleViewModel.shared

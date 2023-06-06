@@ -17,7 +17,7 @@ struct GoogleAuthButtonView: View {
     @Binding var isPresentedHalfModal:Bool
     
     // MARK: - ViewModels
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
 
     // MARK: - Flag

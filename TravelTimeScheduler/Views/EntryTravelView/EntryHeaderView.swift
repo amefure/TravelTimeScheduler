@@ -11,7 +11,7 @@ struct EntryHeaderView: View {
     
     // MARK: - ViewModels
     private let validationVM = ValidationViewModel()
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
     
     // MARK: - TextField

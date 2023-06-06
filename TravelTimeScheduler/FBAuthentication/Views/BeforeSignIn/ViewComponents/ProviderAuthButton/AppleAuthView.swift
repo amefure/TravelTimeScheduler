@@ -13,7 +13,7 @@ import FirebaseAuth
 struct AppleAuthButtonView: View {
     
     // MARK: - ViewModels
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     @ObservedObject var authVM = AuthViewModel.shared
     
     // MARK: - Navigationプロパティ

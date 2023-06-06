@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserAllTravelDeletePanelView: View {
     // MARK: - ViewModels
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     
     @State var isAlert:Bool = false
     @State var isDeleteAlert:Bool = false

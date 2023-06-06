@@ -11,7 +11,7 @@ import RealmSwift
 class UserNewEntryRegistrationFBDatabaseViewModel {
     
     // FB RealtimeDatabase User
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
     private let userInfoVM = SignInUserInfoViewModel()
     

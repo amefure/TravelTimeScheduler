@@ -10,7 +10,7 @@ import RealmSwift
 struct RealmListTravelView: View {
     
     // MARK: - ViewModels
-    private let dbControl = SwitchingDatabaseControlViewModel.shared // migrationのため必要
+    private let dbControl = SwitchingDatabaseControlViewModel() // migrationのため必要
     private let displayDateVM = DisplayDateViewModel()
     
     // MARK: - Database

@@ -12,7 +12,7 @@ struct ReadingShareTravelView: View {
     // MARK: - ViewModels
     private let validationVM = ValidationViewModel()
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
-    private let dbControl = SwitchingDatabaseControlViewModel.shared
+    private let dbControl = SwitchingDatabaseControlViewModel()
     private let userInfoVM = SignInUserInfoViewModel()
     private let deviceSizeVM = DeviceSizeViewModel()
     
