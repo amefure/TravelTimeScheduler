@@ -16,7 +16,7 @@ struct UserInfoCardView: View {
     private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
     @State var active = false // User情報が更新された時に画面を再描画する
     // MARK: - View
-    private let columns = [GridItem(.fixed(100)),GridItem(.fixed(DeviceSizeViewModel().isSESize ? 120 : 180))]
+    private let columns = [GridItem(.fixed(100)),GridItem(.fixed(DeviceSizeViewModel().isSESize ? 160 : 180))]
     
     var body: some View {
         Group{
@@ -29,7 +29,6 @@ struct UserInfoCardView: View {
                         Text(userInfoVM.signInUserName)
                             .foregroundColor(Color.thema)
                             .lineLimit(1)
-                            
                     }
                     
                     Group{
@@ -65,16 +64,7 @@ struct UserInfoCardView: View {
                 }
                 
             }
-        }.padding()
-            .foregroundColor(.gray)
-            .frame(width: deviceSizeVM.deviceWidth - 40)
-            .fontWeight(.bold)
-            .background(.white)
-            .overlay(
-                RoundedRectangle(cornerRadius:5)
-                    .stroke(Color.gray,lineWidth: 2)
-            )
-            .shadowCornerRadius()
+        }.floatingCard()
             .onAppear{
                 active.toggle() // User情報が更新された時に画面を再描画する
             }

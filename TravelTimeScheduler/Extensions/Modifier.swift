@@ -21,6 +21,22 @@ struct ScheduleTypeIcon: ViewModifier {
     }
 }
 
+struct FloatingCard:ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .padding()
+                .foregroundColor(.gray)
+                .frame(width: DeviceSizeViewModel().deviceWidth - 40)
+                .fontWeight(.bold)
+                .background(.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius:5)
+                        .stroke(Color.gray,lineWidth: 2)
+                )
+                .shadowCornerRadius()
+    }
+}
+
 struct NavigationCustomBackground:ViewModifier{
     func body(content: Content) -> some View {
         content
@@ -43,6 +59,10 @@ struct ShadowCornerRadius:ViewModifier{
 extension View {
     func scheduleTypeIcon(color:Color) -> some View {
         modifier(ScheduleTypeIcon(color: color))
+    }
+    
+    func floatingCard() -> some View {
+        modifier(FloatingCard())
     }
     
     func navigationCustomBackground() -> some View {

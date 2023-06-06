@@ -31,17 +31,8 @@ struct ShareTravelView: View {
                     
                     CopyButtonView(copyText: travel.id.stringValue)
                     
-                }.padding()
-                    .foregroundColor(.gray)
-                    .frame(width: deviceSizeVM.deviceWidth - 40)
-                    .fontWeight(.bold)
-                    .background(.white)
-                    .textSelection(.enabled)
-                    .overlay(
-                        RoundedRectangle(cornerRadius:5)
-                            .stroke(Color.gray,lineWidth: 2)
-                    )
-                    .shadowCornerRadius()
+                }.textSelection(.enabled)
+                    .floatingCard()
                 
             }.listRowBackground(Color.list)
         }.foregroundColor(Color.thema)
