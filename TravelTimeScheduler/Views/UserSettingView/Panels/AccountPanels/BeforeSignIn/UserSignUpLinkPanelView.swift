@@ -1,24 +1,23 @@
 //
-//  UserinfoEditView.swift
+//  SignOutButtonView.swift
 //  TravelTimeScheduler
 //
-//  Created by t&a on 2023/05/03.
+//  Created by t&a on 2023/04/06.
 //
 
 import SwiftUI
 
-// 
-struct UserinfoEditView: View {
+struct UserSignUpLinkPanelView: View {
     
     var body: some View {
         NavigationLink {
-            EditUserNameView()
+            NewEntryAuthView()
         } label: {
             VStack{
-                Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                Image(systemName: "person.fill.checkmark")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("Edit User")
+                Text("Sign Up")
             }
         }
     }

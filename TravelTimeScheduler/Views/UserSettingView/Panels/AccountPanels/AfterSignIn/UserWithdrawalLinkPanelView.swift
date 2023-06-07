@@ -1,23 +1,23 @@
 //
-//  SignOutButtonView.swift
+//  UserWithdrawalView.swift
 //  TravelTimeScheduler
 //
-//  Created by t&a on 2023/04/06.
+//  Created by t&a on 2023/05/03.
 //
 
 import SwiftUI
 
-struct UserSignUpPanelView: View {
+struct UserWithdrawalLinkPanelView: View {
     
     var body: some View {
         NavigationLink {
-            NewEntryAuthView()
+            WithdrawalButtonView()
         } label: {
             VStack{
-                Image(systemName: "person.fill.checkmark")
+                Image(systemName: "arrow.right.to.line.compact")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("Sign Up")
+                Text("User Delete")
             }
         }
     }

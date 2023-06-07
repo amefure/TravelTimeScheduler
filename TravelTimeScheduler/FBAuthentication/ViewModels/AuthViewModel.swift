@@ -17,7 +17,6 @@ class AuthViewModel:ObservableObject {
     
     // UserDefaultVM
     private let userInfoVM = SignInUserInfoViewModel()
-    private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
     
     // AuthModel
     private var auth = AuthModel.shared
@@ -30,6 +29,7 @@ class AuthViewModel:ObservableObject {
     // プロパティ
     @Published var errMessage:String = ""
     
+    /// Auth処理の結果に応じた真偽値とエラーメッセージのセット
     private func switchResultAndSetErrorMsg(_ result:Result<Bool,Error>) -> Bool{
         switch result {
         case .success(_) :
@@ -43,6 +43,7 @@ class AuthViewModel:ObservableObject {
         }
     }
     
+    /// 観測されているエラーメッセージプロパティのリセット
     public func resetErrorMsg(){
         self.errMessage = ""
     }
@@ -73,8 +74,6 @@ class AuthViewModel:ObservableObject {
     public func signOut(completion: @escaping (Bool) -> Void ) {
         self.auth.SignOut { result in
             if self.switchResultAndSetErrorMsg(result) {
-                self.allTravelFirebase.resetData() // 読み込んでいるFirebase Dataをリセット
-                self.userInfoVM.resetUserInfo()    // ユーザー情報をリセット
                 completion(true)
             }else{
                 completion(false)

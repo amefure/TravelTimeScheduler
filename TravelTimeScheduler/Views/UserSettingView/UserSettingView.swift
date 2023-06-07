@@ -30,15 +30,15 @@ struct UserSettingView: View {
             LazyVGrid(columns: columns,spacing: 20) {
                 
                 if authVM.isSignIn {
-                    UserinfoEditView()
+                    UserinfoEditLinkPanelView()
                 }else{
-                    UserNameEntryView()
+                    UserNameEntryLinkPanelView()
                 }
                 
                 if authVM.isSignIn  {
                     UserSignOutPanelView()
                 }else{
-                    UserSignUpPanelView()
+                    UserSignUpLinkPanelView()
                 }
                 
                 if !authVM.isSignIn  {
@@ -46,7 +46,7 @@ struct UserSettingView: View {
                 }
                 
                 if authVM.isSignIn  {
-                    UserWithdrawalPanelView()
+                    UserWithdrawalLinkPanelView()
                 }
                 
                 UserReviewLinkPanelView()

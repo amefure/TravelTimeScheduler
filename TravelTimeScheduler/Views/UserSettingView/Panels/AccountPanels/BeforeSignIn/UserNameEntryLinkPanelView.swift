@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserNameEntryView: View {
+struct UserNameEntryLinkPanelView: View {
     
     var body: some View {
         NavigationLink {

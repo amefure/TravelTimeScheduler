@@ -11,6 +11,9 @@ struct UserSignOutPanelView: View {
     // MARK: - ViewModels
     @ObservedObject var authVM = AuthViewModel.shared
     private let dbControl = SwitchingDatabaseControlViewModel()
+    private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
+    private let userInfoVM = SignInUserInfoViewModel()
+    
     // MARK: - Navigationプロパティ
     @State var isActive:Bool = false
     @State var isPresented:Bool = false
@@ -33,9 +36,11 @@ struct UserSignOutPanelView: View {
                     Text("キャンセル")
                 }
                 Button {
-                    dbControl.stopAllObserved()
                     authVM.signOut { result in
                         if result {
+                            dbControl.stopAllObserved()   // Firebaseの観測を停止
+                            allTravelFirebase.resetData() // 読み込んでいるFirebase Dataをリセット
+                            userInfoVM.resetUserInfo()    // ユーザー情報をリセット
                             isActive = true
                         }
                     }

@@ -7,6 +7,8 @@
 
 import UIKit
 
-class FBDatabaseErrorModel: NSObject {
-
+enum FBDatabaseErrorModel:Error{
+    case convertFailed   // 変換失敗
+    case getFailed       // 取得失敗
+    case unknown         // 不明
 }

@@ -46,19 +46,6 @@ class RealmDatabaseViewModel:CrudDatabaseViewModel {
         model.updateTravel(newRecord: newRecord)
     }
     
-    /// Update Share Property Only
-    public func updateShareTravel(travel:Travel,share:Bool){
-        let newRecord = Travel()
-        newRecord.id = travel.id
-        newRecord.name = travel.name
-        newRecord.members = travel.members
-        newRecord.startDate = travel.startDate
-        newRecord.endDate = travel.endDate
-        newRecord.schedules = travel.schedules
-        newRecord.share = share
-        model.updateTravel(newRecord: newRecord)
-    }
-    
     // Delete
     public func deleteTravel(travel:Travel){
         model.deleteTravel(id: travel.id)

@@ -11,9 +11,6 @@ import RealmSwift
 class SignInUserInfoViewModel {
     
     private let userDefaults: UserDefaultsProtocol
-    
-    // FB RealtimeDatabase User
-    private let allTravelFirebase = FBDatabaseTravelListViewModel.shared
 
     init(userDefaults: UserDefaultsProtocol = UserDefaultsWrapper.shared) {
         self.userDefaults = userDefaults

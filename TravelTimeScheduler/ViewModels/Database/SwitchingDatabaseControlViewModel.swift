@@ -104,11 +104,6 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
 // MARK: - Realm Only Function
 extension SwitchingDatabaseControlViewModel{
     
-    /// Update Share Property Only
-    public func updateShareTravel(travel:Travel,share:Bool){
-        realmVM.updateShareTravel(travel: travel, share: true)
-    }
-    
     // MARK: - ALl
     public func deleteRealmAllTable() {
         realmVM.deleteAllTable()
