@@ -26,8 +26,11 @@ struct SearchBoxView: View {
         }.padding(8)
             .background(Color.foundation)
             .opacity(0.8)
-            .cornerRadius(10)
-            .padding()
+            .cornerRadius(5)
+            .padding([.vertical,.leading])
             .fontWeight(.bold)
+            .onChange(of: searchText) { newValue in
+                inputText = newValue
+            }
     }
 }

@@ -41,14 +41,6 @@ struct PickerTimeView: View {
     }
     
     var body: some View {
-        HStack{
-            
-            Button {
-                selectTime = "all"
-            } label: {
-                Image(systemName: "calendar")
-                    .foregroundColor(selectTime != "all" ? .negative : .foundation)
-            }
             Picker(selection: $selectTime, content: {
                 ForEach(timeArray,id:\.self) { item in
                     Text(item)
@@ -57,7 +49,6 @@ struct PickerTimeView: View {
             }).padding(.trailing)
                 .frame(minWidth: 100)
                 .tint(Color.foundation)
-            
-        }.fontWeight(.bold)
+                .fontWeight(.bold)
     }
 }

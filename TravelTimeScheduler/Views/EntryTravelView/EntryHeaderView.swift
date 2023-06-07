@@ -70,7 +70,7 @@ struct EntryHeaderView: View {
             }).padding()
                 .foregroundColor(validatuonInput() ? .accentSchedule : .gray)
                 .fontWeight(.bold)
-        }.padding()
+        }.padding(10)
             .background(Color.thema)
             .alert(travel == nil ? "「\(travelName)」を登録しました。" : "「\(travelName)」を更新しました。", isPresented: $isAlert) {
                 Button {

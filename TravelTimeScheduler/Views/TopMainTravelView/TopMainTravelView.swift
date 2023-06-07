@@ -17,6 +17,8 @@ struct TopMainTravelView: View {
     // MARK: - View
     @State var isEntryTravelPresented:Bool = false
     @State var isReadingSharePresented:Bool = false
+    
+    // MARK: - FilteringView
     @State var searchText:String = ""
     @State var selectTime:String = "all"
     
@@ -24,11 +26,8 @@ struct TopMainTravelView: View {
     var body: some View {
         VStack(spacing:0){
             
-            // MARK: - 文字列フィルタリング
-            SearchBoxView(searchText: $searchText)
-            
-            // MARK: - 日付フィルタリング
-            PickerTimeView(selectTime: $selectTime)
+            // MARK: - フィルタリング
+            FilteringContainerView(searchText: $searchText, selectTime: $selectTime)
             
             // MARK: - サインイン→Firebase DB / 未サインイン→Relam DB
             if authVM.isSignIn {
@@ -48,11 +47,12 @@ struct TopMainTravelView: View {
                 .shadowCornerRadius()
                 .padding()
                 .fontWeight(.bold)
-            
+                
             // MARK: - AdMob
-            AdMobBannerView().frame(height: 60)
+            AdMobBannerView()
+                .frame(height: 60)
             
-        }.ignoresSafeArea(.keyboard, edges: .bottom)
+        }.ignoresSafeArea(.keyboard)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .background(Color.thema)
