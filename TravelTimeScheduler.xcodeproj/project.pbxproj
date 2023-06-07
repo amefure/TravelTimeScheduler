@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123364752A2F651200D2EB7D /* FilteringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123364742A2F651200D2EB7D /* FilteringContainerView.swift */; };
 		1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */; };
 		1252187429D63310006AF797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187329D63310006AF797 /* Assets.xcassets */; };
 		1252187729D63310006AF797 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187629D63310006AF797 /* Preview Assets.xcassets */; };
@@ -124,6 +125,7 @@
 /* Begin PBXFileReference section */
 		0B69A7FC4D3F9F5BB8619F31 /* Pods-TravelTimeScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		123364742A2F651200D2EB7D /* FilteringContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringContainerView.swift; sourceTree = "<group>"; };
 		1252186C29D6330F006AF797 /* TravelTimeScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTimeScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerApp.swift; sourceTree = "<group>"; };
 		1252187329D63310006AF797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,6 +258,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		123364732A2F650700D2EB7D /* FilteringContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				123364742A2F651200D2EB7D /* FilteringContainerView.swift */,
+				12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */,
+				12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */,
+			);
+			path = FilteringContainerView;
+			sourceTree = "<group>";
+		};
 		1252186329D6330F006AF797 = {
 			isa = PBXGroup;
 			children = (
@@ -683,8 +695,7 @@
 			isa = PBXGroup;
 			children = (
 				12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */,
-				12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */,
-				12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */,
+				123364732A2F650700D2EB7D /* FilteringContainerView */,
 				1281C5402A160EF800C23047 /* ListTravelView */,
 				12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */,
 			);
@@ -999,6 +1010,7 @@
 				12F0E08F2A135DF30081D9C1 /* RowTranceportationView.swift in Sources */,
 				12F0E07E2A0853130081D9C1 /* AuthInputBoxView.swift in Sources */,
 				12F0E08D2A131F130081D9C1 /* SectionImageView.swift in Sources */,
+				123364752A2F651200D2EB7D /* FilteringContainerView.swift in Sources */,
 				12F0E06B29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift in Sources */,
 				1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */,
 				1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */,
@@ -1235,7 +1247,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -1248,11 +1260,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1272,7 +1285,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -1285,11 +1298,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

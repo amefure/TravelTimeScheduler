@@ -24,10 +24,12 @@ struct BlankTravelView: View {
                 .frame(width: deviceSizeVM.deviceWidth)
                 .fontWeight(.bold)
                 .foregroundColor(.gray)
+                .offset(y:-30)
             
             Image(imageName)
                 .resizable()
-                .frame(width: deviceSizeVM.deviceWidth - 100  ,height: deviceSizeVM.deviceWidth / 1.9)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 300  ,height: 100)
             
             Spacer()
         }.background(Color.list)
