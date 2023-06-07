@@ -34,6 +34,9 @@ struct InputPeriodView: View {
                 .environment(\.calendar, Calendar(identifier: .japanese))
                 .onChange(of: startDate) { newValue in
                     endDateRange = newValue...Calendar.current.date(byAdding: .year, value: 10, to: Date())!
+                    if startDate > endDate { // Update時に出発日が帰宅日より後を指定された場合の対処
+                        endDate = startDate
+                    }
                 }
             
             DatePicker("帰宅日", selection: $endDate,in:endDateRange,displayedComponents: [.date])
