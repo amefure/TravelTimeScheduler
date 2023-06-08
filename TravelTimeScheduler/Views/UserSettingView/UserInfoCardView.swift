@@ -51,8 +51,7 @@ struct UserInfoCardView: View {
                             .foregroundColor(Color.thema)
                             .lineLimit(1)
                     }
-                }.font(deviceSizeVM.isSESize ? .caption : .none)
-                    .id(active) // User情報が更新された時に画面を再描画する
+                }.id(active) // User情報が更新された時に画面を再描画する
             }else{
                 HStack{
                     Image(systemName: "person.icloud")

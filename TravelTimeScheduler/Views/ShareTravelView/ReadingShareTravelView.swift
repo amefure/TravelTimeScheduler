@@ -39,7 +39,7 @@ struct ReadingShareTravelView: View {
             
             HeaderTitleView(title:"ReadingShareTravel")
                 .frame(width: deviceSizeVM.deviceWidth)
-                .padding()
+                .padding(10)
                 .background(Color.thema)
             
             List{
@@ -75,8 +75,8 @@ struct ReadingShareTravelView: View {
                                 .tint(.white)
                                 .fontWeight(.bold)
                         }.disabled(!validationVM.validateEmpty(str:travelId))
-                    }.listRowBackground(Color.thema)
-                        .frame(maxWidth:.infinity, alignment: .center)
+                    }.frame(maxWidth:deviceSizeVM.deviceWidth - 20, alignment: .center)
+                        .listRowBackground(Color.thema)
                         .alert(isSuccess ? "旅行情報を追加しました。" : "存在しないID\nもしくは\n既に追加済みのIDです。", isPresented: $isPresented) {
                             Button {
                                 if isSuccess {

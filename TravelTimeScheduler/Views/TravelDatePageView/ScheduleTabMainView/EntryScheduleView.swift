@@ -114,7 +114,7 @@ struct EntryScheduleView: View {
                     .frame(height: 60)
             }
             
-        }.padding(.horizontal)
+        }.padding(.horizontal,30)
             .onAppear{
                 /// 　初期値セット
                 if schedule != nil{
