@@ -20,7 +20,7 @@ struct UserShareLinkPanelView: View {
                 Image(systemName: "square.and.arrow.up")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("Share App")
+                Text("Appを勧める")
             }
         })
     }

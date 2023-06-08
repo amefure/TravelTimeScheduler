@@ -17,7 +17,7 @@ struct UserWithdrawalLinkPanelView: View {
                 Image(systemName: "arrow.right.to.line.compact")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("User Delete")
+                Text("ユーザー退会")
             }
         }
     }

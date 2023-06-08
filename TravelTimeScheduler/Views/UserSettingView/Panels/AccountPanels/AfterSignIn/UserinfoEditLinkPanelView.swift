@@ -17,7 +17,7 @@ struct UserinfoEditLinkPanelView: View {
                 Image(systemName: "rectangle.and.pencil.and.ellipsis")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("Edit User")
+                Text("ユーザー編集")
             }
         }
     }

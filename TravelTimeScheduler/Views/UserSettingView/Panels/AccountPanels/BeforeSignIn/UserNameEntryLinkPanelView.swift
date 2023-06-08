@@ -17,7 +17,7 @@ struct UserNameEntryLinkPanelView: View {
                 Image(systemName: "person.text.rectangle")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("User Name")
+                Text("ユーザー名")
             }
         }
     }

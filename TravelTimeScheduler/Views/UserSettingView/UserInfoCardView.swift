@@ -23,7 +23,7 @@ struct UserInfoCardView: View {
             if AuthViewModel.shared.isSignIn {
                 LazyVGrid(columns: columns){
                     Group{
-                        Text("User Name")
+                        Text("ユーザー名")
                             .font(.caption)
                         Text(userInfoVM.signInUserName)
                             .foregroundColor(Color.thema)
@@ -45,7 +45,7 @@ struct UserInfoCardView: View {
                     }
                     
                     Group{
-                        Text("SignIn Email")
+                        Text("Email")
                             .font(.caption)
                         Text(userInfoVM.signInUserEmail)
                             .foregroundColor(Color.thema)

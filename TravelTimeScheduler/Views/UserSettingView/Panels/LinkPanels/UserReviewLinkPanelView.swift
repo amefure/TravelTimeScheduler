@@ -16,7 +16,7 @@ struct UserReviewLinkPanelView: View {
                 Image(systemName:"hand.thumbsup")
                     .font(.system(size: 40))
                     .frame(height: 40)
-                Text("Review")
+                Text("レビュー")
             }
         })
     }
