@@ -126,6 +126,7 @@
 		0B69A7FC4D3F9F5BB8619F31 /* Pods-TravelTimeScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		123364742A2F651200D2EB7D /* FilteringContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringContainerView.swift; sourceTree = "<group>"; };
+		123364802A318BC800D2EB7D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1252186C29D6330F006AF797 /* TravelTimeScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTimeScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerApp.swift; sourceTree = "<group>"; };
 		1252187329D63310006AF797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -296,6 +297,7 @@
 				125218BA29D6F837006AF797 /* TravelTimeScheduler.entitlements */,
 				125218B929D6F726006AF797 /* Info.plist */,
 				1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */,
+				123364802A318BC800D2EB7D /* README.md */,
 				1252189D29D63690006AF797 /* Views */,
 				125218A029D636B2006AF797 /* Models */,
 				1252189F29D636A9006AF797 /* ViewModels */,
