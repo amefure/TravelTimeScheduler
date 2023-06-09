@@ -16,7 +16,7 @@ struct EntryScheduleView: View {
     private let dbControl = SwitchingDatabaseControlViewModel()
     private let displayDate = DisplayDateViewModel()
     private let deviceSize = DeviceSizeViewModel()
-
+    
     
     @ObservedResults(Travel.self) var allTravelRelam
     
@@ -45,66 +45,69 @@ struct EntryScheduleView: View {
                 .padding()
                 .background(Color.thema)
             
-            // MARK: - Input1
-            DatePicker("時間", selection: $dateTime,displayedComponents:[.hourAndMinute])
-                .datePickerStyle(.compact)
-                .colorInvert()
-                .colorMultiply(Color.foundation)
-                .labelsHidden()
-                .background(Color.schedule)
-                .shadowCornerRadius()
-                .padding(deviceSize.isSESize ? 10 : 15)
-                .environment(\.locale, Locale(identifier: "ja_JP"))
-                .environment(\.calendar, Calendar(identifier: .japanese))
-            
-            // MARK: - Input2
-            TextField("内容", text: $content)
-                .padding(10)
-                .background(Color.schedule)
-                .padding(.bottom,3)
-                .shadowCornerRadius()
-                .padding(deviceSize.isSESize ? 10 : 15)
-            
-            // MARK: - Input3
-            TextField("Memo", text: $memo)
-                .padding(10)
-                .background(Color.list)
-                .padding(.bottom,3)
-                .cornerRadius(5)
-                .padding(deviceSize.isSESize ? 10 : 15)
-            
-            // MARK: - Input4
-            ScheduleTypePickerView(type: $type)
-            
-            
-            // MARK: - 登録ボタン
-            Button {
-                if validatuonInput(){
-                    if schedule == nil {
-                        /// 新規登録
-                        let sc = Schedule()
-                        sc.content = content
-                        sc.dateTime = dateTime
-                        sc.memo = memo
-                        sc.type = type
-                        sc.tranceportation = .none
-                        
-                        dbControl.addSchedule(travel: travel, schedule: sc)
-                    }else{
-                        /// 更新処理
-                        dbControl.updateSchedule(travelId: travel.id.stringValue, scheduleId: schedule!.id.stringValue, dateTime: dateTime, content: content,memo: memo, type: type, tranceportation: schedule!.tranceportation)
-                        
+            VStack(spacing:0){
+                
+                // MARK: - Input1
+                DatePicker("時間", selection: $dateTime,displayedComponents:[.hourAndMinute])
+                    .datePickerStyle(.compact)
+                    .colorInvert()
+                    .colorMultiply(Color.foundation)
+                    .labelsHidden()
+                    .background(Color.schedule)
+                    .shadowCornerRadius()
+                    .padding(deviceSize.isSESize ? 8 : 15)
+                    .environment(\.locale, Locale(identifier: "ja_JP"))
+                    .environment(\.calendar, Calendar(identifier: .japanese))
+                
+                // MARK: - Input2
+                TextField("内容", text: $content)
+                    .padding(10)
+                    .background(Color.schedule)
+                    .padding(.bottom,3)
+                    .shadowCornerRadius()
+                    .padding(deviceSize.isSESize ? 8 : 15)
+                
+                // MARK: - Input3
+                TextField("Memo", text: $memo)
+                    .padding(10)
+                    .background(Color.list)
+                    .padding(.bottom,3)
+                    .cornerRadius(5)
+                    .padding(deviceSize.isSESize ? 8 : 15)
+                
+                // MARK: - Input4
+                ScheduleTypePickerView(type: $type)
+                
+                
+                // MARK: - 登録ボタン
+                Button {
+                    if validatuonInput(){
+                        if schedule == nil {
+                            /// 新規登録
+                            let sc = Schedule()
+                            sc.content = content
+                            sc.dateTime = dateTime
+                            sc.memo = memo
+                            sc.type = type
+                            sc.tranceportation = .none
+                            
+                            dbControl.addSchedule(travel: travel, schedule: sc)
+                        }else{
+                            /// 更新処理
+                            dbControl.updateSchedule(travelId: travel.id.stringValue, scheduleId: schedule!.id.stringValue, dateTime: dateTime, content: content,memo: memo, type: type, tranceportation: schedule!.tranceportation)
+                            
+                        }
+                        isModal = false
                     }
-                    isModal = false
-                }
-            } label: {
-                Text(schedule == nil ? "追加" : "編集")
-            }.padding(deviceSize.isSESize ? 8 : 10)
-                .background(validatuonInput() ? Color.thema :.gray)
-                .foregroundColor(.white)
-                .shadowCornerRadius()
-                .accessibilityIdentifier("addScheduleButton")
-            
+                } label: {
+                    Text(schedule == nil ? "追加" : "編集")
+                }.padding(deviceSize.isSESize ? 8 : 10)
+                    .background(validatuonInput() ? Color.thema :.gray)
+                    .foregroundColor(.white)
+                    .shadowCornerRadius()
+                    .accessibilityIdentifier("addScheduleButton")
+                
+            }.frame(maxWidth: deviceSize.deviceWidth - 40)
             
             Spacer()
             
@@ -114,7 +117,7 @@ struct EntryScheduleView: View {
                     .frame(height: 60)
             }
             
-        }.padding(.horizontal,30)
+        }.padding(.horizontal)
             .onAppear{
                 /// 　初期値セット
                 if schedule != nil{
