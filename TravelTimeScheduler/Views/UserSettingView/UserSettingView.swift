@@ -70,5 +70,14 @@ struct UserSettingView: View {
         .navigationTitle("User Setting")
         .background(Color.list)
         .fontWeight(.bold)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing, content: {
+                NavigationLink {
+                    HowToUseTheAppView()
+                } label: {
+                    Image(systemName: "questionmark.app")
+                }
+            })
+        }
     }
 }

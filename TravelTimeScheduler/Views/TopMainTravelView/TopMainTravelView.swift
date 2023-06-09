@@ -47,7 +47,7 @@ struct TopMainTravelView: View {
                 .shadowCornerRadius()
                 .padding()
                 .fontWeight(.bold)
-                
+            
             // MARK: - AdMob
             AdMobBannerView()
                 .frame(height: 60)

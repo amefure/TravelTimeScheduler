@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123008422A32835600A43ADF /* HowToUseTheAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123008412A32835600A43ADF /* HowToUseTheAppView.swift */; };
+		123008442A32F69F00A43ADF /* AccordionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123008432A32F69F00A43ADF /* AccordionBoxView.swift */; };
 		123364752A2F651200D2EB7D /* FilteringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123364742A2F651200D2EB7D /* FilteringContainerView.swift */; };
 		1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */; };
 		1252187429D63310006AF797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187329D63310006AF797 /* Assets.xcassets */; };
@@ -125,6 +127,8 @@
 /* Begin PBXFileReference section */
 		0B69A7FC4D3F9F5BB8619F31 /* Pods-TravelTimeScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		123008412A32835600A43ADF /* HowToUseTheAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppView.swift; sourceTree = "<group>"; };
+		123008432A32F69F00A43ADF /* AccordionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionBoxView.swift; sourceTree = "<group>"; };
 		123364742A2F651200D2EB7D /* FilteringContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringContainerView.swift; sourceTree = "<group>"; };
 		123364802A318BC800D2EB7D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1252186C29D6330F006AF797 /* TravelTimeScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTimeScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -547,6 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				1281C5392A1582FB00C23047 /* EntryUserNameView.swift */,
+				123008412A32835600A43ADF /* HowToUseTheAppView.swift */,
 			);
 			path = DestinationPages;
 			sourceTree = "<group>";
@@ -637,6 +642,7 @@
 				12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */,
 				12F0E08C2A131F130081D9C1 /* SectionImageView.swift */,
 				12AEEB802A275E28008AB7B8 /* CopyButtonView.swift */,
+				123008432A32F69F00A43ADF /* AccordionBoxView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -1016,6 +1022,7 @@
 				12F0E06B29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift in Sources */,
 				1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */,
 				1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */,
+				123008422A32835600A43ADF /* HowToUseTheAppView.swift in Sources */,
 				12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */,
 				1281C5362A157FD400C23047 /* UserAllTravelDeletePanelView.swift in Sources */,
 				12B4699E29F56710002E6864 /* ListScheduleViewModel.swift in Sources */,
@@ -1087,6 +1094,7 @@
 				1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */,
 				12AEEB832A2AC536008AB7B8 /* UserSignOutPanelView.swift in Sources */,
 				12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */,
+				123008442A32F69F00A43ADF /* AccordionBoxView.swift in Sources */,
 				125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */,
 				12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */,
 				1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */,
