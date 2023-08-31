@@ -26,6 +26,8 @@ struct EntryHeaderView: View {
     // MARK: - View
     @State var isAlert:Bool = false
     
+    var startInterstitial: () -> Void
+    
     private func validatuonInput() -> Bool{
         validationVM.validateEmpty(str:travelName)
     }
@@ -74,6 +76,8 @@ struct EntryHeaderView: View {
             .background(Color.thema)
             .alert(travel == nil ? "「\(travelName)」を登録しました。" : "「\(travelName)」を更新しました。", isPresented: $isAlert) {
                 Button {
+                    // 広告の再生
+                    startInterstitial()
                     dismiss()
                 } label: {
                     Text("OK")

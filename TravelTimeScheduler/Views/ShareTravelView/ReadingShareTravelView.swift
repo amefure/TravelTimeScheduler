@@ -12,6 +12,7 @@ struct ReadingShareTravelView: View {
     // MARK: - ViewModels
     private let validationVM = ValidationViewModel()
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
+    @ObservedObject var interstitial = AdmobInterstitialView()
     private let dbControl = SwitchingDatabaseControlViewModel()
     private let userInfoVM = SignInUserInfoViewModel()
     private let deviceSizeVM = DeviceSizeViewModel()
@@ -36,11 +37,6 @@ struct ReadingShareTravelView: View {
     //
     var body: some View {
         VStack(spacing:0){
-            
-            HeaderTitleView(title:"ReadingShareTravel")
-                .frame(width: deviceSizeVM.deviceWidth)
-                .padding(10)
-                .background(Color.thema)
             
             List{
                 
@@ -80,6 +76,7 @@ struct ReadingShareTravelView: View {
                         .alert(isSuccess ? "旅行情報を追加しました。" : "存在しないID\nもしくは\n既に追加済みのIDです。", isPresented: $isPresented) {
                             Button {
                                 if isSuccess {
+                                    interstitial.presentInterstitial()
                                     dismiss()
                                 }
                             } label: {
@@ -87,8 +84,12 @@ struct ReadingShareTravelView: View {
                             }
                         }
                 }
-            }
-        }.onDisappear {
+            }.navigationCustomBackground()
+                .navigationTitle("Travelを共有する")
+        }.onAppear {
+            interstitial.loadInterstitial()
+        }
+        .onDisappear {
             if AuthViewModel.shared.isSignIn {
                 dbControl.readAllTravel { data in
                     allTravelFirebase.travels = data

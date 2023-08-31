@@ -16,7 +16,6 @@ struct TopMainTravelView: View {
     
     // MARK: - View
     @State var isEntryTravelPresented:Bool = false
-    @State var isReadingSharePresented:Bool = false
     
     // MARK: - FilteringView
     @State var searchText:String = ""
@@ -37,11 +36,11 @@ struct TopMainTravelView: View {
             }
             
             // MARK: - Entry Button
-            Button(action: {
-                isEntryTravelPresented = true
-            }, label: {
+            NavigationLink {
+                EntryTravelView(travel:nil, parentDismissFunction: {})
+            } label: {
                 Text("旅行登録")
-            }).frame(width:  deviceSizeVM.isSESize ? 80 : 100 ,height: deviceSizeVM.isSESize ? 45 : 60)
+            }.frame(width:  deviceSizeVM.isSESize ? 80 : 100 ,height: deviceSizeVM.isSESize ? 45 : 60)
                 .background(Color.foundation)
                 .foregroundColor(Color.thema)
                 .shadowCornerRadius()
@@ -56,12 +55,6 @@ struct TopMainTravelView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .background(Color.thema)
-            .sheet(isPresented: $isEntryTravelPresented) {
-                EntryTravelView(travel:nil,parentDismissFunction: {})
-            }
-            .sheet(isPresented: $isReadingSharePresented) {
-                ReadingShareTravelView()
-            }
             .toolbar {
                 // MARK: - Header
                 ToolbarItem(placement: .principal) {
@@ -81,8 +74,8 @@ struct TopMainTravelView: View {
                 // MARK: - LeftButton
                 if authVM.isSignIn {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            isReadingSharePresented = true
+                        NavigationLink {
+                            ReadingShareTravelView()
                         } label: {
                             Image(systemName: "icloud.and.arrow.down.fill")
                                 .foregroundColor(Color.foundation)

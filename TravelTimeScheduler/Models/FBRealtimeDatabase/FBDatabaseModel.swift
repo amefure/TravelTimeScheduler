@@ -127,7 +127,7 @@ extension FBDatabaseModel{
         
         /// 必要になる変数を定義
         var TravelsArray:[Travel] = []
-        let schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
+        var schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
         
         /// 掘り進める
         if let travels = snapshot.value as? [String:Any]{                       // #1 [ key-travel.id : value [travel.name,travel....]]
@@ -143,6 +143,8 @@ extension FBDatabaseModel{
                     } // #4 ↓schedulesがなくてもFirebaseに格納する
                     let newTravel = self.getConvertTravel(key: travelRecored.key, travel: travel, schedulesArray: schedulesArray)
                     TravelsArray.append(newTravel)
+                    // 中身をリセット
+                    schedulesArray.removeAll()
                 } // #3
             } // #2
         } // #1
