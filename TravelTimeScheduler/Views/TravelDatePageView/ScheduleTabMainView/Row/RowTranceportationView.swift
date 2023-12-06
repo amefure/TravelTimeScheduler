@@ -24,7 +24,7 @@ struct RowTranceportationView: View {
         HStack{
             
             // スケジュールの交通手段が未設定なら
-            if schedule.tranceportation == nil {
+            if schedule.tranceportation == nil || schedule.tranceportation == .unowned {
                 
                 // MARK: - 交通手段登録ボタン
                 Button {

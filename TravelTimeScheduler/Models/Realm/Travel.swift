@@ -12,17 +12,17 @@ import SwiftUI
 
 class Travel :Object,ObjectKeyIdentifiable {
     
-    @Persisted(primaryKey: true) var id:ObjectId
-    @Persisted var name:String = ""           // 旅行名
-    @Persisted var members:RealmSwift.List = RealmSwift.List<String>()   //メンバー
-    @Persisted var startDate:Date             // 旅行開始日
-    @Persisted var endDate:Date               // 旅行終了日
-    @Persisted var schedules:RealmSwift.List = RealmSwift.List<Schedule>()    // タイムスケジュール
-    @Persisted var share:Bool = false
+    @Persisted(primaryKey: true) var id: ObjectId
+    @Persisted var name: String = ""           // 旅行名
+    @Persisted var members: RealmSwift.List = RealmSwift.List<String>()   //メンバー
+    @Persisted var startDate: Date             // 旅行開始日
+    @Persisted var endDate :Date               // 旅行終了日
+    @Persisted var schedules: RealmSwift.List = RealmSwift.List<Schedule>()    // タイムスケジュール
+    @Persisted var share: Bool = false
     
-    var readableUserlId:[String] = []
+    var readableUserlId: [String] = []
     /// 旅行期間の日付をすべて含んだ配列
-    public var allTravelPeriod:[Date] {
+    public var allTravelPeriod: [Date] {
         let displayDateViewModel = DisplayDateViewModel()
         let start = displayDateViewModel.startOfDay(startDate) // 日付の時刻をリセット
         let end = displayDateViewModel.startOfDay(endDate)     // 日付の時刻をリセット
@@ -39,19 +39,19 @@ class Travel :Object,ObjectKeyIdentifiable {
 }
 
 class Schedule:Object ,ObjectKeyIdentifiable {
-    @Persisted(primaryKey: true) var id:ObjectId             // ID
-    @Persisted var dateTime:Date = Date()                    // 時間
-    @Persisted var content:String = ""                       // 内容
-    @Persisted var memo:String = ""                          // memo
-    @Persisted var type:ScheduleType = .other                // タイプ
-    @Persisted var tranceportation:Tranceportation? = .none  // 移動手段
+    @Persisted(primaryKey: true) var id: ObjectId             // ID
+    @Persisted var dateTime: Date = Date()                    // 時間
+    @Persisted var content: String = ""                       // 内容
+    @Persisted var memo: String = ""                          // memo
+    @Persisted var type: ScheduleType = .other                // タイプ
+    @Persisted var tranceportation: Tranceportation? = .none  // 移動手段
 }
 
-enum ScheduleType: String,PersistableEnum{
+enum ScheduleType: String, PersistableEnum {
     
     case airport = "空港"
     case station = "駅"
-    case hotel = "ホテル、宿"
+    case hotel = "宿泊先"
     case shop = "ショップ"
     case nature = "自然"
     case sightseein = "観光地"
@@ -126,6 +126,7 @@ enum Tranceportation: String,PersistableEnum {
     case bicycle = "自転車"
     case walk = "歩き"
     case other = "その他"
+    case unowned = "未設定"
     
     /// ScheduleTypeのアイコンイメージ(image型)
     static func getTranceportationTypeImage(_ type:Tranceportation) -> Image{
@@ -139,15 +140,17 @@ enum Tranceportation: String,PersistableEnum {
         case .train:
             return Image(systemName: "tram.fill")
         case .car:
-            return  Image(systemName: "car")
+            return Image(systemName: "car")
         case .bus:
-            return  Image(systemName: "bus")
+            return Image(systemName: "bus")
         case .bicycle:
             return Image(systemName: "bicycle")
         case .walk:
             return Image(systemName: "figure.walk")
         case .other:
-            return  Image(systemName: "arrow.down")
+            return Image(systemName: "arrow.down")
+        case .unowned:
+            return Image(systemName: "minus")
         }
     }
     
@@ -163,13 +166,15 @@ enum Tranceportation: String,PersistableEnum {
         case Tranceportation.train.rawValue:
             return .train
         case Tranceportation.car.rawValue:
-            return  .car
+            return .car
         case Tranceportation.bus.rawValue:
-            return  .bus
+            return .bus
         case Tranceportation.bicycle.rawValue:
             return .bicycle
         case Tranceportation.walk.rawValue:
             return .walk
+        case Tranceportation.unowned.rawValue:
+            return .unowned
         case Tranceportation.other.rawValue:
             return .other
         default:
