@@ -39,7 +39,7 @@ struct InputPeriodView: View {
                     }
                 }
             
-            DatePicker("帰宅日", selection: $endDate,in:endDateRange,displayedComponents: [.date])
+            DatePicker("帰宅日", selection: $endDate, in:endDateRange, displayedComponents: [.date])
                 .datePickerStyle(.compact)
                 .accentColor(.thema)
                 .fontWeight(.bold)

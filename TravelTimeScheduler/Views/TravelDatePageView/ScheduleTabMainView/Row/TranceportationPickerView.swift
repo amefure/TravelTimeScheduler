@@ -37,7 +37,7 @@ struct TranceportationPickerView: View {
             }
                 .onChange(of: selectedTranceportation) { newValue in
                     displaytChange = false
-                    dbControl.updateSchedule(travelId: travel.id.stringValue, scheduleId: schedule.id.stringValue, dateTime: schedule.dateTime, content: schedule.content, memo:schedule.memo,type: schedule.type, tranceportation: selectedTranceportation)
+                    dbControl.updateSchedule(travelId: travel.id.stringValue, scheduleId: schedule.id.stringValue, dateTime: schedule.dateTime, endDateTime: schedule.endDateTime, content: schedule.content, memo:schedule.memo,type: schedule.type, tranceportation: selectedTranceportation)
                 }
         }
     }

@@ -33,12 +33,27 @@ struct RowScheduleView: View {
                 
                 HStack{
                     
-                    // MARK: - 時間：20:00
-                    Text(displayDate.getTimeDisplayFormatString(schedule.dateTime))
-                        .fontWeight(.bold)
-                        .padding(.leading,5)
-                        .frame(width: 65)
-                    
+                    VStack {
+                        // MARK: - 時間：20:00
+                        Text(displayDate.getTimeDisplayFormatString(schedule.dateTime))
+                            .fontWeight(.bold)
+                            .padding(.leading,5)
+                            .frame(width: 65)
+                        
+                        if let endTime = schedule.endDateTime {
+                            
+                            Text("〜")
+                                .rotationEffect(.degrees(90))
+                                .font(.caption)
+                            
+                            // MARK: - 時間：20:00
+                            Text(displayDate.getTimeDisplayFormatString(endTime))
+                                .fontWeight(.bold)
+                                .padding(.leading,5)
+                                .frame(width: 65)
+                        }
+                    }
+                   
                     // MARK: - スケジュールタイプ：空港
                     ScheduleType.getScheduleTypeImage(schedule.type)
                         .scheduleTypeIcon(color: .accentSchedule)

@@ -40,7 +40,8 @@ class Travel :Object,ObjectKeyIdentifiable {
 
 class Schedule:Object ,ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id: ObjectId             // ID
-    @Persisted var dateTime: Date = Date()                    // 時間
+    @Persisted var dateTime: Date = Date()                    // 開始時間
+    @Persisted var endDateTime: Date? = nil                   // 終了時間
     @Persisted var content: String = ""                       // 内容
     @Persisted var memo: String = ""                          // memo
     @Persisted var type: ScheduleType = .other                // タイプ

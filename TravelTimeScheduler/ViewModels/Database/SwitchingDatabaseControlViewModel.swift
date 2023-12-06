@@ -75,13 +75,13 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     }
     
     // Update
-    public func updateSchedule(travelId:String,scheduleId:String,dateTime:Date,content:String,memo:String,type:ScheduleType,tranceportation:Tranceportation?){
+    public func updateSchedule(travelId:String,scheduleId:String,dateTime:Date ,endDateTime:Date? ,content:String,memo:String,type:ScheduleType,tranceportation:Tranceportation?){
         if authVM.isSignIn {
-            fbVM.updateSchedule(travelId: travelId, scheduleId: scheduleId, dateTime: dateTime, content: content, memo:memo, type: type, tranceportation: tranceportation)
+            fbVM.updateSchedule(travelId: travelId, scheduleId: scheduleId, dateTime: dateTime, endDateTime: endDateTime, content: content, memo:memo, type: type, tranceportation: tranceportation)
         }else{
             let objTravelID = convertTypeVM.convertStringToObjectId(strID: travelId)
             let objScheduleID = convertTypeVM.convertStringToObjectId(strID: scheduleId)
-            realmVM.updateSchedule(travelId: objTravelID, scheduleId: objScheduleID, dateTime: dateTime, content: content, memo:memo, type: type, tranceportation: tranceportation)
+            realmVM.updateSchedule(travelId: objTravelID, scheduleId: objScheduleID, dateTime: dateTime, endDateTime: endDateTime, content: content, memo:memo, type: type, tranceportation: tranceportation)
         }
     }
     

@@ -18,11 +18,19 @@ class ConvertTypeViewModel {
     /// Array<Schedule>  → Dictionary<String:String>
     public func convertScheduleToDictionary(schedules:RealmSwift.List<Schedule>) -> [String:[String:String]] {
         var joinSchedule:[String:[String:String]] = [:]
+        
         for schedule in schedules {
+            
+            var endDateTime: String = ""
+            if let time = schedule.endDateTime {
+                endDateTime = DisplayDateViewModel().getAllDateDisplayFormatString(time)
+            }
+            
             let array = [
                 "content": schedule.content,
                 "memo": schedule.memo,
-                "dateTime":DisplayDateViewModel().getAllDateDisplayFormatString(schedule.dateTime),
+                "dateTime": DisplayDateViewModel().getAllDateDisplayFormatString(schedule.dateTime),
+                "endDateTime": endDateTime,
                 "type":schedule.type.rawValue,
                 "tranceportation":schedule.tranceportation?.rawValue ?? Tranceportation.other.rawValue
             ]

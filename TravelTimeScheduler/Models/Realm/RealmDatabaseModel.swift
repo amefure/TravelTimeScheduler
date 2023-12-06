@@ -13,7 +13,8 @@ class RealmDatabaseModel {
     static var shared:RealmDatabaseModel = RealmDatabaseModel()
     
     init() {
-        let config = Realm.Configuration(schemaVersion: 1)
+        // 2：endDateTimeカラムの追加
+        let config = Realm.Configuration(schemaVersion: 2)
         realm = try! Realm(configuration:config)
     }
     
@@ -47,11 +48,12 @@ class RealmDatabaseModel {
     }
     
     // Update
-    public func updateSchedule(travelId:ObjectId,scheduleId:ObjectId,dateTime:Date,content:String,memo:String,type:ScheduleType,tranceportation:Tranceportation?){
+    public func updateSchedule(travelId:ObjectId,scheduleId:ObjectId,dateTime:Date, endDateTime: Date? ,content:String,memo:String,type:ScheduleType,tranceportation:Tranceportation?){
         try! realm.write {
             let record = readIdTravel(id:travelId)
             let result =  record.schedules.where({$0.id == scheduleId }).first!
             result.dateTime = dateTime
+            result.endDateTime = endDateTime
             result.content = content
             result.memo = memo
             result.type = type

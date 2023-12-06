@@ -127,7 +127,7 @@ extension FBDatabaseModel{
         
         /// 必要になる変数を定義
         var TravelsArray:[Travel] = []
-        var schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
+        let schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
         
         /// 掘り進める
         if let travels = snapshot.value as? [String:Any]{                       // #1 [ key-travel.id : value [travel.name,travel....]]
@@ -170,6 +170,9 @@ extension FBDatabaseModel{
         newSchedule.content = value["content"]!
         newSchedule.memo = value["memo"]!
         newSchedule.dateTime = self.displayDateVM.getAllDateStringDate(value["dateTime"]!)
+        if value["endDateTime"] != nil && value["endDateTime"] != ""{
+            newSchedule.endDateTime = self.displayDateVM.getAllDateStringDate(value["endDateTime"]!)
+        }
         newSchedule.type = ScheduleType.getScheduleType(value["type"]!)
         newSchedule.tranceportation = Tranceportation.getScheduleType(value["tranceportation"]!)
         return newSchedule
