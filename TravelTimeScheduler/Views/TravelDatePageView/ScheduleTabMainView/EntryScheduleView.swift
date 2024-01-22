@@ -50,73 +50,73 @@ struct EntryScheduleView: View {
             
             VStack(spacing:0){
                 
-                // MARK: - Input1
                 HStack {
-                    
-                    Text("開始時間")
-                        .foregroundColor(Color.gray)
-                    
-                    DatePicker("開始時間", selection: $dateTime, displayedComponents:[.hourAndMinute])
-                        .datePickerStyle(.compact)
-                        .colorInvert()
-                        .colorMultiply(Color.foundation)
-                        .labelsHidden()
-                        .background(Color.schedule)
-                        .shadowCornerRadius()
-                        .padding(deviceSize.isSESize ? 8 : 15)
-                        .environment(\.locale, Locale(identifier: "ja_JP"))
-                        .environment(\.calendar, Calendar(identifier: .japanese))
-                }
-                
-                
-                // MARK: - Input1
-               
-                HStack {
-                    Text("終了時間")
-                        .foregroundColor(Color.gray)
-                    
-                    if isEndDateTime {
+                    // MARK: - Input1
+                    HStack {
                         
-                        ZStack {
-                            DatePicker("終了時間", selection: $endDateTime, displayedComponents:[.hourAndMinute])
-                                .datePickerStyle(.compact)
-                                .colorInvert()
-                                .colorMultiply(Color.foundation)
-                                .labelsHidden()
-                                .background(Color.schedule)
-                                .shadowCornerRadius()
-                                .padding(deviceSize.isSESize ? 8 : 15)
-                                .environment(\.locale, Locale(identifier: "ja_JP"))
-                                .environment(\.calendar, Calendar(identifier: .japanese))
+                        Text("開始時間")
+                            .foregroundColor(Color.gray)
+                        
+                        DatePicker("開始時間", selection: $dateTime, displayedComponents:[.hourAndMinute])
+                            .datePickerStyle(.compact)
+                            .colorInvert()
+                            .colorMultiply(Color.foundation)
+                            .labelsHidden()
+                            .background(Color.schedule)
+                            .shadowCornerRadius()
+                            .padding(deviceSize.isSESize ? 8 : 15)
+                            .environment(\.locale, Locale(identifier: "ja_JP"))
+                            .environment(\.calendar, Calendar(identifier: .japanese))
+                    }
+                    
+                    
+                    // MARK: - Input1
+                   
+                    HStack {
+                        Text("終了時間")
+                            .foregroundColor(Color.gray)
+                        
+                        if isEndDateTime {
                             
+                            ZStack {
+                                DatePicker("終了時間", selection: $endDateTime, displayedComponents:[.hourAndMinute])
+                                    .datePickerStyle(.compact)
+                                    .colorInvert()
+                                    .colorMultiply(Color.foundation)
+                                    .labelsHidden()
+                                    .background(Color.schedule)
+                                    .shadowCornerRadius()
+                                    .padding(deviceSize.isSESize ? 8 : 15)
+                                    .environment(\.locale, Locale(identifier: "ja_JP"))
+                                    .environment(\.calendar, Calendar(identifier: .japanese))
+                                
+                                Button(action: {
+                                    isEndDateTime = false
+                                }, label: {
+                                    Image(systemName: "minus.square.fill")
+                                        .foregroundStyle(Color.negative)
+                                }).offset(x: 50)
+                            }
+                           
+                        } else {
                             Button(action: {
-                                isEndDateTime = false
+                                isEndDateTime = true
                             }, label: {
-                                Image(systemName: "minus.square.fill")
-                                    .foregroundStyle(Color.negative)
-                            }).offset(x: 50)
+                                Image(systemName: "plus")
+                                    .padding(deviceSize.isSESize ? 8 : 15)
+                                    .frame(width: 60)
+                                    .background(Color.foundation)
+                                    .foregroundColor(Color.thema)
+                                    .cornerRadius(5)
+                                    .buttonStyle(.borderless)
+                                    .overlay {
+                                        Rectangle()
+                                            .stroke(style: StrokeStyle(dash: [5, 5]))
+                                    }.padding(deviceSize.isSESize ? 8 : 15)
+                            })
                         }
-                       
-                    } else {
-                        Button(action: {
-                            isEndDateTime = true
-                        }, label: {
-                            Image(systemName: "plus")
-                                .padding(deviceSize.isSESize ? 8 : 15)
-                                .frame(width: 60)
-                                .background(Color.foundation)
-                                .foregroundColor(Color.thema)
-                                .cornerRadius(5)
-                                .buttonStyle(.borderless)
-                                .overlay {
-                                    Rectangle()
-                                        .stroke(style: StrokeStyle(dash: [5, 5]))
-                                }.padding(deviceSize.isSESize ? 8 : 15)
-                        })
                     }
                 }
-                
-                
                 // MARK: - Input2
                 TextField("内容", text: $content)
                     .padding(10)
@@ -135,6 +135,7 @@ struct EntryScheduleView: View {
                 
                 // MARK: - Input4
                 ScheduleTypePickerView(type: $type)
+                    .frame(height: 70)
                 
                 
                 // MARK: - 登録ボタン
