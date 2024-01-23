@@ -34,7 +34,7 @@ struct AuthInputBoxView: View {
                 TextField("メールアドレス", text: $email)
                 SecureInputView(password: $password)
             }.padding()
-                .font(.system(size: DeviceSizeViewModel().isSESize ? 15 : 20))
+                .font(.system(size: DeviceSizeManager.isSESize ? 15 : 20))
                 .fontWeight(.bold)
                 .overlay(
                     RoundedRectangle(cornerRadius:5)

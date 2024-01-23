@@ -23,13 +23,13 @@ class ConvertTypeViewModel {
             
             var endDateTime: String = ""
             if let time = schedule.endDateTime {
-                endDateTime = DisplayDateViewModel().getAllDateDisplayFormatString(time)
+                endDateTime = DateFormatManager().getAllDateDisplayFormatString(time)
             }
             
             let array = [
                 "content": schedule.content,
                 "memo": schedule.memo,
-                "dateTime": DisplayDateViewModel().getAllDateDisplayFormatString(schedule.dateTime),
+                "dateTime": DateFormatManager().getAllDateDisplayFormatString(schedule.dateTime),
                 "endDateTime": endDateTime,
                 "type":schedule.type.rawValue,
                 "tranceportation":schedule.tranceportation?.rawValue ?? Tranceportation.other.rawValue

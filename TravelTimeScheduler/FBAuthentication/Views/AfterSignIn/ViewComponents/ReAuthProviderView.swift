@@ -9,8 +9,6 @@ import SwiftUI
 
 // MARK: - Apple/Google User用　再認証View
 struct ReAuthProviderView: View {
-    // MARK: - ViewModels
-    private let deviceSize = DeviceSizeViewModel()
     
     public let provider:AuthProviderModel
     
@@ -21,7 +19,7 @@ struct ReAuthProviderView: View {
     var body: some View {
         VStack{
             HeaderTitleView(title: "再認証")
-                .frame(width: deviceSize.deviceWidth)
+                .frame(width: DeviceSizeManager.deviceWidth)
                 .padding()
                 .background(Color.thema)
             

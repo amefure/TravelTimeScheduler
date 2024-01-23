@@ -17,7 +17,7 @@ class FBDatabaseModel {
     private var ref:DatabaseReference! = Database.database().reference()
     
     private let convertTypeVM = ConvertTypeViewModel()
-    private let displayDateVM = DisplayDateViewModel()
+    private let displayDateVM = DateFormatManager()
     
     // MARK: - User
     /// User登録処理

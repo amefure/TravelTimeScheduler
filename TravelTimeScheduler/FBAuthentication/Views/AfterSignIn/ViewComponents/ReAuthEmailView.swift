@@ -37,7 +37,7 @@ struct ReAuthEmailView: View {
     var body: some View {
         // MARK: - Header
         HeaderTitleView(title: "再認証")
-            .frame(width: DeviceSizeViewModel().deviceWidth)
+            .frame(width: DeviceSizeManager.deviceWidth)
             .padding()
             .background(Color.thema)
         

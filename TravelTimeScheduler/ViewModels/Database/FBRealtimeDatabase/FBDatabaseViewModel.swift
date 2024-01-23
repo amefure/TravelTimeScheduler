@@ -31,8 +31,8 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
         let childUpdates:[String : Any] = [
             "name": travelName,
             "members": members,
-            "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(startDate),
-            "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(endDate),
+            "startDate": DateFormatManager().getAllDateDisplayFormatString(startDate),
+            "endDate": DateFormatManager().getAllDateDisplayFormatString(endDate),
             "share": "true",
             "readableUserlId": [userInfoVM.signInUserId]
         ]
@@ -46,8 +46,8 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
             "name": travelName,
             "members": Array(members),
             "schedules" : schedules,
-            "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(startDate),
-            "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(endDate),
+            "startDate": DateFormatManager().getAllDateDisplayFormatString(startDate),
+            "endDate": DateFormatManager().getAllDateDisplayFormatString(endDate),
             "share": "true"
         ]
         model.entryTravel(id:id,childUpdates: childUpdates)
@@ -129,8 +129,8 @@ extension FBDatabaseViewModel {
                 "name": travel.name,
                 "members": Array(travel.members),
                 "schedules" : scheduleDictionary,
-                "startDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.startDate),
-                "endDate": DisplayDateViewModel().getAllDateDisplayFormatString(travel.endDate),
+                "startDate": DateFormatManager().getAllDateDisplayFormatString(travel.startDate),
+                "endDate": DateFormatManager().getAllDateDisplayFormatString(travel.endDate),
                 "share": "true",
                 "readableUserlId": [userInfoVM.signInUserId]
             ]

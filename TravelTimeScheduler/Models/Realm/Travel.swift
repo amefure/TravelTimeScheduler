@@ -23,7 +23,7 @@ class Travel :Object,ObjectKeyIdentifiable {
     var readableUserlId: [String] = []
     /// 旅行期間の日付をすべて含んだ配列
     public var allTravelPeriod: [Date] {
-        let displayDateViewModel = DisplayDateViewModel()
+        let displayDateViewModel = DateFormatManager()
         let start = displayDateViewModel.startOfDay(startDate) // 日付の時刻をリセット
         let end = displayDateViewModel.startOfDay(endDate)     // 日付の時刻をリセット
         let dateCount:Int = Int(start.distance(to: end) / (60 * 60 * 24))

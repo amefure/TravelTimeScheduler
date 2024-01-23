@@ -42,6 +42,7 @@ Pods/
 
 # Firebase
 GoogleService-Info.plist
+TravelTimeScheduler/ViewModels/Function/AdMobViewModels.swift
 
 # Carthage
 Carthage/Build/

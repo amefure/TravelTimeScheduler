@@ -60,16 +60,16 @@
 		12AEEB832A2AC536008AB7B8 /* UserSignOutPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB822A2AC536008AB7B8 /* UserSignOutPanelView.swift */; };
 		12AEEB8D2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB8C2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift */; };
 		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
-		12B4696929E81E4C002E6864 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* Color.swift */; };
+		12B4696929E81E4C002E6864 /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* ExColor.swift */; };
 		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
 		12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */; };
-		12B4696F29E82614002E6864 /* AdMobViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696E29E82614002E6864 /* AdMobViewModels.swift */; };
+		12B4696F29E82614002E6864 /* AdMobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696E29E82614002E6864 /* AdMobView.swift */; };
 		12B4697129E82633002E6864 /* ShareLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697029E82633002E6864 /* ShareLinkViewModel.swift */; };
-		12B4697329E82640002E6864 /* DeviceSizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697229E82640002E6864 /* DeviceSizeViewModel.swift */; };
+		12B4697329E82640002E6864 /* DeviceSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697229E82640002E6864 /* DeviceSizeManager.swift */; };
 		12B4697E29E82D14002E6864 /* EntryTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697D29E82D14002E6864 /* EntryTravelView.swift */; };
 		12B4698229E8ACDF002E6864 /* EntryScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */; };
 		12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698329EA9893002E6864 /* ListScheduleView.swift */; };
-		12B4698629EC1254002E6864 /* DisplayDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698529EC1254002E6864 /* DisplayDateViewModel.swift */; };
+		12B4698629EC1254002E6864 /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698529EC1254002E6864 /* DateFormatManager.swift */; };
 		12B4698829ECA1ED002E6864 /* TravelPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698729ECA1ED002E6864 /* TravelPageView.swift */; };
 		12B4698A29ED5C28002E6864 /* RowScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698929ED5C28002E6864 /* RowScheduleView.swift */; };
 		12B4698E29F16C10002E6864 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698D29F16C10002E6864 /* Modifier.swift */; };
@@ -184,16 +184,16 @@
 		12AEEB822A2AC536008AB7B8 /* UserSignOutPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOutPanelView.swift; sourceTree = "<group>"; };
 		12AEEB8C2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewEntryRegistrationFBDatabaseViewModel.swift; sourceTree = "<group>"; };
 		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
-		12B4696829E81E4C002E6864 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		12B4696829E81E4C002E6864 /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
 		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
 		12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseModel.swift; sourceTree = "<group>"; };
-		12B4696E29E82614002E6864 /* AdMobViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobViewModels.swift; sourceTree = "<group>"; };
+		12B4696E29E82614002E6864 /* AdMobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobView.swift; sourceTree = "<group>"; };
 		12B4697029E82633002E6864 /* ShareLinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLinkViewModel.swift; sourceTree = "<group>"; };
-		12B4697229E82640002E6864 /* DeviceSizeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSizeViewModel.swift; sourceTree = "<group>"; };
+		12B4697229E82640002E6864 /* DeviceSizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSizeManager.swift; sourceTree = "<group>"; };
 		12B4697D29E82D14002E6864 /* EntryTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTravelView.swift; sourceTree = "<group>"; };
 		12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryScheduleView.swift; sourceTree = "<group>"; };
 		12B4698329EA9893002E6864 /* ListScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScheduleView.swift; sourceTree = "<group>"; };
-		12B4698529EC1254002E6864 /* DisplayDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDateViewModel.swift; sourceTree = "<group>"; };
+		12B4698529EC1254002E6864 /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
 		12B4698729ECA1ED002E6864 /* TravelPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPageView.swift; sourceTree = "<group>"; };
 		12B4698929ED5C28002E6864 /* RowScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowScheduleView.swift; sourceTree = "<group>"; };
 		12B4698D29F16C10002E6864 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
@@ -300,12 +300,11 @@
 			children = (
 				125218BA29D6F837006AF797 /* TravelTimeScheduler.entitlements */,
 				125218B929D6F726006AF797 /* Info.plist */,
-				1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */,
 				123364802A318BC800D2EB7D /* README.md */,
-				1252189D29D63690006AF797 /* Views */,
+				128FC4B12B5F72DE003E3B53 /* Extension&Utility */,
+				1252189D29D63690006AF797 /* View */,
 				125218A029D636B2006AF797 /* Models */,
 				1252189F29D636A9006AF797 /* ViewModels */,
-				12B4696729E813C1002E6864 /* Extensions */,
 				125218A129D6373C006AF797 /* FBAuthentication */,
 				1252187329D63310006AF797 /* Assets.xcassets */,
 				1252189929D634C3006AF797 /* GoogleService-Info.plist */,
@@ -339,23 +338,23 @@
 			path = TravelTimeSchedulerUITests;
 			sourceTree = "<group>";
 		};
-		1252189D29D63690006AF797 /* Views */ = {
+		1252189D29D63690006AF797 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */,
 				12F0E0822A0A6FB40081D9C1 /* TopMainTravelView */,
 				12F0E06529FBEA8B0081D9C1 /* EntryTravelView */,
 				1281C53D2A15A3D500C23047 /* ShareTravelView */,
 				12B4699129F1E45E002E6864 /* TravelDatePageView */,
 				12F0E0702A029AD90081D9C1 /* UserSettingView */,
-				12B4699629F514FD002E6864 /* ViewComponents */,
+				12B4699629F514FD002E6864 /* Components */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1252189F29D636A9006AF797 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				12B4697629E826CB002E6864 /* Utility */,
 				1252193C29DF7404006AF797 /* UserDefaults */,
 				12B4699C29F566EF002E6864 /* ViewControl */,
 				12B4697829E827A7002E6864 /* Database */,
@@ -501,6 +500,32 @@
 			path = ListTravelView;
 			sourceTree = "<group>";
 		};
+		128FC4B12B5F72DE003E3B53 /* Extension&Utility */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697229E82640002E6864 /* DeviceSizeManager.swift */,
+				12B4698529EC1254002E6864 /* DateFormatManager.swift */,
+				12B4696829E81E4C002E6864 /* ExColor.swift */,
+			);
+			path = "Extension&Utility";
+			sourceTree = "<group>";
+		};
+		128FC4B32B5F75DE003E3B53 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		128FC4B42B5F7605003E3B53 /* ExModifier */ = {
+			isa = PBXGroup;
+			children = (
+				12B4698D29F16C10002E6864 /* Modifier.swift */,
+			);
+			path = ExModifier;
+			sourceTree = "<group>";
+		};
 		12AEEB842A2AC68F008AB7B8 /* LinkPanels */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,16 +581,6 @@
 			path = DestinationPages;
 			sourceTree = "<group>";
 		};
-		12B4696729E813C1002E6864 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				12B4696829E81E4C002E6864 /* Color.swift */,
-				12B4698D29F16C10002E6864 /* Modifier.swift */,
-				12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		12B4697429E826B4002E6864 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,19 +598,9 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
-		12B4697629E826CB002E6864 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				12B4697229E82640002E6864 /* DeviceSizeViewModel.swift */,
-				12B4698529EC1254002E6864 /* DisplayDateViewModel.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
 		12B4697729E82790002E6864 /* Function */ = {
 			isa = PBXGroup;
 			children = (
-				12B4696E29E82614002E6864 /* AdMobViewModels.swift */,
 				12AEEB7C2A275D21008AB7B8 /* MessageBalloonViewModel.swift */,
 				12B4697029E82633002E6864 /* ShareLinkViewModel.swift */,
 			);
@@ -635,16 +640,19 @@
 			path = TravelDatePageView;
 			sourceTree = "<group>";
 		};
-		12B4699629F514FD002E6864 /* ViewComponents */ = {
+		12B4699629F514FD002E6864 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */,
+				128FC4B32B5F75DE003E3B53 /* Layout */,
+				128FC4B42B5F7605003E3B53 /* ExModifier */,
 				12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */,
 				12F0E08C2A131F130081D9C1 /* SectionImageView.swift */,
 				12AEEB802A275E28008AB7B8 /* CopyButtonView.swift */,
 				123008432A32F69F00A43ADF /* AccordionBoxView.swift */,
+				12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */,
+				12B4696E29E82614002E6864 /* AdMobView.swift */,
 			);
-			path = ViewComponents;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		12B4699929F5328B002E6864 /* ScheduleTabMainView */ = {
@@ -1014,7 +1022,7 @@
 			files = (
 				12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */,
 				12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */,
-				12B4696F29E82614002E6864 /* AdMobViewModels.swift in Sources */,
+				12B4696F29E82614002E6864 /* AdMobView.swift in Sources */,
 				12F0E08F2A135DF30081D9C1 /* RowTranceportationView.swift in Sources */,
 				12F0E07E2A0853130081D9C1 /* AuthInputBoxView.swift in Sources */,
 				12F0E08D2A131F130081D9C1 /* SectionImageView.swift in Sources */,
@@ -1041,7 +1049,7 @@
 				12AEEB7B2A24D8DB008AB7B8 /* ProgressButtonStack.swift in Sources */,
 				1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */,
 				12B469A029F67093002E6864 /* TranceportationPickerView.swift in Sources */,
-				12B4697329E82640002E6864 /* DeviceSizeViewModel.swift in Sources */,
+				12B4697329E82640002E6864 /* DeviceSizeManager.swift in Sources */,
 				12B4697129E82633002E6864 /* ShareLinkViewModel.swift in Sources */,
 				12B4698A29ED5C28002E6864 /* RowScheduleView.swift in Sources */,
 				12B4698229E8ACDF002E6864 /* EntryScheduleView.swift in Sources */,
@@ -1069,7 +1077,7 @@
 				12B4699529F1E58E002E6864 /* ScheduleControlPanelView.swift in Sources */,
 				12F0E0842A0A703E0081D9C1 /* BlankTravelView.swift in Sources */,
 				12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */,
-				12B4698629EC1254002E6864 /* DisplayDateViewModel.swift in Sources */,
+				12B4698629EC1254002E6864 /* DateFormatManager.swift in Sources */,
 				1252193B29DF6ED6006AF797 /* Travel.swift in Sources */,
 				12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */,
 				12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */,
@@ -1083,7 +1091,7 @@
 				12AEEB792A24B99B008AB7B8 /* ReadingShareTravelView.swift in Sources */,
 				1252193129DE1E49006AF797 /* UserSignUpLinkPanelView.swift in Sources */,
 				12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */,
-				12B4696929E81E4C002E6864 /* Color.swift in Sources */,
+				12B4696929E81E4C002E6864 /* ExColor.swift in Sources */,
 				12B4699829F51589002E6864 /* ScheduleTypePickerView.swift in Sources */,
 				1252192B29DE1C2A006AF797 /* EmailAuthButtonView.swift in Sources */,
 				1281C5382A15825800C23047 /* UserNameEntryLinkPanelView.swift in Sources */,
