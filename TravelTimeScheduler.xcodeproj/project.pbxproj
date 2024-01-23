@@ -1,0 +1,1460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		123008422A32835600A43ADF /* HowToUseTheAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123008412A32835600A43ADF /* HowToUseTheAppView.swift */; };
+		123008442A32F69F00A43ADF /* AccordionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123008432A32F69F00A43ADF /* AccordionBoxView.swift */; };
+		123364752A2F651200D2EB7D /* FilteringContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123364742A2F651200D2EB7D /* FilteringContainerView.swift */; };
+		1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */; };
+		1252187429D63310006AF797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187329D63310006AF797 /* Assets.xcassets */; };
+		1252187729D63310006AF797 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252187629D63310006AF797 /* Preview Assets.xcassets */; };
+		1252188129D63310006AF797 /* TravelTimeSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188029D63310006AF797 /* TravelTimeSchedulerTests.swift */; };
+		1252188B29D63310006AF797 /* TravelTimeSchedulerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188A29D63310006AF797 /* TravelTimeSchedulerUITests.swift */; };
+		1252188D29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252188C29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift */; };
+		1252189A29D634C3006AF797 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1252189929D634C3006AF797 /* GoogleService-Info.plist */; };
+		1252189B29D634C3006AF797 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1252189929D634C3006AF797 /* GoogleService-Info.plist */; };
+		1252189C29D634C3006AF797 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1252189929D634C3006AF797 /* GoogleService-Info.plist */; };
+		125218A429D6376D006AF797 /* NewEntryAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218A329D6376D006AF797 /* NewEntryAuthView.swift */; };
+		125218A629D63786006AF797 /* LoginAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218A529D63786006AF797 /* LoginAuthView.swift */; };
+		125218A829D63897006AF797 /* GoogleAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218A729D63897006AF797 /* GoogleAuthView.swift */; };
+		125218AA29D638A9006AF797 /* AppleAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218A929D638A9006AF797 /* AppleAuthView.swift */; };
+		125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218AB29D638B9006AF797 /* PasswordResetView.swift */; };
+		125218AE29D638D3006AF797 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218AD29D638D3006AF797 /* SecureInputView.swift */; };
+		125218B229D638F6006AF797 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B129D638F6006AF797 /* ErrorMessageView.swift */; };
+		125218B529D63943006AF797 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B429D63943006AF797 /* AuthViewModel.swift */; };
+		125218B729D63955006AF797 /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B629D63955006AF797 /* ValidationViewModel.swift */; };
+		1252192029DD7E0B006AF797 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252191F29DD7E0B006AF797 /* AuthModel.swift */; };
+		1252192229DD7E22006AF797 /* AppleAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192129DD7E22006AF797 /* AppleAuthModel.swift */; };
+		1252192429DD7F41006AF797 /* EmailAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192329DD7F41006AF797 /* EmailAuthModel.swift */; };
+		1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192529DD7F54006AF797 /* GoogleAuthModel.swift */; };
+		1252192829DD7F69006AF797 /* AuthErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192729DD7F69006AF797 /* AuthErrorModel.swift */; };
+		1252192B29DE1C2A006AF797 /* EmailAuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */; };
+		1252193129DE1E49006AF797 /* UserSignUpLinkPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193029DE1E49006AF797 /* UserSignUpLinkPanelView.swift */; };
+		1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */; };
+		1252193729DE20D1006AF797 /* AuthProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193629DE20D1006AF797 /* AuthProviderModel.swift */; };
+		1252193929DF6E8A006AF797 /* FBDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */; };
+		1252193B29DF6ED6006AF797 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193A29DF6ED6006AF797 /* Travel.swift */; };
+		1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */; };
+		1252194029DF7442006AF797 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */; };
+		1281C5312A13B82400C23047 /* FBDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5302A13B82400C23047 /* FBDatabaseModel.swift */; };
+		1281C5332A15140700C23047 /* FBDatabaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5322A15140700C23047 /* FBDatabaseErrorModel.swift */; };
+		1281C5362A157FD400C23047 /* UserAllTravelDeletePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5352A157FD400C23047 /* UserAllTravelDeletePanelView.swift */; };
+		1281C5382A15825800C23047 /* UserNameEntryLinkPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5372A15825800C23047 /* UserNameEntryLinkPanelView.swift */; };
+		1281C53A2A1582FB00C23047 /* EntryUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5392A1582FB00C23047 /* EntryUserNameView.swift */; };
+		1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C53E2A15A3E300C23047 /* ShareTravelView.swift */; };
+		1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5412A160F0300C23047 /* RealmListTravelView.swift */; };
+		1281C5442A1611D900C23047 /* FBRealtimeListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */; };
+		12AEEB712A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */; };
+		12AEEB732A19B0AB008AB7B8 /* ConvertTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */; };
+		12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */; };
+		12AEEB772A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */; };
+		12AEEB792A24B99B008AB7B8 /* ReadingShareTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */; };
+		12AEEB7B2A24D8DB008AB7B8 /* ProgressButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */; };
+		12AEEB7D2A275D21008AB7B8 /* MessageBalloonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB7C2A275D21008AB7B8 /* MessageBalloonViewModel.swift */; };
+		12AEEB812A275E28008AB7B8 /* CopyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB802A275E28008AB7B8 /* CopyButtonView.swift */; };
+		12AEEB832A2AC536008AB7B8 /* UserSignOutPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB822A2AC536008AB7B8 /* UserSignOutPanelView.swift */; };
+		12AEEB8D2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB8C2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift */; };
+		12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696529E813A0002E6864 /* UserSettingView.swift */; };
+		12B4696929E81E4C002E6864 /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* ExColor.swift */; };
+		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
+		12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */; };
+		12B4696F29E82614002E6864 /* AdMobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696E29E82614002E6864 /* AdMobView.swift */; };
+		12B4697129E82633002E6864 /* ShareLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697029E82633002E6864 /* ShareLinkViewModel.swift */; };
+		12B4697329E82640002E6864 /* DeviceSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697229E82640002E6864 /* DeviceSizeManager.swift */; };
+		12B4697E29E82D14002E6864 /* EntryTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697D29E82D14002E6864 /* EntryTravelView.swift */; };
+		12B4698229E8ACDF002E6864 /* EntryScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */; };
+		12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698329EA9893002E6864 /* ListScheduleView.swift */; };
+		12B4698629EC1254002E6864 /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698529EC1254002E6864 /* DateFormatManager.swift */; };
+		12B4698829ECA1ED002E6864 /* TravelPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698729ECA1ED002E6864 /* TravelPageView.swift */; };
+		12B4698A29ED5C28002E6864 /* RowScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698929ED5C28002E6864 /* RowScheduleView.swift */; };
+		12B4698E29F16C10002E6864 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698D29F16C10002E6864 /* Modifier.swift */; };
+		12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4698F29F1E406002E6864 /* ScrollPeriodTabPickerView.swift */; };
+		12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699229F1E530002E6864 /* ScheduleTabMainView.swift */; };
+		12B4699529F1E58E002E6864 /* ScheduleControlPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699429F1E58E002E6864 /* ScheduleControlPanelView.swift */; };
+		12B4699829F51589002E6864 /* ScheduleTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */; };
+		12B4699E29F56710002E6864 /* ListScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699D29F56710002E6864 /* ListScheduleViewModel.swift */; };
+		12B469A029F67093002E6864 /* TranceportationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699F29F67093002E6864 /* TranceportationPickerView.swift */; };
+		12D5895C29E60ABB00DAEA5F /* EditUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */; };
+		12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */; };
+		12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */; };
+		12F0E06429FB220F0081D9C1 /* UserInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */; };
+		12F0E06729FBEAB00081D9C1 /* InputPeriodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06629FBEAB00081D9C1 /* InputPeriodView.swift */; };
+		12F0E06929FBEC510081D9C1 /* InputMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06829FBEC510081D9C1 /* InputMemberView.swift */; };
+		12F0E06B29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06A29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift */; };
+		12F0E06D2A01F7D20081D9C1 /* SearchBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */; };
+		12F0E06F2A0284E10081D9C1 /* PickerTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */; };
+		12F0E0722A029AFD0081D9C1 /* UserinfoEditLinkPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0712A029AFD0081D9C1 /* UserinfoEditLinkPanelView.swift */; };
+		12F0E0742A029BA00081D9C1 /* UserWithdrawalLinkPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0732A029BA00081D9C1 /* UserWithdrawalLinkPanelView.swift */; };
+		12F0E0762A029C130081D9C1 /* UserShareLinkPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0752A029C130081D9C1 /* UserShareLinkPanelView.swift */; };
+		12F0E0782A029C530081D9C1 /* UserReviewLinkPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0772A029C530081D9C1 /* UserReviewLinkPanelView.swift */; };
+		12F0E07A2A029CB10081D9C1 /* UserTermsOfServiceLinkPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0792A029CB10081D9C1 /* UserTermsOfServiceLinkPanelView.swift */; };
+		12F0E07C2A084CFE0081D9C1 /* WellcomeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E07B2A084CFE0081D9C1 /* WellcomeMessageView.swift */; };
+		12F0E07E2A0853130081D9C1 /* AuthInputBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E07D2A0853130081D9C1 /* AuthInputBoxView.swift */; };
+		12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */; };
+		12F0E0842A0A703E0081D9C1 /* BlankTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */; };
+		12F0E0862A0AF4660081D9C1 /* EntryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0852A0AF4660081D9C1 /* EntryHeaderView.swift */; };
+		12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E0882A11FB400081D9C1 /* ReAuthProviderView.swift */; };
+		12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E08A2A1302910081D9C1 /* ReAuthEmailView.swift */; };
+		12F0E08D2A131F130081D9C1 /* SectionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E08C2A131F130081D9C1 /* SectionImageView.swift */; };
+		12F0E08F2A135DF30081D9C1 /* RowTranceportationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E08E2A135DF30081D9C1 /* RowTranceportationView.swift */; };
+		25BDF1DF9470CC6D55D7F5E0 /* Pods_TravelTimeScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A67D54A71F648BB8CB3391 /* Pods_TravelTimeScheduler.framework */; };
+		A5F1ADEDAA729AFE72C97AD9 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */; };
+		D8596E9294FB5113D291ED26 /* Pods_TravelTimeSchedulerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1252187D29D63310006AF797 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1252186429D6330F006AF797 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1252186B29D6330F006AF797;
+			remoteInfo = TravelTimeScheduler;
+		};
+		1252188729D63310006AF797 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1252186429D6330F006AF797 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1252186B29D6330F006AF797;
+			remoteInfo = TravelTimeScheduler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B69A7FC4D3F9F5BB8619F31 /* Pods-TravelTimeScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler.debug.xcconfig"; sourceTree = "<group>"; };
+		0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		123008412A32835600A43ADF /* HowToUseTheAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseTheAppView.swift; sourceTree = "<group>"; };
+		123008432A32F69F00A43ADF /* AccordionBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionBoxView.swift; sourceTree = "<group>"; };
+		123364742A2F651200D2EB7D /* FilteringContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringContainerView.swift; sourceTree = "<group>"; };
+		123364802A318BC800D2EB7D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1252186C29D6330F006AF797 /* TravelTimeScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTimeScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerApp.swift; sourceTree = "<group>"; };
+		1252187329D63310006AF797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1252187629D63310006AF797 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1252187C29D63310006AF797 /* TravelTimeSchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelTimeSchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1252188029D63310006AF797 /* TravelTimeSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerTests.swift; sourceTree = "<group>"; };
+		1252188629D63310006AF797 /* TravelTimeSchedulerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelTimeSchedulerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1252188A29D63310006AF797 /* TravelTimeSchedulerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerUITests.swift; sourceTree = "<group>"; };
+		1252188C29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTimeSchedulerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1252189929D634C3006AF797 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		125218A329D6376D006AF797 /* NewEntryAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryAuthView.swift; sourceTree = "<group>"; };
+		125218A529D63786006AF797 /* LoginAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthView.swift; sourceTree = "<group>"; };
+		125218A729D63897006AF797 /* GoogleAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthView.swift; sourceTree = "<group>"; };
+		125218A929D638A9006AF797 /* AppleAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthView.swift; sourceTree = "<group>"; };
+		125218AB29D638B9006AF797 /* PasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetView.swift; sourceTree = "<group>"; };
+		125218AD29D638D3006AF797 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
+		125218B129D638F6006AF797 /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
+		125218B429D63943006AF797 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		125218B629D63955006AF797 /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
+		125218B929D6F726006AF797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		125218BA29D6F837006AF797 /* TravelTimeScheduler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TravelTimeScheduler.entitlements; sourceTree = "<group>"; };
+		1252191F29DD7E0B006AF797 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		1252192129DD7E22006AF797 /* AppleAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthModel.swift; sourceTree = "<group>"; };
+		1252192329DD7F41006AF797 /* EmailAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthModel.swift; sourceTree = "<group>"; };
+		1252192529DD7F54006AF797 /* GoogleAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthModel.swift; sourceTree = "<group>"; };
+		1252192729DD7F69006AF797 /* AuthErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorModel.swift; sourceTree = "<group>"; };
+		1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthButtonView.swift; sourceTree = "<group>"; };
+		1252193029DE1E49006AF797 /* UserSignUpLinkPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpLinkPanelView.swift; sourceTree = "<group>"; };
+		1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalButtonView.swift; sourceTree = "<group>"; };
+		1252193629DE20D1006AF797 /* AuthProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderModel.swift; sourceTree = "<group>"; };
+		1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseViewModel.swift; sourceTree = "<group>"; };
+		1252193A29DF6ED6006AF797 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUserInfoViewModel.swift; sourceTree = "<group>"; };
+		1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		1281C5302A13B82400C23047 /* FBDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseModel.swift; sourceTree = "<group>"; };
+		1281C5322A15140700C23047 /* FBDatabaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseErrorModel.swift; sourceTree = "<group>"; };
+		1281C5352A157FD400C23047 /* UserAllTravelDeletePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllTravelDeletePanelView.swift; sourceTree = "<group>"; };
+		1281C5372A15825800C23047 /* UserNameEntryLinkPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameEntryLinkPanelView.swift; sourceTree = "<group>"; };
+		1281C5392A1582FB00C23047 /* EntryUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryUserNameView.swift; sourceTree = "<group>"; };
+		1281C53E2A15A3E300C23047 /* ShareTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTravelView.swift; sourceTree = "<group>"; };
+		1281C5412A160F0300C23047 /* RealmListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmListTravelView.swift; sourceTree = "<group>"; };
+		1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRealtimeListTravelView.swift; sourceTree = "<group>"; };
+		12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingDatabaseControlViewModel.swift; sourceTree = "<group>"; };
+		12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTypeViewModel.swift; sourceTree = "<group>"; };
+		12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudDatabaseViewModel.swift; sourceTree = "<group>"; };
+		12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseTravelListViewModel.swift; sourceTree = "<group>"; };
+		12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingShareTravelView.swift; sourceTree = "<group>"; };
+		12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButtonStack.swift; sourceTree = "<group>"; };
+		12AEEB7C2A275D21008AB7B8 /* MessageBalloonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBalloonViewModel.swift; sourceTree = "<group>"; };
+		12AEEB802A275E28008AB7B8 /* CopyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButtonView.swift; sourceTree = "<group>"; };
+		12AEEB822A2AC536008AB7B8 /* UserSignOutPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignOutPanelView.swift; sourceTree = "<group>"; };
+		12AEEB8C2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNewEntryRegistrationFBDatabaseViewModel.swift; sourceTree = "<group>"; };
+		12B4696529E813A0002E6864 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
+		12B4696829E81E4C002E6864 /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
+		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
+		12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseModel.swift; sourceTree = "<group>"; };
+		12B4696E29E82614002E6864 /* AdMobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobView.swift; sourceTree = "<group>"; };
+		12B4697029E82633002E6864 /* ShareLinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLinkViewModel.swift; sourceTree = "<group>"; };
+		12B4697229E82640002E6864 /* DeviceSizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSizeManager.swift; sourceTree = "<group>"; };
+		12B4697D29E82D14002E6864 /* EntryTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTravelView.swift; sourceTree = "<group>"; };
+		12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryScheduleView.swift; sourceTree = "<group>"; };
+		12B4698329EA9893002E6864 /* ListScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScheduleView.swift; sourceTree = "<group>"; };
+		12B4698529EC1254002E6864 /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
+		12B4698729ECA1ED002E6864 /* TravelPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPageView.swift; sourceTree = "<group>"; };
+		12B4698929ED5C28002E6864 /* RowScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowScheduleView.swift; sourceTree = "<group>"; };
+		12B4698D29F16C10002E6864 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
+		12B4698F29F1E406002E6864 /* ScrollPeriodTabPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPeriodTabPickerView.swift; sourceTree = "<group>"; };
+		12B4699229F1E530002E6864 /* ScheduleTabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTabMainView.swift; sourceTree = "<group>"; };
+		12B4699429F1E58E002E6864 /* ScheduleControlPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleControlPanelView.swift; sourceTree = "<group>"; };
+		12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypePickerView.swift; sourceTree = "<group>"; };
+		12B4699D29F56710002E6864 /* ListScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScheduleViewModel.swift; sourceTree = "<group>"; };
+		12B4699F29F67093002E6864 /* TranceportationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranceportationPickerView.swift; sourceTree = "<group>"; };
+		12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserNameView.swift; sourceTree = "<group>"; };
+		12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTravelView.swift; sourceTree = "<group>"; };
+		12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleView.swift; sourceTree = "<group>"; };
+		12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCardView.swift; sourceTree = "<group>"; };
+		12F0E06629FBEAB00081D9C1 /* InputPeriodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPeriodView.swift; sourceTree = "<group>"; };
+		12F0E06829FBEC510081D9C1 /* InputMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMemberView.swift; sourceTree = "<group>"; };
+		12F0E06A29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTravelButtonView.swift; sourceTree = "<group>"; };
+		12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBoxView.swift; sourceTree = "<group>"; };
+		12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimeView.swift; sourceTree = "<group>"; };
+		12F0E0712A029AFD0081D9C1 /* UserinfoEditLinkPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserinfoEditLinkPanelView.swift; sourceTree = "<group>"; };
+		12F0E0732A029BA00081D9C1 /* UserWithdrawalLinkPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWithdrawalLinkPanelView.swift; sourceTree = "<group>"; };
+		12F0E0752A029C130081D9C1 /* UserShareLinkPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShareLinkPanelView.swift; sourceTree = "<group>"; };
+		12F0E0772A029C530081D9C1 /* UserReviewLinkPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewLinkPanelView.swift; sourceTree = "<group>"; };
+		12F0E0792A029CB10081D9C1 /* UserTermsOfServiceLinkPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTermsOfServiceLinkPanelView.swift; sourceTree = "<group>"; };
+		12F0E07B2A084CFE0081D9C1 /* WellcomeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeMessageView.swift; sourceTree = "<group>"; };
+		12F0E07D2A0853130081D9C1 /* AuthInputBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInputBoxView.swift; sourceTree = "<group>"; };
+		12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMainTravelView.swift; sourceTree = "<group>"; };
+		12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankTravelView.swift; sourceTree = "<group>"; };
+		12F0E0852A0AF4660081D9C1 /* EntryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryHeaderView.swift; sourceTree = "<group>"; };
+		12F0E0882A11FB400081D9C1 /* ReAuthProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReAuthProviderView.swift; sourceTree = "<group>"; };
+		12F0E08A2A1302910081D9C1 /* ReAuthEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReAuthEmailView.swift; sourceTree = "<group>"; };
+		12F0E08C2A131F130081D9C1 /* SectionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionImageView.swift; sourceTree = "<group>"; };
+		12F0E08E2A135DF30081D9C1 /* RowTranceportationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTranceportationView.swift; sourceTree = "<group>"; };
+		1BEC4574320B7DB533585B3D /* Pods-TravelTimeSchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeSchedulerTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F59A6353BC2EB3C8AAA5B3E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeSchedulerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A67D54A71F648BB8CB3391 /* Pods_TravelTimeScheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelTimeScheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7EA08380A07E067510492F9 /* Pods-TravelTimeScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler.release.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler.release.xcconfig"; sourceTree = "<group>"; };
+		E7444FC2F380F92C5576B517 /* Pods-TravelTimeSchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeSchedulerTests.release.xcconfig"; path = "Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
+		F88D925E3C25EFAC19E2B93E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig"; path = "Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1252186929D6330F006AF797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25BDF1DF9470CC6D55D7F5E0 /* Pods_TravelTimeScheduler.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252187929D63310006AF797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8596E9294FB5113D291ED26 /* Pods_TravelTimeSchedulerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252188329D63310006AF797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5F1ADEDAA729AFE72C97AD9 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		123364732A2F650700D2EB7D /* FilteringContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				123364742A2F651200D2EB7D /* FilteringContainerView.swift */,
+				12F0E06C2A01F7D20081D9C1 /* SearchBoxView.swift */,
+				12F0E06E2A0284E10081D9C1 /* PickerTimeView.swift */,
+			);
+			path = FilteringContainerView;
+			sourceTree = "<group>";
+		};
+		1252186329D6330F006AF797 = {
+			isa = PBXGroup;
+			children = (
+				1252186E29D6330F006AF797 /* TravelTimeScheduler */,
+				1252187F29D63310006AF797 /* TravelTimeSchedulerTests */,
+				1252188929D63310006AF797 /* TravelTimeSchedulerUITests */,
+				1252186D29D6330F006AF797 /* Products */,
+				E2AB1BE13C30414714022949 /* Pods */,
+				3045442C34AA0D166A569C70 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1252186D29D6330F006AF797 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1252186C29D6330F006AF797 /* TravelTimeScheduler.app */,
+				1252187C29D63310006AF797 /* TravelTimeSchedulerTests.xctest */,
+				1252188629D63310006AF797 /* TravelTimeSchedulerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1252186E29D6330F006AF797 /* TravelTimeScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				125218BA29D6F837006AF797 /* TravelTimeScheduler.entitlements */,
+				125218B929D6F726006AF797 /* Info.plist */,
+				123364802A318BC800D2EB7D /* README.md */,
+				128FC4B12B5F72DE003E3B53 /* Extension&Utility */,
+				1252189D29D63690006AF797 /* View */,
+				125218A029D636B2006AF797 /* Models */,
+				1252189F29D636A9006AF797 /* ViewModels */,
+				125218A129D6373C006AF797 /* FBAuthentication */,
+				1252187329D63310006AF797 /* Assets.xcassets */,
+				1252189929D634C3006AF797 /* GoogleService-Info.plist */,
+				1252187529D63310006AF797 /* Preview Content */,
+			);
+			path = TravelTimeScheduler;
+			sourceTree = "<group>";
+		};
+		1252187529D63310006AF797 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1252187629D63310006AF797 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1252187F29D63310006AF797 /* TravelTimeSchedulerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1252188029D63310006AF797 /* TravelTimeSchedulerTests.swift */,
+			);
+			path = TravelTimeSchedulerTests;
+			sourceTree = "<group>";
+		};
+		1252188929D63310006AF797 /* TravelTimeSchedulerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1252188A29D63310006AF797 /* TravelTimeSchedulerUITests.swift */,
+				1252188C29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift */,
+			);
+			path = TravelTimeSchedulerUITests;
+			sourceTree = "<group>";
+		};
+		1252189D29D63690006AF797 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1252186F29D6330F006AF797 /* TravelTimeSchedulerApp.swift */,
+				12F0E0822A0A6FB40081D9C1 /* TopMainTravelView */,
+				12F0E06529FBEA8B0081D9C1 /* EntryTravelView */,
+				1281C53D2A15A3D500C23047 /* ShareTravelView */,
+				12B4699129F1E45E002E6864 /* TravelDatePageView */,
+				12F0E0702A029AD90081D9C1 /* UserSettingView */,
+				12B4699629F514FD002E6864 /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1252189F29D636A9006AF797 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1252193C29DF7404006AF797 /* UserDefaults */,
+				12B4699C29F566EF002E6864 /* ViewControl */,
+				12B4697829E827A7002E6864 /* Database */,
+				12B4697729E82790002E6864 /* Function */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		125218A029D636B2006AF797 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1281C52F2A13B7FB00C23047 /* FBRealtimeDatabase */,
+				12B4697429E826B4002E6864 /* Realm */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		125218A129D6373C006AF797 /* FBAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				125218B829D63A78006AF797 /* Views */,
+				1252191E29DD7DED006AF797 /* Models */,
+				125218B329D63924006AF797 /* ViewModels */,
+			);
+			path = FBAuthentication;
+			sourceTree = "<group>";
+		};
+		125218A229D6374E006AF797 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E07F2A08531C0081D9C1 /* AuthInputBoxView */,
+				125218B129D638F6006AF797 /* ErrorMessageView.swift */,
+				1252192929DD7FC3006AF797 /* ProviderAuthButton */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		125218B329D63924006AF797 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				125218B429D63943006AF797 /* AuthViewModel.swift */,
+				125218B629D63955006AF797 /* ValidationViewModel.swift */,
+				1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		125218B829D63A78006AF797 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1252192D29DE1DEE006AF797 /* AfterSignIn */,
+				1252192C29DE1DC9006AF797 /* BeforeSignIn */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1252191E29DD7DED006AF797 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1252191F29DD7E0B006AF797 /* AuthModel.swift */,
+				1252192129DD7E22006AF797 /* AppleAuthModel.swift */,
+				1252192329DD7F41006AF797 /* EmailAuthModel.swift */,
+				1252192529DD7F54006AF797 /* GoogleAuthModel.swift */,
+				1252192729DD7F69006AF797 /* AuthErrorModel.swift */,
+				1252193629DE20D1006AF797 /* AuthProviderModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1252192929DD7FC3006AF797 /* ProviderAuthButton */ = {
+			isa = PBXGroup;
+			children = (
+				125218A929D638A9006AF797 /* AppleAuthView.swift */,
+				1252192A29DE1C2A006AF797 /* EmailAuthButtonView.swift */,
+				125218A729D63897006AF797 /* GoogleAuthView.swift */,
+			);
+			path = ProviderAuthButton;
+			sourceTree = "<group>";
+		};
+		1252192C29DE1DC9006AF797 /* BeforeSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E07B2A084CFE0081D9C1 /* WellcomeMessageView.swift */,
+				125218A529D63786006AF797 /* LoginAuthView.swift */,
+				125218A329D6376D006AF797 /* NewEntryAuthView.swift */,
+				125218AB29D638B9006AF797 /* PasswordResetView.swift */,
+				125218A229D6374E006AF797 /* ViewComponents */,
+			);
+			path = BeforeSignIn;
+			sourceTree = "<group>";
+		};
+		1252192D29DE1DEE006AF797 /* AfterSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				1252192E29DE1E1C006AF797 /* ViewComponents */,
+			);
+			path = AfterSignIn;
+			sourceTree = "<group>";
+		};
+		1252192E29DE1E1C006AF797 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */,
+				12F0E0882A11FB400081D9C1 /* ReAuthProviderView.swift */,
+				12F0E08A2A1302910081D9C1 /* ReAuthEmailView.swift */,
+				1252193229DE1E97006AF797 /* WithdrawalButtonView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		1252193C29DF7404006AF797 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				1252193F29DF7441006AF797 /* UserDefaultsProtocol.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		1281C52F2A13B7FB00C23047 /* FBRealtimeDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				1281C5302A13B82400C23047 /* FBDatabaseModel.swift */,
+				1281C5322A15140700C23047 /* FBDatabaseErrorModel.swift */,
+			);
+			path = FBRealtimeDatabase;
+			sourceTree = "<group>";
+		};
+		1281C53D2A15A3D500C23047 /* ShareTravelView */ = {
+			isa = PBXGroup;
+			children = (
+				1281C53E2A15A3E300C23047 /* ShareTravelView.swift */,
+				12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */,
+			);
+			path = ShareTravelView;
+			sourceTree = "<group>";
+		};
+		1281C5402A160EF800C23047 /* ListTravelView */ = {
+			isa = PBXGroup;
+			children = (
+				1281C5412A160F0300C23047 /* RealmListTravelView.swift */,
+				1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */,
+			);
+			path = ListTravelView;
+			sourceTree = "<group>";
+		};
+		128FC4B12B5F72DE003E3B53 /* Extension&Utility */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697229E82640002E6864 /* DeviceSizeManager.swift */,
+				12B4698529EC1254002E6864 /* DateFormatManager.swift */,
+				12B4696829E81E4C002E6864 /* ExColor.swift */,
+			);
+			path = "Extension&Utility";
+			sourceTree = "<group>";
+		};
+		128FC4B32B5F75DE003E3B53 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		128FC4B42B5F7605003E3B53 /* ExModifier */ = {
+			isa = PBXGroup;
+			children = (
+				12B4698D29F16C10002E6864 /* Modifier.swift */,
+			);
+			path = ExModifier;
+			sourceTree = "<group>";
+		};
+		12AEEB842A2AC68F008AB7B8 /* LinkPanels */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E0772A029C530081D9C1 /* UserReviewLinkPanelView.swift */,
+				12F0E0752A029C130081D9C1 /* UserShareLinkPanelView.swift */,
+				12F0E0792A029CB10081D9C1 /* UserTermsOfServiceLinkPanelView.swift */,
+			);
+			path = LinkPanels;
+			sourceTree = "<group>";
+		};
+		12AEEB852A2AC858008AB7B8 /* AccountPanels */ = {
+			isa = PBXGroup;
+			children = (
+				12AEEB862A2AC869008AB7B8 /* AfterSignIn */,
+				12AEEB872A2AC886008AB7B8 /* BeforeSignIn */,
+			);
+			path = AccountPanels;
+			sourceTree = "<group>";
+		};
+		12AEEB862A2AC869008AB7B8 /* AfterSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E0712A029AFD0081D9C1 /* UserinfoEditLinkPanelView.swift */,
+				12AEEB822A2AC536008AB7B8 /* UserSignOutPanelView.swift */,
+				12F0E0732A029BA00081D9C1 /* UserWithdrawalLinkPanelView.swift */,
+			);
+			path = AfterSignIn;
+			sourceTree = "<group>";
+		};
+		12AEEB872A2AC886008AB7B8 /* BeforeSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				1281C5372A15825800C23047 /* UserNameEntryLinkPanelView.swift */,
+				1252193029DE1E49006AF797 /* UserSignUpLinkPanelView.swift */,
+			);
+			path = BeforeSignIn;
+			sourceTree = "<group>";
+		};
+		12AEEB882A2ACB64008AB7B8 /* TravelsPanels */ = {
+			isa = PBXGroup;
+			children = (
+				1281C5352A157FD400C23047 /* UserAllTravelDeletePanelView.swift */,
+			);
+			path = TravelsPanels;
+			sourceTree = "<group>";
+		};
+		12AEEB892A2ACFA9008AB7B8 /* DestinationPages */ = {
+			isa = PBXGroup;
+			children = (
+				1281C5392A1582FB00C23047 /* EntryUserNameView.swift */,
+				123008412A32835600A43ADF /* HowToUseTheAppView.swift */,
+			);
+			path = DestinationPages;
+			sourceTree = "<group>";
+		};
+		12B4697429E826B4002E6864 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				1252193A29DF6ED6006AF797 /* Travel.swift */,
+				12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		12B4697529E826C3002E6864 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		12B4697729E82790002E6864 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				12AEEB7C2A275D21008AB7B8 /* MessageBalloonViewModel.swift */,
+				12B4697029E82633002E6864 /* ShareLinkViewModel.swift */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		12B4697829E827A7002E6864 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697929E827BB002E6864 /* FBRealtimeDatabase */,
+				12B4697529E826C3002E6864 /* Realm */,
+				12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */,
+				12AEEB8C2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift */,
+				12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */,
+				12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		12B4697929E827BB002E6864 /* FBRealtimeDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				1252193829DF6E8A006AF797 /* FBDatabaseViewModel.swift */,
+				12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */,
+			);
+			path = FBRealtimeDatabase;
+			sourceTree = "<group>";
+		};
+		12B4699129F1E45E002E6864 /* TravelDatePageView */ = {
+			isa = PBXGroup;
+			children = (
+				12B4698729ECA1ED002E6864 /* TravelPageView.swift */,
+				12B4698F29F1E406002E6864 /* ScrollPeriodTabPickerView.swift */,
+				12B4699429F1E58E002E6864 /* ScheduleControlPanelView.swift */,
+				12B4699929F5328B002E6864 /* ScheduleTabMainView */,
+			);
+			path = TravelDatePageView;
+			sourceTree = "<group>";
+		};
+		12B4699629F514FD002E6864 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				128FC4B32B5F75DE003E3B53 /* Layout */,
+				128FC4B42B5F7605003E3B53 /* ExModifier */,
+				12F0E0832A0A703E0081D9C1 /* BlankTravelView.swift */,
+				12F0E08C2A131F130081D9C1 /* SectionImageView.swift */,
+				12AEEB802A275E28008AB7B8 /* CopyButtonView.swift */,
+				123008432A32F69F00A43ADF /* AccordionBoxView.swift */,
+				12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */,
+				12B4696E29E82614002E6864 /* AdMobView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		12B4699929F5328B002E6864 /* ScheduleTabMainView */ = {
+			isa = PBXGroup;
+			children = (
+				12B4699229F1E530002E6864 /* ScheduleTabMainView.swift */,
+				12B4698329EA9893002E6864 /* ListScheduleView.swift */,
+				12F0E0902A135DF70081D9C1 /* Row */,
+				12B4698129E8ACDF002E6864 /* EntryScheduleView.swift */,
+				12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */,
+			);
+			path = ScheduleTabMainView;
+			sourceTree = "<group>";
+		};
+		12B4699C29F566EF002E6864 /* ViewControl */ = {
+			isa = PBXGroup;
+			children = (
+				12B4699D29F56710002E6864 /* ListScheduleViewModel.swift */,
+			);
+			path = ViewControl;
+			sourceTree = "<group>";
+		};
+		12F0E06529FBEA8B0081D9C1 /* EntryTravelView */ = {
+			isa = PBXGroup;
+			children = (
+				12B4697D29E82D14002E6864 /* EntryTravelView.swift */,
+				12F0E0852A0AF4660081D9C1 /* EntryHeaderView.swift */,
+				12F0E06829FBEC510081D9C1 /* InputMemberView.swift */,
+				12F0E06629FBEAB00081D9C1 /* InputPeriodView.swift */,
+				12F0E06A29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift */,
+			);
+			path = EntryTravelView;
+			sourceTree = "<group>";
+		};
+		12F0E0702A029AD90081D9C1 /* UserSettingView */ = {
+			isa = PBXGroup;
+			children = (
+				12B4696529E813A0002E6864 /* UserSettingView.swift */,
+				12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */,
+				12AEEB892A2ACFA9008AB7B8 /* DestinationPages */,
+				12F0E0872A0AF7C40081D9C1 /* Panels */,
+			);
+			path = UserSettingView;
+			sourceTree = "<group>";
+		};
+		12F0E07F2A08531C0081D9C1 /* AuthInputBoxView */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E07D2A0853130081D9C1 /* AuthInputBoxView.swift */,
+				125218AD29D638D3006AF797 /* SecureInputView.swift */,
+			);
+			path = AuthInputBoxView;
+			sourceTree = "<group>";
+		};
+		12F0E0822A0A6FB40081D9C1 /* TopMainTravelView */ = {
+			isa = PBXGroup;
+			children = (
+				12F0E0802A0A6EE70081D9C1 /* TopMainTravelView.swift */,
+				123364732A2F650700D2EB7D /* FilteringContainerView */,
+				1281C5402A160EF800C23047 /* ListTravelView */,
+				12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */,
+			);
+			path = TopMainTravelView;
+			sourceTree = "<group>";
+		};
+		12F0E0872A0AF7C40081D9C1 /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				12AEEB852A2AC858008AB7B8 /* AccountPanels */,
+				12AEEB882A2ACB64008AB7B8 /* TravelsPanels */,
+				12AEEB842A2AC68F008AB7B8 /* LinkPanels */,
+			);
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		12F0E0902A135DF70081D9C1 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				12B4698929ED5C28002E6864 /* RowScheduleView.swift */,
+				12F0E08E2A135DF30081D9C1 /* RowTranceportationView.swift */,
+				12B4699F29F67093002E6864 /* TranceportationPickerView.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		3045442C34AA0D166A569C70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44A67D54A71F648BB8CB3391 /* Pods_TravelTimeScheduler.framework */,
+				0F5C472A05FC5BD17279D448 /* Pods_TravelTimeScheduler_TravelTimeSchedulerUITests.framework */,
+				2A482A8A0121169041F1176F /* Pods_TravelTimeSchedulerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2AB1BE13C30414714022949 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B69A7FC4D3F9F5BB8619F31 /* Pods-TravelTimeScheduler.debug.xcconfig */,
+				A7EA08380A07E067510492F9 /* Pods-TravelTimeScheduler.release.xcconfig */,
+				F88D925E3C25EFAC19E2B93E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig */,
+				1F59A6353BC2EB3C8AAA5B3E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig */,
+				1BEC4574320B7DB533585B3D /* Pods-TravelTimeSchedulerTests.debug.xcconfig */,
+				E7444FC2F380F92C5576B517 /* Pods-TravelTimeSchedulerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1252186B29D6330F006AF797 /* TravelTimeScheduler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1252189029D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeScheduler" */;
+			buildPhases = (
+				92C48CDE8EBEC5B1017E6B38 /* [CP] Check Pods Manifest.lock */,
+				1252186829D6330F006AF797 /* Sources */,
+				1252186929D6330F006AF797 /* Frameworks */,
+				1252186A29D6330F006AF797 /* Resources */,
+				1DF66AF8C819C708101A927B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TravelTimeScheduler;
+			productName = TravelTimeScheduler;
+			productReference = 1252186C29D6330F006AF797 /* TravelTimeScheduler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1252187B29D63310006AF797 /* TravelTimeSchedulerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1252189329D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerTests" */;
+			buildPhases = (
+				6521804DC1E4383DDFB07A37 /* [CP] Check Pods Manifest.lock */,
+				1252187829D63310006AF797 /* Sources */,
+				1252187929D63310006AF797 /* Frameworks */,
+				1252187A29D63310006AF797 /* Resources */,
+				A47EFD94B83192699F016535 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1252187E29D63310006AF797 /* PBXTargetDependency */,
+			);
+			name = TravelTimeSchedulerTests;
+			productName = TravelTimeSchedulerTests;
+			productReference = 1252187C29D63310006AF797 /* TravelTimeSchedulerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1252188529D63310006AF797 /* TravelTimeSchedulerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1252189629D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerUITests" */;
+			buildPhases = (
+				4490083AF0E04A5361F521BD /* [CP] Check Pods Manifest.lock */,
+				1252188229D63310006AF797 /* Sources */,
+				1252188329D63310006AF797 /* Frameworks */,
+				1252188429D63310006AF797 /* Resources */,
+				4525552D62FB8E36D50FF401 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1252188829D63310006AF797 /* PBXTargetDependency */,
+			);
+			name = TravelTimeSchedulerUITests;
+			productName = TravelTimeSchedulerUITests;
+			productReference = 1252188629D63310006AF797 /* TravelTimeSchedulerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1252186429D6330F006AF797 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					1252186B29D6330F006AF797 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					1252187B29D63310006AF797 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1252186B29D6330F006AF797;
+					};
+					1252188529D63310006AF797 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1252186B29D6330F006AF797;
+					};
+				};
+			};
+			buildConfigurationList = 1252186729D6330F006AF797 /* Build configuration list for PBXProject "TravelTimeScheduler" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1252186329D6330F006AF797;
+			productRefGroup = 1252186D29D6330F006AF797 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1252186B29D6330F006AF797 /* TravelTimeScheduler */,
+				1252187B29D63310006AF797 /* TravelTimeSchedulerTests */,
+				1252188529D63310006AF797 /* TravelTimeSchedulerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1252186A29D6330F006AF797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252187729D63310006AF797 /* Preview Assets.xcassets in Resources */,
+				1252187429D63310006AF797 /* Assets.xcassets in Resources */,
+				1252189A29D634C3006AF797 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252187A29D63310006AF797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252189B29D634C3006AF797 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252188429D63310006AF797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252189C29D634C3006AF797 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DF66AF8C819C708101A927B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler/Pods-TravelTimeScheduler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4490083AF0E04A5361F521BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4525552D62FB8E36D50FF401 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests/Pods-TravelTimeScheduler-TravelTimeSchedulerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6521804DC1E4383DDFB07A37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelTimeSchedulerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92C48CDE8EBEC5B1017E6B38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelTimeScheduler-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A47EFD94B83192699F016535 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelTimeSchedulerTests/Pods-TravelTimeSchedulerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1252186829D6330F006AF797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */,
+				12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */,
+				12B4696F29E82614002E6864 /* AdMobView.swift in Sources */,
+				12F0E08F2A135DF30081D9C1 /* RowTranceportationView.swift in Sources */,
+				12F0E07E2A0853130081D9C1 /* AuthInputBoxView.swift in Sources */,
+				12F0E08D2A131F130081D9C1 /* SectionImageView.swift in Sources */,
+				123364752A2F651200D2EB7D /* FilteringContainerView.swift in Sources */,
+				12F0E06B29FBF9FC0081D9C1 /* DeleteTravelButtonView.swift in Sources */,
+				1252192629DD7F54006AF797 /* GoogleAuthModel.swift in Sources */,
+				1252193329DE1E97006AF797 /* WithdrawalButtonView.swift in Sources */,
+				123008422A32835600A43ADF /* HowToUseTheAppView.swift in Sources */,
+				12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */,
+				1281C5362A157FD400C23047 /* UserAllTravelDeletePanelView.swift in Sources */,
+				12B4699E29F56710002E6864 /* ListScheduleViewModel.swift in Sources */,
+				1252192229DD7E22006AF797 /* AppleAuthModel.swift in Sources */,
+				12F0E06429FB220F0081D9C1 /* UserInfoCardView.swift in Sources */,
+				1281C53A2A1582FB00C23047 /* EntryUserNameView.swift in Sources */,
+				125218B729D63955006AF797 /* ValidationViewModel.swift in Sources */,
+				12AEEB7D2A275D21008AB7B8 /* MessageBalloonViewModel.swift in Sources */,
+				12F0E0782A029C530081D9C1 /* UserReviewLinkPanelView.swift in Sources */,
+				125218A829D63897006AF797 /* GoogleAuthView.swift in Sources */,
+				1252192429DD7F41006AF797 /* EmailAuthModel.swift in Sources */,
+				125218B229D638F6006AF797 /* ErrorMessageView.swift in Sources */,
+				12AEEB732A19B0AB008AB7B8 /* ConvertTypeViewModel.swift in Sources */,
+				1252192029DD7E0B006AF797 /* AuthModel.swift in Sources */,
+				12F0E0722A029AFD0081D9C1 /* UserinfoEditLinkPanelView.swift in Sources */,
+				12AEEB7B2A24D8DB008AB7B8 /* ProgressButtonStack.swift in Sources */,
+				1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */,
+				12B469A029F67093002E6864 /* TranceportationPickerView.swift in Sources */,
+				12B4697329E82640002E6864 /* DeviceSizeManager.swift in Sources */,
+				12B4697129E82633002E6864 /* ShareLinkViewModel.swift in Sources */,
+				12B4698A29ED5C28002E6864 /* RowScheduleView.swift in Sources */,
+				12B4698229E8ACDF002E6864 /* EntryScheduleView.swift in Sources */,
+				1252192829DD7F69006AF797 /* AuthErrorModel.swift in Sources */,
+				125218AA29D638A9006AF797 /* AppleAuthView.swift in Sources */,
+				12B4697E29E82D14002E6864 /* EntryTravelView.swift in Sources */,
+				12F0E06D2A01F7D20081D9C1 /* SearchBoxView.swift in Sources */,
+				1252193929DF6E8A006AF797 /* FBDatabaseViewModel.swift in Sources */,
+				125218AE29D638D3006AF797 /* SecureInputView.swift in Sources */,
+				125218A629D63786006AF797 /* LoginAuthView.swift in Sources */,
+				12F0E0742A029BA00081D9C1 /* UserWithdrawalLinkPanelView.swift in Sources */,
+				12D5895C29E60ABB00DAEA5F /* EditUserNameView.swift in Sources */,
+				12B4698829ECA1ED002E6864 /* TravelPageView.swift in Sources */,
+				1252194029DF7442006AF797 /* UserDefaultsProtocol.swift in Sources */,
+				12F0E07C2A084CFE0081D9C1 /* WellcomeMessageView.swift in Sources */,
+				12AEEB812A275E28008AB7B8 /* CopyButtonView.swift in Sources */,
+				1281C5332A15140700C23047 /* FBDatabaseErrorModel.swift in Sources */,
+				12B4698E29F16C10002E6864 /* Modifier.swift in Sources */,
+				12AEEB772A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift in Sources */,
+				12F0E06F2A0284E10081D9C1 /* PickerTimeView.swift in Sources */,
+				1252193729DE20D1006AF797 /* AuthProviderModel.swift in Sources */,
+				12F0E0862A0AF4660081D9C1 /* EntryHeaderView.swift in Sources */,
+				125218A429D6376D006AF797 /* NewEntryAuthView.swift in Sources */,
+				12F0E06929FBEC510081D9C1 /* InputMemberView.swift in Sources */,
+				12B4699529F1E58E002E6864 /* ScheduleControlPanelView.swift in Sources */,
+				12F0E0842A0A703E0081D9C1 /* BlankTravelView.swift in Sources */,
+				12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */,
+				12B4698629EC1254002E6864 /* DateFormatManager.swift in Sources */,
+				1252193B29DF6ED6006AF797 /* Travel.swift in Sources */,
+				12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */,
+				12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */,
+				1281C5312A13B82400C23047 /* FBDatabaseModel.swift in Sources */,
+				12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */,
+				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
+				12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */,
+				12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */,
+				12AEEB8D2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift in Sources */,
+				12AEEB712A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift in Sources */,
+				12AEEB792A24B99B008AB7B8 /* ReadingShareTravelView.swift in Sources */,
+				1252193129DE1E49006AF797 /* UserSignUpLinkPanelView.swift in Sources */,
+				12B4698429EA9893002E6864 /* ListScheduleView.swift in Sources */,
+				12B4696929E81E4C002E6864 /* ExColor.swift in Sources */,
+				12B4699829F51589002E6864 /* ScheduleTypePickerView.swift in Sources */,
+				1252192B29DE1C2A006AF797 /* EmailAuthButtonView.swift in Sources */,
+				1281C5382A15825800C23047 /* UserNameEntryLinkPanelView.swift in Sources */,
+				1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */,
+				12F0E07A2A029CB10081D9C1 /* UserTermsOfServiceLinkPanelView.swift in Sources */,
+				12F0E06729FBEAB00081D9C1 /* InputPeriodView.swift in Sources */,
+				12F0E0762A029C130081D9C1 /* UserShareLinkPanelView.swift in Sources */,
+				1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */,
+				12AEEB832A2AC536008AB7B8 /* UserSignOutPanelView.swift in Sources */,
+				12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */,
+				123008442A32F69F00A43ADF /* AccordionBoxView.swift in Sources */,
+				125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */,
+				12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */,
+				1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */,
+				1281C5442A1611D900C23047 /* FBRealtimeListTravelView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252187829D63310006AF797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252188129D63310006AF797 /* TravelTimeSchedulerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252188229D63310006AF797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252188B29D63310006AF797 /* TravelTimeSchedulerUITests.swift in Sources */,
+				1252188D29D63310006AF797 /* TravelTimeSchedulerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1252187E29D63310006AF797 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1252186B29D6330F006AF797 /* TravelTimeScheduler */;
+			targetProxy = 1252187D29D63310006AF797 /* PBXContainerItemProxy */;
+		};
+		1252188829D63310006AF797 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1252186B29D6330F006AF797 /* TravelTimeScheduler */;
+			targetProxy = 1252188729D63310006AF797 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1252188E29D63310006AF797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1252188F29D63310006AF797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1252189129D63310006AF797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B69A7FC4D3F9F5BB8619F31 /* Pods-TravelTimeScheduler.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelTimeScheduler/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "旅Time";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.3.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1252189229D63310006AF797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7EA08380A07E067510492F9 /* Pods-TravelTimeScheduler.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TravelTimeScheduler/TravelTimeScheduler.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_ASSET_PATHS = "\"TravelTimeScheduler/Preview Content\"";
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelTimeScheduler/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "旅Time";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.3.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1252189429D63310006AF797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BEC4574320B7DB533585B3D /* Pods-TravelTimeSchedulerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeSchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelTimeScheduler.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravelTimeScheduler";
+			};
+			name = Debug;
+		};
+		1252189529D63310006AF797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7444FC2F380F92C5576B517 /* Pods-TravelTimeSchedulerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeSchedulerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelTimeScheduler.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TravelTimeScheduler";
+			};
+			name = Release;
+		};
+		1252189729D63310006AF797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F88D925E3C25EFAC19E2B93E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeSchedulerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravelTimeScheduler;
+			};
+			name = Debug;
+		};
+		1252189829D63310006AF797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F59A6353BC2EB3C8AAA5B3E /* Pods-TravelTimeScheduler-TravelTimeSchedulerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGD79LB65H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ame.TravelTimeSchedulerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravelTimeScheduler;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1252186729D6330F006AF797 /* Build configuration list for PBXProject "TravelTimeScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252188E29D63310006AF797 /* Debug */,
+				1252188F29D63310006AF797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1252189029D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252189129D63310006AF797 /* Debug */,
+				1252189229D63310006AF797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1252189329D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252189429D63310006AF797 /* Debug */,
+				1252189529D63310006AF797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1252189629D63310006AF797 /* Build configuration list for PBXNativeTarget "TravelTimeSchedulerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252189729D63310006AF797 /* Debug */,
+				1252189829D63310006AF797 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1252186429D6330F006AF797 /* Project object */;
+}
