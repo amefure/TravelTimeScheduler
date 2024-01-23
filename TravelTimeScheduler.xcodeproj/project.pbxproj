@@ -49,6 +49,7 @@
 		1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C53E2A15A3E300C23047 /* ShareTravelView.swift */; };
 		1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5412A160F0300C23047 /* RealmListTravelView.swift */; };
 		1281C5442A1611D900C23047 /* FBRealtimeListTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */; };
+		128FC4B62B5F793F003E3B53 /* AdMobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4B52B5F793F003E3B53 /* AdMobView.swift */; };
 		12AEEB712A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */; };
 		12AEEB732A19B0AB008AB7B8 /* ConvertTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */; };
 		12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */; };
@@ -63,7 +64,6 @@
 		12B4696929E81E4C002E6864 /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696829E81E4C002E6864 /* ExColor.swift */; };
 		12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */; };
 		12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */; };
-		12B4696F29E82614002E6864 /* AdMobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4696E29E82614002E6864 /* AdMobView.swift */; };
 		12B4697129E82633002E6864 /* ShareLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697029E82633002E6864 /* ShareLinkViewModel.swift */; };
 		12B4697329E82640002E6864 /* DeviceSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697229E82640002E6864 /* DeviceSizeManager.swift */; };
 		12B4697E29E82D14002E6864 /* EntryTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4697D29E82D14002E6864 /* EntryTravelView.swift */; };
@@ -173,6 +173,7 @@
 		1281C53E2A15A3E300C23047 /* ShareTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTravelView.swift; sourceTree = "<group>"; };
 		1281C5412A160F0300C23047 /* RealmListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmListTravelView.swift; sourceTree = "<group>"; };
 		1281C5432A1611D900C23047 /* FBRealtimeListTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBRealtimeListTravelView.swift; sourceTree = "<group>"; };
+		128FC4B52B5F793F003E3B53 /* AdMobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobView.swift; sourceTree = "<group>"; };
 		12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingDatabaseControlViewModel.swift; sourceTree = "<group>"; };
 		12AEEB722A19B0AB008AB7B8 /* ConvertTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTypeViewModel.swift; sourceTree = "<group>"; };
 		12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudDatabaseViewModel.swift; sourceTree = "<group>"; };
@@ -187,7 +188,6 @@
 		12B4696829E81E4C002E6864 /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
 		12B4696A29E8252A002E6864 /* RealmDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseViewModel.swift; sourceTree = "<group>"; };
 		12B4696C29E825A7002E6864 /* RealmDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabaseModel.swift; sourceTree = "<group>"; };
-		12B4696E29E82614002E6864 /* AdMobView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobView.swift; sourceTree = "<group>"; };
 		12B4697029E82633002E6864 /* ShareLinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLinkViewModel.swift; sourceTree = "<group>"; };
 		12B4697229E82640002E6864 /* DeviceSizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSizeManager.swift; sourceTree = "<group>"; };
 		12B4697D29E82D14002E6864 /* EntryTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTravelView.swift; sourceTree = "<group>"; };
@@ -650,7 +650,7 @@
 				12AEEB802A275E28008AB7B8 /* CopyButtonView.swift */,
 				123008432A32F69F00A43ADF /* AccordionBoxView.swift */,
 				12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */,
-				12B4696E29E82614002E6864 /* AdMobView.swift */,
+				128FC4B52B5F793F003E3B53 /* AdMobView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1022,7 +1022,6 @@
 			files = (
 				12B4696629E813A0002E6864 /* UserSettingView.swift in Sources */,
 				12B4696B29E8252A002E6864 /* RealmDatabaseViewModel.swift in Sources */,
-				12B4696F29E82614002E6864 /* AdMobView.swift in Sources */,
 				12F0E08F2A135DF30081D9C1 /* RowTranceportationView.swift in Sources */,
 				12F0E07E2A0853130081D9C1 /* AuthInputBoxView.swift in Sources */,
 				12F0E08D2A131F130081D9C1 /* SectionImageView.swift in Sources */,
@@ -1078,6 +1077,7 @@
 				12F0E0842A0A703E0081D9C1 /* BlankTravelView.swift in Sources */,
 				12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */,
 				12B4698629EC1254002E6864 /* DateFormatManager.swift in Sources */,
+				128FC4B62B5F793F003E3B53 /* AdMobView.swift in Sources */,
 				1252193B29DF6ED6006AF797 /* Travel.swift in Sources */,
 				12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */,
 				12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */,
