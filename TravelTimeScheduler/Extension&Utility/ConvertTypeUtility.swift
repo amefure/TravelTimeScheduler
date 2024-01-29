@@ -1,5 +1,5 @@
 //
-//  ConvertTypeViewModel.swift
+//  ConvertTypeUtility.swift
 //  TravelTimeScheduler
 //
 //  Created by t&a on 2023/05/21.
@@ -8,9 +8,8 @@
 import UIKit
 import RealmSwift
 
-
-/// DBに格納時にデータのタイプをキャストする機能を提供するViewModels
-class ConvertTypeViewModel {
+/// DBに格納時にデータのタイプをキャストする機能を提供するUtility
+class ConvertTypeUtility {
 
     // MARK: - Travel(Realm)をFirebase上に新規登録する際の型変換
     // - 使用箇所：SwitchingDatabaseViewModel.swift

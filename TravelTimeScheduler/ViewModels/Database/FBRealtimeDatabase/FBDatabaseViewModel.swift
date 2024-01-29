@@ -18,7 +18,7 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     private let model = FBDatabaseModel()
     
     // MARK: -  ViewModels
-    private let convertTypeVM = ConvertTypeViewModel()
+    private let convertTypeUtility = ConvertTypeUtility()
     private let userInfoVM = SignInUserInfoViewModel()
     
     // MARK: - Generic Type
@@ -36,7 +36,7 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
             "share": "true",
             "readableUserlId": [userInfoVM.signInUserId]
         ]
-        let id:String = convertTypeVM.generateObjectIdString()
+        let id:String = convertTypeUtility.generateObjectIdString()
         model.entryTravel(id:id ,childUpdates: childUpdates)
     }
     
@@ -64,7 +64,7 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     
     public func updateSchedule(travelId: String, scheduleId: String, dateTime: Date, endDateTime:Date?, content: String, memo: String, type: ScheduleType, tranceportation: Tranceportation?) {
         let sc = Schedule()
-        sc.id = convertTypeVM.convertStringToObjectId(strID: scheduleId)
+        sc.id = convertTypeUtility.convertStringToObjectId(strID: scheduleId)
         sc.content = content
         sc.dateTime = dateTime
         sc.endDateTime = endDateTime
@@ -124,7 +124,7 @@ extension FBDatabaseViewModel {
     public func registerAllRealmDBWithFirebase(travels:Array<Travel>){
         var childUpdates:[String : Any] = [:]
         for travel in travels{
-            let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules: travel.schedules)
+            let scheduleDictionary = convertTypeUtility.convertScheduleToDictionary(schedules: travel.schedules)
             let travelBody:[String : Any] = [
                 "name": travel.name,
                 "members": Array(travel.members),

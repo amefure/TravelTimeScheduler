@@ -10,7 +10,7 @@ import SwiftUI
 struct ScheduleControlPanelView: View {
     
     // MARK: - ViewModels
-    @ObservedObject var listScheduleVM = ListScheduleViewModel.shared
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
     
     // MARK: - Parameters
     public let travel:Travel
@@ -65,7 +65,11 @@ struct ScheduleControlPanelView: View {
                 Text("削除")
                 
             }.onChange(of: isOn) { newValue in
-                listScheduleVM.toggleDeleteMode()
+                if isOn {
+                    rootEnvironment.onDeleteMode()
+                } else {
+                    rootEnvironment.offDeleteMode()
+                }
             }.frame(width: 80,height: 45)
                 .foregroundColor( isOn ? .white:Color.negative)
                 .tint(Color.negative) // Toggle Background

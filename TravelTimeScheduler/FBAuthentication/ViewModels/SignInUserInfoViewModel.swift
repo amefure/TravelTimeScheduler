@@ -10,61 +10,58 @@ import RealmSwift
 
 class SignInUserInfoViewModel {
     
-    private let userDefaults: UserDefaultsProtocol
-
-    init(userDefaults: UserDefaultsProtocol = UserDefaultsWrapper.shared) {
-        self.userDefaults = userDefaults
+    private let userDefaultsRepository: UserDefaultsRepository
+    
+    init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
+        userDefaultsRepository = repositoryDependency.userDefaultsRepository
     }
     
     var signInUserId: String {
         get {
-            return userDefaults.object(forKey: "SignInUserId") as? String ?? "none"
+            return userDefaultsRepository.getStringData(key: UserDefaultsKey.SIGNIN_USER_ID, initialValue: "none")
         }
         set {
-            userDefaults.set(newValue, forKey: "SignInUserId")
+            userDefaultsRepository.setStringData(key: UserDefaultsKey.SIGNIN_USER_ID, value: newValue)
         }
     }
     
     var signInUserName: String {
         get {
-            return userDefaults.object(forKey: "SignInUserName") as? String ?? "User"
+            return userDefaultsRepository.getStringData(key: UserDefaultsKey.SIGNIN_USER_NAME, initialValue: "User")
         }
         set {
-            userDefaults.set(newValue, forKey: "SignInUserName")
+            userDefaultsRepository.setStringData(key: UserDefaultsKey.SIGNIN_USER_NAME, value: newValue)
         }
     }
     
     var signInUserProvider: String {
         get {
-            return userDefaults.object(forKey: "SignInUserProvider") as? String ?? "none"
+            return userDefaultsRepository.getStringData(key: UserDefaultsKey.SIGNIN_USER_PROVIDER, initialValue: "none")
         }
         set {
-            userDefaults.set(newValue, forKey: "SignInUserProvider")
+            userDefaultsRepository.setStringData(key: UserDefaultsKey.SIGNIN_USER_PROVIDER, value: newValue)
         }
     }
     
     var signInUserEmail: String {
         get {
-            if let email = userDefaults.object(forKey: "SignInUserEmail") as? String{
-                if email.contains("appleid.com") {
-                    return "非公開"
-                }
+            let email = userDefaultsRepository.getStringData(key: UserDefaultsKey.SIGNIN_USER_EMAIL, initialValue: "none")
+            if email.contains("appleid.com") {
+                return "非公開"
+            } else {
                 return email
-            }else{
-                return "none"
             }
         }
         set {
-            userDefaults.set(newValue, forKey: "SignInUserEmail")
+            userDefaultsRepository.setStringData(key: UserDefaultsKey.SIGNIN_USER_EMAIL, value: newValue)
         }
     }
-    
 }
 
 //MARK: - AuthViewModelから呼び出し
 extension SignInUserInfoViewModel {
     
-    private func setSignInProvider(provider:AuthProviderModel){
+    private func setSignInProvider(provider: AuthProviderModel) {
         switch provider{
             
         case .email:
@@ -76,7 +73,7 @@ extension SignInUserInfoViewModel {
         }
     }
     
-    public func getSignInProvider() -> AuthProviderModel{
+    public func getSignInProvider() -> AuthProviderModel {
         switch self.signInUserProvider {
         case AuthProviderModel.email.rawValue:
             return AuthProviderModel.email
@@ -94,7 +91,7 @@ extension SignInUserInfoViewModel {
 extension SignInUserInfoViewModel {
 
     // サインインした際に実行される処理
-    public func setCurrentUserInfo(uid:String,name:String,email:String,provider:AuthProviderModel){
+    public func setCurrentUserInfo(uid: String, name: String, email: String, provider: AuthProviderModel){
         signInUserId = uid
         signInUserName = name
         setSignInProvider(provider: provider)

@@ -13,7 +13,7 @@ struct RowScheduleView: View {
     private let dbControl = SwitchingDatabaseControlViewModel()
     private let displayDate = DateFormatManager()
     
-    @ObservedObject var listScheduleVM = ListScheduleViewModel.shared
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
     
     // MARK: - Parameters
     public let travel:Travel
@@ -76,7 +76,7 @@ struct RowScheduleView: View {
                     }
                     
                     // MARK: - 右上削除用ボタン
-                    if listScheduleVM.isDeleteMode {
+                    if rootEnvironment.isDeleteMode {
                         Button {
                             isDeleteAlert = true
                         } label: {
@@ -113,7 +113,7 @@ struct RowScheduleView: View {
                 .shadowCornerRadius()
                 .onTapGesture {
                     // DeleteModeでなければ編集モーダル
-                    if !listScheduleVM.isDeleteMode {
+                    if !rootEnvironment.isDeleteMode {
                         isEditModal = true
                     }
                 }

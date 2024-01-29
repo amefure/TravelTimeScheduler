@@ -19,7 +19,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     // MARK: -  ViewModels
     /// DBに格納時にデータのタイプをキャストする機能を提供するViewModels
-    private let convertTypeVM = ConvertTypeViewModel()
+    private let convertTypeUtility = ConvertTypeUtility()
     /// サインインしているならFirebaseに切り替える
     private let authVM:AuthViewModel = AuthViewModel.shared
     
@@ -35,7 +35,7 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
         if authVM.isSignIn {
             fbVM.createTravel(travelName: travelName, members: members, startDate: startDate, endDate: endDate)
         }else{
-            let membersList = convertTypeVM.convertMembersToList(members)
+            let membersList = convertTypeUtility.convertMembersToList(members)
             realmVM.createTravel(travelName: travelName, members: membersList, startDate: startDate, endDate: endDate)
         }
         
@@ -45,11 +45,11 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     /// Update  Property
     public func updateTravel(id:String,travelName:String,members:Array<String>,startDate:Date,endDate:Date,schedules:RealmSwift.List<Schedule>){
         if authVM.isSignIn {
-            let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules:schedules)
+            let scheduleDictionary = convertTypeUtility.convertScheduleToDictionary(schedules:schedules)
             fbVM.updateTravel(id: id, travelName: travelName, members: members, startDate: startDate, endDate: endDate, schedules: scheduleDictionary)
         }else{
-            let objID = convertTypeVM.convertStringToObjectId(strID: id)
-            let membersList = convertTypeVM.convertMembersToList(members)
+            let objID = convertTypeUtility.convertStringToObjectId(strID: id)
+            let membersList = convertTypeUtility.convertMembersToList(members)
             realmVM.updateTravel(id: objID, travelName: travelName, members: membersList, startDate: startDate, endDate: endDate, schedules: schedules)
         }
     }
@@ -79,8 +79,8 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
         if authVM.isSignIn {
             fbVM.updateSchedule(travelId: travelId, scheduleId: scheduleId, dateTime: dateTime, endDateTime: endDateTime, content: content, memo:memo, type: type, tranceportation: tranceportation)
         }else{
-            let objTravelID = convertTypeVM.convertStringToObjectId(strID: travelId)
-            let objScheduleID = convertTypeVM.convertStringToObjectId(strID: scheduleId)
+            let objTravelID = convertTypeUtility.convertStringToObjectId(strID: travelId)
+            let objScheduleID = convertTypeUtility.convertStringToObjectId(strID: scheduleId)
             realmVM.updateSchedule(travelId: objTravelID, scheduleId: objScheduleID, dateTime: dateTime, endDateTime: endDateTime, content: content, memo:memo, type: type, tranceportation: tranceportation)
         }
     }
@@ -90,8 +90,8 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
         if authVM.isSignIn {
             fbVM.deleteSchedule(travelId: travelId, scheduleId: scheduleId)
         }else{
-            let objTravelID = convertTypeVM.convertStringToObjectId(strID: travelId)
-            let objScheduleID = convertTypeVM.convertStringToObjectId(strID: scheduleId)
+            let objTravelID = convertTypeUtility.convertStringToObjectId(strID: travelId)
+            let objScheduleID = convertTypeUtility.convertStringToObjectId(strID: scheduleId)
             realmVM.deleteSchedule(travelId: objTravelID, scheduleId: objScheduleID)
         }
         

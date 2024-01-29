@@ -16,7 +16,7 @@ class FBDatabaseModel {
     // MARK: - Database Reference
     private var ref:DatabaseReference! = Database.database().reference()
     
-    private let convertTypeVM = ConvertTypeViewModel()
+    private let convertTypeUtility = ConvertTypeUtility()
     private let displayDateVM = DateFormatManager()
     
     // MARK: - User
@@ -85,7 +85,7 @@ class FBDatabaseModel {
         currentSchedules.append(addSchedule)
         
         let scheduleRef = ref.child("travels").child(travelId).child("schedules")
-        let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules: currentSchedules)
+        let scheduleDictionary = convertTypeUtility.convertScheduleToDictionary(schedules: currentSchedules)
 
         scheduleRef.setValue(scheduleDictionary)
     }
@@ -95,7 +95,7 @@ class FBDatabaseModel {
         let scheduleRef = ref.child("travels").child(travelId).child("schedules").child(newRecord.id.stringValue)
         let schedulesArray:RealmSwift.List<Schedule> = RealmSwift.List()
         schedulesArray.append(newRecord)
-        let scheduleDictionary = convertTypeVM.convertScheduleToDictionary(schedules: schedulesArray)
+        let scheduleDictionary = convertTypeUtility.convertScheduleToDictionary(schedules: schedulesArray)
         scheduleRef.setValue(scheduleDictionary.first?.value)
 
     }
@@ -153,9 +153,9 @@ extension FBDatabaseModel{
     
     private func getConvertTravel(key:String,travel:[String:Any],schedulesArray:List<Schedule>) -> Travel{
         let newTravel = Travel()
-        newTravel.id = self.convertTypeVM.convertStringToObjectId(strID: key)
+        newTravel.id = self.convertTypeUtility.convertStringToObjectId(strID: key)
         newTravel.name = travel["name"] as! String
-        newTravel.members = self.convertTypeVM.convertMembersToList(travel["members"]! as! Array<String>)
+        newTravel.members = self.convertTypeUtility.convertMembersToList(travel["members"]! as! Array<String>)
         newTravel.startDate = self.displayDateVM.getAllDateStringDate(travel["startDate"]! as! String)
         newTravel.endDate = self.displayDateVM.getAllDateStringDate(travel["endDate"]! as! String)
         newTravel.schedules = schedulesArray
@@ -166,7 +166,7 @@ extension FBDatabaseModel{
     
     private func getConvertSchedule(key:String,value:[String:String]) -> Schedule{
         let newSchedule = Schedule()
-        newSchedule.id = self.convertTypeVM.convertStringToObjectId(strID: key)
+        newSchedule.id = self.convertTypeUtility.convertStringToObjectId(strID: key)
         newSchedule.content = value["content"]!
         newSchedule.memo = value["memo"]!
         newSchedule.dateTime = self.displayDateVM.getAllDateStringDate(value["dateTime"]!)
