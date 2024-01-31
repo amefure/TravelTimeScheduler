@@ -25,7 +25,26 @@ class FBCloudStorageRepository {
         guard let data = image.jpegData(compressionQuality: 0.1) else { return }
         let uploadTask = thumbnailImgRef.putData(data)
     }
-    /// 画像ダウンロード
+    
+    /// 画像Imageダウンロード
+    public func downloadImage(fileName: String, completion: @escaping (UIImage?) -> Void) {
+        let thumbnailImgRef = reference.child("\(fileName).jpg")
+        
+        // 最大許容サイズ 1MB (1 * 1024 * 1024 バイト) でメモリにダウンロード
+        thumbnailImgRef.getData(maxSize: 1 * 1024 * 1024) { result in
+            switch result {
+            case .success(let data):
+                let image = UIImage(data: data)
+                completion(image)
+            case.failure(let error):
+                print(error)
+                completion(nil)
+                break
+            }
+        }
+    }
+    
+    /// 画像URLダウンロード
     public func downloadImageUrl(fileName: String, completion: @escaping (URL?) -> Void) {
         let thumbnailImgRef = reference.child("\(fileName).jpg")
         
