@@ -10,8 +10,8 @@ import SwiftUI
 struct InputPeriodView: View {
     
     // MARK: - Parameters
-    @Binding var startDate:Date
-    @Binding var endDate:Date
+    @Binding var startDate: Date
+    @Binding var endDate: Date
     
     // MARK: -　帰宅日として選択できる範囲をフレキシブルに変更
     @State var endDateRange:ClosedRange<Date> = {

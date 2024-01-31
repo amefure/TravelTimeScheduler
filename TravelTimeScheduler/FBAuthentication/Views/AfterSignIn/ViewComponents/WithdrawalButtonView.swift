@@ -11,7 +11,7 @@ struct WithdrawalButtonView: View {
     
     // MARK: - ViewModels
     private let dbControl = SwitchingDatabaseControlViewModel()
-    private let validationVM = ValidationViewModel()
+    private let validationVM = ValidationUtility()
     @ObservedObject var authVM = AuthViewModel.shared
     private let userInfoVM = SignInUserInfoViewModel()
     

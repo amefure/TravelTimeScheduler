@@ -31,12 +31,12 @@ class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {
     
     
     // MARK: -  Travel
-    func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) {
+    func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) -> String {
         if authVM.isSignIn {
-            fbVM.createTravel(travelName: travelName, members: members, startDate: startDate, endDate: endDate)
-        }else{
+            return fbVM.createTravel(travelName: travelName, members: members, startDate: startDate, endDate: endDate)
+        } else {
             let membersList = convertTypeUtility.convertMembersToList(members)
-            realmVM.createTravel(travelName: travelName, members: membersList, startDate: startDate, endDate: endDate)
+            return realmVM.createTravel(travelName: travelName, members: membersList, startDate: startDate, endDate: endDate)
         }
         
     }

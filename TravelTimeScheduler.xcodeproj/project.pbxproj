@@ -27,7 +27,7 @@
 		125218AE29D638D3006AF797 /* SecureInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218AD29D638D3006AF797 /* SecureInputView.swift */; };
 		125218B229D638F6006AF797 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B129D638F6006AF797 /* ErrorMessageView.swift */; };
 		125218B529D63943006AF797 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B429D63943006AF797 /* AuthViewModel.swift */; };
-		125218B729D63955006AF797 /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B629D63955006AF797 /* ValidationViewModel.swift */; };
+		125218B729D63955006AF797 /* ValidationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125218B629D63955006AF797 /* ValidationUtility.swift */; };
 		1252192029DD7E0B006AF797 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252191F29DD7E0B006AF797 /* AuthModel.swift */; };
 		1252192229DD7E22006AF797 /* AppleAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192129DD7E22006AF797 /* AppleAuthModel.swift */; };
 		1252192429DD7F41006AF797 /* EmailAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252192329DD7F41006AF797 /* EmailAuthModel.swift */; };
@@ -81,6 +81,9 @@
 		12B4699829F51589002E6864 /* ScheduleTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */; };
 		12B469A029F67093002E6864 /* TranceportationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B4699F29F67093002E6864 /* TranceportationPickerView.swift */; };
 		12D5895C29E60ABB00DAEA5F /* EditUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */; };
+		12E6D3A92B6A787B003D1C80 /* FBCloudStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3A82B6A787B003D1C80 /* FBCloudStorageRepository.swift */; };
+		12E6D3AB2B6A7AF3003D1C80 /* EntryTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AA2B6A7AF3003D1C80 /* EntryTravelViewModel.swift */; };
+		12E6D3AE2B6A7DF4003D1C80 /* ImagePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */; };
 		12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */; };
 		12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */; };
 		12F0E06429FB220F0081D9C1 /* UserInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */; };
@@ -150,7 +153,7 @@
 		125218AD29D638D3006AF797 /* SecureInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputView.swift; sourceTree = "<group>"; };
 		125218B129D638F6006AF797 /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		125218B429D63943006AF797 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		125218B629D63955006AF797 /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
+		125218B629D63955006AF797 /* ValidationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtility.swift; sourceTree = "<group>"; };
 		125218B929D6F726006AF797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		125218BA29D6F837006AF797 /* TravelTimeScheduler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TravelTimeScheduler.entitlements; sourceTree = "<group>"; };
 		1252191F29DD7E0B006AF797 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
@@ -206,6 +209,9 @@
 		12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTypePickerView.swift; sourceTree = "<group>"; };
 		12B4699F29F67093002E6864 /* TranceportationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranceportationPickerView.swift; sourceTree = "<group>"; };
 		12D5895B29E60ABB00DAEA5F /* EditUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserNameView.swift; sourceTree = "<group>"; };
+		12E6D3A82B6A787B003D1C80 /* FBCloudStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBCloudStorageRepository.swift; sourceTree = "<group>"; };
+		12E6D3AA2B6A7AF3003D1C80 /* EntryTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTravelViewModel.swift; sourceTree = "<group>"; };
+		12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDialog.swift; sourceTree = "<group>"; };
 		12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTravelView.swift; sourceTree = "<group>"; };
 		12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleView.swift; sourceTree = "<group>"; };
 		12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCardView.swift; sourceTree = "<group>"; };
@@ -350,6 +356,7 @@
 				1281C53D2A15A3D500C23047 /* ShareTravelView */,
 				12B4699129F1E45E002E6864 /* TravelDatePageView */,
 				12F0E0702A029AD90081D9C1 /* UserSettingView */,
+				12E6D3AC2B6A7DE6003D1C80 /* DiaLog */,
 				12B4699629F514FD002E6864 /* Components */,
 			);
 			path = View;
@@ -361,6 +368,7 @@
 				12B4697829E827A7002E6864 /* Database */,
 				12B4697729E82790002E6864 /* Function */,
 				128FC4B72B5F7A62003E3B53 /* RootEnvironment.swift */,
+				12E6D3AA2B6A7AF3003D1C80 /* EntryTravelViewModel.swift */,
 				12B4697029E82633002E6864 /* UserSettingViewModel.swift */,
 			);
 			path = ViewModels;
@@ -399,7 +407,6 @@
 			isa = PBXGroup;
 			children = (
 				125218B429D63943006AF797 /* AuthViewModel.swift */,
-				125218B629D63955006AF797 /* ValidationViewModel.swift */,
 				1252193D29DF7424006AF797 /* SignInUserInfoViewModel.swift */,
 			);
 			path = ViewModels;
@@ -501,6 +508,7 @@
 				12B4697229E82640002E6864 /* DeviceSizeManager.swift */,
 				12B4698529EC1254002E6864 /* DateFormatManager.swift */,
 				12AEEB722A19B0AB008AB7B8 /* ConvertTypeUtility.swift */,
+				125218B629D63955006AF797 /* ValidationUtility.swift */,
 				12B4696829E81E4C002E6864 /* ExColor.swift */,
 			);
 			path = "Extension&Utility";
@@ -535,6 +543,7 @@
 			children = (
 				128FC4BD2B5F7AD1003E3B53 /* DB */,
 				128FC4B92B5F7A80003E3B53 /* DI */,
+				12E6D3A82B6A787B003D1C80 /* FBCloudStorageRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -692,6 +701,14 @@
 				12B4699729F51589002E6864 /* ScheduleTypePickerView.swift */,
 			);
 			path = ScheduleTabMainView;
+			sourceTree = "<group>";
+		};
+		12E6D3AC2B6A7DE6003D1C80 /* DiaLog */ = {
+			isa = PBXGroup;
+			children = (
+				12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */,
+			);
+			path = DiaLog;
 			sourceTree = "<group>";
 		};
 		12F0E06529FBEA8B0081D9C1 /* EntryTravelView */ = {
@@ -1056,7 +1073,7 @@
 				1252192229DD7E22006AF797 /* AppleAuthModel.swift in Sources */,
 				12F0E06429FB220F0081D9C1 /* UserInfoCardView.swift in Sources */,
 				1281C53A2A1582FB00C23047 /* EntryUserNameView.swift in Sources */,
-				125218B729D63955006AF797 /* ValidationViewModel.swift in Sources */,
+				125218B729D63955006AF797 /* ValidationUtility.swift in Sources */,
 				12AEEB7D2A275D21008AB7B8 /* MessageBalloonViewModel.swift in Sources */,
 				12F0E0782A029C530081D9C1 /* UserReviewLinkPanelView.swift in Sources */,
 				125218A829D63897006AF797 /* GoogleAuthView.swift in Sources */,
@@ -1070,6 +1087,7 @@
 				12B469A029F67093002E6864 /* TranceportationPickerView.swift in Sources */,
 				12B4697329E82640002E6864 /* DeviceSizeManager.swift in Sources */,
 				12B4697129E82633002E6864 /* UserSettingViewModel.swift in Sources */,
+				12E6D3A92B6A787B003D1C80 /* FBCloudStorageRepository.swift in Sources */,
 				12B4698A29ED5C28002E6864 /* RowScheduleView.swift in Sources */,
 				12B4698229E8ACDF002E6864 /* EntryScheduleView.swift in Sources */,
 				1252192829DD7F69006AF797 /* AuthErrorModel.swift in Sources */,
@@ -1122,11 +1140,13 @@
 				1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */,
 				12AEEB832A2AC536008AB7B8 /* UserSignOutPanelView.swift in Sources */,
 				12F0E0892A11FB400081D9C1 /* ReAuthProviderView.swift in Sources */,
+				12E6D3AE2B6A7DF4003D1C80 /* ImagePickerDialog.swift in Sources */,
 				123008442A32F69F00A43ADF /* AccordionBoxView.swift in Sources */,
 				125218AC29D638B9006AF797 /* PasswordResetView.swift in Sources */,
 				12B4699029F1E406002E6864 /* ScrollPeriodTabPickerView.swift in Sources */,
 				1252193E29DF7424006AF797 /* SignInUserInfoViewModel.swift in Sources */,
 				1281C5442A1611D900C23047 /* FBRealtimeListTravelView.swift in Sources */,
+				12E6D3AB2B6A7AF3003D1C80 /* EntryTravelViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

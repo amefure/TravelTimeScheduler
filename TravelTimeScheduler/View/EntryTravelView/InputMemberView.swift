@@ -10,7 +10,7 @@ import SwiftUI
 struct InputMemberView: View {
     
     // MARK: - Parameters
-    @Binding var memberArray:[String]
+    @Binding var memberArray: [String]
     
     private let columns = Array(repeating:GridItem(.fixed(140)), count: 2)
     

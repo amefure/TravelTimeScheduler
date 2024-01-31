@@ -16,7 +16,7 @@ struct DeleteTravelButtonView: View {
     public let travel:Travel
     public var parentBackRootViewFunction: () -> Void
     
-    @State var isDeleteAlert = false
+    @State private var isDeleteAlert = false
     
     var body: some View {
         Button (role:.destructive){

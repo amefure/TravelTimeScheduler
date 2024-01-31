@@ -15,7 +15,7 @@ protocol CrudDatabaseViewModel {
     associatedtype DBScheduleCollection // Array<Schedule> or RealmSwift.List<Schedule>
     
     // MARK: -  Travel
-    func createTravel(travelName:String,members:DBMembersCollection,startDate:Date,endDate:Date)
+    func createTravel(travelName:String,members:DBMembersCollection,startDate:Date,endDate:Date) -> String
     func updateTravel(id:RecordId,travelName:String,members:DBMembersCollection,startDate:Date,endDate:Date,schedules:DBScheduleCollection)
     func deleteTravel(travel:Travel)
     

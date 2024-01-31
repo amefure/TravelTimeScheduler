@@ -10,7 +10,7 @@ import SwiftUI
 struct ReadingShareTravelView: View {
     
     // MARK: - ViewModels
-    private let validationVM = ValidationViewModel()
+    private let validationVM = ValidationUtility()
     @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
     @ObservedObject var interstitial = AdmobInterstitialView()
     private let dbControl = SwitchingDatabaseControlViewModel()

@@ -10,7 +10,7 @@ import SwiftUI
 struct EntryUserNameView: View {
     
     // MARK: - ViewModels
-    private let validationVM = ValidationViewModel()
+    private let validationVM = ValidationUtility()
     private let userInfoVM = SignInUserInfoViewModel()
     
     // MARK: - Navigationプロパティ

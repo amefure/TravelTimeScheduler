@@ -8,7 +8,7 @@
 import SwiftUI
 
 // MARK: - 入力値バリデーション管理クラス
-class ValidationViewModel {
+class ValidationUtility {
     
     // MARK: - Empty
     public func validateEmpty(str: String) -> Bool {

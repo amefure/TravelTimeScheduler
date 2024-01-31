@@ -27,7 +27,7 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
     typealias DBScheduleCollection = [String : [String : String]]//Array<Schedule>
     
     // MARK: - Travel新規登録
-    public func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) {
+    public func createTravel(travelName: String, members: Array<String>, startDate: Date, endDate: Date) -> String {
         let childUpdates:[String : Any] = [
             "name": travelName,
             "members": members,
@@ -36,8 +36,9 @@ class FBDatabaseViewModel:CrudDatabaseViewModel{
             "share": "true",
             "readableUserlId": [userInfoVM.signInUserId]
         ]
-        let id:String = convertTypeUtility.generateObjectIdString()
-        model.entryTravel(id:id ,childUpdates: childUpdates)
+        let id: String = convertTypeUtility.generateObjectIdString()
+        model.entryTravel(id: id ,childUpdates: childUpdates)
+        return id
     }
     
     // MARK: - Travel更新

@@ -12,16 +12,21 @@ struct EntryTravelView: View {
     
     // MARK: - ViewModels
     private let userInfoVM = SignInUserInfoViewModel()
+    private let viewModel = EntryTravelViewModel()
     
     // MARK: - TextField
-    @State var travelName:String = ""      // 旅行名
-    @State var memberArray:[String] = [""] // メンバー
-    @State var startDate:Date = Date()     // 出発日
-    @State var endDate:Date = Date()       // 帰宅日
-    @ObservedObject var interstitial = AdmobInterstitialView()
+    @State private var travelName = ""      // 旅行名
+    @State private var memberArray = [""] // メンバー
+    @State private var startDate = Date()     // 出発日
+    @State private var endDate = Date()       // 帰宅日
+    
+    @State private var image: UIImage?
+    @State private var isShowImagePicker = false
+    
+    @ObservedObject private var interstitial = AdmobInterstitialView()
     
     // MARK: - Parameters
-    public let travel:Travel?
+    public let travel: Travel?
     public var parentDismissFunction: () -> Void
     
     // DeleteTravelButtonクリック時に画面をトップに戻す
@@ -32,16 +37,52 @@ struct EntryTravelView: View {
         self.parentDismissFunction()
     }
     
+   
+    
     var body: some View {
         
         // MARK: - Header
-        EntryHeaderView(travelName: travelName, memberArray: memberArray, startDate: startDate, endDate: endDate,travel: travel,
-                        startInterstitial: {
-            interstitial.presentInterstitial()
-        })
+        EntryHeaderView(
+            travelName: travelName,
+            memberArray: memberArray,
+            startDate: startDate,
+            endDate: endDate,
+            image: image,
+            travel: travel,
+            startInterstitial: {
+                interstitial.presentInterstitial()
+            })
         
         // MARK: - Contents
-        List{
+        List {
+            
+            ZStack {
+                if let image = image {
+                    Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: DeviceSizeManager.deviceWidth, height: 100)
+                            .clipped()
+                } else {
+                    Image("Walking_outside")
+                        .resizable()
+                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: DeviceSizeManager.deviceWidth - 40, height: 100)
+                        .clipped()
+                }
+                
+                Button {
+                    isShowImagePicker = true
+                } label: {
+                    Image(systemName: "plus")
+                        .frame(width: DeviceSizeManager.deviceWidth, height: 100)
+                        .background(Color.opacityGray)
+                        .foregroundStyle(Color.thema)
+                }
+            }
+            
             Section("Travel Name") {
                 TextField("旅行名", text: $travelName)
                     .padding()
@@ -70,6 +111,9 @@ struct EntryTravelView: View {
                     }
                 }.listRowSeparator(.hidden)
             }
+        }
+        .sheet(isPresented: $isShowImagePicker) {
+            ImagePickerDialog(image: $image)
         }
         .fontWeight(.bold)
         .listStyle(GroupedListStyle())

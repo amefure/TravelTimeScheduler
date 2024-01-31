@@ -12,7 +12,7 @@ struct EmailAuthButtonView: View {
 
     // MARK: - ViewModels
     @ObservedObject var authVM = AuthViewModel.shared
-    private let validationVM = ValidationViewModel()
+    private let validationVM = ValidationUtility()
     
     // MARK: - Navigationプロパティ
     @Binding var isActive:Bool

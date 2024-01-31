@@ -12,7 +12,7 @@ struct PasswordResetView: View {
     
     // MARK: - ViewModels
     @ObservedObject var authVM = AuthViewModel.shared
-    private let validationVM = ValidationViewModel()
+    private let validationVM = ValidationUtility()
     
     // MARK: - Inputプロパティ
     @State var email:String = ""

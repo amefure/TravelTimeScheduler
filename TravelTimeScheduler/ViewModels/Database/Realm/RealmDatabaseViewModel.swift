@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 ///RealmDBのCRUD処理ViewModel
-class RealmDatabaseViewModel:CrudDatabaseViewModel {
+class RealmDatabaseViewModel: CrudDatabaseViewModel {
     
     // MARK: - Generic Type
     typealias RecordId = ObjectId
@@ -24,7 +24,7 @@ class RealmDatabaseViewModel:CrudDatabaseViewModel {
     
     // MARK: - Travel
     /// Create
-    public func createTravel(travelName: String, members: List<String>, startDate: Date, endDate: Date) {
+    public func createTravel(travelName: String, members: List<String>, startDate: Date, endDate: Date) -> String {
         let record = Travel()
         record.name = travelName
         record.members = members
@@ -32,6 +32,7 @@ class RealmDatabaseViewModel:CrudDatabaseViewModel {
         record.endDate = endDate
        
         model.createTravel(record: record)
+        return record.id.stringValue
     }
     
     /// Update  Property

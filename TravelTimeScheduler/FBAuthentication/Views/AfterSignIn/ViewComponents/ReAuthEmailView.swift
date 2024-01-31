@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: - EmailUser用　再認証View
 struct ReAuthEmailView: View {
     // MARK: - ViewModels
-    private let validationVM = ValidationViewModel()
+    private let validationVM = ValidationUtility()
     @ObservedObject var authVM = AuthViewModel.shared
     private let userInfoVM = SignInUserInfoViewModel()
     private let dbControl = SwitchingDatabaseControlViewModel()

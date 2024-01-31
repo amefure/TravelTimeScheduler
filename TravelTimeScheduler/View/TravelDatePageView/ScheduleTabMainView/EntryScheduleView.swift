@@ -12,7 +12,7 @@ struct EntryScheduleView: View {
     // Entry & Update
     
     // MARK: - ViewModels
-    private let validation = ValidationViewModel()
+    private let validation = ValidationUtility()
     private let dbControl = SwitchingDatabaseControlViewModel()
     private let displayDate = DateFormatManager()
     
