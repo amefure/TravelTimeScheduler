@@ -10,7 +10,7 @@ import FirebaseAuth
 import FirebaseCore
 import AuthenticationServices // Apple
 
-class AuthViewModel:ObservableObject {
+class AuthViewModel: ObservableObject {
     
     // MARK: - シングルトン
     static let shared = AuthViewModel()

@@ -13,22 +13,24 @@ struct RowTravelView: View {
     private let displayDateVM = DateFormatManager()
     
     // MARK: - Parameters
-    let travel:Travel
+    let travel: Travel
     
     var body: some View {
-        HStack{
-            Image(systemName: "mappin.circle.fill")
-                .foregroundColor(Color.thema)
-                .font(.system(size: DeviceSizeManager.isSESize ? 35 : 40))
-                .opacity(0.8)
-            
-            VStack{
-                NavigationLink {
-                    TravelPageView(travel: travel)
-                } label: {
-                    Text(travel.name)
-                        .lineLimit(1)
-                }
+        NavigationLink {
+            TravelPageView(travel: travel)
+        } label: {
+            VStack(alignment: .leading) {
+                Image("Walking_outside")
+                    .resizable()
+                    .scaledToFit()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: DeviceSizeManager.deviceWidth - 40, height: 100)
+                    .clipped()
+                
+                Text(travel.name)
+                    .lineLimit(1)
+                    .font(.system(size: 18))
+                    .padding(.bottom, 8)
                 
                 HStack{
                     Text(displayDateVM.getJapanDateDisplayFormatString(travel.startDate))
@@ -36,7 +38,14 @@ struct RowTravelView: View {
                     Text(displayDateVM.getJapanDateDisplayFormatString(travel.endDate))
                 }.font(.system(size: 12))
                 
-            }.fontWeight(.bold)
-        }
+            }
+        }.padding([.horizontal, .bottom])
+            .frame(width: DeviceSizeManager.deviceWidth - 20)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .foregroundStyle(.gray)
+            .fontWeight(.bold)
+            .background(.white)
+            .compositingGroup()
+            .shadow(color: .gray, radius: 2, x: 1, y: 1)
     }
 }

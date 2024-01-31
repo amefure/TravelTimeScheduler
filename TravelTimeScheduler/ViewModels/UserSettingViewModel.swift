@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShareLinkViewModel {
+class UserSettingViewModel {
 
     public func shareApp(shareText: String, shareLink: String) {
         let items = [shareText, URL(string: shareLink)!] as [Any]

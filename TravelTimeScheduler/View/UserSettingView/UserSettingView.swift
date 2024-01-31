@@ -31,13 +31,13 @@ struct UserSettingView: View {
                 
                 if authVM.isSignIn {
                     UserinfoEditLinkPanelView()
-                }else{
+                } else {
                     UserNameEntryLinkPanelView()
                 }
                 
                 if authVM.isSignIn  {
                     UserSignOutPanelView()
-                }else{
+                } else {
                     UserSignUpLinkPanelView()
                 }
                 

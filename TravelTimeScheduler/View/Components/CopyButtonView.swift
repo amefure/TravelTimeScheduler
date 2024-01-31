@@ -28,7 +28,7 @@ struct CopyButtonView: View {
             
             Button(action: {
                 UIPasteboard.general.string = copyText
-                messageAlertVM.isPreview = true
+                messageAlertVM.show()
                 messageAlertVM.vanishMessage()
                 
             }, label: {

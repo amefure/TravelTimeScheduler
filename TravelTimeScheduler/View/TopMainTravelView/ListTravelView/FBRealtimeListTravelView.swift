@@ -46,7 +46,7 @@ struct FBRealtimeListTravelView: View {
     
     // MARK: - TravelListView
     var body: some View {
-        Group{
+        Group {
             if searchText.isEmpty && filteringResults.count == 0 {
                 // 履歴未登録時のビュー
                 BlankTravelView(text: "旅行を登録してね♪", imageName: "Traveling")
@@ -54,10 +54,21 @@ struct FBRealtimeListTravelView: View {
                 // 検索時にマッチする履歴がない場合のビュー
                 BlankTravelView(text: "「\(searchText)」にマッチする\n旅行履歴はありませんでした。", imageName: "Walking_outside")
             }else{
-                // 履歴リスト表示ビュー
-                List(filteringResults){ travel in
-                    RowTravelView(travel: travel)
-                }.listStyle(GroupedListStyle())
+                
+                ScrollView {
+                    // 履歴リスト表示ビュー
+                    ForEach(filteringResults) { travel in
+                        RowTravelView(travel: travel)
+                    }
+                    
+                    Spacer()
+                }.padding()
+                    .background(Color.list)
+               
+                
+//                List(filteringResults){ travel in
+//                   
+//                }.listStyle(GroupedListStyle())
             }
         }.onAppear{
             dbControl.readAllTravel { data in

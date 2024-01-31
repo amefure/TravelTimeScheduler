@@ -22,33 +22,38 @@ struct TopMainTravelView: View {
     
     
     var body: some View {
-        VStack(spacing:0){
+        
+        ZStack(alignment: .bottomTrailing) {
             
-            // MARK: - フィルタリング
-            FilteringContainerView(searchText: $searchText, selectTime: $selectTime)
-            
-            // MARK: - サインイン→Firebase DB / 未サインイン→Relam DB
-            if authVM.isSignIn {
-                FBRealtimeListTravelView(searchText: $searchText, selectTime: $selectTime)
-            }else{
-                RealmListTravelView(searchText: $searchText, selectTime: $selectTime)
+            VStack(spacing:0) {
+                // MARK: - フィルタリング
+                FilteringContainerView(searchText: $searchText, selectTime: $selectTime)
+                
+                // MARK: - サインイン→Firebase DB / 未サインイン→Relam DB
+                if authVM.isSignIn {
+                    FBRealtimeListTravelView(searchText: $searchText, selectTime: $selectTime)
+                } else {
+                    RealmListTravelView(searchText: $searchText, selectTime: $selectTime)
+                }
+                
+                // MARK: - AdMob
+                AdMobBannerView()
+                    .frame(height: 60)
             }
             
             // MARK: - Entry Button
             NavigationLink {
-                EntryTravelView(travel:nil, parentDismissFunction: {})
+                EntryTravelView(travel: nil, parentDismissFunction: {})
             } label: {
-                Text("旅行登録")
-            }.frame(width:  DeviceSizeManager.isSESize ? 80 : 100 ,height: DeviceSizeManager.isSESize ? 45 : 60)
-                .background(Color.foundation)
-                .foregroundColor(Color.thema)
-                .shadowCornerRadius()
-                .padding()
-                .fontWeight(.bold)
+                Image(systemName: "plus")
+                    .foregroundStyle(.white)
+                    .fontWeight(.bold)
+                    .frame(width: 55, height: 55)
+                    .background(Color.thema)
+                    .clipShape(RoundedRectangle(cornerRadius: 55))
+                    .shadow(color: .gray, radius: 2, x: 1, y: 1)
+            }.offset(x: -30, y: -70)
             
-            // MARK: - AdMob
-            AdMobBannerView()
-                .frame(height: 60)
             
         }.ignoresSafeArea(.keyboard)
             .navigationBarTitleDisplayMode(.inline)

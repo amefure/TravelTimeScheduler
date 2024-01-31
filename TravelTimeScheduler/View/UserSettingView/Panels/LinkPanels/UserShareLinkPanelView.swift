@@ -10,7 +10,7 @@ import SwiftUI
 struct UserShareLinkPanelView: View {
     
     // MARK: - ViewModels
-    private let shareLinkVM = ShareLinkViewModel()
+    private let shareLinkVM = UserSettingViewModel()
     
     var body: some View {
         Button(action: {

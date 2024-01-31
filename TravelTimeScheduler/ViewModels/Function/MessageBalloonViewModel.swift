@@ -7,18 +7,23 @@
 
 import UIKit
 
-class MessageBalloonViewModel:ObservableObject{
+class MessageBalloonViewModel: ObservableObject{
     
     // opacityモディファイアの引数に使用
-    @Published  var opacity:Double = 10.0
+    @Published private(set) var opacity :Double = 10.0
     // 表示/非表示を切り替える用
-    @Published  var isPreview:Bool = false
+    @Published private(set) var isPreview: Bool = false
     
     private var timer = Timer()
     
     // Double型にキャスト＆opacityモディファイア用の数値に割り算
-    public func castOpacity() -> Double{
+    public func castOpacity() -> Double {
         Double(self.opacity / 10)
+    }
+    
+    // 表示
+    public func show(){
+        isPreview = true
     }
     
     // opacityを徐々に減らすことでアニメーションを実装
@@ -33,5 +38,4 @@ class MessageBalloonViewModel:ObservableObject{
             }
         }
     }
-    
 }
