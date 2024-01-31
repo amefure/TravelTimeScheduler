@@ -121,16 +121,21 @@ struct EntryTravelView: View {
         .navigationCustomBackground()
         .onAppear{
             /// 　初期値セット
-            if travel != nil{
-                travelName = travel!.name
-                memberArray = Array(travel!.members)
-                startDate = travel!.startDate
-                endDate = travel!.endDate
-            }else{
+            if let travel = travel {
+                travelName = travel.name
+                memberArray = Array(travel.members)
+                startDate = travel.startDate
+                endDate = travel.endDate
+                viewModel.downloadImage(fileName: travel.id.stringValue) { image in
+                    self.image = image
+                }
+            } else {
                 let myName = userInfoVM.signInUserName
                 memberArray = [myName]
             }
             interstitial.loadInterstitial()
+            
+            
         }.navigationBarBackButtonHidden(true)
     }
 }

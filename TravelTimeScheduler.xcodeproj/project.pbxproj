@@ -84,6 +84,7 @@
 		12E6D3A92B6A787B003D1C80 /* FBCloudStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3A82B6A787B003D1C80 /* FBCloudStorageRepository.swift */; };
 		12E6D3AB2B6A7AF3003D1C80 /* EntryTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AA2B6A7AF3003D1C80 /* EntryTravelViewModel.swift */; };
 		12E6D3AE2B6A7DF4003D1C80 /* ImagePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */; };
+		12E6D3B02B6A859C003D1C80 /* RowTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AF2B6A859C003D1C80 /* RowTravelViewModel.swift */; };
 		12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */; };
 		12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */; };
 		12F0E06429FB220F0081D9C1 /* UserInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */; };
@@ -212,6 +213,7 @@
 		12E6D3A82B6A787B003D1C80 /* FBCloudStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBCloudStorageRepository.swift; sourceTree = "<group>"; };
 		12E6D3AA2B6A7AF3003D1C80 /* EntryTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTravelViewModel.swift; sourceTree = "<group>"; };
 		12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDialog.swift; sourceTree = "<group>"; };
+		12E6D3AF2B6A859C003D1C80 /* RowTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTravelViewModel.swift; sourceTree = "<group>"; };
 		12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTravelView.swift; sourceTree = "<group>"; };
 		12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleView.swift; sourceTree = "<group>"; };
 		12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCardView.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				128FC4B72B5F7A62003E3B53 /* RootEnvironment.swift */,
 				12E6D3AA2B6A7AF3003D1C80 /* EntryTravelViewModel.swift */,
 				12B4697029E82633002E6864 /* UserSettingViewModel.swift */,
+				12E6D3AF2B6A859C003D1C80 /* RowTravelViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1081,6 +1084,7 @@
 				125218B229D638F6006AF797 /* ErrorMessageView.swift in Sources */,
 				12AEEB732A19B0AB008AB7B8 /* ConvertTypeUtility.swift in Sources */,
 				1252192029DD7E0B006AF797 /* AuthModel.swift in Sources */,
+				12E6D3B02B6A859C003D1C80 /* RowTravelViewModel.swift in Sources */,
 				12F0E0722A029AFD0081D9C1 /* UserinfoEditLinkPanelView.swift in Sources */,
 				12AEEB7B2A24D8DB008AB7B8 /* ProgressButtonStack.swift in Sources */,
 				1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */,

@@ -11,6 +11,7 @@ struct DeleteTravelButtonView: View {
     
     // MARK: - ViewModels
     private let dbControl = SwitchingDatabaseControlViewModel()
+    private let viewModel = EntryTravelViewModel()
     
     // MARK: - Parameters
     public let travel:Travel
@@ -26,6 +27,7 @@ struct DeleteTravelButtonView: View {
         }.alert("「\(travel.name)」の記録と思い出をすべて削除しますか...？", isPresented: $isDeleteAlert) {
             Button(role:.destructive) {
                 dbControl.deleteTravel(travel: travel)
+                viewModel.deleteImage(fileName: travel.id.stringValue)
                 self.parentBackRootViewFunction()
             } label: {
                 Text("削除")

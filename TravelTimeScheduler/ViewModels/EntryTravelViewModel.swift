@@ -19,9 +19,23 @@ class EntryTravelViewModel: NSObject {
         fbCloudStorageRepository.uploadImgFile(fileName: fileName, image: image)
     }
     
-    public func downloadImage(completion: @escaping (UIImage) -> Void) {
-        fbCloudStorageRepository.downloadImage { image in
-            completion(image)
+    public func downloadImage(fileName: String, completion: @escaping (UIImage?) -> Void) {
+        fbCloudStorageRepository.downloadImageUrl(fileName: fileName) { url in
+            guard let url = url else { return }
+            do {
+               let data = try Data(contentsOf: url)
+               let image = UIImage(data: data)
+                completion(image)
+           } catch let error {
+               print("Error : \(error.localizedDescription)")
+           }
         }
     }
+    
+    public func deleteImage(fileName: String) {
+        Task {
+            await fbCloudStorageRepository.deleteImage(fileName: fileName)
+        }
+    }
+    
 }
