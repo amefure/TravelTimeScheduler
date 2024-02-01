@@ -105,7 +105,7 @@ struct EntryTravelView: View {
                         .resizable()
                         .scaledToFit()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: DeviceSizeManager.deviceWidth - 40, height: 100)
+                        .frame(width: DeviceSizeManager.deviceWidth, height: 100)
                         .clipped()
                 }
                 

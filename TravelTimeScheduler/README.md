@@ -43,5 +43,5 @@ STEP2：コピーしたIDを貼り付ける
 
 
 ## リファレンス
-- URL：[技術ブログ](https://tech.amefure.com/) 
+- URL：[技術ブログ](https://appdev-room.com/) 
 

@@ -13,6 +13,6 @@ struct HeaderTitleView: View {
         Text(title)
             .foregroundColor(Color.foundation)
             .fontWeight(.bold)
-            .font(.system(size: 18,design:.monospaced))
+            .font(.system(size: 18, design: .monospaced))
     }
 }

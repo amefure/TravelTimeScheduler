@@ -44,7 +44,6 @@ struct RowTravelView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: DeviceSizeManager.deviceWidth - 20, height: 100)
                         .clipped()
-                    
                 }
                
                 Text(travel.name)
@@ -53,7 +52,7 @@ struct RowTravelView: View {
                     .padding(.bottom, 8)
                     .frame(width: DeviceSizeManager.deviceWidth - 40)
                 
-                HStack{
+                HStack {
                     Text(dateFormatManager.getJapanDateDisplayFormatString(travel.startDate))
                     Text("〜")
                     Text(dateFormatManager.getJapanDateDisplayFormatString(travel.endDate))
@@ -63,10 +62,10 @@ struct RowTravelView: View {
             }
         }.padding([.horizontal, .bottom])
             .frame(width: DeviceSizeManager.deviceWidth - 20)
+            .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .foregroundStyle(.gray)
             .fontWeight(.bold)
-            .background(.white)
             .compositingGroup()
             .shadow(color: .gray, radius: 2, x: 1, y: 1)
             .onAppear {

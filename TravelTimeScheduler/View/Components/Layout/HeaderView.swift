@@ -79,7 +79,7 @@ struct HeaderView: View {
                     .padding([.horizontal, .top])
             }
         }.foregroundStyle(.white)
-            .padding()
+            .padding(.vertical)
             .background(Color.thema)
     }
 }

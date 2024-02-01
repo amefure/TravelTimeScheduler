@@ -53,9 +53,9 @@ struct TravelPageView: View {
             AdMobBannerView().frame(height: 60)
             
         }.navigationBarBackButtonHidden(true)
-            .navigationDestination(isPresented: $isSharePresented) {
+            .sheet(isPresented: $isSharePresented, content: {
                 ShareTravelView(travel: travel)
-            }
+            })
             .background(Color.thema)
             .onAppear{
                 if authVM.isSignIn{
