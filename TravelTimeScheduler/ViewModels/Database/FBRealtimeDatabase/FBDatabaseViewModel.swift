@@ -9,7 +9,7 @@ import UIKit
 import FirebaseDatabase
 
 
-class FBDatabaseViewModel:CrudDatabaseViewModel{
+class FBDatabaseViewModel:CrudDatabaseProtocol{
     
     // MARK: シングルトン
     static let shared:FBDatabaseViewModel = FBDatabaseViewModel()

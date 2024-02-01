@@ -9,14 +9,10 @@ import UIKit
 
 class RowTravelViewModel: NSObject {
 
-    private let fbCloudStorageRepository: FBCloudStorageRepository
-    
-    init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
-        fbCloudStorageRepository = repositoryDependency.fbCloudStorageRepository
-    }
+    private let imageStorageControlRepository = SwitchingImageStorageControlRepository.shared
     
     public func downloadImageUrl(fileName: String, completion: @escaping (URL?) -> Void) {
-        fbCloudStorageRepository.downloadImageUrl(fileName: fileName) { url in
+        imageStorageControlRepository.downloadImageUrl(fileName: fileName) { url in
             completion(url)
         }
     }

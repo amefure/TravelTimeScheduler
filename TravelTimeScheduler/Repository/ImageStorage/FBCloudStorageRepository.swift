@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseStorage
 
-class FBCloudStorageRepository {
+class FBCloudStorageRepository: ImageStorageProtocol {
     
     
     private let reference: StorageReference
@@ -23,7 +23,7 @@ class FBCloudStorageRepository {
         let thumbnailImgRef = reference.child("\(fileName).jpg")
         // 10%に圧縮してData型に変換する
         guard let data = image.jpegData(compressionQuality: 0.1) else { return }
-        let uploadTask = thumbnailImgRef.putData(data)
+        _ = thumbnailImgRef.putData(data)
     }
     
     /// 画像Imageダウンロード

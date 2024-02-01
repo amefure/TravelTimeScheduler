@@ -9,7 +9,7 @@ import SwiftUI
 import RealmSwift
 
 // MARK: - DBのSwitching & 適切なデータへの変換
-class SwitchingDatabaseControlViewModel: CrudDatabaseViewModel {    
+class SwitchingDatabaseControlViewModel: CrudDatabaseProtocol {    
     
     // MARK: - Generic Type
     typealias RecordId = String
@@ -21,7 +21,7 @@ class SwitchingDatabaseControlViewModel: CrudDatabaseViewModel {
     /// DBに格納時にデータのタイプをキャストする機能を提供するViewModels
     private let convertTypeUtility = ConvertTypeUtility()
     /// サインインしているならFirebaseに切り替える
-    private let authVM:AuthViewModel = AuthViewModel.shared
+    private let authVM: AuthViewModel = AuthViewModel.shared
     
     
     // MARK: - CRUD処理を提供するViewModels

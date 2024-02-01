@@ -9,13 +9,15 @@ import SwiftUI
 
 struct RowTravelView: View {
     
+    // MARK: - Utility
+    private let dateFormatManager = DateFormatManager()
+    
     // MARK: - ViewModels
-    private let displayDateVM = DateFormatManager()
     private let viewModel = RowTravelViewModel()
     
     // MARK: - Parameters
     let travel: Travel
-    
+    // onAppearで格納
     @State private var url: URL?
     
     var body: some View {
@@ -52,9 +54,9 @@ struct RowTravelView: View {
                     .frame(width: DeviceSizeManager.deviceWidth - 40)
                 
                 HStack{
-                    Text(displayDateVM.getJapanDateDisplayFormatString(travel.startDate))
+                    Text(dateFormatManager.getJapanDateDisplayFormatString(travel.startDate))
                     Text("〜")
-                    Text(displayDateVM.getJapanDateDisplayFormatString(travel.endDate))
+                    Text(dateFormatManager.getJapanDateDisplayFormatString(travel.endDate))
                 }.font(.system(size: 12))
                     .frame(width: DeviceSizeManager.deviceWidth - 40)
                 

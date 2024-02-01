@@ -13,6 +13,7 @@ target 'TravelTimeScheduler' do
   pod 'GoogleSignIn'
   pod 'RealmSwift' 
   pod 'FirebaseStorage'
+  pod 'ReachabilitySwift'
 
   target 'TravelTimeSchedulerTests' do
     inherit! :search_paths
@@ -24,6 +25,7 @@ target 'TravelTimeScheduler' do
     pod 'GoogleSignIn'
     pod 'RealmSwift' 
     pod 'FirebaseStorage'
+    pod 'ReachabilitySwift'
   end
 
   target 'TravelTimeSchedulerUITests' do
@@ -35,6 +37,7 @@ target 'TravelTimeScheduler' do
     pod 'GoogleSignIn'
     pod 'RealmSwift' 
     pod 'FirebaseStorage'
+    pod 'ReachabilitySwift'
   end
 
 end

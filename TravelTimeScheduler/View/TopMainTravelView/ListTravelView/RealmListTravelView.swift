@@ -22,18 +22,18 @@ struct RealmListTravelView: View {
     
     // MARK: - フィルタリング
     private var filteringResults:Results<Travel> {
-        if searchText.isEmpty && selectTime == "all"{
+        if searchText.isEmpty && selectTime == "all" {
             // フィルタリングなし
             return allTravelRelam
-        }else if searchText.isEmpty && selectTime != "all" {
+        } else if searchText.isEmpty && selectTime != "all" {
             // 年数のみ
             let array = displayDateVM.getYearStringDateArray(selectTime)
             return allTravelRelam.filter("startDate between {%@, %@}", array[0],array[1])
-        }else if searchText.isEmpty == false &&  selectTime != "all" {
+        } else if searchText.isEmpty == false &&  selectTime != "all" {
             // 検索値＆年数
             let array = displayDateVM.getYearStringDateArray(selectTime)
             return allTravelRelam.filter("name contains %@", searchText).filter("startDate between {%@, %@}", array[0],array[1])
-        }else{
+        } else {
             // 検索値のみ
             return allTravelRelam.filter("name contains %@", searchText)
         }
@@ -44,14 +44,20 @@ struct RealmListTravelView: View {
         if searchText.isEmpty && filteringResults.count == 0 {
             // 履歴未登録時のビュー
             BlankTravelView(text: "旅行を登録してね♪", imageName: "Traveling")
-        }else if !searchText.isEmpty && filteringResults.count == 0 {
+        } else if !searchText.isEmpty && filteringResults.count == 0 {
             // 検索時にマッチする履歴がない場合のビュー
             BlankTravelView(text: "「\(searchText)」にマッチする\n旅行履歴はありませんでした。", imageName: "Walking_outside")
-        }else{
-            // 履歴リスト表示ビュー
-            List(filteringResults){ travel in
-                RowTravelView(travel: travel)
-            }.listStyle(GroupedListStyle())
+        } else {
+            
+            ScrollView {
+                // 履歴リスト表示ビュー
+                ForEach(filteringResults) { travel in
+                    RowTravelView(travel: travel)
+                }
+                
+                Spacer()
+            }.padding()
+                .background(Color.list)
         }
     }
 }

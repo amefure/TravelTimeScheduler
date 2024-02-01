@@ -10,5 +10,6 @@ import UIKit
 class RepositoryDependency {
     public let userDefaultsRepository = UserDefaultsRepository()
     public let fbCloudStorageRepository = FBCloudStorageRepository()
+    public let localImageStorageRepository = LocalImageStorageRepository()
 }
 

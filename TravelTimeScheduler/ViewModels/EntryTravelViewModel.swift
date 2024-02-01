@@ -10,28 +10,26 @@ import UIKit
 class EntryTravelViewModel: NSObject {
 
     private let validationUtility = ValidationUtility()
-    private let fbCloudStorageRepository: FBCloudStorageRepository
+    
+    private let imageStorageControlRepository = SwitchingImageStorageControlRepository.shared
    
-    init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
-        fbCloudStorageRepository = repositoryDependency.fbCloudStorageRepository
-    }
 }
 
 // MARK: - Firebase Cloud Storage
 extension EntryTravelViewModel {
     public func uploadImgFile(fileName: String, image: UIImage){
-        fbCloudStorageRepository.uploadImgFile(fileName: fileName, image: image)
+        imageStorageControlRepository.uploadImgFile(fileName: fileName, image: image)
     }
     
     public func downloadImage(fileName: String, completion: @escaping (UIImage?) -> Void) {
-        fbCloudStorageRepository.downloadImage(fileName: fileName) { image in
+        imageStorageControlRepository.downloadImage(fileName: fileName) { image in
             completion(image)
         }
     }
     
     public func deleteImage(fileName: String) {
         Task {
-            await fbCloudStorageRepository.deleteImage(fileName: fileName)
+            await imageStorageControlRepository.deleteImage(fileName: fileName)
         }
     }
 }

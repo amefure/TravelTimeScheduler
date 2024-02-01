@@ -8,13 +8,13 @@
 import UIKit
 
 // MARK: - Firebaseから抽出したリアルタイムの情報を保持するクラス
-class FBDatabaseTravelListViewModel:ObservableObject{
+class FBDatabaseTravelListViewModel: ObservableObject {
     
     /// DBから抽出したTravel情報
     @Published var travels:[Travel] = []
     
     // MARK: シングルトン
-    static let shared:FBDatabaseTravelListViewModel = FBDatabaseTravelListViewModel()
+    static let shared = FBDatabaseTravelListViewModel()
     
     
     public func resetData(){

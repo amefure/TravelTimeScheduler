@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CrudDatabaseViewModel {
+protocol CrudDatabaseProtocol {
     
     // MARK: - Generic Type
     associatedtype RecordId             // String          or RealmSwift.ObjectId

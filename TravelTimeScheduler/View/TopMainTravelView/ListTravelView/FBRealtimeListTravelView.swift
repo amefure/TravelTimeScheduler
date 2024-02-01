@@ -30,15 +30,15 @@ struct FBRealtimeListTravelView: View {
         if searchText.isEmpty && selectTime == "all" {
             // フィルタリングなし
             return result
-        }else if searchText.isEmpty && selectTime != "all"{
+        } else if searchText.isEmpty && selectTime != "all" {
             // 年数のみ
             let startAndEndDate = displayDateVM.getYearStringDateArray(selectTime)
             return result.filter({ (startAndEndDate[0]...startAndEndDate[1]).contains($0.startDate)})
-        }else if searchText.isEmpty == false &&  selectTime != "all"  {
+        } else if searchText.isEmpty == false &&  selectTime != "all" {
             // 検索値＆年数
             let startAndEndDate = displayDateVM.getYearStringDateArray(selectTime)
             return result.filter({$0.name.contains(searchText)}).filter({ (startAndEndDate[0]...startAndEndDate[1]).contains($0.startDate)})
-        }else{
+        } else {
             // 検索値のみ
             return result.filter({$0.name.contains(searchText)})
         }

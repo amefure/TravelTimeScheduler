@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 ///RealmDBのCRUD処理ViewModel
-class RealmDatabaseViewModel: CrudDatabaseViewModel {
+class RealmDatabaseViewModel: CrudDatabaseProtocol {
     
     // MARK: - Generic Type
     typealias RecordId = ObjectId

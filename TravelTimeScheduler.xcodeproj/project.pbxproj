@@ -53,7 +53,7 @@
 		128FC4BF2B5F7ADA003E3B53 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4BE2B5F7ADA003E3B53 /* UserDefaultsRepository.swift */; };
 		12AEEB712A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */; };
 		12AEEB732A19B0AB008AB7B8 /* ConvertTypeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB722A19B0AB008AB7B8 /* ConvertTypeUtility.swift */; };
-		12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */; };
+		12AEEB752A1AC74A008AB7B8 /* CrudDatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB742A1AC74A008AB7B8 /* CrudDatabaseProtocol.swift */; };
 		12AEEB772A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */; };
 		12AEEB792A24B99B008AB7B8 /* ReadingShareTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */; };
 		12AEEB7B2A24D8DB008AB7B8 /* ProgressButtonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */; };
@@ -86,6 +86,10 @@
 		12E6D3AE2B6A7DF4003D1C80 /* ImagePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */; };
 		12E6D3B02B6A859C003D1C80 /* RowTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AF2B6A859C003D1C80 /* RowTravelViewModel.swift */; };
 		12E6D3B22B6A8C5E003D1C80 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3B12B6A8C5E003D1C80 /* HeaderView.swift */; };
+		12E6D3B42B6B6198003D1C80 /* ReachabilityUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3B32B6B6198003D1C80 /* ReachabilityUtility.swift */; };
+		12E6D3B72B6B6570003D1C80 /* ImageStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3B62B6B6570003D1C80 /* ImageStorageProtocol.swift */; };
+		12E6D3B92B6B660C003D1C80 /* LocalImageStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3B82B6B660C003D1C80 /* LocalImageStorageRepository.swift */; };
+		12E6D3BB2B6B6794003D1C80 /* SwitchingImageStorageControlRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3BA2B6B6794003D1C80 /* SwitchingImageStorageControlRepository.swift */; };
 		12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */; };
 		12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */; };
 		12F0E06429FB220F0081D9C1 /* UserInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */; };
@@ -183,7 +187,7 @@
 		128FC4BE2B5F7ADA003E3B53 /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
 		12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingDatabaseControlViewModel.swift; sourceTree = "<group>"; };
 		12AEEB722A19B0AB008AB7B8 /* ConvertTypeUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTypeUtility.swift; sourceTree = "<group>"; };
-		12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudDatabaseViewModel.swift; sourceTree = "<group>"; };
+		12AEEB742A1AC74A008AB7B8 /* CrudDatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudDatabaseProtocol.swift; sourceTree = "<group>"; };
 		12AEEB762A1B75EC008AB7B8 /* FBDatabaseTravelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDatabaseTravelListViewModel.swift; sourceTree = "<group>"; };
 		12AEEB782A24B99B008AB7B8 /* ReadingShareTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingShareTravelView.swift; sourceTree = "<group>"; };
 		12AEEB7A2A24D8DB008AB7B8 /* ProgressButtonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButtonStack.swift; sourceTree = "<group>"; };
@@ -216,6 +220,10 @@
 		12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDialog.swift; sourceTree = "<group>"; };
 		12E6D3AF2B6A859C003D1C80 /* RowTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTravelViewModel.swift; sourceTree = "<group>"; };
 		12E6D3B12B6A8C5E003D1C80 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		12E6D3B32B6B6198003D1C80 /* ReachabilityUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityUtility.swift; sourceTree = "<group>"; };
+		12E6D3B62B6B6570003D1C80 /* ImageStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorageProtocol.swift; sourceTree = "<group>"; };
+		12E6D3B82B6B660C003D1C80 /* LocalImageStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalImageStorageRepository.swift; sourceTree = "<group>"; };
+		12E6D3BA2B6B6794003D1C80 /* SwitchingImageStorageControlRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingImageStorageControlRepository.swift; sourceTree = "<group>"; };
 		12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTravelView.swift; sourceTree = "<group>"; };
 		12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleView.swift; sourceTree = "<group>"; };
 		12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCardView.swift; sourceTree = "<group>"; };
@@ -515,6 +523,7 @@
 				12AEEB722A19B0AB008AB7B8 /* ConvertTypeUtility.swift */,
 				125218B629D63955006AF797 /* ValidationUtility.swift */,
 				12B4696829E81E4C002E6864 /* ExColor.swift */,
+				12E6D3B32B6B6198003D1C80 /* ReachabilityUtility.swift */,
 			);
 			path = "Extension&Utility";
 			sourceTree = "<group>";
@@ -549,7 +558,7 @@
 			children = (
 				128FC4BD2B5F7AD1003E3B53 /* DB */,
 				128FC4B92B5F7A80003E3B53 /* DI */,
-				12E6D3A82B6A787B003D1C80 /* FBCloudStorageRepository.swift */,
+				12E6D3B52B6B655A003D1C80 /* ImageStorage */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -657,7 +666,7 @@
 				12B4697529E826C3002E6864 /* Realm */,
 				12AEEB702A183CFF008AB7B8 /* SwitchingDatabaseControlViewModel.swift */,
 				12AEEB8C2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift */,
-				12AEEB742A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift */,
+				12AEEB742A1AC74A008AB7B8 /* CrudDatabaseProtocol.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -715,6 +724,17 @@
 				12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */,
 			);
 			path = DiaLog;
+			sourceTree = "<group>";
+		};
+		12E6D3B52B6B655A003D1C80 /* ImageStorage */ = {
+			isa = PBXGroup;
+			children = (
+				12E6D3A82B6A787B003D1C80 /* FBCloudStorageRepository.swift */,
+				12E6D3B82B6B660C003D1C80 /* LocalImageStorageRepository.swift */,
+				12E6D3B62B6B6570003D1C80 /* ImageStorageProtocol.swift */,
+				12E6D3BA2B6B6794003D1C80 /* SwitchingImageStorageControlRepository.swift */,
+			);
+			path = ImageStorage;
 			sourceTree = "<group>";
 		};
 		12F0E06529FBEA8B0081D9C1 /* EntryTravelView */ = {
@@ -1091,11 +1111,13 @@
 				12E6D3B02B6A859C003D1C80 /* RowTravelViewModel.swift in Sources */,
 				12F0E0722A029AFD0081D9C1 /* UserinfoEditLinkPanelView.swift in Sources */,
 				12AEEB7B2A24D8DB008AB7B8 /* ProgressButtonStack.swift in Sources */,
+				12E6D3B92B6B660C003D1C80 /* LocalImageStorageRepository.swift in Sources */,
 				1281C53F2A15A3E300C23047 /* ShareTravelView.swift in Sources */,
 				12B469A029F67093002E6864 /* TranceportationPickerView.swift in Sources */,
 				12B4697329E82640002E6864 /* DeviceSizeManager.swift in Sources */,
 				12B4697129E82633002E6864 /* UserSettingViewModel.swift in Sources */,
 				12E6D3A92B6A787B003D1C80 /* FBCloudStorageRepository.swift in Sources */,
+				12E6D3B72B6B6570003D1C80 /* ImageStorageProtocol.swift in Sources */,
 				12B4698A29ED5C28002E6864 /* RowScheduleView.swift in Sources */,
 				12B4698229E8ACDF002E6864 /* EntryScheduleView.swift in Sources */,
 				1252192829DD7F69006AF797 /* AuthErrorModel.swift in Sources */,
@@ -1125,10 +1147,11 @@
 				12B4698629EC1254002E6864 /* DateFormatManager.swift in Sources */,
 				1252193B29DF6ED6006AF797 /* Travel.swift in Sources */,
 				12F0E08B2A1302910081D9C1 /* ReAuthEmailView.swift in Sources */,
-				12AEEB752A1AC74A008AB7B8 /* CrudDatabaseViewModel.swift in Sources */,
+				12AEEB752A1AC74A008AB7B8 /* CrudDatabaseProtocol.swift in Sources */,
 				1281C5312A13B82400C23047 /* FBDatabaseModel.swift in Sources */,
 				12B4696D29E825A7002E6864 /* RealmDatabaseModel.swift in Sources */,
 				125218B529D63943006AF797 /* AuthViewModel.swift in Sources */,
+				12E6D3B42B6B6198003D1C80 /* ReachabilityUtility.swift in Sources */,
 				12F0E0812A0A6EE80081D9C1 /* TopMainTravelView.swift in Sources */,
 				12B4699329F1E530002E6864 /* ScheduleTabMainView.swift in Sources */,
 				12AEEB8D2A2CD123008AB7B8 /* UserNewEntryRegistrationFBDatabaseViewModel.swift in Sources */,
@@ -1144,6 +1167,7 @@
 				1252187029D6330F006AF797 /* TravelTimeSchedulerApp.swift in Sources */,
 				12F0E07A2A029CB10081D9C1 /* UserTermsOfServiceLinkPanelView.swift in Sources */,
 				12F0E06729FBEAB00081D9C1 /* InputPeriodView.swift in Sources */,
+				12E6D3BB2B6B6794003D1C80 /* SwitchingImageStorageControlRepository.swift in Sources */,
 				12F0E0762A029C130081D9C1 /* UserShareLinkPanelView.swift in Sources */,
 				1281C5422A160F0300C23047 /* RealmListTravelView.swift in Sources */,
 				12AEEB832A2AC536008AB7B8 /* UserSignOutPanelView.swift in Sources */,
