@@ -23,7 +23,6 @@ struct ReadingShareTravelView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    
     private func validationCheck() -> Bool{
         if let travel = allTravelFirebase.travels.first(where: { $0.id.stringValue == travelId}){
             // readableUserlId配列の中にUserIdがなければOK
@@ -35,7 +34,14 @@ struct ReadingShareTravelView: View {
     }
     //
     var body: some View {
-        VStack(spacing:0){
+        VStack(spacing:0) {
+            
+            HeaderView(
+                title: "Travelを共有する",
+                leadingIcon: "chevron.backward",
+                leadingAction: {
+                    dismiss()
+                })
             
             List{
                 
@@ -72,28 +78,28 @@ struct ReadingShareTravelView: View {
                         }.disabled(!validationVM.validateEmpty(str:travelId))
                     }.frame(maxWidth: DeviceSizeManager.deviceWidth - 20, alignment: .center)
                         .listRowBackground(Color.thema)
-                        .alert(isSuccess ? "旅行情報を追加しました。" : "存在しないID\nもしくは\n既に追加済みのIDです。", isPresented: $isPresented) {
-                            Button {
-                                if isSuccess {
-                                    interstitial.presentInterstitial()
-                                    dismiss()
-                                }
-                            } label: {
-                                Text("OK")
-                            }
-                        }
-                }
-            }.navigationCustomBackground()
-                .navigationTitle("Travelを共有する")
-        }.onAppear {
-            interstitial.loadInterstitial()
-        }
-        .onDisappear {
-            if AuthViewModel.shared.isSignIn {
-                dbControl.readAllTravel { data in
-                    allTravelFirebase.travels = data
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
+            .alert(isSuccess ? "旅行情報を追加しました。" : "存在しないID\nまたは\n既に追加済みのIDです。", isPresented: $isPresented) {
+                Button {
+                    if isSuccess {
+                        interstitial.presentInterstitial()
+                        dismiss()
+                    }
+                } label: {
+                    Text("OK")
+                }
+            }
+            .onAppear {
+                interstitial.loadInterstitial()
+            }
+            .onDisappear {
+                if AuthViewModel.shared.isSignIn {
+                    dbControl.readAllTravel { data in
+                        allTravelFirebase.travels = data
+                    }
+                }
+            }
     }
 }

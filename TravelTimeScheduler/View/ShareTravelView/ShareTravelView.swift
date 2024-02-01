@@ -13,29 +13,42 @@ struct ShareTravelView: View {
     private let dbControl = SwitchingDatabaseControlViewModel()
     
     // MARK: - Receive Parameters
-    public let travel:Travel
+    public let travel: Travel
+    
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        List{
+        
+        VStack {
             
-            // MARK: - ImageView
-            SectionImageView(image: "ShareId")
+            HeaderView(
+                title: "Share Travel",
+                leadingIcon: "chevron.backward",
+                leadingAction: {
+                    dismiss()
+                })
             
-            Section(header: Text("TravelID"), footer: Text("・このIDは登録した旅行ごとに振られる一意のIDです。\n・このIDを友達に教えることで旅行をシェアできます。")) {
+            List {
                 
-                HStack{
-                    
-                    Text(travel.id.stringValue)
-                        .lineLimit(1)
-                    
-                    CopyButtonView(copyText: travel.id.stringValue)
-                    
-                }.textSelection(.enabled)
-                    .floatingCard()
+                // MARK: - ImageView
+                SectionImageView(image: "ShareId")
                 
-            }.listRowBackground(Color.list)
+                Section(header: Text("TravelID"), footer: Text("・このIDは登録した旅行ごとに振られる一意のIDです。\n・このIDを友達に教えることで旅行をシェアできます。")) {
+                    
+                    HStack{
+                        
+                        Text(travel.id.stringValue)
+                            .lineLimit(1)
+                        
+                        CopyButtonView(copyText: travel.id.stringValue)
+                        
+                    }.textSelection(.enabled)
+                        .floatingCard()
+                    
+                }.listRowBackground(Color.list)
+            }
+            
         }.foregroundColor(Color.thema)
-            .navigationTitle("Share Travel")
-            .navigationCustomBackground()
+            .navigationBarBackButtonHidden(true)
     }
 }

@@ -37,20 +37,56 @@ struct EntryTravelView: View {
         self.parentDismissFunction()
     }
     
+    // MARK: - ViewModels
    
+    private let dbControl = SwitchingDatabaseControlViewModel()
+    @ObservedObject var allTravelFirebase = FBDatabaseTravelListViewModel.shared
+    
+    // MARK: - View
+    @State private var isSuccessAlert: Bool = false
+    
+
     
     var body: some View {
         
-        // MARK: - Header
-        EntryHeaderView(
-            travelName: travelName,
-            memberArray: memberArray,
-            startDate: startDate,
-            endDate: endDate,
-            image: image,
-            travel: travel,
-            startInterstitial: {
-                interstitial.presentInterstitial()
+        HeaderView(
+            title: "旅行登録",
+            leadingIcon: "chevron.backward",
+            trailingIcon: "checkmark",
+            leadingAction: {
+                dismiss()
+            },
+            trailingAction: {
+                if viewModel.validatuonInput(str: travelName) {
+                    
+                    if let travel = travel {
+                        // 更新処理
+                        dbControl.updateTravel(
+                            id: travel.id.stringValue,
+                            travelName: travelName,
+                            members: memberArray,
+                            startDate: startDate,
+                            endDate: endDate,
+                            schedules: travel.schedules)
+                        
+                        if let image = image {
+                            viewModel.uploadImgFile(fileName: travel.id.stringValue, image: image)
+                        }
+                        
+                    } else {
+                        // 新規登録処理
+                        let id = dbControl.createTravel(
+                            travelName: travelName,
+                            members: memberArray,
+                            startDate: startDate,
+                            endDate: endDate)
+                        if let image = image {
+                            viewModel.uploadImgFile(fileName: id, image: image)
+                        }
+                    }
+                    
+                    isSuccessAlert = true
+                }
             })
         
         // MARK: - Contents
@@ -118,7 +154,6 @@ struct EntryTravelView: View {
         .fontWeight(.bold)
         .listStyle(GroupedListStyle())
         .scrollContentBackground(.hidden)
-        .navigationCustomBackground()
         .onAppear{
             /// 　初期値セット
             if let travel = travel {
@@ -134,8 +169,22 @@ struct EntryTravelView: View {
                 memberArray = [myName]
             }
             interstitial.loadInterstitial()
-            
-            
         }.navigationBarBackButtonHidden(true)
+            .alert(travel == nil ? "「\(travelName)」を登録しました。" : "「\(travelName)」を更新しました。", isPresented: $isSuccessAlert) {
+                Button {
+                    // 広告の再生
+                    interstitial.presentInterstitial()
+                    dismiss()
+                } label: {
+                    Text("OK")
+                }
+            }
+            .onDisappear {
+                if AuthViewModel.shared.isSignIn {
+                    dbControl.readAllTravel { data in
+                        allTravelFirebase.travels = data
+                    }
+                }
+            }
     }
 }

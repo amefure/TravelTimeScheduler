@@ -85,6 +85,7 @@
 		12E6D3AB2B6A7AF3003D1C80 /* EntryTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AA2B6A7AF3003D1C80 /* EntryTravelViewModel.swift */; };
 		12E6D3AE2B6A7DF4003D1C80 /* ImagePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */; };
 		12E6D3B02B6A859C003D1C80 /* RowTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3AF2B6A859C003D1C80 /* RowTravelViewModel.swift */; };
+		12E6D3B22B6A8C5E003D1C80 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6D3B12B6A8C5E003D1C80 /* HeaderView.swift */; };
 		12F0E06029F9669D0081D9C1 /* RowTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */; };
 		12F0E06229FB21D30081D9C1 /* HeaderTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */; };
 		12F0E06429FB220F0081D9C1 /* UserInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */; };
@@ -214,6 +215,7 @@
 		12E6D3AA2B6A7AF3003D1C80 /* EntryTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTravelViewModel.swift; sourceTree = "<group>"; };
 		12E6D3AD2B6A7DF4003D1C80 /* ImagePickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDialog.swift; sourceTree = "<group>"; };
 		12E6D3AF2B6A859C003D1C80 /* RowTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTravelViewModel.swift; sourceTree = "<group>"; };
+		12E6D3B12B6A8C5E003D1C80 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		12F0E05F29F9669D0081D9C1 /* RowTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTravelView.swift; sourceTree = "<group>"; };
 		12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleView.swift; sourceTree = "<group>"; };
 		12F0E06329FB220F0081D9C1 /* UserInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCardView.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				12F0E06129FB21D30081D9C1 /* HeaderTitleView.swift */,
+				12E6D3B12B6A8C5E003D1C80 /* HeaderView.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -1078,6 +1081,7 @@
 				1281C53A2A1582FB00C23047 /* EntryUserNameView.swift in Sources */,
 				125218B729D63955006AF797 /* ValidationUtility.swift in Sources */,
 				12AEEB7D2A275D21008AB7B8 /* MessageBalloonViewModel.swift in Sources */,
+				12E6D3B22B6A8C5E003D1C80 /* HeaderView.swift in Sources */,
 				12F0E0782A029C530081D9C1 /* UserReviewLinkPanelView.swift in Sources */,
 				125218A829D63897006AF797 /* GoogleAuthView.swift in Sources */,
 				1252192429DD7F41006AF797 /* EmailAuthModel.swift in Sources */,

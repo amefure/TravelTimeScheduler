@@ -65,10 +65,6 @@ struct FBRealtimeListTravelView: View {
                 }.padding()
                     .background(Color.list)
                
-                
-//                List(filteringResults){ travel in
-//                   
-//                }.listStyle(GroupedListStyle())
             }
         }.onAppear{
             dbControl.readAllTravel { data in

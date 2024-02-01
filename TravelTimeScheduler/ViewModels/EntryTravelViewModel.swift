@@ -9,12 +9,16 @@ import UIKit
 
 class EntryTravelViewModel: NSObject {
 
+    private let validationUtility = ValidationUtility()
     private let fbCloudStorageRepository: FBCloudStorageRepository
-    
+   
     init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
         fbCloudStorageRepository = repositoryDependency.fbCloudStorageRepository
     }
-    
+}
+
+// MARK: - Firebase Cloud Storage
+extension EntryTravelViewModel {
     public func uploadImgFile(fileName: String, image: UIImage){
         fbCloudStorageRepository.uploadImgFile(fileName: fileName, image: image)
     }
@@ -30,5 +34,14 @@ class EntryTravelViewModel: NSObject {
             await fbCloudStorageRepository.deleteImage(fileName: fileName)
         }
     }
-    
 }
+
+// MARK: - Private Method
+extension EntryTravelViewModel {
+    public func validatuonInput(str: String) -> Bool{
+        validationUtility.validateEmpty(str: str)
+    }
+}
+
+
+

@@ -18,12 +18,27 @@ struct TravelPageView: View {
     private let dbControl = SwitchingDatabaseControlViewModel()
     
     // MARK: - View
-    @State var selection:Int = 0
-    @State var isDeleteMode:Bool = false
-    @State var isSharePresented = false
+    @State private var selection:Int = 0
+    @State private var isDeleteMode:Bool = false
+    @State private var isSharePresented = false
+    
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        VStack(spacing:0){
+        VStack(spacing: 0) {
+            
+            HeaderView(
+                title: travel.name,
+                leadingIcon: "chevron.backward",
+                trailingIcon: authVM.isSignIn ? "cloud.fill": "",
+                leadingAction: {
+                    dismiss()
+                }, trailingAction: {
+                    isSharePresented = true
+                },
+                isShowMenu: true,
+                members: Array(travel.members)
+            )
             
             // MARK: - 日付タブピッカー
             ScrollPeriodTabPickerView(travel: travel, selection: $selection)
@@ -37,37 +52,11 @@ struct TravelPageView: View {
             // MARK: - Admob
             AdMobBannerView().frame(height: 60)
             
-        }.navigationTitle(travel.name)
-            .toolbar {
-                if authVM.isSignIn{
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            isSharePresented = true
-                        }) {
-                            VStack{
-                                Image(systemName: "cloud.fill")
-                                Text("共有")
-                                    .font(.caption)
-                            }
-                        }
-                    }
-                }
-            }
+        }.navigationBarBackButtonHidden(true)
             .navigationDestination(isPresented: $isSharePresented) {
                 ShareTravelView(travel: travel)
             }
-            .toolbarTitleMenu {
-                if travel.members.first == "" {
-                    // countは0でも1になる(Blankがあるため)
-                    Text("No Member")
-                }else{
-                    ForEach(travel.members,id: \.self) { member in
-                        Text(member)
-                    }
-                }
-            }
             .background(Color.thema)
-            .navigationCustomBackground()
             .onAppear{
                 if authVM.isSignIn{
                     dbControl.observedTravel(travelId: travel.id.stringValue) { data in

@@ -9,7 +9,7 @@ import SwiftUI
 import RealmSwift
 
 // MARK: - DBのSwitching & 適切なデータへの変換
-class SwitchingDatabaseControlViewModel:CrudDatabaseViewModel {    
+class SwitchingDatabaseControlViewModel: CrudDatabaseViewModel {    
     
     // MARK: - Generic Type
     typealias RecordId = String

@@ -14,9 +14,24 @@ struct UserSettingView: View {
     // MARK: - View
     private let columns = Array(repeating: GridItem(.flexible()), count: 3)
     
+    @State private var isShowHowToUse = false
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         
         VStack {
+            
+            HeaderView(
+                title: "User Setting",
+                leadingIcon: "chevron.backward",
+                trailingIcon: "questionmark.app",
+                leadingAction: {
+                    dismiss()
+                },
+                trailingAction: {
+                    isShowHowToUse = true
+                })
+            
             
             Spacer()
             
@@ -52,7 +67,7 @@ struct UserSettingView: View {
                 UserReviewLinkPanelView()
                 
                 UserShareLinkPanelView()
-               
+                
                 UserTermsOfServiceLinkPanelView()
                 
                 
@@ -65,19 +80,11 @@ struct UserSettingView: View {
                 // MARK: - AdMob
                 AdMobBannerView().frame(height: 60)
             }
-        }    
-        .navigationCustomBackground()
-        .navigationTitle("User Setting")
-        .background(Color.list)
-        .fontWeight(.bold)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing, content: {
-                NavigationLink {
-                    HowToUseTheAppView()
-                } label: {
-                    Image(systemName: "questionmark.app")
-                }
+        }.background(Color.list)
+            .navigationBarBackButtonHidden(true)
+            .fontWeight(.bold)
+            .navigationDestination(isPresented: $isShowHowToUse, destination: {
+                HowToUseTheAppView()
             })
-        }
     }
 }

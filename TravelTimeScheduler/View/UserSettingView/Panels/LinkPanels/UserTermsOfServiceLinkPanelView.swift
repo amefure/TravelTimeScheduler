@@ -10,7 +10,7 @@ import SwiftUI
 struct UserTermsOfServiceLinkPanelView: View {
     
     var body: some View {
-        Link(destination:URL.init(string: "https://tech.amefure.com/app-terms-of-service")!,
+        Link(destination:URL.init(string: "https://appdev-room.com/app-terms-of-service")!,
           label: {
             VStack{
                 Image(systemName:"note.text")

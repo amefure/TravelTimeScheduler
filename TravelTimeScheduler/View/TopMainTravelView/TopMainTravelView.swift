@@ -20,14 +20,28 @@ struct TopMainTravelView: View {
     @State var searchText:String = ""
     @State var selectTime:String = "all"
     
+    @State private var isShowSetting = false
+    @State private var isShowShare = false
+    
     
     var body: some View {
         
         ZStack(alignment: .bottomTrailing) {
             
             VStack(spacing:0) {
+                
+                HeaderView(
+                    title: "旅Time",
+                    leadingIcon: authVM.isSignIn ? "icloud.and.arrow.down.fill" : "",
+                    trailingIcon: "gearshape.fill",
+                    leadingAction: {
+                        isShowShare = true
+                    },
+                    trailingAction: {
+                        isShowSetting = true
+                    })
                 // MARK: - フィルタリング
-                FilteringContainerView(searchText: $searchText, selectTime: $selectTime)
+//                FilteringContainerView(searchText: $searchText, selectTime: $selectTime)
                 
                 // MARK: - サインイン→Firebase DB / 未サインイン→Relam DB
                 if authVM.isSignIn {
@@ -56,37 +70,14 @@ struct TopMainTravelView: View {
             
             
         }.ignoresSafeArea(.keyboard)
-            .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
             .background(Color.thema)
-            .toolbar {
-                // MARK: - Header
-                ToolbarItem(placement: .principal) {
-                    HeaderTitleView(title: "旅Time")
-                        .padding(.top)
-                }
-                
-                // MARK: - RightButton
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: {
-                        UserSettingView()
-                    }, label: {
-                        Image(systemName: "gearshape.fill")
-                            .foregroundColor(Color.foundation)
-                    })
-                }
-                // MARK: - LeftButton
-                if authVM.isSignIn {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink {
-                            ReadingShareTravelView()
-                        } label: {
-                            Image(systemName: "icloud.and.arrow.down.fill")
-                                .foregroundColor(Color.foundation)
-                        }
-                    }
-                }
-            }
+            .navigationDestination(isPresented: $isShowSetting, destination: {
+                UserSettingView()
+            })
+            .navigationDestination(isPresented: $isShowShare, destination: {
+                ReadingShareTravelView()
+            })
     }
 }
 
